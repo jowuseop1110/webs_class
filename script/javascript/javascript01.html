@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Document</title>
+
+    <title>Javascript</title>
+
 
     <style>
         @font-face {
@@ -46,6 +50,9 @@
 
         * {
 
+
+
+
             margin: 0;
             padding: 0;
             font-family: 'NexonLv1Gothic';
@@ -57,6 +64,8 @@
         }
 
         
+
+
 
         li {
             list-style: none;
@@ -73,6 +82,7 @@
             border-color: #e6e6e6;
             border-width: 0px;
             border-bottom-width: 1px;
+
 
         }
   
@@ -96,11 +106,20 @@
             padding: 0 10 0 10px;
                 /* 데이터 저장하기 검은색 바탕 여백 */
             font-size: 40;
+
+        }
+
+        h1 {
+            padding-bottom: 20px;
+            font-size: 50px;
+
         }
 
         .list1 li {
             display: inline;
+
             /* <li><a 들의 가로정렬 */
+
         }
 
         .list1 li a {
@@ -110,19 +129,42 @@
             display: inline-block;
             margin-bottom: 10px;
 
+
         }
     
+
+        
+
         .refer {
             background: #000;
             color: #fff;
             padding: 2px 10px 0 10px;
-            border-radius: 30px        
+
+            border-radius: 30px;       
+
+            border-radius: 30px;
+        }
+
+        h2 {
+            margin-top: 30px;
+            background-color: #000;
+            color: #fff;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-weight: 400;
+            padding: 3px 10px 0 10px;
+            font-size: 24px;
+
         }
     </style>
 </head>
 
 <body>
+
     <h1><a href="../index.html">javascript</a></h1>
+
+
+
 
     <ul class="list1">
         <li><a href="javascript01.html">데이터 저장하기</a></li>
@@ -133,6 +175,7 @@
 
     <h2>데이터 저장하기</h2>
     <ul>
+
         <li>01.변수 : 데이터 저장 <a href="reference01.html" class="refer">참고</a></li>
         <li>02.변수 : 데이터 저장 + 데이터 변경</li>
         <li>03.변수 : 데이터 저장 + 데이터 변경 + 데이터 추가</li>
@@ -149,10 +192,15 @@
             // 변수 x에 숫자 100을 저장
             // 변수 y에 숫자 200을 저장
             // 변수 z에 문자 javascript를 저장(문자를 입력할떄는 ""를 입력해야 한다)
+
+ 
+
+
             document.write("<br>*** 01. 변수 ***<br>");
             document.write(x, "<br>");
             document.write(y, "<br>");
             document.write(z, "<br>");
+
             // 저장한 값을 출력함
         }
         {
@@ -174,13 +222,15 @@
                 // 저장한 값을 출력함
                 
         }
-        // 03. 변수 : 데이터 저장 + 데이터 변경 + 데이터 추가
+
         {
+            //03. 변수 : 데이터 저장 + 데이터 변경 + 데이터 추가
             let x = 100;
             let y = 200;
             let z = "javascript";
 
             x += 300;
+
             // 기존의 x값(100)에다가 300을 + 해주겠다
             y += 400;
 
@@ -191,10 +241,14 @@
             document. write(y, "<br>");
             document. write(z, "<br>");
 
-
         }
+
     </script>
+    </hr>
 </body>
+
+
+
 
 
 </html>
