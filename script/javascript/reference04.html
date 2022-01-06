@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rference</title>
+</head>
+<style>
+    @font-face {
+        font-family: 'NexonLv1Gothic';
+        font-weight: 300;
+        font-style: normal;
+        src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.eot');
+        src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.eot?#iefix') format('embedded-opentype'),
+            url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.woff2') format('woff2'),
+            url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.woff') format('woff'),
+            url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.ttf') format("truetype");
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'NexonLv1Gothic';
+        font-weight: 400;
+        font-style: normal;
+        src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.eot');
+        src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.eot?#iefix') format('embedded-opentype'),
+            url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.woff2') format('woff2'),
+            url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.woff') format('woff'),
+            url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.ttf') format("truetype");
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'NexonLv1Gothic';
+        font-weight: 700;
+        font-style: normal;
+        src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.eot');
+        src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.eot?#iefix') format('embedded-opentype'),
+            url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.woff2') format('woff2'),
+            url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.woff') format('woff'),
+            url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.ttf') format("truetype");
+        font-display: swap;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: 'NexonLv1Gothic';
+        line-height: 1.6;
+    }
+
+    body {
+        padding: 5%;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: #333;
+    }
+
+    hr {
+        margin: 5% 0;
+        border-style: dashed;
+        border-color: #e6e6e6;
+        border-width: 0px;
+        border-bottom-width: 1px;
+    }
+
+    h1 {
+        padding-bottom: 20px;
+        font-size: 40;
+    }
+
+    h2 {
+        margin-top: 30px;
+        background-color: #000;
+        color: #fff;
+        display: inline-block;
+        margin-bottom: 1opx;
+        font-weight: 400;
+        padding: 0 10 0 10px;
+        font-size: 40;
+    }
+
+    .list1 li {
+        display: inline;
+    }
+
+    .list1 li a {
+        border: 1px solid #333;
+        padding: 8px 30px 5px 30px;
+        border-radius: 40px;
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+
+    .refer {
+        background: #000;
+        color: #fff;
+        padding: 2px 10px 0 10px;
+        border-radius: 30px;
+    }
+
+    pre {
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+</style>
+
+<body>
+
+    <!-- // 식별자 & 키워드 차이점(참고) -->
+    <!-- // 식별자 만드는 규칙 -->
+    <!-- // 단어 조합 규칙 -->
+    <h2>식별자 & 키워드 차이점</h2><br>
+    <br>
+    <p>
+        <br>
+        <strong>1.</strong> 변수명 첫 글자로는 $,_(언더바), 영문자만 올 수 있습니다.<br>
+        <br>
+        <pre>
+   var num = 10;
+</pre>
+    </p>
+    <br>
+    위와 같은 변수 선언문에서 var는 자바스크립트를 처음 만들 때 정해진 특별한 의미가 부여된 예약어 혹은<br>
+    키워드라고 합니다. 현재의 대부분의 웹 브라우저에는 아래와 같이 30가지의 자바스크립트 키워드를 지원합니다.<br>
+    <br>
+    <pre>
+   break         else    instanceof    true      case        false
+   new            try      catch          finally    null         typeof
+   continue     for      return          var       default    function
+   switch        void     delete         if          this          wgile
+   do              in       throw           with     const       class
+</pre>
+    <br>
+    그리고 num은 우리가 특정 값을 담아서 구분해 놀기 위해 임의로 만들어놓은 식별자라고 합니다. 참고로 식별자에는<br>
+    위와 같은 let, var, const같은 키워드를 사용할 수 없습니다.<br>
+    </p>
+    <br>
+    <h2>식별자 만드는 규칙</h2><br>
+    <br>
+    <p>
+        다음은 변수를 선언할 때 주의해야 할 사항입니다.
+        <br>
+        <strong>1.</strong> 변수명 첫 글자로는 $,_(언더바), 영문자만 올 수 있습니다.<br>
+        <br>
+        <pre>
+   var 1num = 10;(X)
+   var $num = 10;(O)
+</pre>
+    </p>
+    <br>
+    <p>
+        <strong>2.</strong> 변수명 첫 글자 다음은 영문자, 숫자, $,_(언더바)만 포함할 수 있습니다.<br>
+        <br>
+        <pre>
+   var 100num = 10; (X)
+   var num100 = 10; (O)
+</pre>
+    </p>
+    <br>
+    <p>
+        <strong>3.</strong> 변수명으로는 예약어(documentm, location, window등)를 사용할 수 없습니다. 예약어란 이미 자<br>
+        바스크립트에서 사용 중인 단어를 말합니다.<br>
+        <br>
+        <pre>
+   var document = 10; (X)
+   var num = 10; (O)
+</pre>
+    </p>
+    <br>
+    <p>
+        <strong>4.</strong> 변수명을 지을 때는 되도록 의미를 부여해 작성하는 것이 좋습니다.<br>
+        <br>
+        <pre>
+   var num = "hello"; (X)
+   var num = 10; (O)
+</pre>
+    </p>
+    <br>
+    <p>
+        <strong>5.</strong> 변수명을 사용할 때는 대 · 소문자를 구분해야 합니다.<br>
+        <br>
+        <pre>
+   var num = 10; document.width(Num) (X)
+   var num = 10; document.width(num) (O)
+</pre>
+    </p>
+    <br>
+    <p>
+        <strong>6.</strong> 변수명을 사용할 때는 공백은 포함할 수 없습니다.<br>
+        <br>
+        <pre>
+   var n um = 10; document.width(num) (X)
+   var num = 10; document.width(num) (O)
+</pre>
+    </p>
+    <h2>단어 조합 규칙</h2><br>
+    <br>
+    <p>
+        <strong>1.</strong> 읽기 쉽게 들여 쓰는 습관
+        <br>
+        자바스크립트 해석기는 소스를 처리할 때 들여쓰기를 신경 쓰지 않습니다. 하지만 작성한 소스<br>
+        를 다른 프로그래머가 읽거나, 오류가 발생해 소스를 수정해야 할 수도 있습니다. 그때를 대비해 일기 쉽<br>
+        게 들여 쓰는 습관을 들이세요.
+    </p>
+    <br>
+    <p>
+        <strong>2.</strong> 세미콜론(;)으로 문장을 구분
+        <br>
+        자바스크립트에서 세미콜론은 문장 끝을 나타냅니다. 하지만 자바스크립트는 문장 끝에 세미콜론을 붙<br>
+        이지 않아도 실행은 됩니다. 즉 다음 문장의 실행 결과는 같습니다.<br>
+        <br>
+        <pre>
+   var num1     =      var num1;
+   var num2     =      var num2;
+</pre>
+    </p>
+
+</body>
+
+</html>
