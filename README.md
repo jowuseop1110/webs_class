@@ -4,7 +4,7 @@
 https://jowuseop1110.github.io/webs_class/
 
 ##자바스크립트
-https://jowuseop1110.github.io/webs_class/
+https://jowuseop1110.github.io/webs_class/javascript
 
 ##html 레퍼런스
-https://jowuseop1110.github.io/webs_class/
+https://jowuseop1110.github.io/webs_class/refernece
