@@ -40,32 +40,101 @@
     padding: 0;
     font-family: 'Nexonlv1Gothic';
 }
+
 li {
     list-style: none;
 }
+
 a {
     text-decoration: none;
-    color: #000;   
+    color: #000;
 }
+
 /* header */
 #header {
-    padding: 30px;
+    padding: 40px;
+    border-bottom: 1px dashed #cdcdcd;
 }
+
 #header h1 {
     margin-bottom: 30px;
     font-size: 40px;
 }
-#header nav {}
-#header nav ul {}
+
 #header nav ul li {
     display: inline;
     /* 인라인과 블록 차이점 */
 }
+
 #header nav ul li a {
     font-size: 20px;
+    /* 글씨 크기 */
     border: 1px solid #000;
+    /* 테두리 설정 */
     padding: 12px 30px 10px 30px;
+    /* 테두리 내부 여백 12px(상), 30px(우), 10px(하), 30px(좌)*/
     border-radius: 30px;
+    /* 테두리 꼭짓점 r값 */
     display: inline-block;
+    /* inline속성과 bolck속성을 함께 적용 */
     margin-bottom: 10px;
+    /* 테두리 하단 외부 여백 */
+}
+
+#header nav ul li.active a {
+    background: #000;
+    color: #fff;
+
+}
+
+/* 모바일용 스타일*/
+@media (max-width: 800px) {
+    #header {
+        padding: 20px;
+    }
+
+    #header h1 {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    #header nav ul li a {
+        font-size: 16px;
+        padding: 8px 15px 6px 15px;
+        margin-bottom: 5px;
+    }
+}
+
+/* //모바일용 스타일*/
+
+/* mai */
+#main {
+    padding: 40px;
+}
+
+.list {
+    padding: 40px;
+    border-bottom: 1px dotted #cdcdcd;
+}
+
+.list ul li {
+    font-size: 18px;
+    /* 폰트들간에 열을 1.8만큼 공간을 줌 */
+    line-height: 1.8;
+}
+
+@media (max-width: 800px) {
+    #main {
+        padding: 20px;
+    }
+
+    .list {
+        padding-bottom: 20px;
+    }
+
+    .list ul li {
+        font-size: 14px;
+        /* 폰트들간에 열을 1.8만큼 공간을 줌 */
+        line-height: 1.6;
+    }
 }
