@@ -113,16 +113,14 @@ a {
 }
 
 .list {
-    padding: 40px;
+    padding-bottom: 40px;
     border-bottom: 1px dotted #cdcdcd;
 }
-
 .list ul li {
     font-size: 18px;
     /* 폰트들간에 열을 1.8만큼 공간을 줌 */
     line-height: 1.8;
 }
-
 @media (max-width: 800px) {
     #main {
         padding: 20px;
