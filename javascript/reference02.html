@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+    <!-- style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+    <!-- script -->
+    <scrip src="stylesheet" href="assets/js/prism.js"></scrip>
+
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="ixdex.html">javascript</a></h1>
+        <nav>
+            <ul>
+
+                <li><a href="reference01.html">기초문법</a></li>
+                <li class="active"><a href="reference02.html">변수</a></li>
+                <li><a href="reference03.html">자료형</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main id="main">
+        <div class="doc">
+            <h2>변수란?</h2>
+            <p>변수(Variables)는 변하는 데이터(값)를 저장할 수 있는 메모리 공간입니다. 데이터를 담을 수 있는<br>
+                그릇이라 할 수 있죠. 변수에는 데이터가 오직 한 개만 저장됩니다. 그러다 보니 새로운 데이터가 들<br>
+                어오면 기존에 있던 데이터는 메모리 공간에서 지워지게 됩니다. 변수에 저장할 수 있는 데이터의<br>
+                종류로는 문자형(String), 숫자형(Number), 논리형(Boolean) 그리고 빈(Null) 데이터가 있습니다.
+            </p>
+
+            <h2>변수 선언 방법</h2>
+            <p>변수를 선언할 때는 다음 기본형과 같이 var 키워드를 변수명 앞에 붙입니다. 변수명에는 한글을 사<br>
+                용할 수 없으며, 영문과 숫자 그리고 일부 특수 문자(_,$)만 포함할 수 있습니다. 변수명은 의미에<br>
+                맞게 만드는 것이 좋습니다. 가령, 수학 시험 점수를 저장하는 변수라면 'mathNum'이라고 이름 지<br>
+                으면 되겠죠. 이때 변수명은 단어와 단어의 조합으로 지었고, 두 번째 단어의 첫 글자는 대문자로 표<br>
+                기했습니다. 이는 마치 낙타의 등과 같다고해서 낙타(Camel)표기법이라 부릅니다. 
+            </p>
+            <div class="code">
+                var 변수명 = 값;<br>
+                let 변수명 = 값;
+            </div>
+            <h2>변수명</h2>
+            <p>자바스크입트에는 의미를 가진 단어들이 있기 때문에 사용자가 임의로
+                사용할 수 없는 단어들이 있습니다.
+            </p>
+
+            <div class="line">
+                키워드 : 자바스크립트에서 사용하는 단어<br>
+                식별자 : 사용자가 임의로 사용하는 단어
+            </div>
+            <h3>식별자를 만드는 규칙</h3>
+            <ul>
+                <li>사용자가 사용할 수 있는 문자 : 알파벳(a~z, A~Z, (숫자(0~9), 밑줄(_), 달리기호($)</li>
+                <li>첫 글자는 숫자를 사용할 수 없습니다.</li>
+                <li>공백을 사용할 수 없습니다. : 밑줄(_) 사용가능, 하이픈(-) 사용안됩니다.</li>
+                <li>특수기호를 사용할 수 없습니다. : 달러기호($)는 사용가능합니다.</li>
+                <li>키워드를 사용할 수 없습니다.</li>
+            </ul>
+            <h3>단어를 조합할 때 규칙</h3>
+            <ul>
+                <li>언더스코어 노테이션 : (color_top) 중간에 '_'를 사용합니다.</li>
+                <li>케멜 노테이션 : (color_Top) : 두번째 단어의 첫 글자를 대문자로 사용합니다.</li>
+                <li>파스칼 노테이션 : (Color_top) : 모든 단어의 첫 글자를 대문자로 사용합니다.</li>
+            </ul>
+        </div>
+    </main>
+
+</body>
+
+</html>
