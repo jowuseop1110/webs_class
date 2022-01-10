@@ -49,13 +49,31 @@ a {
     text-decoration: none;
     color: #000;
 }
+/* table */
+
+table {  
+    border-spacing: 0;
+}
+th {
+    border:1px solid #000;
+    background-color: rgb(68, 196, 247);
+    padding: 5px 30px 5px 30px;
+    font-size: 15px;
+}
+td {
+    border:1px solid #000;
+    padding: 5px 20px 5px 20px;
+    text-align: center;
+}
+/* //table */
 /* top */
 .top {
     position: fixed;
     right: 20px;
     bottom: 20px;
 }
-    .top a {   
+
+.top a {
     width: 60px;
     height: 60px;
     line-height: 60px;
@@ -64,7 +82,8 @@ a {
     background: #000;
     color: #fff;
     display: block;
-    }
+}
+
 /* header */
 #header {
     padding: 40px;
@@ -142,24 +161,27 @@ a {
     #main {
         padding: 20px;
     }
-/* list */
-.list {
-    padding-bottom: 20px;
+
+    /* list */
+    .list {
+        padding-bottom: 20px;
+    }
+
+    .list ul li {
+        font-size: 14px;
+        /* 폰트들간에 열을 1.6만큼 공간을 줌 */
+        line-height: 1.6;
+    }
 }
 
-.list ul li {
-    font-size: 14px;
-    /* 폰트들간에 열을 1.6만큼 공간을 줌 */
-    line-height: 1.6;
-}
-}
 /* note */
 .note {
-padding: 40px 0;
-border-bottom: 1pz dotted #cdcdcd;
+    padding: 40px 0;
+    border-bottom: 1pz dotted #cdcdcd;
 }
+
 .note a {
-    font-size:  16px;
+    font-size: 16px;
     background: #000;
     color: #fff;
     border-radius: 20px;
@@ -167,24 +189,30 @@ border-bottom: 1pz dotted #cdcdcd;
     display: inline-block;
     margin-bottom: 5px;
 }
+
 .note a:hover {
     text-decoration: underline;
 }
-@media (max-width: 800px){
-    .note{
+
+@media (max-width: 800px) {
+    .note {
         padding: 20px 0;
     }
+
     .note a {
         font-size: 14px;
     }
 }
+
 /* script */
 .script {
     padding: 40px 0;
 }
+
 .script .sample {
     margin-bottom: 80px;
 }
+
 .script .sample h3 {
     background: #F2F2F2;
     font-size: 16px;
@@ -193,59 +221,73 @@ border-bottom: 1pz dotted #cdcdcd;
     border: 1px solid #E6E6E6;
     font-weight: 500;
 }
+
 .script .sample .code pre {
     margin: 0 !important;
     border-radius: 0 0 5px 5px;
 }
-@media (max-width: 800px){
+
+@media (max-width: 800px) {
     .script {
         padding: 20px 0;
     }
+
     .script .sample {
         margin-bottom: 40px;
     }
-    .script .sample h3{
+
+    .script .sample h3 {
         font-size: 14px;
         padding: 10px 15px 8px 15px;
     }
-    .script .sample ,code pre{
+
+    .script .sample,
+    code pre {
         font-size: 14px;
     }
 }
+
 /* doc */
 .doc {
     font-size: 18px;
     line-height: 1.8;
     padding-bottom: 300;
 }
+
 .doc h2 {
     font-weight: 500;
     margin: 40px 0 5px;
 }
+
 .doc h3 {
     font-weight: 500;
     margin: 20px 0 5px;
     text-decoration: underline;
 }
+
 .doc li {
     list-style: disc;
     margin-left: 20px;
 }
+
 .doc p {
     margin-bottom: 5px;
 }
+
 .doc .line {
     border: 1px solid #cdcdcd;
     padding: 20px 20px 15px 20px;
     border-radius: 10px;
     background: #eeeef0;
 }
+
 .doc .code {
     padding: 20px 20px 15px 20px;
     border-radius: 10px;
     background: #f4f8fa;
-    
+
 }
+
 .doc strong {
     background: #c3eaff;
     font-weight: normal;
@@ -253,6 +295,7 @@ border-bottom: 1pz dotted #cdcdcd;
     padding: 2px 15px 0px 15px;
     display: inline-block;
 }
+
 /* 개별 style */
 .doc .linetop {
     font-size: 20px;
@@ -261,6 +304,7 @@ border-bottom: 1pz dotted #cdcdcd;
     padding: 5px 20px 0px 10px;
     border-radius: 10px;
 }
+
 /* /개별 style */
 /* result */
 .result h4 {
@@ -268,9 +312,10 @@ border-bottom: 1pz dotted #cdcdcd;
     padding: 10px 20px;
     font-weight: normal;
     margin-top: 10px;
-    border-radius:  5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
     font-size: 16px;
 }
+
 .result div {
     background: #242822;
     padding: 20px;
@@ -279,11 +324,13 @@ border-bottom: 1pz dotted #cdcdcd;
     font-size: 16px;
     line-height: 1.4;
 }
-@media (max-width: 800px){
+
+@media (max-width: 800px) {
     .result h4 {
         font-size: 14px;
         padding: 10px 15px;
     }
+
     .result div {
         font-size: 14px;
         padding: 15px;
