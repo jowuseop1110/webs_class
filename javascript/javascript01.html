@@ -208,6 +208,10 @@
     document.write(arr[2]);
 }</code></pre>
                 </div>
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div class="result07"></div>
+                </div>
             </div>
             <!-- sample7 -->
             <!-- sample8 -->
@@ -225,6 +229,10 @@
     document.write(arr[2]);
 }</code></pre>
                 </div>
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div class="result08"></div>
+                </div>
             </div>
             <!-- /sample8 -->
             <!-- sample9 -->
@@ -238,6 +246,10 @@
     document.write(arr[1]);
     document.write(arr[2]);
 }</code></pre>
+                </div>
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div class="result09"></div>
                 </div>
             </div>
             <!-- /sample9 -->
@@ -256,6 +268,10 @@
     document.write(obj[2]);
 }</code></pre>
                 </div>
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div class="result10"></div>
+                </div>
             </div>
             <!-- /sample10 -->
             <!-- sample11 -->
@@ -273,6 +289,10 @@
     document.write(obj.c);
 }</code></pre>
                 </div>
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div class="result11"></div>
+                </div>
             </div>
             <!-- /smaple11 -->
             <!-- sample12 -->
@@ -289,6 +309,10 @@
     document.write(obj.b);
     document.write(obj.c);
 }</code></pre>
+                </div>
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div class="result12"></div>
                 </div>
             </div>
             <!-- /sample12 -->
@@ -308,6 +332,10 @@
     document.write(obj.c);
 }</code></pre>
                 </div>
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div class="result13"></div>
+                </div>
             </div>
             <!-- /sample13ㅡ -->
             <!-- sample14 -->
@@ -321,6 +349,10 @@
     document.write(obj[0].b);
     document.write(obj[1].c);
 }</code></pre>
+                </div>
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div class="result14"></div>
                 </div>
             </div>
             <!-- /sample14ㅡ -->
@@ -346,7 +378,7 @@
                 </div>
                 <div class="result">
                     <h4>결과보기</h4>
-                    <div class="result01"></div>
+                    <div class="result15"></div>
                 </div>
             </div>
             <!-- /sample15ㅡ -->
@@ -365,6 +397,10 @@
     document.write(obj.b);
     document.write(obj.c);
 }</code></pre>
+                </div>
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div class="result16"></div>
                 </div>
             </div>
             <!-- /sample16ㅡ -->
@@ -400,6 +436,10 @@
     // obj.g();
     // obj.d();
 }</code></pre>
+                </div>
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div class="result17"></div>
                 </div>
             </div>
             <!-- /sample17ㅡ -->
@@ -492,20 +532,13 @@
             arr[1] = 200;
             arr[2] = "javascript";
 
-            document.write("<br>*** 06.배열 표현 방법1 ***<br>");
-            document.write(arr[0], "<br>");
-            document.write(arr[1], "<br>");
-            document.write(arr[2], "<br>");
             document.querySelector(".result06").innerHTML = arr[0] + "<br>" + arr[1] + "<br>" + arr[2];
         }
         // 07. 배열 : 여러개의 데이터를 저장 : 표현 방법2
         {
             const arr = new Array(100, 200, "javascript");
             // 06번의 단축
-            document.write("<br>*** 07.배열 표현 방법2 ***<br>");
-            document.write(arr[0], "<br>");
-            document.write(arr[1], "<br>");
-            document.write(arr[2], "<br>");
+            document.querySelector(".result07").innerHTML = arr[0] + "<br>" + arr[1] + "<br>" + arr[2];
         }
         // 08. 배열 : 여러개의 데이터를 저장 : 표현 방법3
         {
@@ -514,19 +547,13 @@
             arr[1] = 200;
             arr[2] = "javascript";
 
-            document.write("<br>*** 08.배열 표현 방법3 ***<br>");
-            document.write(arr[0], "<br>");
-            document.write(arr[1], "<br>");
-            document.write(arr[2], "<br>");
+            document.querySelector(".result08").innerHTML = arr[0] + "<br>" + arr[1] + "<br>" + arr[2];
         }
         // 09. 배열 : 여러개의 데이터를 저장 : 표현 방법4
         {
             const arr = [100, 200, "javascript"];
 
-            document.write("<br>*** 09.배열 표현 방법4 ***<br>");
-            document.write(arr[0], "<br>");
-            document.write(arr[1], "<br>");
-            document.write(arr[2], "<br>");
+            document.querySelector(".result09").innerHTML = arr[0] + "<br>" + arr[1] + "<br>" + arr[2];
         }
         // 10. 객체 : 데이터를 저장(키와 값) - ex) 색: 파랑 : 표현 방법1 : 배열의 방법 동일하게 적용
         {
@@ -535,10 +562,7 @@
             obj[1] = 200;
             obj[2] = "javascript";
 
-            document.write("<br>*** 10. 객체 표현 방법1***<br>");
-            document.write(obj[0], "<br>");
-            document.write(obj[1], "<br>");
-            document.write(obj[2], "<br>");
+            document.querySelector(".result10").innerHTML = obj[0] + "<br>" + obj[1] + "<br>" + obj[2];
 
         }
         // 11. 객체 : 데이터를 저장(키와 값) - ex) 색: 파랑 : 표현 방법2
@@ -548,10 +572,7 @@
             obj.b = 200;
             obj.c = "javascript";
 
-            document.write("<br>*** 11. 객체 표현 방법2***<br>");
-            document.write(obj.a, "<br>");
-            document.write(obj.b, "<br>");
-            document.write(obj.c, "<br>");
+            document.querySelector(".result11").innerHTML = obj.a + "<br>" + obj.b + "<br>" + obj.c;
         }
         // 12. 객체 : 데이터를 저장(키와 값) - ex) 색: 파랑 : 표현 방법3
         {
@@ -561,10 +582,7 @@
             obj.b = 200;
             obj.c = "javascript";
 
-            document.write("<br>*** 12. 객체 표현 방법3***<br>");
-            document.write(obj.a, "<br>");
-            document.write(obj.b, "<br>");
-            document.write(obj.c, "<br>");
+            document.querySelector(".result12").innerHTML = obj.a + "<br>" + obj.b + "<br>" + obj.c;
         }
         // 13. 객체 : 데이터를 저장(키와 값) - ex) 색: 파랑 : 표현 방법4
         {
@@ -573,10 +591,8 @@
                 b: 200,
                 c: "javascript"
             }
-            document.write("<br>*** 13. 객체 표현 방법4***<br>");
-            document.write(obj.a, "<br>");
-            document.write(obj.b, "<br>");
-            document.write(obj.c, "<br>");
+
+            document.querySelector(".result13").innerHTML = obj.a + "<br>" + obj.b + "<br>" + obj.c;
         }
         // 14. 객체 : 데이터를 저장(키와 값) : 표현 방법5 : 배열 속에 객체
         {
@@ -589,10 +605,8 @@
                 }
 
             ];
-            document.write("<br>*** 14. 객체 표현 방법5***<br>");
-            document.write(obj[0].a, "<br>");
-            document.write(obj[0].b, "<br>");
-            document.write(obj[1].c, "<br>");
+
+            document.querySelector(".result14").innerHTML = obj[0].a + "<br>" + obj[0].b + "<br>" + obj[1].c;
         }
         // 15. 객체 : 데이터를 저장(키와 값)  : 표현 방법6 : 객체 속에 배열
         {
@@ -605,13 +619,8 @@
                 },
                 d: "javascript"
             }
-            document.write("<br>*** 15. 객체  ***<br>");
-            document.write(obj.a, "<br>");
-            document.write(obj.b[0], "<br>");
-            document.write(obj.b[1], "<br>");
-            document.write(obj.c.x, "<br>");
-            document.write(obj.c.y, "<br>");
-            document.write(obj.d, "<br>");
+
+            document.querySelector(".result15").innerHTML = obj.a + "<br>" + obj.b[0] + "<br>" + obj.b[1] + "<br>" + obj.c.x + "<br>" + obj.c.y + "<br>" + obj.d;
         }
         // 16. 객체 : 데이터를 저장(키와 값)  : 표현 방법7 : 객체 속에 변수
         {
@@ -623,10 +632,8 @@
                 b,
                 c
             }
-            document.write("<br>*** 16. 객체 표현 방법5***<br>");
-            document.write(obj.a, "<br>");
-            document.write(obj.b, "<br>");
-            document.write(obj.c, "<br>");
+
+            document.querySelector(".result16").innerHTML = obj.a + "<br>" + obj.b + "<br>" + obj.c
         }
         // 17. 객체 : 데이터를 저장(키와 값)  : 표현 방법8 : 객체 속에 함수
         {
@@ -649,14 +656,15 @@
                     document.write(this.d + "가 실행되었습니다.<br>")
                 }
             }
-            document.write("<br>*** 17. 객체 표현 방법5***<br>");
-            document.write(obj.a, "<br>");
-            document.write(obj.b, "<br>");
-            document.write(obj.b[0], "<br>");
-            document.write(obj.b[1], "<br>");
-            document.write(obj.c.x, "<br>");
-            document.write(obj.c.y, "<br>");
-            obj.e();
+            document.querySelector(".result17").innerHTML += obj.a + "<br>" + obj.b + "<br>" + obj.b[0] + "<br>" + obj.b[1] + "<br>" + obj.c.x + "<br>" + obj.c.y + "<br>"; 
+            // document.write("<br>*** 17. 객체 표현 방법5***<br>");
+            // document.write(obj.a, "<br>");
+            // document.write(obj.b, "<br>");
+            // document.write(obj.b[0], "<br>");
+            // document.write(obj.b[1], "<br>");
+            // document.write(obj.c.x, "<br>");
+            // document.write(obj.c.y, "<br>");
+            // obj.e();
             // obj.f();
             // obj.g();
             // obj.d();
