@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>javascript</title>
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/bbbbb.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/bbbbb.png">
+    <link rel="icon" href="../assets/face/bbbbb.png">
     <!-- style -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/prism.css">
     <!-- script -->
     <script src="../assets/js/prism.js"></script>
 </head>
+
 <body>
     <div class="top"><a href="#header">top</div>
     <header id="header">
@@ -459,10 +465,11 @@
                 x = 200; //지역변수 100->200
                 y = 300; //전역변수 200->300      
 
-                document.querySelector(".result04").innerHTML = a + "<br>" + x + "<br>" + y + "<br>" + z + "<br>" + b + "<br>" + x + "<br>" + y + "<br>" + z;                
+                document.querySelector(".result04").innerHTML = a + "<br>" + x + "<br>" + y + "<br>" + z + "<br>" + b +
+                    "<br>" + x + "<br>" + y + "<br>" + z;
             }
             func();
-            
+
         }
         //  05. 상수 : 데이터 저장 + 데이터 변경 불가
         {
@@ -473,7 +480,7 @@
             // y= 400; 상수(데이터 변경 불가) y는 200고정값으로 출력
             // z= "jquery"; 상수(데이터 변경 불가) z는 javascript고정값으로 출력
 
-            document.querySelector(".result05").innerHTML = x + "<br>" + y + "<br>" + z; 
+            document.querySelector(".result05").innerHTML = x + "<br>" + y + "<br>" + z;
         }
         // 06. 배열 : 여러개의 데이터를 저장 : 표현 방법1
         // 식별자 & 키워드 차이점(참고)
