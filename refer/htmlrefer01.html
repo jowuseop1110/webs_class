@@ -26,6 +26,7 @@
         <h2><a href="html.html"><em>기초문법</em></a></h2>
         <div class="menu">
             <ul>
+                <li><a href="html.html">속성</a></li>
                 <li class="active"><a href="htmlrefer01.html">기초 문법</a></li>
                 <li><a href="htmlrefer02.html">Block/Inline</a></li>
             </ul>
@@ -33,10 +34,54 @@
         <!-- //menu -->
 
         <div class="refer">
-
+            <div class="doc">
+                <h3>기본형태</h3>
+                <p>
+                    <strong>태그(TAG)</strong>
+                    태그는 각자의 의미를 가지고 있으며 다음과 같은 형태를 가진다.
+                </p>
+                <div class="line">
+                    <pre><code>&lt;TAG&gt;content&lt;/TAG&gt;
+</code></pre>
+                </div>
+                <p>
+                    <strong>속성(Attributes)과 값(Value)</strong>
+                    태그의 기능을 확장하기 위해 '속성'사용한다
+                </p>
+                <div class="line">
+                    <pre><code>&lt;TAG 속성="값"&gt;&lt;/TAG&gt;
+</code></pre>
+                </div>
+                <strong>부모와 자식 요소</strong>
+                <p>
+                    태그 A가 태그 B의 콘텐츠로 사양되면, 태그 B는 태그 A의 부모 요소, 태그 A는 태그 B의 자식요로라고 한다.
+                </p>
+                <div class="line">
+                    <pre><code> &lt;section class="fruits"&gt;
+&lt;h1&gt;과일 목록&lt;/h1&gt;
+&lt;ul&gt;
+    &lt;li&gt;사과&lt;/li&gt;
+    &lt;li&gt;딸기&lt;/li&gt;
+    &lt;li&gt;바나나&lt;/li&gt;
+    &lt;li&gt;오렌지&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/section>
+</code></pre>
+                </div>
+                <p>
+                    <strong>빈 태그(주석)</strong>주석이란(comment)이란 개발자가 작성한 해당 코드에 대한 이해를 돕는 설명이나<br>
+                    디버깅 위해 작성한 구문을 의미한다.
+                </p>
+                <div class="line">
+                    <pre><code>&lt;!--어려운 부분--&gt;
+&lt;p&gt;이부분은 어렵고 복잡한 코드입니다.&lt;/p&gt;
+&lt;!--/어려운 부분--&gt;
+</code></pre>
+                </div>
+            </div>
         </div>
 
-      <!-- //refer -->
+        <!-- //refer -->
     </main>
 
     <!-- script -->

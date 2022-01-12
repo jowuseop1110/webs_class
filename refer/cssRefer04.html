@@ -36,13 +36,46 @@
         <!-- //menu -->
 
         <div class="refer">
-<div class="doc">
-    <h3>CSS 색상</h3>
-    <p></p>
-</div>
+            <div class="doc">
+                <h3>색상 표현방법</h3>
+                <strong>이름 사용하기</strong>
+                <p>
+                    CSS에서는 140가지의 색상을 이름으로 지원한다고 합니다. 아래 urL을 클릭하면 지원하는 색상표를 확인할 수 있습니다.<br>
+                    그러나 이 방법은 block, white가 아닌 이상 색상을 세밀하게 원하는 대로 조절할 수 없습니다.
+                </p>
+                <div class="line">
+                    <pre><code>p {
+            color: red;
+        background-color: white;
+    }
+</code></pre>
+                </div>
+                <strong>RGB 사용하기</strong>
+                <p>
+                    RGB 색상표기법은 rgb(red, green, blue) 형식으로 색상을 표현하는데, 각 요소에는 0에서 255사이의 숫자를 입력합니다.
+                </p>
+                <div class="line">
+                    <pre><code>p {
+        color: rgba(0,0,0);
+        background-color: white;
+    }
+                    </code></pre>
+                </div>
+                <strong>HEX 사용하기</strong>
+                <p>
+                    실제로 실무에서 가장 많이 사용하는 색상 표기법입니다. RGB 순서대로 16진수로 변환하여 00~ff까지 두 자리씩 표기<br>
+                    합니다. 여섯자리의 색상코드 앞에는 샵 (#)을 붙입니다.
+                </p>
+                <div class="line">
+                    <pre><code>p {
+        color : #94fb11;
+        beackgrund-color: #3111FB;
+    }</code></pre>
+                </div>
+            </div>
         </div>
 
-      <!-- //refer -->
+        <!-- //refer -->
     </main>
 
     <!-- script -->

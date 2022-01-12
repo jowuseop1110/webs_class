@@ -37,7 +37,33 @@
 
         <div class="refer">
             <div class="doc">
-                <h3>Block와 Inline</h3>
+                <h3>Block</h3>
+                <p>
+                    <strong>한 줄에 나열되지 않고 그 자체로 한 줄을 완전리 차지합니다.</strong> 대표적인 요소로 <strong>&lt;p&gt;</strong> 태그가 있으며<br>
+                    블록 속성을 가지고 있는 태그는 기본적으로 너비 100%(width: 100%)속성을 가지고 있습니다. 화면의 카로 폭을 100%로 완전히 차지하기 때문에,
+                    다음 요소가 양 옆으로 붙을 공간이 없어서 자연히 줄 넘김이 됩니다. 또한, 인라인 요소와 다르게 margin, width, height 속성을 정의하면<br>
+                    모두 적용됩니다. 모양새를 쉽게 제어할 수 있는 속성 때문에 대부분 블록 속성을 가진 태그를 화면 구성이나 레이아웃에 사용합니다.
+                </p>
+                <h3>Inline</h3>
+                <p>
+                    줄을 바꾸지 않고 다른 요소와 함께 한 행에 위치하는 속성입니다. 그래서 Inline 속성은, 문장안에서 사용하는 태그에 주로 기본값으로 설정되어<br>
+                    있습니다. 특정 문장이나 단어를 굵게 표시해주는 &lt;strong&gt; 태그도 Inline 속성을 가지고 있습니다.
+                </p>
+                <h3>Block과 Inline의 합성 속성(display: inline-block)</h3>
+                <p>
+                    Inline과 Block, 두 속성의 중간 단계도 있습니다. inline-block이라는 이 속성은, 인라인과 같이 한 줄에 표현하면서도 margin, width, height
+                    속성을 정의하면 표현해 줍니다.
+                </p>
+                <div class="code">
+                    ● 상, 하단 외부 여백(margin-top, margin-bottom) 속성을 정의할 수 있습니다. inline-block 요소의 상, 하 여백을 margin과
+                    line-height 두가지 속성 모두를 통해 제어할 수 있습니다.<br>
+
+                    ● 너비(width)와 높이(height) 속성을 정의할 수 있습니다. 기본적으로는 태그가 품고 있는 내부 요소의 부피에 맞춰집니다만, 너비와 높이를 지정하면 이 값 또한
+                    표현됩니다.<br>
+                    
+                    ● inline-block 속성을 가진 태그끼리 연속으로 사용되는 경우에는 최소한의 간격을 유지하기 위해서 좌, 우에 약 5px 가량의 외부 여백(margin)이 자동으로
+                    발생합니다. 하지만, margin-left나 margin-right를 사용하면 여기에 추가로 여백을 줄 수 있게 됩니다.
+                </div>
             </div>
         </div>
 
