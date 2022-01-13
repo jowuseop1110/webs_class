@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/bbbbb.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/bbbbb.png">
+    <link rel="icon" href="../assets/face/bbbbb.png">
+    <!-- style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+    <!-- script -->
+    <scrip src="stylesheet" href="assets/js/prism.js"></scrip>
+
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">javascript</a></h1>
+        <nav>
+            <ul>
+
+                <li><a href="reference01.html">기초문법</a></li>
+                <li><a href="reference02.html">변수</a></li>
+                <li><a href="reference03.html">자료형</a></li>
+                <li><a href="reference04.html">for문</a></li>
+                <li><a href="reference05.html">연산자</a></li>
+                <li class="active"><a href="reference06.html">조건문</a></li>
+                <li><a href="reference07.html">반복문</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main id="main">
+
+        <div class="doc">
+            <h2>조건문</h2>
+            <p>조건문 조건식의 값이(true)인지, 거짓(false)인지에 따라 자바스크립트 코드를 제어합니다.
+                조건문의 정류에는 if문, else문 그리고 else if문이 있습니다.
+            </p>
+            <h3>if문</h3>
+            <p>
+                if문은 조건식을 만족(true)할 경우에만 코드를 실행합니다.
+            </p>
+            <p>
+                <strong>기본형</strong>
+            </p>
+            <div class="line">
+                if(조건식){<br>
+                &nbsp;자바스크립트 코드;<br>
+                }
+            </div>
+            <p class="mt30">
+                <strong>적용예제</strong>
+            </p>
+            <div class="line">
+                var num = 10;<br>
+                if(num&lt;500){&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;결과값
+                : true를 반환합니다.<br>
+                &nbsp;&nbsp;&nbsp;document.write("hello");<br>
+                }
+            </div>
+            <p class="mt30">
+                if문을 활용하여 방문자로부터 입력받은 걸음수를 조건문으로 만들고, 걸음수가 10,000보 이상일 경우에만 결과를 출력하도록 작성해보겠습니다.
+            </p>
+            <div class="linetop">
+                코딩해보세요!
+            </div>
+            <div class="code">
+                <pre>
+&lt;script&gt;
+{
+    var i= 13000;      //입력: 13000보
+
+    if( i >=10000){    //조건 : 10000보
+        document.write("좋은습관을 가지고 계시군요");    출력: 좋은습관을 가지고 계시네요
+    } else{
+        document.write("******걷기운동은 건강에 좋습니다.*******");
+    }
+}
+&lt;/script&gt;    
+</pre>
+                <p>
+                    위에 예제처럼 입력값이 10,000보 이상일 경우에는 조건식에 true응 반환하여 "좋으습관을 가지고 계시네요"
+                    실행되지만 10,000보 미만일 경우에는 "******걷기운동은 건강에 좋습니다.*******"만 화면에 출력합니다.
+                </p>
+            </div>
+            <h4 class="mt30">조건식에 논리형 데이터가 아닌 다른 형이 오는 경우</h4>
+            <p>
+                조건식에 논리형 데이터(true, false)가 아닌 다른 형태 데이터가 입력되어도 true 또는 false로 인식됩됩니다.
+                다음은 조건식에 노리형 데이터가 아닌 다른 형의 데이터가 입력되었을 때 반횐되는 결과입니다.
+                다음 값이 조건식에 입력되면 false를 반환하지만 그 밖의 값은 true로 인식합니다.
+            </p>
+            <div class="line">
+                0, null,"(빈문자)", undefined
+            </div>
+            <br>
+            <div class="linetop">
+                출력되는 경우
+            </div>
+            <div class="code">
+                <pre>
+&lt;script&gt;
+    {
+        var i ="조운섭";
+
+        if(i=="조운섭"){
+        document.write(i+"님 환영합니다");    //출력값: 조운섭님 환영합니다.
+        }       
+    }
+&lt;/script&gt;
+</pre>
+            </div>
+            <div class="linetop">
+                출력되지 않는 경우
+            </div>
+            <div class="code">
+                <pre>
+&lt;script&gt;
+    {
+        var i ="";
+
+        if(i=="조운섭"){
+        document.write(i+"님 환영합니다");    //출력값: false
+        }        
+    }
+&lt;/script&gt;
+</pre>
+            </div>
+            <h3>else문</h3>
+            <p>
+                else문은 조건식을 만족할(true) 경우와 만족하지 않을(false) 경우에 따라 실행되는 코드가 달라집니다.
+                즉, 두 가지 결과가 나올 수 있습니다.
+            </p>
+            <p><strong>else문의 기본형</strong></p>
+            <div class="line">
+                <pre>
+if(조건식){
+        자바스크립트 코드1;
+}sles{
+    자바스크립트 코드2;
+}
+</pre>
+            </div>
+            <p>
+                방문자가 좋은 하는 숫자가 홀수인지 짝수인지 if문과 else문을 활용하여 나타내보겠습니다.
+            </p>
+            <div class="linetop">
+                코딩해 보세요1
+            </div>
+            <div class="code">
+                <pre>
+&lt;script&gt;
+    {
+        var i =11; 
+
+        if(i %2== 0){
+            document.write("짝수");
+        } else{
+            document.write("홀수")
+        }
+    }
+&lt;/script&gt;
+</pre>
+                <div class="linetop">
+                    결과값: 홀수
+                </div>
+            </div>
+            <div class="linetop">
+                코딩해 보세요2
+            </div>
+            <div class="code">
+                <pre>
+&lt;script&gt;
+    {
+        var result=confirm("남자로 태어 나시겠습니까?"); 
+
+        if(result){
+            document.write("축하합니다 남자입니다.");
+        } else{
+            document.write("축하합니다 여자입니다.")
+        }
+    }
+&lt;/script&gt;
+</pre>
+                <div class="line">
+                    <pre>
+결과값: 
+남자로 태어 나시겠습니까? 라는 메세지를 포함한 확인/취소 창이 출력됩니다.
+    확인                           취소
+        ㄴ> 축하합니다 남자입니다.      ㄴ> 축하합니다 여자입니다.
+</pre>
+                </div>
+            </div>
+            <h3>if else문</h3>
+            <p>
+                else if문은 두 가지 이상의 조건식과 정해 놓은 조건을 만족하지 않을 때 실행되는 코드로 이루어져 있습니다.
+            </p>
+            <div class="line">
+                <div class="linetop">
+                    else문의 기본형
+                </div>
+                <br>
+                <pre>
+if(조건식1){
+코드1;
+} else if(조건식2){
+
+} else if(조건식2){
+    
+} else if(조건식2){
+    
+} else if(조건식2){
+    
+} else if(조건식2){
+    
+}
+</pre>
+            </div>
+            <p>
+                다음은 sels if문을 활용해 사용자가 입력하는 시간에 먹어야 하는 식사가 아침밥인지 점심밥인지 저녁밥인지 나타내보겠습니다.
+            </p>
+            <div class="code">
+                <pre>
+&lt;script&gt;
+{
+    var mon = 12;
+
+    if (mon >=6&&mon&lt;=9) {
+        document.write("아침밥");
+    } else if (mon >=11&&mon&lt;=13){
+        document.write("점심밥")
+    } else if (mon >=17&&mon&lt;=19){
+        document.write("저녁밥")
+    } 
+}
+&lt;/script&gt;
+</pre>
+                <div class="linetop">
+                    결과값: 점심밥
+                </div>
+            </div>
+            <h3>중첩 if문</h3>
+            <p>
+                조건문 안에 조건문이 있으면 중첩 if문이라고 합니다.
+            </p>
+            <div class="line">
+                <div class="linetop">
+                    기본형
+                </div><br>
+                <pre>
+if(조건식1){
+    if(조건식2){
+        자바스크립트 코드;
+    }
+}
+</pre>
+
+            </div>
+            <p>
+                중첩 if문을 활용하여 사용자가 ID와 PW를 입력하고 일치하였을 때 reue와 일치하지 않을을 때 or 틀렸을때 false 를 보겠습니다.
+            </p>
+            <p><strong>id와 pw가 일치할때</strong></p>
+            <div class="code">
+                <div class="linetop">코딩해 보세요!</div>
+                <pre>
+&lt;script&gt;
+{
+    var id = "jowunseop"; // 데이터 저장
+    var pw = 8904; //데이터 저장
+
+    var user_id = "jowunseop" // 입력값
+    var user_pw = 8904; // 입력값
+
+    if (user_id == id) {
+        if (user_pw == pw) {
+            document.write(user_id + "님 반갑습니다.");
+        } else {
+            document.write("pw가 일치하지 않습니다.");
+        }
+    } else {
+        document.write("id가 일치하지 않습니다.");
+    }
+}
+&lt;/script&gt; 
+</pre>
+<div class="linetop">결과값: jowunseop님 반갑습니다.</div>
+            </div>
+            <p><strong>id와 pw가 일치하지 않을때</strong></p>
+            <div class="code">
+                <div class="linetop">코딩해 보세요!</div>
+                <pre>
+&lt;script&gt;
+{
+    var id = "jowunseop"; // 데이터 저장
+    var pw = 8904; //데이터 저장
+
+    var user_id = "jowunseop" // 입력값이 저장되어 있는 데이터와 다름
+    var user_pw = 89; // 입력값이 저장되어 있는 데이터와 다름
+
+    if (user_id == id) {
+        if (user_pw == pw) {
+            document.write(user_id + "님 반갑습니다.");
+        } else {
+            document.write("pw가 일치하지 않습니다.");
+        }
+    } else {
+        document.write("id가 일치하지 않습니다.");
+    }
+}
+&lt;/script&gt; 
+</pre>
+<div class="linetop">결과값: pw가 일치하지 않습니다.</div>
+            </div>
+
+            <p>
+
+            </p>
+        </div>
+        </div>
+
+    </main>
+
+</body>
+
+</html>
