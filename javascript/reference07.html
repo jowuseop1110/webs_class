@@ -39,27 +39,198 @@
     <main id="main">
 
         <div class="doc">
-           <h2>반복문</h2>
-           <p>
-               while 문은 조건식을 만족할 때까지 코드를 여러 회 반복하여 실행할 수 있습니다.
-           </p>
-           <div class="line">
-               <div class="linetop">
-                   기본형
-               </div>
-               <pre>
+            <h2>반복문</h2>
+            <p>
+                반복문을 이용하면 코드를 원하는 횟수만큼 반복하여 실행할 수 있습니다. 가령, "안녕하세요!"라는
+                문구를 100회 출력하려면 출력문을 100번 작성해야 하짐만 반복문을 사용한다면 한 줄의 출력문으로
+                100회 출력할 수 있습니다. 반복문에는 while문과 do while문, for문이 있습니다.
+            </p>
+            <h3>while문</h3>
+            <p>
+                while 문은 조건식을 만족할 때까지 코드를 여러 회 반복하여 실행할 수 있습니다.
+                기본형 예제에 1번은 조건ㄴ식을 검사하고, 2번은 조건에 만족하면 중괄호 안에있는
+                코드와 증감식으 실행합니다. 그리고 3번은 다시 조건식을 검사합니다.
+            </p>
+            <div class="line">
+                <div class="linetop">
+                    기본형
+                </div>
+                <pre>
 var 변수=초깃값;
 while(1,3조건식);
     2 자바스크립트 코드;
     증감식;
 }
 </pre>
-           </div>
-           <h2>while문</h2>
-           <h2>for문</h2>
-           <h2>break문</h2>
-           <h2>continue문</h2>
+            </div>
+            <p>
+                while문을 사용해 숫자를 1~10까지 1씩 증가하면서 10회 출력하도록 작성해보겠습니다.
+            </p>
+            <div class="line">
+                <div class="linetop">
+                    코딩해 보세요!
+                </div>
+                <pre>
+&lt;script&gt;
+    {  
+        let i = 1;                        //초기값
+        while (i &lt;= 10) {            //조건식
+            document.write(i);    //출력
+            i++;                          //증감식
+        } 
+    }
+&lt;/script&gt;
+</pre>
+                <div class="linetop">
+                    결과값: 12345678910
+                </div>
+            </div>
+            <p>
+                다음은 while문과 if문 사용하여 1~10까지의 숫자를 짝수와 홀수로 나타내보겠습니다.
+            </p>
+            <div class="line">
+                <div class="linetop">
+                    코딩해 보세요!
+                </div>
+                <pre>
+&lt;script&gt;
+{
+    let i = 1;
+    while (i &lt;= 10) {
+        if (i % 2 == 0) {
+            document.write(i+"짝수");
+        } else {
+            document.write(i+"홀수");
+        }
+        i++;
+    }
+}
+&lt;/script&gt;
+</pre>
+                <div class="linetop">
+                    결과값: 1홀수2짝수3홀수4짝수5홀수6짝수7홀수8짝수9홀수10짝수
+                </div>
+            </div>
+            <h3>do while문</h3>
+            <p>do while문은 예를 들어 숫자가 1~10이 있다면 어떤조건문이건 참(true), 거짓(false) 상관없이 처음에 한번은 무조건
+                출력코드를 실행합니다.<br>
+                다음 예제를 보시고 풀이 해보도록 하겠습니다.
+            </p>
+            <div class="line">
+                <div class="linetop">
+                    코딩해 보세요!
+                </div>
+                <pre>
+&lt;script&gt;
+    {
+        let i = 1;
 
+        do {
+            document.write(i + "는(은)10보다 작다");   //1은 반드시 실행
+            i++;      //증감식: +1
+        }  
+        while (i &lt; 10) ;   //조건식: i가 10보다 작으면 반복으로 실행 하겠다.
+    }
+&lt;/script&gt;
+</pre>
+                <div class="linetop">
+                    결과값: 1는(은)10보다작다 2는(은)10보다작다 3는(은)10보다작다 4는(은)10보다작다 5는(은)10보다작다 6는(은)10보다작다 7는(은)10보다작다 8는(은)10보다작다
+                    9는(은)10보다작다
+                </div>
+            </div>
+            <p>
+                보시는거와 같이 첫 결과값'1은 10보다 작다'는 do에서 실행시킨거고 '2,3,4,5,6,7,8,9는 10보다 작다'는 증감식인 i++와 반복문인 while문이 실행 시킨겁니다.
+            </p>
+            <h3>for문</h3>
+            <p>
+                for문은 조건식을 만족할 때까지 특정 코드를 반복하여 실행합니다. 사용방법은 while문과 같지만 while문보다 사용하기 편해 사용 빈도가 높은 편입니다.
+                for문으로 1~10까지 i를 1씩 증가하며 출력한 예제입니다.
+            </p>
+            <div class="line">
+                <div class="linetop">코딩해 보세요!</div>
+                <pre>
+&lt;script&gt;
+    {      //초깃값,//조건식,//증감식
+        for(let i =1; i&lt;=10; i++){
+            //1       //2    //4
+            document.write(i);
+            //3
+        }
+    }
+&lt;/script&gt;
+</pre>
+                <div class="linetop">
+                    결과값: 12345678910
+                </div>
+            </div>
+            <h3>break문</h3>
+            <p>
+                반복문인 while문 또는 for문에서 break문을 실행하면 조건식과 상관없이 강제로 반복문은 종료합니다.
+            </p>
+            <div class="code">
+                <div class="linetop">
+                    기본형
+                </div>
+                for(초깃값;조건식;증감식){
+                break; //반복문을 강제로 종료합니다
+                자바스크립트 코드;
+                }
+            </div>
+            <p>
+                break문이 코드 앞에 있으므로 코드는 실행되지않고 for문이 종료됩니다.
+            </p>
+            <div class="line">
+                <div class="linetop">
+                    코딩해 보세요!
+                </div>
+                <pre>
+&lt;script&gt;
+{
+    for (var i = 1; i &lt; 10; i++) {
+        if (i == 5) break;
+
+        document.write(i)
+    }
+}
+&lt;/script&gt;
+</pre>
+                <div class="linetop">
+                    결과값: 1234
+                </div>
+            </div>
+            <h3>continue문</h3>
+            <p>
+                continue문은 반복문에서만 사용할 수 있습니다. 즉. while문 안에 있는 continue문은
+                다음에 오는 코드는 무시하고 조건식에서 조건 검사를 진행하라는 뜻입니다.
+            </p>
+            <div class="code">
+                <div class="linetop">
+                    기본형
+                </div>
+                for(초깃갑, 조건식, 증감식){<br>
+                continue;<br>
+                자바스크립트 코드;<br>
+                }
+            </div>
+            <p>
+                for문을 이용해 1부터 10까지의 숫자중 5를 제외한 나머지 순자를 출력하겠습니다.
+            </p>
+            <div class="code">
+                <div class="linetop">
+                    코딩해보세요
+                </div>
+                <pre>
+&lt;script&gt;                               
+{
+    for (var i = 1; i &lt; 10; i++) {
+        if (i == 5) break;
+
+        document.write(i)
+    }
+}
+&lt;/script&gt;
+</pre>
+            </div>
         </div>
         </div>
 
