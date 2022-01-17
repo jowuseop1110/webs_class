@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layout01</title>
+    <title>Layout05</title>
 </head>
 <style>
     * {
@@ -14,59 +14,95 @@
     }
 
     body {
-        background-color: #fff3e0;
+        background-color: #EAF5EA;
     }
 
-    #container {
+    #wrap {
         width: 1200px;
         height: 1080px;
-        margin-left: auto;
-        margin-right: auto;
+        background-color: #111;
     }
 
     #header {
         width: 1200px;
         height: 100px;
-        background-color: #fae1b7;
+        background-color: #CEE5CB;
     }
 
     #nav {
-        width: 1200px;
-        height: 100px;
-        background-color: #f7ce8b;
+        display: flex;
     }
 
-    #aside {
+    #nav .nav1 {
         width: 400px;
-        height: 780px;
-        background-color: #f4ba61;
-        float: left;
+        height: 100px;
+        background-color: #AFD5AB;
+    }
+
+    #nav .nav2 {
+        width: 400px;
+        height: 100px;
+        background-color: #82BE7B;
+    }
+
+    #nav .nav3 {
+        width: 400px;
+        height: 100px;
+        background-color: #AFD5AB;
     }
 
     #contents {
-        width: 800px;
+        background-color: #5B9D51;
+        display: flex;
+    }
+
+    #contents .content1 {
+        width: 300px;
         height: 780px;
-        background-color: #f2ab47;
-        float: left;
-        /* float을 사용하면 버그 발생 */
+        background-color: #91C58A;
+    }
+
+    #contents .cont1 {
+        width: 300px;
+        height: 780px;
+        background-color: #91C58A;
+    }
+
+    #contents .cont2 {
+        width: 600px;
+        height: 390px;
+        background-color: #7BB972;
+    }
+
+    #contents .cont3 {
+        width: 300px;
+        height: 780px;
+        background-color: #67AD5B;
     }
 
     #footer {
         width: 1200px;
         height: 100px;
-        background-color: #f19d38;
-        clear: both;
-        /* 버그 수정 */
+        background-color: #5D9E52;
     }
 </style>
 
+
 <body>
-    <div id="container">
-        <div id="header"></div>
-        <div id="nav"></div>
-        <div id="aside"></div>
-        <div id="contents"></div>
-        <div id="footer"></div>
+    <div id="wrap">
+        <header id="header"></header>
+        <nav id="nav">
+            <div class="nav1"></div>
+            <div class="nav2"></div>
+            <div class="nav3"></div>
+        </nav>
+        <section id="contents">
+            <div class="cont1"></div>
+            <div class="cont2"></div>
+            <div class="cont3"></div>
+
+        </section>
+        <footer id="footer"></footer>
     </div>
 </body>
 
