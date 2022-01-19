@@ -245,13 +245,13 @@ img {
 
 .script .sample .view {
     display: flex;
-    flex-wrap:  wrap;
+    flex-wrap: wrap;
     justify-content: space-between;
     padding: 2%;
     border: 1px solid #e6e6e6;
 }
 
-.script .sample .view > div {
+.script .sample .view>div {
     width: 16%;
     border: 4px solid transparent;
     box-sizing: border-box;
@@ -262,24 +262,29 @@ img {
     background-color: rgb(187, 43, 43);
     border-radius: 1.3em;
 }
+
 /*  */
-.script .sample .view > div.selected1 {
+.script .sample .view > div.blue {
     border: 4px solid rgb(43, 69, 187);
     background-color: rgb(43, 105, 187);
     border-radius: 1.3em;
 }
+
 /*  */
-.script .sample .view > div.selected img {
+.script .sample .view>div.selected img {
     opacity: 0.3;
 }
-.script .sample .view > div img {
+
+.script .sample .view>div img {
     border-radius: 1em;
 }
+
 .script .sample .btn {
     border: 1px solid #E6E6E6;
     border-top: 0;
     padding: 2%;
 }
+
 .script .sample .btn a {
     border: 1px solid #333;
     border-radius: 2rem;
@@ -287,6 +292,7 @@ img {
     display: inline-block;
     margin: 0.3em;
 }
+
 .script .sample .btn a:hover {
     background-color: #000;
     color: #fff;
@@ -300,6 +306,7 @@ img {
     border: 1px solid #E6E6E6;
     font-weight: 500;
 }
+
 .script .sample .code pre {
     margin: 0 !important;
     border-radius: 0 0 5px 5px;
@@ -323,7 +330,8 @@ img {
     code pre {
         font-size: 14px;
     }
-    .script .sample .view > div {
+
+    .script .sample .view>div {
         width: 48%;
         margin: 1%;
     }
@@ -451,18 +459,26 @@ img {
     padding: 10px 20px;
     font-weight: normal;
     margin-top: 10px;
-    border-radius: 5px 5px 0 0;
+    border-radius: 5px;
     font-size: 16px;
+    cursor: pointer;
 }
 
-.result>div {
+.result > div {
     background: #242822;
     padding: 20px;
     color: #fff;
-    border-radius: 0 0 5px 5px;
+    border-radius: 5px;
     font-size: 16px;
     line-height: 1.4;
-    /* display: none; */
+    display: none;
+}
+.result.active h4 {
+    border-radius: 5px 5px 0 0;
+}
+.result.active > div {
+    display: block;
+    border-radius: 0 0 5px 5px;
 }
 
 @media (max-width: 800px) {

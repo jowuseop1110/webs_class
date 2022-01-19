@@ -1,45 +1,160 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>javascript</title>
-        <!-- 파비콘 -->
-        <link rel="shortcut icon" href="../assets/face/bbbbb.png">
-        <link rel="apple-touch-icon-precomposed" href="../assets/face/bbbbb.png">
-        <link rel="icon" href="../assets/face/bbbbb.png">
-        <!-- style -->
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="stylesheet" href="assets/css/prism.css">
-        <!-- script -->
-        <script src="../assets/js/prism.js"></script>
-    </head>
->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prectice01-3</title>
+    <!-- style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism2.css">
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        table td {
+            border: 1px solid #222;
+            font-style: 16px;
+            padding: 15px;
+            font-family: 'NexonLv1Gothic';
+        }
+    </style>
+</head>
+
 <body>
-    <div class="back"><a href = "practice01.html">Back</a></div>
-    <header id="header">
-        <h1><a href="index.html">javascript</a></h1>
-        <nav>
-            <li><a href="javascript01.html">데이터 저장하기</a></li>
-            <li><a href="javascript02.html">데이터 불러오기</a></li>
-            <li><a href="javascript03.html">데이터 실행하기</a></li>
-            <li><a href="javascript04.html">데이터 제어하기</a></li>
-        </ul>
-        <ul>
-            <li class="active"></li><a href="practice01.html"데이터 연습하기></a></li>
-          </ul>
-        </nav>
-        <!-- header -->
-        <main id="main">
-            <div class="list">
-                <ul>
-                    <li><a href="precice01.-1.html">01. 1부터 100까지 출력하기</a></li>
-                    <li><a href="precice01.-2.html">02. 구구단 출력하기</a></li>
-                    <li><a href="precice01.-3.html">03. 테이블 출력하기</a></li>
-                </ul>
+
+    <div class="back"><a href="practice01.html">Back</a></div>
+    <main id="main">
+        <div class="test">
+            <h2>3. 테이블 출력하기</h2>
+            <!-- 01 -->
+            <h3>1.1 for문을 이용해서 테이블을 출력하시오.</h3>
+            <div class="code">
+                <pre class="line-numbers"><code class="language-js">{
+    let table = "&lt;table&gt;";
+
+        for (let i = 1; i &lt;= 5; i++) {
+            table += "&lt;tr&gt;";
+            for (let j = 1; j &lt;= 5; j++){
+                table += "&lt;td&gt;1&lt;/td&gt;";
+            }
+            table += "&lt;/tr&gt;";
+        }
+        table += "&lt;/table&gt;";
+     
+        document.querySelector(".result01").innerHTML = table;
+}</code></pre>
             </div>
-        </main>
-    </header>
+            <div class="result01"></div>
+            <!-- //01 -->
+
+            <!-- 02 -->
+            <h3>1.2 for문을 이용해 테이블을 출력하시오</h3>
+            <p>1~25번까지</p>
+            <div class="code">
+                <pre class="line-numbers"><code class="language-js">{
+    let num = 1;
+    let table = "&lt;table&gt;";
+
+    for (let i = 1; i &lt;= 5; i++) {
+        table += "&lt;tr&gt;";
+        for (let j = 1; j &lt;= 5; j++) {
+            table += "&lt;td&gt;" + num + "&lt;/td&gt;";
+            num++;
+        }
+        table += "&lt;/tr&gt;"
+    }
+    table += "&lt;/table&gt;";
+
+    document.querySelector(".result02").innerHTML = table;
+}</code></pre>
+            </div>
+            <div class="result02"></div>
+        </div>
+        <!-- //02 -->
+
+        <!--// class test div -->
+        </div>
+        <!-- //01 -->
+
+
+        <!-- <table border="1">
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+        </table> -->
+    </main>
+    <!-- script -->
+    <script src="assets/js/prism2.js"></script>
+    <script>
+        // 01
+        {
+            let table = "<table>";
+
+            for (let i = 1; i <= 5; i++) {
+                table += "<tr>";
+                for (let j = 1; j <= 5; j++) {
+                    table += "<td>1</td>";
+                }
+                table += "</tr>";
+            }
+            table += "</table>";
+
+
+            document.querySelector(".result01").innerHTML = table;
+        }
+        // 02
+        {
+            let num = 1;
+            let table = "<table>";
+
+            for (let i = 1; i <= 5; i++) {
+                table += "<tr>";
+                for (let j = 1; j <= 5; j++) {
+                    table += "<td>" + num + "</td>";
+                    num++;
+                }
+                table += "</tr>"
+            }
+            table += "</table>";
+
+            document.querySelector(".result02").innerHTML = table;
+        }
+    </script>
 </body>
+
 </html>
