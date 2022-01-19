@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        #wrap {
+            width: 100%;
+        }
+        #header {
+            height: 100px;
+            background-color: #EEEBE9;
+        }
+        #nav {
+            height: 100px;
+            background-color: #B9ABA4;
+        }
+        #contents {
+            height: 780px;
+            background-color: #886F64;
+        }
+        #footer {
+            height: 100px;
+            background-color: #4A352F;
+        }
+        .container {
+            width: 1200px;
+            height: inherit;
+            margin: 0 auto;
+            background-color: rgba(0,0,0,0.3);
+        }
+        #nav .container {
+            display: flex;
+        }
+        #nav .container .cav1 {
+            width: 50%;
+            height: 100px;
+            background-color: #B29283;
+        }
+        #nav .container .cav2 {
+            width: 50%;
+            height: 100px;
+            background-color: #9D8980;
+        }
+        #contents .container {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+        #contents .container .article {
+            display: flex;
+        }
+        #contents .container .article .arti1 {
+            width: 400px;
+            height: 390px;
+            background-color: #684D43;
+        }
+        #contents .container .article .arti2 {
+            width: 400px;
+            height: 390px;
+            background-color: #896E62;
+        }
+        #contents .container .article2 {
+            width: 800px;
+            height: 390px;
+            background-color: #594138;
+        }
+        #contents .container .aside {
+            width: 400px;
+            height: 780px;
+            background-color: #73574A;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="container"></div>
+        </header>
+        <nav id="nav">
+            <div class="container">
+                <div class="cav1">1</div>
+                <div class="cav2">2</div>
+            </div>
+        </nav>
+        <section id="contents">
+            <div class="container">
+                <div class="article">
+                    <div class="arti1">1</div>
+                    <div class="arti2">2</div>
+                </div>
+                <div class="article2">3</div>
+                <div class="aside">4</div>
+            </div>
+        </section>
+        <footer id="footer">
+            <div class="container"></div>
+        </footer>
+    </div>
+</body>
+</html>

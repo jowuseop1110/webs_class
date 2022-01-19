@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout04</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #E3F2FD;
+        }
+        #wrap {
+            width: 1200px;
+            height: 1080px;
+            margin: 0 auto;
+        }
+
+        #header {
+            width: 1200px;
+            height: 100px;
+            background-color: #BDE3F9;
+        }
+
+        #nav {
+            height: 100px;
+            display: flex;
+        }
+
+        #nav .nave1 {
+            width: 600px;
+            height: 100px;
+            background-color: #94D2F6;
+        }
+
+        #nav .nave2 {
+            width: 600px;
+            height: 100px;
+            background-color: #97b3c0;
+        }
+
+        #cotents {
+            width: 1200px;
+            display: flex;
+        }
+
+        #cotents .content1 {
+            width: 300px;
+            height: 520px;
+            background-color: #70C0F2;
+        }
+
+        #cotents .content2 .coten1 {
+            width: 900px;
+            height: 260px;
+            background-color: #5AB3F0;
+        }
+
+        #cotents .content2 .coten2 {
+            width: 900px;
+            height: 260px;
+            background-color: #4BA6EE;
+        }
+
+        #content3 {
+            width: 1200;
+            height: 260px;
+            background-color: #4599DF;
+        }
+
+        #footer {
+            width: 1200px;
+            height: 100px;
+            background-color: #3B86CB;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <nav id="nav">
+            <div class="nave1"></div>
+            <div class="nave2"></div>
+        </nav>
+        <section id="cotents">
+            <div class="content1"></div>
+            <div class="content2">
+                <div class="coten1"></div>
+                <div class="coten2"></div>
+            </div>
+        </section>
+        <div id="content3"></div>
+        <footer id="footer"></footer>
+    </div>
+</body>
+
+</html>
