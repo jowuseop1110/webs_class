@@ -1,0 +1,50 @@
+#header {
+    padding: 10px;
+    border-bottom: 1px solid #333;
+    min-width: 1200px;
+    white-space: nowrap;
+    /* 화이트스페이스 속성 : 줄바꿈 속성
+    nowrap : 반응하지않겠다 */
+}
+
+#header .logo {
+    float: left;
+    width: 20%;
+    /* float과 width는 셋트 */
+    font-size: 30px;
+    padding: 20px 18px;
+}
+
+#header .logo em {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+#header .menu {
+    float: left;
+    width: 60%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#header .menu div {
+    display: inline-block;
+    padding: 20px;
+}
+
+#header .menu a {
+    padding: 20px;
+}
+
+#header .member {
+    float: left;
+    width: 20%;
+    text-align: right;
+    margin-top: 30px;
+}
+
+#header .member a {
+    border: 1px solid #333;
+    padding: 10px 20px;
+    border-radius: 50px;
+}
