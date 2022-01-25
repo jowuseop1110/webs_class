@@ -115,8 +115,18 @@ body {
     border: 1px solid #000;
     overflow-x: auto;
 }
-.refer .title {}
-.refer .title ul {}
+.refer .subTitle {
+    margin-top: 10px;
+}
+.refer .subTitle li {
+    display: inline-block;
+}
+.refer .subTitle li a {
+    margin-right: 10px;
+}
+.refer .subTitle li.active a {
+    border-bottom: 2px solid #000;
+}
 .refer .title li {
     display: inline;
 }
@@ -134,6 +144,10 @@ body {
 .refer .table {
     margin-top: 40px;
     overflow-x: auto;
+}
+.refer .table h3 {
+    font-weight: normal;
+    margin-bottom: 5px;
 }
 .refer .table table {
     width: 100%;
@@ -156,6 +170,7 @@ body {
     font-weight: 300;
     line-height: 1.4;
 }
+
 /* doc */
 .doc {
     font-size: 18px;
@@ -245,3 +260,18 @@ body {
         font-size: 20px;
     }
 }
+
+/* 간격 셋팅 */
+.mt0 {margin-top: 0 !important;}
+.mt10 {margin-top: 10px !important;}
+.mt20 {margin-top: 20px !important;}
+.mt30 {margin-top: 30px !important;}
+.mt40 {margin-top: 40px !important;}
+.mt50 {margin-top: 50px !important;}
+
+.mb0 {margin-bottom: 0 !important;}
+.mb10 {margin-bottom: 10px !important;}
+.mb20 {margin-bottom: 20px !important;}
+.mb30 {margin-bottom: 30px !important;}
+.mb40 {margin-bottom: 40px !important;}
+.mb50 {margin-bottom: 50px !important;}
