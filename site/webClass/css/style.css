@@ -201,12 +201,12 @@
     background-color: #ccc;
     background-image: url(../img/img_text_bg2.jpg);
 }
-@media (-webkit-min-device-pixel-rario:1.5) {
+@media (-webkit-min-device-pixel-ratio:1.5) {
     .itType01 .img1 {
         background-image: url(../img/text@2x.jpg);
     }
 }
-@media (-webkit-min-device-pixel-rario:2.5) {
+@media (-webkit-min-device-pixel-ratio:2.5) {
     .itType01 .img1 {
         background-image: url(../img/text@3x.jpg);
     }
