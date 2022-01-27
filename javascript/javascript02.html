@@ -352,7 +352,7 @@
             <!-- //sample11 -->
             <!-- sample12 -->
             <div id="sample12" class="sample">
-                <h3>12. 객체 : 데이터 불러오기 : 기본</h3>
+                <h3>12. 배열 : 데이터 불러오기 : 배열구조분해할당</h3>
                 <div class="code">
                     <pre class="line-numbers"><code class="language-js">{
     let a, b, c;
@@ -376,7 +376,7 @@
             <!-- //sample12 -->
             <!-- sample13 -->
             <div id="sample13" class="sample">
-                <h3>13. 객체 : 데이터 불러오기 : Object</h3>
+                <h3>13. 객체 : 데이터 불러오기 : 기본</h3>
                 <div class="code">
                     <pre class="line-numbers"><code class="language-js">{
     const obj = {
@@ -405,7 +405,7 @@
             <!-- //sample13 -->
             <!-- sample14 -->
             <div id="sample14" class="sample">
-                <h3>14. 객체 : 데이터 불러오기 : 변수</h3>
+                <h3>14. 객체 : 데이터 불러오기 : Object</h3>
                 <div class="code">
                     <pre class="line-numbers"><code class="language-js">{
     const obj = {
@@ -432,7 +432,7 @@ a,100,b,200,c,javascript
             <!-- //sample14 -->
             <!-- sample15 -->
             <div id="sample15" class="sample">
-                <h3>15. 객체 : 데이터 불러오기 : for in</h3>
+                <h3>15. 객체 : 데이터 불러오기 : 변수</h3>
                 <div class="code">
                     <pre class="line-numbers"><code class="language-js">{                       
     const obj = {
@@ -466,14 +466,21 @@ a,100,b,200,c,javascript
                 <h3>16. 객체 : 데이터 불러오기 : for in</h3>
                 <div class="code">
                     <pre class="line-numbers"><code class="language-js">{                       
-                     
+    const obj = {
+        a: 100,
+        b: 200,
+        c: "javascript16"
+    }
+    for (let key in obj) {
+        document.write(obj[key])
+    }      
 }</code></pre>
                 </div>
                 <div class="result result16t">
                     <h4>결과보기</h4>
                     <div class="result16">
                         <pre>
-
+100200javascript16
 </pre>
                     </div>
                 </div>
@@ -485,14 +492,23 @@ a,100,b,200,c,javascript
                 <h3>17. 객체 : 데이터 불러오기 : map()</h3>
                 <div class="code">
                     <pre class="line-numbers"><code class="language-js">{                       
-                     
+    const obj = [{
+        a: 100,
+        b: 200,
+        c: "javascript17"
+    }]
+    obj.map(function (el) {
+        document.write(el.a);
+        document.write(el.b);
+        document.write(el.c);
+    })         
 }</code></pre>
                 </div>
                 <div class="result result17t">
                     <h4>결과보기</h4>
                     <div class="result17">
                         <pre>
-
+100200javascript17
 </pre>
                     </div>
                 </div>
@@ -504,14 +520,27 @@ a,100,b,200,c,javascript
                 <h3>18. 객체 : 데이터 불러오기 : hasOwnProperty()</h3>
                 <div class="code">
                     <pre class="line-numbers"><code class="language-js">{                       
-                     
+    const obj = {
+        a: 100,
+        b: 200,
+        c: "javascript18"
+    }
+
+    document.write(obj.hasOwnProperty('a'));
+    document.write(obj.hasOwnProperty('b'));
+    document.write(obj.hasOwnProperty('c'));
+    document.write(obj.hasOwnProperty('d'));
+    document.write('a' in obj);
+    document.write('b' in obj);
+    document.write('c' in obj);
+    document.write('d' in obj);                
 }</code></pre>
                 </div>
                 <div class="result result18t">
                     <h4>결과보기</h4>
                     <div class="result18">
                         <pre>
-
+truetruetruefalsetruetruetruefalse
 </pre>
                     </div>
                 </div>
@@ -523,14 +552,25 @@ a,100,b,200,c,javascript
                 <h3>19. 객체 : 데이터 불러오기 : 펼침 연산자 - 복사</h3>
                 <div class="code">
                     <pre class="line-numbers"><code class="language-js">{                       
-                     
+    const obj = {
+        a: 100,
+        b: 200,
+        c: "javascript19"
+    }
+    const spread = {
+        ...obj
+    }
+
+    document.write(spread.a);
+    document.write(spread.b);
+    document.write(spread.c);                
 }</code></pre>
                 </div>
                 <div class="result result19t">
                     <h4>결과보기</h4>
                     <div class="result19">
                         <pre>
-
+100200javascript19
 </pre>
                     </div>
                 </div>
@@ -542,14 +582,27 @@ a,100,b,200,c,javascript
                 <h3>20. 객체 : 데이터 불러오기 : 펼침 연산자 - 추가</h3>
                 <div class="code">
                     <pre class="line-numbers"><code class="language-js">{                       
-                     
+    const obj = {
+        a: 100,
+        b: 200,
+        c: "javascript20"
+    }
+    const spread = {
+        ...obj,
+        d: "jquery"
+    }
+
+    document.write(spread.a);
+    document.write(spread.b);
+    document.write(spread.c);
+    document.write(spread.d);         
 }</code></pre>
                 </div>
                 <div class="result result20t">
                     <h4>결과보기</h4>
                     <div class="result20">
                         <pre>
-
+100200javascript20jquery
 </pre>
                     </div>
                 </div>
@@ -561,14 +614,30 @@ a,100,b,200,c,javascript
                 <h3>21. 객체 : 데이터 불러오기 : 펼침 연산자 - 결합</h3>
                 <div class="code">
                     <pre class="line-numbers"><code class="language-js">{                       
-                     
+    const objA = {
+        a: 100,
+        b: 200,
+    }
+    const objB = {
+        c: "javascript21",
+        d: "jquery",
+    }
+    const spread = {
+        ...objA,
+        ...objB
+    }
+
+    document.write(spread.a);
+    document.write(spread.b);
+    document.write(spread.c);
+    document.write(spread.d);                 
 }</code></pre>
                 </div>
                 <div class="result result21t">
                     <h4>결과보기</h4>
                     <div class="result21">
                         <pre>
-
+100200javascript21jquery
 </pre>
                     </div>
                 </div>
@@ -577,17 +646,30 @@ a,100,b,200,c,javascript
 
             <!-- sample22 -->
             <div id="sample22" class="sample">
-                <h3>22. 객체 : 데이터 불러오기 : 객체구조분해할당</h3>
+                <h3>22. 객체 : 데이터 불러오기 : 비구조화 할당</h3>
                 <div class="code">
                     <pre class="line-numbers"><code class="language-js">{                       
-                     
+    const obj = {
+        a: 100,
+        b: 200,
+        c: "javascript22"
+    }
+    const {
+        a,
+        b,
+        c
+    } = obj;
+
+    document.write(a);
+    document.write(b);
+    document.write(c);                  
 }</code></pre>
                 </div>
                 <div class="result result22t">
                     <h4>결과보기</h4>
                     <div class="result22">
                         <pre>
-
+100200javascript22
 </pre>
                     </div>
                 </div>
@@ -596,17 +678,30 @@ a,100,b,200,c,javascript
 
             <!-- sample23 -->
             <div id="sample23" class="sample">
-                <h3>23. 객체 : 데이터 불러오기 : 비구조화 할당</h3>
+                <h3>23. 객체 : 데이터 불러오기 : 비구조화 할당 : 별도 이름 저장</h3>
                 <div class="code">
                     <pre class="line-numbers"><code class="language-js">{                       
-                     
+    const obj = {
+        a: 100,
+        b: 200,
+        c: "javascript23"
+    }
+    const {
+        a: name1,
+        b: name2,
+        c: name3
+    } = obj;
+
+    document.write(name1);
+    document.write(name2);
+    document.write(name3);         
 }</code></pre>
                 </div>
                 <div class="result result23t">
                     <h4>결과보기</h4>
                     <div class="result23">
                         <pre>
-
+100200javascript23
 </pre>
                     </div>
                 </div>
@@ -617,9 +712,6 @@ a,100,b,200,c,javascript
         <!-- //script -->
     </main>
     <!-- script -->
-    <script src="assets/js/script.js"></script>
-    <script src="assets/js/prism.js"></script>
-
     <script>
         //result h4 클릭하면 
 
@@ -799,10 +891,145 @@ a,100,b,200,c,javascript
         //     document.write(name2);
         //     document.write(name3);
         // }
-        {
 
+        // 16.객체 : 데이터 불러오기 : for in
+        {
+            const obj = {
+                a: 100,
+                b: 200,
+                c: "javascript16"
+            }
+            for (let key in obj) {
+                document.write(obj[key])
+            }
+        }
+
+        // 17. 객체 : 데이터 불러오기 : map()
+        {
+            const obj = [{
+                a: 100,
+                b: 200,
+                c: "javascript17"
+            }]
+            obj.map(function (el) {
+                document.write(el.a);
+                document.write(el.b);
+                document.write(el.c);
+            })
+        }
+
+        // 18. 객체 : 데이터 불러오기 : hasOwnproperty()
+        {
+            const obj = {
+                a: 100,
+                b: 200,
+                c: "javascript18"
+            }
+
+            document.write(obj.hasOwnProperty('a'));
+            document.write(obj.hasOwnProperty('b'));
+            document.write(obj.hasOwnProperty('c'));
+            document.write(obj.hasOwnProperty('d'));
+            document.write('a' in obj);
+            document.write('b' in obj);
+            document.write('c' in obj);
+            document.write('d' in obj);
+        }
+
+        // 19. 객체 : 데이터 불러오기 : 펼침 연산자 - 복사
+        {
+            const obj = {
+                a: 100,
+                b: 200,
+                c: "javascript19"
+            }
+            const spread = {
+                ...obj
+            }
+
+            document.write(spread.a);
+            document.write(spread.b);
+            document.write(spread.c);
+        }
+
+        // 20. 객체 : 데이터 불러오기 : 펼침 연산자 - 추가
+        {
+            const obj = {
+                a: 100,
+                b: 200,
+                c: "javascript20"
+            }
+            const spread = {
+                ...obj,
+                d: "jquery"
+            }
+
+            document.write(spread.a);
+            document.write(spread.b);
+            document.write(spread.c);
+            document.write(spread.d);
+        }
+
+        // 21. 객체 : 데이터 불러오기 : 펼침연산자 - 결합
+        {
+            const objA = {
+                a: 100,
+                b: 200,
+            }
+            const objB = {
+                c: "javascript21",
+                d: "jquery",
+            }
+            const spread = {
+                ...objA,
+                ...objB
+            }
+
+            document.write(spread.a);
+            document.write(spread.b);
+            document.write(spread.c);
+            document.write(spread.d);
+        }
+
+        // 22. 객체 : 데이터 불러오기 : 비구조화 할당
+        {
+            const obj = {
+                a: 100,
+                b: 200,
+                c: "javascript22"
+            }
+            const {
+                a,
+                b,
+                c
+            } = obj;
+
+            document.write(a);
+            document.write(b);
+            document.write(c);
+        }
+
+        // 23. 객체 : 데이터 불러오기 : 비구조화 할단 : 별도 이름 저장
+        {
+            const obj = {
+                a: 100,
+                b: 200,
+                c: "javascript23"
+            }
+            const {
+                a: name1,
+                b: name2,
+                c: name3
+            } = obj;
+
+            document.write(name1);
+            document.write(name2);
+            document.write(name3);
         }
     </script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/prism.js"></script>
+
 </body>
 
 </html>
