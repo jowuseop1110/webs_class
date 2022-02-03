@@ -144,6 +144,7 @@ img {
     font-size: 15px;
     padding: 8px 20px 6px 20px;
 }
+
 #header nav ul:nth-child(4) li a {
     font-size: 15px;
     padding: 8px 20px 6px 20px;
@@ -261,14 +262,14 @@ img {
     box-sizing: border-box;
 }
 
-.script .sample .view > div.selected {
+.script .sample .view>div.selected {
     border: 4px solid rgb(187, 43, 43);
     background-color: rgb(187, 43, 43);
     border-radius: 1.3em;
 }
 
 /*  */
-.script .sample .view > div.blue {
+.script .sample .view>div.blue {
     border: 4px solid rgb(43, 69, 187);
     background-color: rgb(43, 105, 187);
     border-radius: 1.3em;
@@ -281,6 +282,39 @@ img {
 
 .script .sample .view>div img {
     border-radius: 1em;
+}
+
+.script .sample .table {
+    border-left: 1px solid#e6e6e6;
+    border-right: 1px solid#e6e6e6;
+    padding: 20px;
+}
+
+.script .sample .table table {
+    width: 100%;
+    border: 1px solid #e6e6e6;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.script .sample .table table th {
+    padding: 10px 5px;
+    font-weight: normal;
+}
+
+.script .sample .table table td {
+    padding: 10px 5px;
+    border: 1px solid #e6e6e6;
+}
+
+.script .sample .table td[class*="R"], .script .sample .table td[class*="P"] {
+    color: #fff;
+    transform: all 0.2s;
+    cursor: help;
+}
+
+.script .sample .table td[class*="R"]:hover ,.script .sample .table td[class*="P"]:hover {
+    color: #000;
 }
 
 .script .sample .btn {
@@ -338,6 +372,18 @@ img {
     .script .sample .view>div {
         width: 48%;
         margin: 1%;
+    }
+
+    .script .sample .table {
+        overflow-x: scroll;
+    }
+
+    .script .sample .table table {
+        width: 700px;
+    }
+
+    .script .sample .table td[class*="R"],  .script .sample .table td[class*="P"] {
+        color: #000;
     }
 }
 
@@ -468,7 +514,7 @@ img {
     cursor: pointer;
 }
 
-.result > div {
+.result>div {
     background: #242822;
     padding: 20px;
     color: #fff;
@@ -477,10 +523,12 @@ img {
     line-height: 1.4;
     display: none;
 }
+
 .result.active h4 {
     border-radius: 5px 5px 0 0;
 }
-.result.active > div {
+
+.result.active>div {
     display: block;
     border-radius: 0 0 5px 5px;
 }
@@ -560,9 +608,11 @@ img {
         font-size: 55px;
         padding: 10px 0;
     }
-    .javascript .menu .ul{
+
+    .javascript .menu .ul {
         display: none;
     }
+
     .javascript .menu .ul:first-child {
         display: block;
     }
@@ -597,6 +647,7 @@ img {
 .test .code {
     margin-top: 1em;
 }
+
 /* 버튼 */
 .pBtn {
     background: #000;

@@ -702,13 +702,13 @@
             // 300
             // 400
             // 500
-        }
-        {
-            const str = [100, 200, 600]
-
-            for (let i in str) {
-                document.write(str[i])
-            }
+        } {
+      const str = [100,200,300,400,500]
+      str.forEach(function(a,b,c){
+          document.write(a)
+          document.write(b)
+         
+      })
         }
     </script>
 </body>

@@ -178,47 +178,46 @@
     2. CSS 속성을 통해서 : background 속성 : 의미가 없는 이미지(배경, 색표현) -->ir효과(대체 문자를 CSS속성으로 표현)
     3. 이미지 스프라이트 : background와 ir효과를 통해서 이미지를 표현
 */
-/* 이미지/텍스트 유형 */
-/* 유형1(img_text_type */
-.itType01 {
+/* 이미지/텍스트 유형 유형1(img_text_type01)*/
+.imgText_type01 {
     padding: 150px 0;
     overflow: hidden;
 }
 
-.itType01 .text {
+.imgText_type01 .text {
     float: left;
     width: 386.66px;
     height: 530px;
     margin-right: 20px;
 }
 
-.itType01 .text .text_title {
+.imgText_type01 .text .text_title {
     font-family: 'GmarketSans';
     font-size: 50px;
     font-weight: 500;
     margin: 70px 0 45px -4px;
 }
 
-.itType01 .text .text_desc {
+.imgText_type01 .text .text_desc {
     font-family: 'NEXONLv1Gothic';
     font-style: 18px;
     color: #888;
     margin-bottom: 55px;
 }
 
-.itType01 .text .text_more {
+.imgText_type01 .text .text_more {
     font-family: 'NEXONLv1Gothic';
     font-size: 18px;
 }
 
-.itType01 .text .text_more a {
+.imgText_type01 .text .text_more a {
     color: #af3029;
 }
 
 /* .itType01 .text .text_more svg {
     vertical-align: 2px;
 } */
-.itType01 .img1 {
+.imgText_type01 .img1 {
     float: left;
     width: 386.66px;
     height: 530px;
@@ -227,7 +226,7 @@
     background-image: url(../img/img_text_bg1.jpg);
 }
 
-.itType01 .img2 {
+.imgText_type01 .img2 {
     float: left;
     width: 386.66px;
     height: 530px;
@@ -236,81 +235,147 @@
 }
 
 @media (-webkit-min-device-pixel-ratio:1.5) {
-    .itType01 .img1 {
+    .imgText_type01 .img1 {
         background-image: url(../img/img_text_bg1@2x.jpg);
     }
 
-    .itType01 .img2 {
+    .imgText_type01 .img2 {
         background-image: url(../img/img_text_bg1@2x.jpg);
     }
 }
 
 @media (-webkit-min-device-pixel-ratio:2.5) {
-    .itType01 .img1 {
+    .imgText_type01 .img1 {
         background-image: url(../img/img_text_bg1@3x.jpg);
     }
 
-    .itType01 .img2 {
+    .imgText_type01 .img2 {
         background-image: url(../img/img_text_bg1@3x.jpg);
     }
 }
 
 /* itType02 */
-.itType02 {
-    background: #f5f5f5;
+.imgText_type02 {
+    background: #F5F5F5;
     overflow: hidden;
     padding: 150px 0;
     min-width: 1200px;
 }
-
-.itType02_left {
+.imgText_type02 .left {
     float: left;
     width: 48.5%;
     height: 535px;
     background: url(../img/img_text_bg3.jpg) no-repeat center center;
-    /* css 이미지 넣는 방법 */
     background-size: cover;
     margin-right: 1.5%;
-
 }
-
-.itType02_right {
+.imgText_type02 .right {
     font-family: 'GmarketSans';
     float: left;
     width: 48.5%;
     height: 535px;
-    padding: 50px;
-    margin-right: 1.5%;
+    margin-left: 1.5%;
 }
-
-.itType02_right .sub {
+.imgText_type02 .right .sub {
     font-size: 16px;
-    color: #7c7c7c;
+    color: #7C7C7C;
     margin-top: 43px;
     margin-bottom: 10px;
-    text-decoration: underline;
-    text-underline-position: under ;
+    display: inline-block;
+    /* text-decoration: underline;
+    text-underline-position: under; */
+    border-bottom: 1px solid #7C7C7C;
 }
-
-.itType02_right .title {
+.imgText_type02 .right .title {
     font-size: 50px;
     font-weight: 500;
     margin-bottom: 38px;
     white-space: nowrap;
 }
-
-.itType02_right .desc {
+.imgText_type02 .right .desc {
     font-size: 24px;
     font-weight: 300;
     margin-bottom: 38px;
     white-space: nowrap;
 }
-
-.itType02_right a {
-    font-size: 24px;
+.imgText_type02 .right .view {
+    font-size: 16px;
     font-weight: 300;
     background: #000;
     padding: 9px 46px;
     display: inline-block;
     color: #fff;
+    font-weight: 500;
 }
+/* 이미지 유형 01(img_type01) */
+.img_type01 {
+    padding: 150px 0;
+    height: 500px;
+    margin-bottom: 500px;
+}
+.img_type01 h3 {
+    font-size: 50px;
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 30px;
+}
+.img_type01 h3 em {
+    font-size: 20px;
+    color: #777;
+    vertical-align: -4px;
+}
+.img_type01 .img_wrap {
+   display: flex;
+   justify-content: space-between;
+}
+.img_type01 .img_wrap .left {
+    width: 590px;
+    height: 360px;
+    background: url(../img/겨울산.jpg);
+    position: relative;
+}
+.img_type01 .img_wrap .right {
+    width: 590px;
+    height: 360px;
+    background: url(../img/도시야경.jpg);
+    position: relative;
+}
+.img_type01 .img_wrap .left-cont {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+}
+.img_type01 .img_wrap .left-cont a {
+    background: rgba(54, 54, 54, 0.6);
+}
+.img_type01 .img_wrap .right-cont {
+    width: 350px;
+    position: absolute;
+    left: 30px;
+    bottom: 20px;
+    background: rgba(59, 59, 59, 0.6);
+}
+.img_type01 .img_wrap .right-cont a {
+    text-decoration: underline;
+}
+.img_type01 .img_wrap h4 {
+    font-size: 30px;
+    color: #ffffff;
+    font-weight: 500;
+}
+.img_type01 .img_wrap p {
+    width: 561px;
+    font-size: 14px;
+    color: #ffffff;
+    padding-right: 200px;
+    margin-bottom: 15px;
+}
+.img_type01 .img_wrap a {
+    /* background: rgba(54, 54, 54, 0.6); */
+    width: 130px;
+    padding: 10px 10px;
+    color: #ffffff;
+    display: inline-block;
+}
+/* 이미지 유형 02(img_type02) */
+.img_type02 {}
