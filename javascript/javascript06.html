@@ -133,13 +133,13 @@
                 </div>
                 <div class="code">
                     <pre class="line-numbers"><code class="language-js">{
-    const arrNum =[100, 200, 300, 400, 500];
+1   const arrNum =[100, 200, 300, 400, 500];
     const arrNumlength = arrNum.length;
 
-    const arrText =['a', 'b', 'c', 'd', 'e'];
+2   const arrText =['a', 'b', 'c', 'd', 'e'];
     const arrTextLength= arrText.length;
 
-    const arr =[1, 2, ['a', 'b']];
+3   const arr =[1, 2, ['a', 'b']];
     const arrLength= arr.length;    
 }</code></pre>
 
@@ -191,17 +191,20 @@
                                 <td class="sample02_M4"></td>
                                 <td class="sample02_R4"></td>
                             </tr>
+                        
                         </tbody>
                     </table>
                 </div>
                 <div class="code">
                     <pre class="line-numbers"><code class="language-js">{
     const arrNum = [100, 200, 300, 400, 500];
-    const text1 = arrNum.Join("*")
-    const text2 = arrNum.Join("-")
-    const text3 = arrNum.Join("")
-    const text4 = arrNum.Join(" ")
-    const text5 = arrNum.Join("+")            
+1   const text1 = arrNum.Join("*")
+
+2   const text2 = arrNum.Join("-")
+
+3   const text3 = arrNum.Join("")
+
+4   const text4 = arrNum.Join(" ")        
 }</code></pre>
 
                 </div>
@@ -250,11 +253,11 @@
                 </div>
                 <div class="code">
                     <pre class="line-numbers"><code class="language-js">{
-    const arrNum = [100, 200, 300, 400, 500];
-    const arrPush = arrNum.Push(600)
+1   const arrNum = [100, 200, 300, 400, 500];
+   const arrPush = arrNum.Push(600)
 
-    const arrNum = [100, 200, 300, 400, 500];
-    const arrPop = arrNum.pop()
+2   const arrNum = [100, 200, 300, 400, 500];
+   const arrPop = arrNum.pop()
 }</code></pre>
 
                 </div>
@@ -303,10 +306,10 @@
                 </div>
                 <div class="code">
                     <pre class="line-numbers"><code class="language-js">{
-    const arrNum = [100, 200, 300, 400, 500];
+1   const arrNum = [100, 200, 300, 400, 500];
     const arrPush = arrNum.Push(600)
 
-    const arrNum = [100, 200, 300, 400, 500];
+2   const arrNum = [100, 200, 300, 400, 500];
     const arrPop = arrNum.pop()
 }</code></pre>
 
@@ -380,22 +383,22 @@
                 </div>
                 <div class="code">
                     <pre class="line-numbers"><code class="language-js">{
-    const arrNum = [100, 200, 300, 400, 500];
+1   const arrNum = [100, 200, 300, 400, 500];
     const arrNumResult = arrNum.reverse();
 
-    const arrNum2 = [100, 200, 300, 400, 500];
+2   const arrNum2 = [100, 200, 300, 400, 500];
     const arrNumSort2 = arrNum2.sort();
 
-    const arrNum3 = [100, 200, 300, 400, 500];
+3   const arrNum3 = [100, 200, 300, 400, 500];
     const arrNumSort3 = arrNum3.sort(function(a,b){return b-a});
 
-    const arrNum4 = [500, 400, 300, 200, 100];
+4   const arrNum4 = [500, 400, 300, 200, 100];
     const arrNumSort4 = arrNum4.sort(function(a,b){return a-b});
 
-    const arrNum5 = ['c','d','e','a','b'];
+5   const arrNum5 = ['c','d','e','a','b'];
     const arrNumSort5 = arrNum5.sort((a,b) => a. localeCompare(b));
 
-    const arrNum6 = ['c','d','e','a','b'];
+6   const arrNum6 = ['c','d','e','a','b'];
     const arrNumSort6 = arrNum5.sort((a,b) => b. localeCompare(a));    
 }</code></pre>
 
@@ -445,9 +448,9 @@
                     <pre class="line-numbers"><code class="language-js">{
     const arrNum1 = [100, 200, 300];
     const arrNum2 = [400, 500, 600];
-    const arrConcat = arrNum1.concat(arrNum2); 
+1   const arrConcat = arrNum1.concat(arrNum2); 
 
-    const arrSpread = [...arrNum1, ...arrNum2];
+2   const arrSpread = [...arrNum1, ...arrNum2];
 }</code></pre>
 
                 </div>
@@ -509,27 +512,26 @@
                 </div>
                 <div class="code">
                     <pre class="line-numbers"><code class="language-js">{
-    const arrNum1 = [100, 200, 300, 400, 500];
+1   const arrNum1 = [100, 200, 300, 400, 500];
     const arrReduce1 = arrNum1.reduce(element => element)
-/
-    const arrNum2 = [100, 200, 300, 400, 500];
+
+2   const arrNum2 = [100, 200, 300, 400, 500];
     const arrReduce2 = arrNum2.reduce((previous, current) => previous + current);
-/
-    const arrNum3 = [100, 200, 300, 400, 500];
+
+3   const arrNum3 = [100, 200, 300, 400, 500];
     let sum = 0;
     for (let i = 0; i &lt; arrNum3.length; i++) {
 
-        //100, 200, 300, 400, 500
         sum = sum + arrNum3[i]
     }
-/
-    const arrNum4 = [
+
+4   const arrNum4 = [
         [100, 200],
         [300, 400]
     ];
     const arrReduce4 = arrNum4.reduce((p, c) => p.concat(c));
-/
-    const arrNum5 = ["javascript", "react", "vue"];
+
+5   const arrNum5 = ["javascript", "react", "vue"];
     const arrReduce5 = arrNum5.reduceRight((p, c) => p + c);        
 }</code></pre>
 
@@ -599,17 +601,17 @@
                 <div class="code">
                     <pre class="line-numbers"><code class="language-js">{
     const arrNum = [100, 200, 300, 400, 500];
-    const result = arrNum.slice(2);
-/
-    const result2 = arrNum.slice(2, 3);
-/
-    const result3 = arrNum.slice(2, 4);
-/
-    const result4 = arrNum.slice(2, 5);
-/
-    const result5 = arrNum.slice(-2);
-/
-    const result6 = arrNum.slice(-2, 5);
+1   const result = arrNum.slice(2);
+
+2   const result2 = arrNum.slice(2, 3);
+
+3   const result3 = arrNum.slice(2, 4);
+
+4   const result4 = arrNum.slice(2, 5);
+
+5   const result5 = arrNum.slice(-2);
+
+6   const result6 = arrNum.slice(-2, 5);
 }</code></pre>
 
                 </div>
@@ -685,22 +687,22 @@
                 </div>
                 <div class="code">
                     <pre class="line-numbers"><code class="language-js">{
-    const arrNum = [100, 200, 300, 400, 500];
+1   const arrNum = [100, 200, 300, 400, 500];
     const result = arrNum.splice(2);
-/
-    const arrNum2 = [100, 200, 300, 400, 500];
+
+2   const arrNum2 = [100, 200, 300, 400, 500];
     const result2 = arrNum2.splice(2, 3);
-/
-    const arrNum3 = [100, 200, 300, 400, 500];
+
+3   const arrNum3 = [100, 200, 300, 400, 500];
     const result3 = arrNum3.splice(2, 3, 'javascript');
-/
-    const arrNum4 = [100, 200, 300, 400, 500];
+
+4   const arrNum4 = [100, 200, 300, 400, 500];
     const result4 = arrNum4.splice(1, 1, 'javascript');
-/
-    const arrNum5 = [100, 200, 300, 400, 500];
+
+5   const arrNum5 = [100, 200, 300, 400, 500];
     const result5 = arrNum5.splice(0, 0, 'javascript');
-/
-    const arrNum6 = [100, 200, 300, 400, 500];
+
+6   const arrNum6 = [100, 200, 300, 400, 500];
     const result6 = arrNum6.splice(0, 4, 'javascript', 'jquery');        
 }</code></pre>
 
@@ -772,22 +774,22 @@
                 </div>
                 <div class="code">
                     <pre class="line-numbers"><code class="language-js">{
-    const arrNum1 = [100, 200, 300, 400, 500];
+1   const arrNum1 = [100, 200, 300, 400, 500];
     const arrIndex1 = arrNum1.indexOf(200);
 
-    const arrNum2 = [100, 200, 300, 400, 500];
+2   const arrNum2 = [100, 200, 300, 400, 500];
     const arrIndex2 = arrNum2.indexOf(300);
 
-    const arrNum3 = [100, 200, 300, 400, 500];
+3   const arrNum3 = [100, 200, 300, 400, 500];
     const arrIndex3 = arrNum3.indexOf(600);
 
-    const arrNum4 = [100, 200, 300, 400, 500];
+4   const arrNum4 = [100, 200, 300, 400, 500];
     const arrIndex4 = arrNum4.lastIndexOf(200);
 
-    const arrNum5 = [100, 200, 300, 400, 500];
+5   const arrNum5 = [100, 200, 300, 400, 500];
     const arrIndex5 = arrNum5.includes(200);
 
-    const arrNum6 = [100, 200, 300, 400, 500];
+6   const arrNum6 = [100, 200, 300, 400, 500];
     const arrIndex6 = arrNum6.includes(600);
 }</code></pre>
 
@@ -853,18 +855,18 @@
                 </div>
                 <div class="code">
                     <pre class="line-numbers"><code class="language-js">{
-    const arrNum = [100, 200, 300, 400, 500];
+1   const arrNum = [100, 200, 300, 400, 500];
     const result = arrNum.find(el => el === 300)
-/
-    const result2 = arrNum.find(el => el === 600)
-/
-    const arrText3 = ["javascript", "react", "vue"];
+
+2   const result2 = arrNum.find(el => el === 600)
+
+3   const arrText3 = ["javascript", "react", "vue"];
     const result3 = arrText3.find(el => el === "javascript");
-/
-    const arrText4 = ["javascript", "react", "vue"];
+
+4   const arrText4 = ["javascript", "react", "vue"];
     const result4 = arrText4.findIndex(el => el === "javascript");
-/
-    const arrText5 = ["javascript", "react", "vue"];
+
+5   const arrText5 = ["javascript", "react", "vue"];
     const result5 = arrText5.findIndex(el => el === "html");
 }</code></pre>
 
@@ -917,13 +919,13 @@
                 </div>
                 <div class="code">
                     <pre class="line-numbers"><code class="language-js">{
-    const arrNum = [100, 200, 300, 400, 500];
+1   const arrNum = [100, 200, 300, 400, 500];
     const result = arrNum.filter(el => el ===300);
-/
-    const arrNum2 = [100, 200, 300, 400, 500];
+
+2   const arrNum2 = [100, 200, 300, 400, 500];
     const result2 = arrNum2.filter(el => el ===600);
-/
-    const arrNum3 = [100, 200, 300, 400, 500];
+
+3   const arrNum3 = [100, 200, 300, 400, 500];
     const result3 = arrNum3.filter(el => el >=300);
 }</code></pre>
 
@@ -982,8 +984,18 @@
                 </div>
                 <div class="code">
                     <pre class="line-numbers"><code class="language-js">{
-           
-        }</code></pre>
+1   const arrNum1 = [100, 200, 300, 400, 500];
+    const result1 = arrNum1.map(el => el);
+
+2   const arrNum2 = [100, 200, 300, 400, 500];
+    const result2 = arrNum2.map(el => el +"j");
+
+3   const arrNum3 = [100, 200, 300, 400, 500];
+    const result3 = arrNum3.map(el => el + 100);
+
+4   const arrNum4 = [{a: 100}, {a:200}, {a:300}];
+    const result4 = arrNum4.map(el => el.a);       
+}</code></pre>
 
                 </div>
             </div>
@@ -1454,7 +1466,6 @@
         // 20. 배열 메서드 : map() : 배열 요소 추출하여 새로운 배열로 만듦 : 반환(배열)
         // 배열. filter(콜백함수)
         {
-
             const arrNum1 = [100, 200, 300, 400, 500];
             const result1 = arrNum1.map(el => el);
 
@@ -1479,7 +1490,7 @@
             document.querySelector(".sample13_M3").innerHTML = "map(el => el + 100)";
             document.querySelector(".sample13_R3").innerHTML = result3;
 
-            const arrNum4 = [{a: 100}, {b:200}, {c:300}];
+            const arrNum4 = [{a: 100}, {a:200}, {a:300}];
             const result4 = arrNum4.map(el => el.a);
 
             document.querySelector(".sample13_N4").innerHTML = 4;
