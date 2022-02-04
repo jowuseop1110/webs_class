@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 만들기 예제</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #wrap {
+            width: 1920px;
+            height: 3000px;
+        }
+
+        #header {
+            height: 100px;
+            display: flex;
+            justify-content: space-between
+        }
+
+        #header .main {
+            font-size: 50px;
+            margin-top: 20px;
+            margin-left: 40px;
+        }
+
+        #header .menu {
+            margin-top: 30px;
+            text-align: right;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        #header .menu li {
+            display: inline-block;
+        }
+
+        #header .menu li a {
+            padding: 20px;
+        }
+
+        #nav {
+            width: 1620px;
+            height: 389px;
+            font-size: 40px;
+            font-weight: 700;
+            margin-top: 200px;
+            margin-left: 370px;
+        }
+
+        #contents1 {
+            width: 1920px;
+            overflow: hidden;
+            margin-left: 100px;
+        }
+
+        #contents1 .con1 {
+            width: 580px;
+            height: 762px;
+            float: left;
+            margin-left: 280px;
+        }
+        #contents1 .con1 .pic1 {
+            width: 590px;
+            height: 590px;
+            background: url(../layout/img/카라이프.jpg);
+            background-size: cover;
+            margin: -20px 0 150px 0;
+        }
+        #contents1 .con1 .pic11 {
+            font-size: 28px;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            font-weight: 700;
+        }
+        #contents1 .con2 {
+            width: 910px;
+            height: 800px;
+            margin-left: 50px;
+            margin-top: 150px;
+            float: left;
+        }
+        #contents1 .con2 .pic2 {
+            width: 590px;
+            height: 590px;
+            background: url(../layout/img/스타일.jpg);
+            background-size: cover;
+            margin-top: -20px;
+        }
+        #contents1 .con2 .pic21 {
+            width: 590px;
+            font-size: 28px;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            font-weight: 700;
+        }
+        #contents2 {
+            width: 1920px;
+            overflow: hidden;
+            margin-left: 100px;
+        }
+   
+        #contents2 .con3 {
+            width: 580px;
+            height: 762px;
+            float: left;
+            margin-left: 280px;
+        }
+        #contents2 .con3 .pic3 {
+            width: 590px;
+            height: 590px;
+            background: url(../layout/img/리뉴얼.jpg);
+            background-size: cover;
+            margin: -20px 0 150px 0;
+        }
+        #contents2 .con3 .pic31 {
+            font-size: 28px;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            font-weight: 700;
+        }
+        #contents2 .con4 {
+            width: 590px;
+            height: 1322px;
+            float: left;
+        }
+
+        #contents2 .con4 .pic4 {
+            width: 590px;
+            height: 590px;
+            background: url(../layout/img/까사미아.jpg);
+            background-size: cover;
+            margin-left: 50px;
+            margin-top: -20px;
+        }
+        #contents2 .con4 .pic41 {
+            margin-top: 150px;
+            width: 590px;
+            font-size: 28px;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            margin-left: 50px;
+            font-weight: 700;
+        }
+        #footer {
+            width: 2026px;
+            height: 403px;
+            background: #777;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+            <h2 class="main">IMFORM</h2>
+            <ul class="menu">
+                <li><a hre="#">SERVISE</a></li>
+                <li><a hre="#">WORK</a></li>
+                <li><a hre="#">ABOUT</a></li>
+                <li><a hre="#">CONTACT</a></li>
+            </ul>
+        </header>
+        <nav id="nav">
+            <h2>We research new opportunities<br>
+            that inspire success.</h2>
+        </nav>
+        <section id="contents1">
+            <div class="con1">
+                <div class="pic11">스마트한 카라이프<br>한국타이어</div>
+                <div class="pic1"></div>
+            </div>
+            <div class="con2">
+                <div class="pic21">한섬 프리미엄 스타일<br>모바일 룩북</div>
+                <div class="pic2"></div>
+            </div>
+        </section>
+        <section id="contents2">
+            <div class="con3">
+                <div class="pic31">나는 대만족 입니다<br>대만관광청 홈페이지 리뉴얼</div>
+                <div class="pic3"></div>
+            </div>
+            <div class="con4">
+                <div class="pic41">세련된 감각의 까사미아<br>라이프스타일 매거진</div>
+                <div class="pic4"></div>
+            </div>
+        </section>
+
+        <footer id="footer"></footer>
+    </div>
+</body>
+
+</html>
