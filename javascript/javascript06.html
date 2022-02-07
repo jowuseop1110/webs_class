@@ -41,13 +41,13 @@
                 <li><a href="practice.html">데이터 연습하기</a></li>
             </ul>
             <ul>
-                <li><a href="sample.html">필수 예제</a></li>
-                <li><a href="plugin.html">플로그인</a></li>
-                <li><a href="effect/mouseEffect.html">마우스 이펙트</a></li>
-                <li><a href="effect/parallaxEffect.html">필랠랙스 이펙트</a></li>
-                <li><a href="effect/slideEffect.hrml">슬라이드 이펙트</a></li>
-                <li><a href="effect/gameEffect.html">게임 이펙트</a></li>
-            </ul>
+                <li><a href="effect/sample_menu.html">메뉴 이펙트</a></li>
+                <li><a href="sffect/sample_search.html">검색 이펙트</a></li>
+                <li><a href="effect/sample_mouse.html">마우스 이펙트</a></li>
+                <li><a href="effect/sample_parallax.html">필랠랙스 이펙트</a></li>
+                <li><a href="effect/sample_slide.html">슬라이드 이펙트</a></li>
+                <li><a href="effect/sample_game.html">게임 이펙트</a></li>
+              </ul>
         </nav>
     </header>
 
@@ -1497,6 +1497,58 @@
             document.querySelector(".sample13_Q4").innerHTML = "[{a: 100}, {b:200}, {c:300}]";
             document.querySelector(".sample13_M4").innerHTML = "map(el => el.a)";
             document.querySelector(".sample13_R4").innerHTML = result4;
+        }
+        {
+                        //300, 400   
+                        arrBox = [100, 200, 300, 400, 500, 600, 700];
+            const result1 = arrBox.slice(2, 4);
+            console.log(result1);
+
+            arrBox2 = [100, 200, 300, 400, 500, 600, 700];
+            const result2 = arrBox2.splice(0, 7, 300, 400)
+            console.log(arrBox2);
+
+            //100, 300, 500, 700
+            arrBox3 = [100, 200, 300, 400, 500, 600, 700];
+            const result3 = arrBox3.splice(1, 7, 300, 500, 700);
+            console.log(arrBox3);
+
+            //700
+            arrBox4 = [100, 200, 300, 400, 500, 600, 700];
+            const result4 = arrBox4.find(el => el === 700)
+            console.log(result4);
+
+            arrBox5 = [100, 200, 300, 400, 500, 600, 700];
+            const result5 = arrBox5.filter(el => el === 700);
+            console.log(result5);
+
+            arrText1 = ["j", "b", "c", "d", "e"];
+
+            // j
+            const result6 = arrText1.splice(1);
+            console.log(arrText1);
+
+            const result7 = arrText1.filter(el => el === "j");
+            console.log(result7)
+
+            // j,c
+            arrText2 = ["j", "b", "c", "d", "e"];
+            const result8 = arrText2.splice(1, 4, 'c');
+            console.log(arrText2);
+
+            arrText3 = ["j", "b", "c", "d", "e"];
+            const result9 = arrText3.filter(el => el === "c");
+            const result10 = arrText3.splice(1)
+            const result11 = arrText3.concat(result9);
+            console.log(result11);
+            // jbcd
+            const arrText4 = ["j", "b", "c", "d", "e"];
+            const arrText5 = ["j", "b", "c", "d", "e"];
+
+            const result12 = arrText4.slice(0, 4);
+            const result13 = arrText5.splice(0, 4);
+            console.log(result12);
+            console.log(result13);
         }
     </script>
 </body>
