@@ -1089,7 +1089,7 @@
 
             document.querySelector(".sample04_N1").innerHTML = 1;
             document.querySelector(".sample04_Q1").innerHTML = "[100, 200, 300, 400, 500]";
-            document.querySelector(".sample04_M1").innerHTML = "unshift()";
+            document.querySelector(".sample04_M1").innerHTML = "unshift(600)";
             document.querySelector(".sample04_P1").innerHTML = arrNumUnshift;
             document.querySelector(".sample04_R1").innerHTML = arrNum;
         }
@@ -1467,7 +1467,7 @@
         // 배열. filter(콜백함수)
         {
             const arrNum1 = [100, 200, 300, 400, 500];
-            const result1 = arrNum1.map(el => el);
+            const result1 = arrNum1.map(el => el >= 300);
 
             document.querySelector(".sample13_N1").innerHTML = 1;
             document.querySelector(".sample13_Q1").innerHTML = "[100, 200, 300, 400, 500]";
@@ -1499,56 +1499,59 @@
             document.querySelector(".sample13_R4").innerHTML = result4;
         }
         {
-                        //300, 400   
-                        arrBox = [100, 200, 300, 400, 500, 600, 700];
-            const result1 = arrBox.slice(2, 4);
-            console.log(result1);
+            //300, 400   
+            // arrBox = [100, 200, 300, 400, 500, 600, 700];
+            // const result1 = arrBox.slice(2, 4);
+            // console.log(result1);
 
-            arrBox2 = [100, 200, 300, 400, 500, 600, 700];
-            const result2 = arrBox2.splice(0, 7, 300, 400)
-            console.log(arrBox2);
+            // arrBox2 = [100, 200, 300, 400, 500, 600, 700];
+            // const result2 = arrBox2.splice(2, 2);
+            // console.log(result2);
 
             //100, 300, 500, 700
-            arrBox3 = [100, 200, 300, 400, 500, 600, 700];
-            const result3 = arrBox3.splice(1, 7, 300, 500, 700);
-            console.log(arrBox3);
+            // arrBox3 = [100, 200, 300, 400, 500, 600, 700];
+            // const result3 = arrBox3.splice(1,6,300,500,700);
+            // console.log(arrBox3);
 
             //700
-            arrBox4 = [100, 200, 300, 400, 500, 600, 700];
-            const result4 = arrBox4.find(el => el === 700)
-            console.log(result4);
+            // arrBox4 = [100, 200, 300, 400, 500, 600, 700];
+            // const result4 = arrBox4.find(el => el === 700);
+            // console.log(result4);
 
-            arrBox5 = [100, 200, 300, 400, 500, 600, 700];
-            const result5 = arrBox5.filter(el => el === 700);
-            console.log(result5);
+            // arrBox5 = [100, 200, 300, 400, 500, 600, 700];
+            // const result5 = arrBox5.filter(el => el === 700);
+            // console.log(result5);
 
-            arrText1 = ["j", "b", "c", "d", "e"];
+            // arrText1 = ["j", "b", "c", "d", "e"];
 
             // j
-            const result6 = arrText1.splice(1);
-            console.log(arrText1);
+            // const result6 = arrText1.slice(0,1);
+            // console.log(result6);
 
-            const result7 = arrText1.filter(el => el === "j");
-            console.log(result7)
+            // const result7 = arrText1.splice(1,4);
+            // console.log(arrText1);
+
+            // const result7 = arrText1.filter(el => el === "j");
+            // console.log(result7)
 
             // j,c
-            arrText2 = ["j", "b", "c", "d", "e"];
-            const result8 = arrText2.splice(1, 4, 'c');
-            console.log(arrText2);
+            // arrText2 = ["j", "b", "c", "d", "e"];
+            // const result8 = arrText2.splice(1, 4,'c');
+            // console.log(arrText2);
 
-            arrText3 = ["j", "b", "c", "d", "e"];
-            const result9 = arrText3.filter(el => el === "c");
-            const result10 = arrText3.splice(1)
-            const result11 = arrText3.concat(result9);
-            console.log(result11);
+            // arrText3 = ["j", "b", "c", "d", "e"];
+            // const result9 = arrText3.filter(el => el === "c");
+            // const result10 = arrText3.splice(1)
+            // const result11 = arrText3.concat(result9);
+            // console.log(result11);
             // jbcd
-            const arrText4 = ["j", "b", "c", "d", "e"];
-            const arrText5 = ["j", "b", "c", "d", "e"];
+            // const arrText4 = ["j", "b", "c", "d", "e"];
+            // const arrText5 = ["j", "b", "c", "d", "e"];
 
-            const result12 = arrText4.slice(0, 4);
-            const result13 = arrText5.splice(0, 4);
-            console.log(result12);
-            console.log(result13);
+            // const result12 = arrText4.slice(0, 4);
+            // const result13 = arrText5.splice(0, 4);
+            // console.log(result12);
+            // console.log(result13);
         }
     </script>
 </body>
