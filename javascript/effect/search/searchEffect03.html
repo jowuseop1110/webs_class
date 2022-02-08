@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Effect</title>
+    <style>
+        @font-face {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.ttf') format("truetype");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'TmonMonsori';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/TmonMonsori.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'NexonLv1Gothic';
+            font-size: 16px;
+            line-height: 1.6;
+            word-break: break-all;
+            color: #223547;
+        }
+
+        a {
+            text-decoration: none;
+            color: #223547;
+        }
+
+        .number {
+            margin: 10px;
+        }
+
+        .number li {
+            list-style: none;
+            display: inline;
+        }
+
+        .number li a {
+            border: 1px solid #223547;
+            width: 30px;
+            height: 30px;
+            border-radius: 50px;
+            display: inline-block;
+            text-align: center;
+            line-height: 30px;
+            transition: all 0.3s;
+        }
+
+        .number li.active a {
+            background: #223547;
+            color: #fff;
+        }
+
+        .board {
+            margin: 5vw 10vw 10vw 10vw;
+            width: 80vw;
+            background: #F1F3F6;
+            border: 2px solid #223547;
+            padding: 3vw;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .board .sub {
+            font-size: 20px;
+        }
+
+        .board .sub a {
+            font-size: 20px;
+            border-bottom: 1px solid #223547;
+        }
+
+        .board h1 a {
+            font-family: 'TmonMonsori';
+            font-size: 80px;
+            margin-bottom: 1vw;
+        }
+
+        .board .search {
+            margin-bottom: 3vw;
+        }
+
+        .board .count {
+            text-align: right;
+            color: #777;
+        }
+
+        .board .count em {
+            font-style: normal;
+            color: #223547;
+        }
+
+        .board .search label {
+            display: none;
+        }
+
+        .board .search input {
+            font-size: 24px;
+            border: 2px solid #223547;
+            padding: 10px 40px;
+            border-radius: 40px;
+            width: 50%;
+        }
+
+        .board .list {
+            text-align: left;
+        }
+
+        .board .list li {
+            background-color: #BDD6E6;
+            margin: 5px 0;
+            padding: 7px 10px;
+            border-radius: 4px;
+            list-style: none;
+            transition: all 0.3s;
+        }
+
+        .board .list li:hover {
+            background-color: #A5C3D5;
+            cursor: grabbing
+        }
+
+        .board .list li.hide {
+            display: none;
+        }
+
+        @media (max-width: 800px) {
+            .board {
+                margin: 2vw 2vw 2vw 2vw;
+                width: 96vw;
+                padding: 4vw 2vw;
+            }
+
+            .board .sub {
+                font-size: 14px;
+            }
+
+            .board .sub a {
+                font-size: 14px;
+            }
+
+            .board h1 a {
+                font-size: 40px;
+            }
+
+            .board .search input {
+                font-size: 16px;
+                padding: 5px 20px;
+                width: 100%;
+            }
+
+            .board .list li {
+                font-size: 14px;
+            }
+
+        }
+
+        /* option */
+        .board .search span {
+            border: 1px solid #223547;
+            border-radius: 30px;
+            padding: 5px 30px;
+            display: inline-block;
+            transition: all 0.3s;
+            margin: 3px;
+            /* 효과 */
+        }
+
+        .board .search span:hover {
+            background: #223547;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .board .list li {
+            display: none;
+        }
+
+        .board .list li.show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="number">
+            <ul>
+                <li><a href="sample_search.html">1</a></li>
+                <li><a href="searchEffect01.html">2</a></li>
+                <li><a href="searchEffect02.html">3</a></li>
+                <li class="active"><a href="searchEffect03.html">4</a></li>
+                <li><a href="searchEffect04.html">5</a></li>
+            </ul>
+        </div>
+        <div class="board">
+            <span class="sub"><a href="#">charAt( )</a>를 이용하여 알파벳 별로 검색하기</span>
+            <h1><a href="searchEffect.html">CSS 속성 검색하기</a></h1>
+            <div class="search">
+                <span>a</span>
+                <span>b</span>
+                <span>c</span>
+                <span>d</span>
+                <span>e</span>
+                <span>f</span>
+                <span>g</span>
+                <span>h</span>
+                <br>
+                <span>기타</span>
+                <span>애니메이션</span>
+                <span>효과</span>
+                <span>테이블</span>
+
+            </div>
+            <div class="count">
+                전체 속성 갯수 : <em>0</em>개
+            </div>
+            <div class="list">
+                <ul>
+                    <li data-name="all" data-type="기타"><strong>all</strong> : all 속성은 CSS 속성을 재설정하는 데 사용할 수 있는 약식 속성입니다.
+                    </li>
+                    <li data-name="animation" data-type="애니메이션"><strong>animation</strong> : animation 속성은 애니메이션 속성을
+                        설정하기 위한 약식 속성입니다.
+                    </li>
+                    <li data-name="aanimation-delay" data-type="애니메이션"><strong>animation-delay</strong> :animation-delay 속성은 애니메이션이 시작되는시간을 설정합니다. </li>
+                    <li data-name="animation-directio" data-type="애니메이션"><strong>animation-directio</strong> :animation-direction 속성은애니메이션이 일부 또는 모든 주기 또는 반복에서 반대로재생되어야 하는지 여부를 지정합니다. </li>
+                    <li data-name="animation-duratio" data-type="애니메이션"><strong>animation-duratio</strong> :animation-duration 속성은 애니메이션 주기에 걸리는 시간을 지정하는 데 사용됩니다.</li>
+                    <li data-name="animation-fill-mode" data-type="애니메이션"><strong>animation-fill-mode</strong> : animation-fill-mode 속성은 애니메이션이 끝난 후의 상태를 설정합니다.</li>
+                    <li data-name="animation-iteration-count" data-type="애니메이션"><strong>animation-iteration-count</strong> : animation-iteration-count 속성은 애니메이션이 중지되기 전에 애니메이션 주기가 재생되는 횟수를 지정하는 데 사용됩니다.</li>
+                    <li data-name="animation-name" data-type="애니메이션"><strong>animation-name</strong> : animation-name 속성은 @keyframes 규칙에의해 정의된 하나 이상의 애니메이션 이름을 지정하는데 사용되며 선택한 요소에 적용됩니다.</li>
+                    <li data-name="animation-play-stat" data-type="애니메이션"><strong>animation-play-state</strong> : animation-play-state 속성은 CSS 애니메이션이 실행 중인지 일시 중지되었는지 지정합니다.</li>
+                    <li data-name="background-filter" data-type="효과"><strong>background-filter</strong> : background-filter 속성을 사용하면 CSS를 사용하여 요소 뒤의 콘텐츠에 필터 효과를 적용할 수 있습니다.</li>
+                    <li data-name="backface-visibility" data-type="속성"><strong>backface-visibility</strong> : backface-visibility 속성은 뷰어를 향할 때 변형된 요소의 "뒷면"이 보이는지 여부를 결정합니다.</li>
+                    <li data-name="caption-side" data-type="테이블"><strong>caption-side</strong> : caption-side 속성은 테이블 caption의 위치를 설정합니다.</li>
+                    <li data-name="direction" data-type="효과"><strong>direction</strong> : direction 속성은 텍스트 흐름의 방향을 제어하는​​데 사용됩니다.</li>
+                    <li data-name="display" data-type="효과"><strong>display</strong> : display 속성은 페이지의 요소에 대해 생성되는 상자의 종류를 지정하는 데 사용됩니다.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- script -->
+    <script>
+        const searchBox = document.querySelectorAll(".search span"); //알파벳 버튼
+        const cssList = document.querySelectorAll(".list ul li"); //속성 리스트
+        const cssCount = document.querySelector(".count em"); //속성 갯수
+
+        //모든 데이터 보이기
+        cssList.forEach((ele, index) => {
+            ele.classList.add("show");
+            cssCount.innerHTML = index + 1;
+        })
+
+        //알파벳을 클릭하면 클릭한 데이터 값을 가져와야 한다.
+        searchBox.forEach(el => {
+            el.addEventListener("click", () => {
+                const searchWord = el.innerText; //알파벳 첫글자
+                // console.log(searcWord)
+
+                cssList.forEach(el => {
+                    // console.log(el)
+                    const cssName = el.dataset.name; //css속성 값
+                    const cssName1 = el.dataset.type;//css 유형 값
+                    // console.log(cssName)
+
+                    //알파벳 첫글자(a) == CSS 속성의 첫글자(a)
+
+                    if(searchWord.charAt(0) === cssName.charAt(0) || searchWord.charAt(0) === cssName1.charAt(0)){
+                        el.classList.add("show");
+                    } else {
+                        el.classList.remove("show");
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>
