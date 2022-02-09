@@ -384,7 +384,7 @@
 /* 이미지 유형 02(img_type02) */
 .img_type02 {
     padding: 150px 0;
-    background: #f5f5f5;
+    background: #fff;
 }
 .img_type02 h3 {
     font-size: 50px;
@@ -475,4 +475,119 @@
 }
 .img_type02 .img-wrap li:nth-child(3) {
     background: url(../img/img_big3.jpg);
+}
+
+/*banner_type01  */
+.banner_type01 {
+    font-family: 'GmarketSans';
+    background: url(../img/노트북\ 1.jpg) center center no-repeat;
+    background-size: cover;
+}
+.container01 {
+    width: 100%;
+    height: 500px;
+    background-color: rgba(0,0,0,0.5);
+    text-align: center;
+    color: #fff;
+}
+.container01 h3 {
+    font-size: 50px;
+    font-weight: 500;
+    position: relative;
+    top: 142.3px;
+}
+.container01 p {
+    font-size: 24px;
+    font-weight: 300;
+    position: relative;
+    top: 150px;
+}
+.container01 a {
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+    color: #fff;
+    top: 180px;
+    line-height: 10;
+    text-decoration: underline;
+}
+/* footer_type01 */
+#footer {
+    width: 100%;
+    height: 682px;
+    background-color: #f5f5f5;
+}
+#footer .container {
+    padding: 150px 0 0 0;
+}
+.footer-wrap {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'GmarketSans';
+    border-bottom: 1px solid #333;
+}
+.footer-wrap h3 {
+    margin: 0 58px 30px 0;
+    font-size: 28px;
+    font-weight: 500;
+}
+.footer-wrap ul {
+    margin-bottom: 72px;
+}
+.footer-wrap ul li a {
+    font-size: 18px;
+    line-height: 1.8;
+    font-weight: 300;
+    position: relative;
+    color: #777;
+}
+.footer-wrap ul li a:hover {
+    color: rgb(5, 5, 5);
+}
+.footer-wrap ul li a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 1px;
+    background: #111;
+    transform: scale(0);
+    transition: all 0.3s ease;
+}
+.footer-wrap ul li a:hover::before{
+    transform: scale(1);
+    color: #000;
+} 
+.footer-rights {
+    text-align: center;
+    position: relative;
+    top: 60px;
+
+}
+.footer-sns {
+    margin-top: 10px;
+}
+.footer-sns ul {
+    display: flex;
+    justify-content: center;
+}
+.footer-sns li a {
+    width: 40px;
+    height: 40px;
+    margin: 4px 6px;
+    display: inline-block;
+    background-image: url(../img/svg.svg);
+}
+.footer-sns li:nth-child(1) a {
+
+}
+.footer-sns li:nth-child(2) a {
+    background-position: -50px 0;
+}
+.footer-sns li:nth-child(3) a {
+    background-position: -100px 0;
+}
+.footer-sns li:nth-child(4) a {
+    background-position: -150px 0;
 }
