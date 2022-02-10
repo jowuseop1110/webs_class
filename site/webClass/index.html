@@ -35,6 +35,8 @@
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+
 </head>
 
 <body>
@@ -69,7 +71,79 @@
         </header>
         <!--//header -->
         <section id="contents">
-            <h2 class="ir_so">배너 영역</h2>
+            <h3 class="ir_so">배너 영역</h3>
+            <!-- <div class="img_type slider">
+                <div class="slider-img">
+                    <div class="desc">
+                    <span>DEVELOPER</span>
+                    <h4>NEW FRONTEND</h4>
+                    <p>당신이 만들어갈 새로운 이야기<br>
+                        당신도 할 수 있습니다.</p>
+                        <div class="btn">
+                            <a href="#" class="white">자세히 보기</a>
+                            <a href="#" class="black">사이트 보기</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-arrow">
+                    <a href="#" class="left"><span class="ir_pm">이전이미지</span></a>
+                    <a href="#" class="right"><span class="ir_pm">다음이미지</span></a>
+                </div>
+                <div class="slider-dot">
+                    <a href="#" class="dot active"><span class="ir_pm">1</span></a>
+                    <a href="#" class="dot"><span class="ir_pm">2</span></a>
+                    <a href="#" class="dot"><span class="ir_pm">3</span></a>
+                    <a href="#" class="dot"><span class="ir_pm">4</span></a>
+                    <a href="#" class="play"><span class="ir_pm">자동플레이</span></a>
+                    <a href="#" class="stop"><span class="ir_pm">정지</span></a>
+                </div>
+            </div> -->
+            <!-- Slider main container -->
+            <div class="swiper">
+
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide s1">
+                        <div class="desc">
+                            <span>DEVELOPER01</span>
+                            <h4>NEW FRONTEND</h4>
+                            <p>당신이 만들어갈 새로운 이야기<br>
+                                당신도 할 수 있습니다.</p>
+                            <div class="btn">
+                                <a href="#" class="white">자세히 보기</a>
+                                <a href="#" class="black">사이트 보기</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide s2">
+                        <div class="desc">
+                            <span>DEVELOPER02</span>
+                            <h4>NEW FRONTEND</h4>
+                            <p>당신이 만들어갈 새로운 이야기<br>
+                                당신도 할 수 있습니다.</p>
+                            <div class="btn">
+                                <a href="#" class="white">자세히 보기</a>
+                                <a href="#" class="black">사이트 보기</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide s3">
+                        <div class="desc">
+                            <span>DEVELOPER03</span>
+                            <h4>NEW FRONTEND</h4>
+                            <p>당신이 만들어갈 새로운 이야기<br>
+                                당신도 할 수 있습니다.</p>
+                            <div class="btn">
+                                <a href="#" class="white">자세히 보기</a>
+                                <a href="#" class="black">사이트 보기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
             <div class="img_Type">
                 <!-- <img src="../webClass/img/Mask Group-min.jpg" alt="메인 베너"> -->
             </div>
@@ -176,7 +250,7 @@
                 </div>
             </article>
             <!-- //imgType02 -->
-          
+
         </section>
         <!-- //contents -->
         <footer id="footer" class="footer_type01">
@@ -186,70 +260,93 @@
                     <div>
                         <h3>레이아웃 영역</h3>
                         <ul>
-                            <li><a href = "#">레이아웃 유형 01</a></li>
-                            <li><a href = "#">레이아웃 유형 02</a></li>
-                            <li><a href = "#">레이아웃 유형 03</a></li>
-                            <li><a href = "#">레이아웃 유형 04</a></li>
-                            <li><a href = "#">레이아웃 유형 05</a></li>
+                            <li><a href="#">레이아웃 유형 01</a></li>
+                            <li><a href="#">레이아웃 유형 02</a></li>
+                            <li><a href="#">레이아웃 유형 03</a></li>
+                            <li><a href="#">레이아웃 유형 04</a></li>
+                            <li><a href="#">레이아웃 유형 05</a></li>
                         </ul>
                     </div>
                     <div>
                         <h3>메뉴 영역</h3>
                         <ul>
-                            <li><a href = "#">메뉴 영역1</a></li>
+                            <li><a href="#">메뉴 영역1</a></li>
                         </ul>
                     </div>
                     <div>
                         <h3>메인 영역</h3>
                         <ul>
-                            <li><a href = "#">이미지 유형 01</a></li>
-                            <li><a href = "#">동영상 유형 02</a></li>
-                            <li><a href = "#">슬라이드 유형 03</a></li>
+                            <li><a href="#">이미지 유형 01</a></li>
+                            <li><a href="#">동영상 유형 02</a></li>
+                            <li><a href="#">슬라이드 유형 03</a></li>
                         </ul>
                     </div>
                     <div>
                         <h3>컨텐츠 영역</h3>
                         <ul>
-                            <li><a href = "#">텍스트 유형 01</a></li>
-                            <li><a href = "#">이미지 유형 02</a></li>
-                            <li><a href = "#">이미지/텍스트 03</a></li>
-                            <li><a href = "#">카드 유형 04</a></li>
-                            <li><a href = "#">배너 유형 05</a></li>
+                            <li><a href="#">텍스트 유형 01</a></li>
+                            <li><a href="#">이미지 유형 02</a></li>
+                            <li><a href="#">이미지/텍스트 03</a></li>
+                            <li><a href="#">카드 유형 04</a></li>
+                            <li><a href="#">배너 유형 05</a></li>
                         </ul>
                     </div>
                     <div>
                         <h3>푸터 영역</h3>
                         <ul>
-                            <li><a href = "#">컨택트 유형 01</a></li>
-                            <li><a href = "#">푸터 영역 02</a></li>
+                            <li><a href="#">컨택트 유형 01</a></li>
+                            <li><a href="#">푸터 영역 02</a></li>
                         </ul>
                     </div>
                     <div>
                         <h3>사이트</h3>
                         <ul>
-                            <li><a href = "#">웹표준 사이트</a></li>
-                            <li><a href = "#">반응형 사이트</a></li>
-                            <li><a href = "#">패럴랙스 사이트</a></li>
-                            <li><a href = "#">포트폴리오 사이트</a></li>
+                            <li><a href="#">웹표준 사이트</a></li>
+                            <li><a href="#">반응형 사이트</a></li>
+                            <li><a href="#">패럴랙스 사이트</a></li>
+                            <li><a href="#">포트폴리오 사이트</a></li>
                         </ul>
                     </div>
-                   
+
                 </div>
-              
+
                 <address class="footer-rights">
                     &copy; 2022 jowunseop. All Rights reserved
                     <div class="footer-sns">
                         <ul>
-                            <li><a href = "#" class="ir_pm">페이스북</a></li>
-                            <li><a href = "#" class="ir_pm">인스타그램</a></li>
-                            <li><a href = "#" class="ir_pm">카카오톡</a></li>
-                            <li><a href = "#" class="ir_pm">블러그</a></li>
+                            <li><a href="#" class="ir_pm">페이스북</a></li>
+                            <li><a href="#" class="ir_pm">인스타그램</a></li>
+                            <li><a href="#" class="ir_pm">카카오톡</a></li>
+                            <li><a href="#" class="ir_pm">블러그</a></li>
                         </ul>
                     </div>
                 </address>
             </div>
         </footer>
     </div>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+            effect: 'slide',
+            // autoplay: {
+            //     delay: 3000,
+
+            // },
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
 </body>
 
 </html>
