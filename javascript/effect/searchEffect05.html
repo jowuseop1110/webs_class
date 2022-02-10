@@ -168,7 +168,7 @@
             .board .list li {
                 font-size: 14px;
             }
-
+            
         }
 
         /* option */
@@ -181,11 +181,29 @@
             margin: 3px;
             /* 효과 */
         }
-
+        .board .list li {
+            padding-right: 100px;
+            position: relative;
+        }
         .board .search span:hover {
             background: #223547;
             color: #fff;
             cursor: pointer;
+        }
+        .board .list li {
+            padding-right: 100px;
+            position: relative;
+        }
+        .board .list li span {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            font-size: 14px;
+            transform: translateY(-50%);
+        }
+        .board .list li span::before {
+            content: 'view : ';
+            text-transform: uppercase;
         }
     </style>
 </head>
@@ -210,10 +228,10 @@
             
             <!-- 검색 영역 -->
             <div class="search">
-                <span>조회수 10개 이상</span>
-                <span>조회수 20개 이상</span>
-                <span>조회수 30개 이상</span>
-                <span>조회수 40개 이상</span>
+                <span data-view="10">조회수 10개 이상</span>
+                <span data-view="20">조회수 20개 이상</span>
+                <span data-view="30">조회수 30개 이상</span>
+                <span data-view="40">조회수 40개 이상</span>
             </div>
 
             <!-- 전체 목록 갯수 -->
@@ -244,32 +262,59 @@
         const searchBox = document.querySelectorAll(".search span");
         const cssList = document.querySelector(".list ul");
         const cssCount = document.querySelector(".count em");
+        
+        // 목록 보여주기
+        function updataList(list){
+           listHtml = "";
+            for(const data of list){
+                listHtml += `<li>${data.name} : ${data.desc} <span>${data.view}</span></li>`;
+            }
+            cssList.innerHTML = listHtml;
+        }
+        updataList(cssProperty);
 
-        //각각의 버튼 클릭하면 경고창
+        // 버튼 클릭하기
         searchBox.forEach(span => {
             span.addEventListener("click", () => {
-                onClickButton();
+                // alert("ffd") 클릭했을때 확인
+                const target = span.dataset.view
+                // alert(target); 클릭할때마가 data.view 값을 가져옴
+                const filterList = cssProperty.filter(data => data.view >= target) //걸러준 값
+                // console.log(filterList)
+                updataList(filterList);
             })
         })
-        //변수(데이터저장+변경+추가+전역/지역)
-        //배열(순차적으로 여러개 데이터 저장)
-        //객체(데이터 저장(키와 값)) 
-        //함수(실행문 집합체, 재활용)
-        function onClickButton(){
-        }
+    //     //각각의 버튼 클릭하면 경고창
+    //     searchBox.forEach(span => {
+    //         span.addEventListener("click", (event) => {
+    //             onClickButton(event);
+    //         })
+    //     })
+    //     //변수(데이터저장+변경+추가+전역/지역)
+    //     //배열(순차적으로 여러개 데이터 저장)
+    //     //객체(데이터 저장(키와 값)) 
+    //     //함수(실행문 집합체, 재활용)
+    //         // 버튼을 클릭했을 때
+    //     function onClickButton(event){
+    //         // 클릭한 대상의 view값을 가져와서 경고창으로 보여주세요!!
+    //         const button = event.target; //사용자가 클릭한 버튼 타겟 설정
+    //         const tarketView = button.dataset.view; //클릭한 데이터값을 저장
+    //         const filterList = cssProperty.filter((data) => data.view >= tarketView)
+          
+    //         upDataList(filterList);
+    //     }
 
-       // CSS 리스트 출력하기
-        function upDataList(){
-            let list = "";
+    //    // CSS 리스트 출력하기
+    //     function upDataList(filterList){
+    //         let list = "";
 
-            for(let data of cssProperty){
-            list += `<li>${data.name} : ${data.desc} <sapn>${data.view}</sapn></li>`;
-            }
-  
-            cssList.innerHTML = list;
+    //         for(let data of filterList){
+    //         list += `<li>${data.name} : ${data.desc} <sapn>${data.view}</sapn></li>`;
+    //         }
+    //         cssList.innerHTML = list;
 
-        }      
-        upDataList();
+    //     }      
+    //     upDataList();
 
 
         
