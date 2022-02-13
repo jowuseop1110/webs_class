@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 만들기</title>
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+   <style>
+        /* 기본셋팅 */
+        :root {
+            font-style: 16px;
+            line-height: 1.53;
+        }
+
+        /* 여백 초기화 */
+        body,
+        div,
+        dl,
+        dt,
+        ul,
+        ol,
+        li,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        pre,
+        code,
+        form,
+        fieldset,
+        legend,
+        textarea,
+        p,
+        blockquote,
+        th,
+        td,
+        input,
+        select,
+        button,
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section,
+        figure,
+        figcaption {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 시멘트 태그 초기화 */
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section {
+            display: block;
+        }
+
+        /* 폰트 초기화 */
+        body,
+        button,
+        input,
+        select,
+        table,
+        textarea {
+            color: #222;
+            font-family: 'NexonLv1Gothic', 'AppleSDGothicNeo-Regular', 'Malgun Gothic', '맑은 고딕', dotum, 돋움;
+        }
+
+        /* 링크 초기화 */
+        a {
+            color: #222;
+            text-decoration: none;
+        }
+
+        /* 목록 초기화 */
+        ol,
+        ul,
+        li {
+            list-style: none;
+        }
+
+        /* 스타일 초기화 */
+        em,
+        address {
+            font-style: normal;
+        }
+
+        /* skip 메뉴 */
+        #skip {
+            position: relative;
+            z-index: 10000;
+        }
+
+        #skip a {
+            background: #000;
+            color: #fff;
+            position: absolute;
+            left: -400px;
+            top: 5px;
+            padding: 20px 40px;
+            display: inline-block;
+            transition: left 0.3s ease-in;
+        }
+
+        #skip a:active,
+        #skip a:focus {
+            left: 5px;
+        }
+
+        /* 클리어 픽스 */
+        .clearfix {
+            zoom: 1;
+        }
+
+        .clearfix::before,
+        .clearfix::after {
+            content: '';
+            display: block;
+        }
+
+        .clearfix::after {
+            clear: both;
+        }
+
+        /* ir 효과
+ir_pm : 의미 있는 이미지의 대체 텍스트를 제공하는 경우
+ir_wa : 의미 있는 이미지의 대체 텍스트로 이미지가 없어도 대체 텍스트를 보여주고 싶을 때
+ir_so : 대체 테스트가 아닌 접근성을 위한 숨김 텍스트를 제공할 때
+ */
+        .ir_pm {
+            display: block;
+            overflow: hidden;
+            font-size: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+
+        .ir_wa {
+            display: block;
+            overflow: hidden;
+            position: relative;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+        }
+
+        .ir_so {
+            overflow: hidden;
+            position: relative;
+            width: 0;
+            height: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+
+        #wrap {
+            width: 100%;
+            margin: 0 auto;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        #header {
+            margin-left: 50px;
+            height: 100px;
+            background: #fff;
+            display: flex;
+        }
+
+        #header .left {
+            width: 25%;
+            padding: 20px 0 35px 35px;
+            display: flex;
+        }
+
+        #header .left .svg {
+            width: 40px;
+            height: 40px;
+            margin-top: 10px;
+            background-image: url(img/sv.svg);
+            background-position: -149px -47px;
+        }
+
+        #header .left .em {
+            font-size: 40px;
+            font-weight: 500;
+        }
+
+
+        #header .center {
+            margin: 0 180px;
+            width: 50%;
+            padding: 30px 0;
+            font-size: 25px;
+            font-weight: 500;
+            display: flex;
+        }
+
+        #header .center .menu1 {
+         padding: 0 20px;
+        }
+
+        #header .center .menu2 {
+            padding: 0 20px;
+        }
+
+        #header .center .menu3 {
+            padding: 0 20px;
+        }
+
+        #header .center .menu4 {
+            padding: 0 20px;
+        }
+
+        #header .center .menu5 {
+            padding: 0 20px;
+        }
+
+        #header .right {
+            padding: 40px 24px;
+            width: 25%;
+            display: flex;
+       
+        }
+
+        #header .right .member {
+            margin-right: 24px;
+   
+            background-image: url(img/sv.svg);  
+            background-position: -200px -50px;
+        }
+
+        #header .right .pw {
+            margin-right: 24px;
+            background-image: url(img/sv.svg);  
+            background-position: -229px -50px;
+    
+        }
+
+        #header .right .pe {
+            background-image: url(img/sv.svg);  
+            background-position: -250px -50px;
+        }
+
+        #header .member {
+            width: 22px;
+            height: 19px;
+
+        }
+
+        #header .pw {
+            width: 21px;
+            height: 18px;
+       
+        }
+
+        #header .pe {
+            width: 22px;
+            height: 18px;
+         
+        }
+
+        #contetns {
+            margin-left: 50px;
+            height: 1000px;
+            background: url(img/image.png);
+            background-position: right bottom;
+            background-repeat: no-repeat;
+        }
+        #contetns .text1 {
+            padding: 120px 0 55px 35px;
+            font-size: 80px;
+            font-weight: 700;
+        }
+        #contetns .text2 {
+            padding: 0px 0px 55px 35px;
+            font-size: 18px;
+            font-weight: 500;
+            color: #72696a;
+        }
+        #contetns .text3 {           
+            display: inline-block;
+            padding: 35px 0 0 0;
+        }
+        #contetns .text3 .Qu {
+            padding: 21px 45px 21px 36px;
+            border: 1px solid #c4a586;
+            background: #c4a586;
+            color: #fff;
+            float: left;
+            font-size: 16px;
+            font-weight: 500;
+            margin-right: 26px;
+        }
+        #contetns .text3 .Vi {
+            padding: 20px 52px 20px 54px;
+            border: 2px solid #c4a586;
+            float: left;
+            font-size: 16px;
+            font-weight: 500;
+            color: #c4a586;
+        }
+        #banner {
+            height: 300px;
+      
+            /* font-family: 'Six Caps', sans-serif;
+            font-family: 'Nanum Gothic', sans-serif;
+            font-family: 'Nanum Brush Script', cursive; */
+        }
+        #banner .text {
+            display: inline-block;
+            padding: 120px 100px 0 100px;
+            font-size: 35px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            color: #c4a586;
+ 
+        }
+        #banner .text .stripe {
+           float: left;
+           margin-right: 98px;
+    
+        }
+        #banner .text .Google {
+            float: left;
+            font-weight: 500;
+            margin-right: 98px;
+        }
+        #banner .text .Deloitte {
+            float: left;
+            margin-right: 98px;
+        }
+        #banner .text .accenture {
+            float: left;
+            font-weight: 500;
+            margin-right: 98px;
+        }
+        #banner .text .IMB {
+            float: left;
+            margin-right: 98px;
+        }
+        #banner .text .SAMSUNG {
+            float: left;
+   
+        }
+        #cont1 {
+            height: 388px;
+            background: #666;
+        }
+
+        #cont2 {
+            height: 800px;
+            background: #777;
+        }
+
+        #footer {
+            height: 746px;
+            background: #888;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="left">
+                <div class="svg"></div>
+                <div class="em">MISTRIUM</div>
+            </div>
+            <div class="center">
+                <div class="menu1">home</div>
+                <div class="menu2">about</div>
+                <div class="menu3">products</div>
+                <div class="menu4">faqs</div>
+                <div class="menu5">contact</div>
+            </div>
+            <div class="right">
+                <div class="member"></div>
+                <div class="pw"></div>
+                <div class="pe"></div>
+            </div>
+        </div>
+        <div id="contetns">
+            <div class="text1">Modern Furniture For<br>
+            Modern Living Style</div>
+            <div class="text2"> In unfeeling existence objection immediate repulsive<br>
+                on he in. Imprudence comparison uncommonly me<br>
+                he difficulty diminution resolution. Likewise proposal<br>
+                differed scarcely dwelling as on raillery. <br>
+                <br>
+                September few dependent extremity own continued <br>
+                and ten prevailed attending. Early to weeks we could. <br> Do <br>
+                commanded an shameless we disposing do.<br>Indulgence ten <br>
+                remarkably nor are impression out. <br>
+                Power is lived means oh every in we quiet.<br>
+            <div class="text3">
+                <div class="Qu">
+                    Request a Quote
+                </div>
+                <div class="Vi">
+                    Watch Video
+                </div>
+            </div>
+        </div>
+        <div id="banner">
+            <div class="text">
+            <div class="stripe">stripe</div>
+            <div class="Google">Google</div>
+            <div class="Deloitte">Deloitte.</div>
+            <div class="accenture">accenture</div>
+            <div class="IMB">IMB</div>
+            <div class="SAMSUNG">SAMSUNG</div>
+        </div>
+        </div>
+        <div id="cont1"></div>
+        <div id="cont2"></div>
+        <div id="footer"></div>
+    </div>
+</body>
+
+</html>
