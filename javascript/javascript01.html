@@ -160,10 +160,23 @@
                 <h3>04.변수 : 지역 변수 + 전역 변수 + 매개변수</h3>
                 <div class="code">
                     <pre class="line-numbers"><code class="language-js">{
-    let x = 100;
-    let y = 200;
-    let z = "javascript";
+    let x = 100; // 전역변수
+    let y = 200; // 전역변수
 
+    function func() {
+        let x = 100; // 지역변수
+        let z = "javascript"; // 지역변수
+        x = 200; // 지역변수 100->200
+        y = 300; // 전역변수 200->300
+
+        document.write("함수 안");
+        document.write(x);
+        document.write(y);
+        document.write(z);
+    }
+    func();
+
+    document.write("함수 밖");
     document.write(x);
     document.write(y);
     document.write(z);
@@ -171,7 +184,16 @@
                 </div>
                 <div class="result">
                     <h4>결과보기</h4>
-                    <div class="result04"></div>
+                    <div>
+                        함수 안<br>
+                        200<br>
+                        300<br>
+                        javascript<br>
+                        함수 밖<br>
+                        100<br>
+                        300<br>
+                        오류
+                    </div>
                 </div>
             </div>
             <!-- /sample4 -->
@@ -516,23 +538,26 @@
 
         // 04. 변수(데이터 저장소)의 종류 : 지역변수, 전역변수
         {
-            let x = 100; //전역변수
-            let y = 200; //전역변수
+            let x = 100; // 전역변수
+    let y = 200; // 전역변수
 
-            function func() {
-                let a = "함수 안";
-                let b = "함수 밖";
+    function func() {
+        let x = 100; // 지역변수
+        let z = "javascript"; // 지역변수
+        x = 200; // 지역변수 100->200
+        y = 300; // 전역변수 200->300
 
-                let x = 100; //지역변수
-                let z = "javascript"; //지역변수
-                x = 200; //지역변수 100->200
-                y = 300; //전역변수 200->300      
+        document.write("함수 안");
+        document.write(x);
+        document.write(y);
+        document.write(z);
+    }
+    func();
 
-                document.querySelector(".result04").innerHTML = a + "<br>" + x + "<br>" + y + "<br>" + z + "<br>" + b +
-                    "<br>" + x + "<br>" + y + "<br>" + z;
-            }
-            func();
-
+    document.write("함수 밖");
+    document.write(x);
+    document.write(y);
+    document.write(z);   
         }
         //  05. 상수 : 데이터 저장 + 데이터 변경 불가
         {
