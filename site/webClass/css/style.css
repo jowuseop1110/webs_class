@@ -899,6 +899,7 @@
 }
 .member-targ .back ul li {
     position: relative;
+    margin-left: 10px;
 }
 .member-targ .back ul li::before{
     content: '';
