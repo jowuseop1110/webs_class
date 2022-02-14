@@ -3,6 +3,14 @@
     height: 20000px;
 }
 
+.gray {
+    background: #f5f5f5;
+}
+
+.white {
+    background: #fff !important;
+}
+
 /* 컨테이너 */
 .container {
     width: 1200px;
@@ -278,20 +286,22 @@
 .swiper {
     width: 100%;
     height: 600px;
-  }
- 
-  .swiper-slide.s1 {
-    background: url(../img/마운틴.jpg) no-repeat center / cover;
-  }
-  .swiper-slide.s2 {
-    background: url(../img/마운틴.jpg) no-repeat center / cover;
-  }
-  .swiper-slide.s3 {
-    background: url(../img/마운틴.jpg) no-repeat center / cover;
-  }
- 
+}
 
-  .slider-img .desc {
+.swiper-slide.s1 {
+    background: url(../img/마운틴.jpg) no-repeat center / cover;
+}
+
+.swiper-slide.s2 {
+    background: url(../img/마운틴.jpg) no-repeat center / cover;
+}
+
+.swiper-slide.s3 {
+    background: url(../img/마운틴.jpg) no-repeat center / cover;
+}
+
+
+.slider-img .desc {
     margin: 0 auto;
     max-width: 1200px;
     padding: 100px 0;
@@ -304,6 +314,7 @@
     padding: 100px 0;
     color: #fff;
 }
+
 .swiper .desc span {
 
     font-size: 18px;
@@ -336,6 +347,7 @@
     background: #000;
     color: #fff;
 }
+
 .swiper-button-prev {
     width: 27px;
     height: 56px;
@@ -343,18 +355,22 @@
     background-position: 0 -50px;
 
 }
+
 .swiper-button-prev::after {
     font-size: 0 !important;
 }
+
 .swiper-button-next {
     width: 27px;
     height: 56px;
     background: url(../img/bg.svg);
     background-position: -23px -50px;
 }
+
 .swiper-button-next::after {
     font-size: 0 !important;
 }
+
 /* 웹 사이트에서 이미지를 표현하는 방법 
     1. HTML 태그를 통해서 : img태그 : 의미가 있는 이미지(로고, 메뉴) --> alt(대체문자)
     2. CSS 속성을 통해서 : background 속성 : 의미가 없는 이미지(배경, 색표현) -->ir효과(대체 문자를 CSS속성으로 표현)
@@ -822,4 +838,76 @@
 
 .footer-sns li:nth-child(4) a {
     background-position: -150px 0;
+}
+
+/* 회원가입 */
+.join-type {
+    padding: 200px 0;
+}
+
+.member-form {
+    max-width: 665px;
+    height: 800px;
+    border: 1px solid #dedede;
+    background: #fff;
+    margin: 0px auto;
+    padding: 50px;
+}
+
+.member-form h3 {
+    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.member-form .list li {
+    font-size: 14px;
+    line-height: 1.6;
+    position: relative;
+    padding-left: 10px;
+}
+
+.member-form .list li::before {
+    content: '';
+    width: 3px;
+    height: 3px;
+    background: #000;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 7px;
+
+}
+.member-targ {
+    margin-top: 30px;
+}
+.member-targ h4 {
+    font-weight: 500;
+    width: 238px;
+    border-bottom: 1px solid #000;
+    font-size: 16px;
+}
+.member-targ .back {
+    margin-top: 10px;
+    height: 170px;
+    font-size: 14px;
+    background: #f5f5f5;
+}
+.member-targ .back ul {
+    display: inline-block;
+    margin: 20px;
+}
+.member-targ .back ul li {
+    position: relative;
+}
+.member-targ .back ul li::before{
+    content: '';
+    width: 3px;
+    height: 3px;
+    background: #000;
+    border-radius: 50%;
+    position: absolute;
+    left: -10px;
+    top: 7px;
+
 }
