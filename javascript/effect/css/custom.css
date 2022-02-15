@@ -1,0 +1,394 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'NexonLv1Gothic';
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.2s;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    vertical-align: top;
+    /*이미지 여백 제거*/
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background: url(img/effectimg01.jpg);
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+    /*사진 넘어가는거 차단*/
+    color: #fff;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(168, 130, 130, 0.5);
+    z-index: -1;
+}
+
+.title {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+.title h1 {
+    font-size: 34px;
+    border-bottom: 1px dashed #fff;
+    margin-bottom: 8px;
+    padding-bottom: 5px;
+    font-weight: 500;
+}
+
+.title p {
+    font-size: 18px;
+}
+
+.number {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.number li {
+    display: inline;
+}
+
+.number li a {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px dashed #fff;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+
+.number li :active a,
+.number li a:hover {
+    background: #fff;
+    color: #000;
+}
+
+.source {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+.source button {
+    border: 1px dashed #fff;
+    background: transparent;
+    font-family: 'NexonLv1Gothic';
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 30px;
+    border-radius: 50px;
+    transition: all 0.4s;
+    /* hover 했을때: 0.4초 효과 */
+    cursor: pointer;
+}
+
+.source button:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* modal */
+#modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    /* display: none; 애니메이션을 줄수 없음*/
+    transform: scaleY(0);
+    /*사라짐*/
+    /* transition: all 0.3s ease; */
+
+}
+
+/* 애니메이션 */
+#modal.show {
+    /* display: block; 애니메이션을 줄수 없음 */
+    animation: foldOut 1s ease forwards;
+    /* animation-fill-mode: forwards; */
+}
+
+#modal.show.hide {
+    animation: foldIn 0.5s ease backwards;
+}
+
+@keyframes foldOut {
+
+    /*애니메이션 효과*/
+    0% {
+        transform: scaleX(0) scaleY(0.005)
+    }
+
+    50% {
+        transform: scaleX(1) scaleY(0.005)
+    }
+
+    100% {
+        transform: scaleX(1) scaleY(1)
+    }
+}
+
+@keyframes foldIn {
+
+    /*애니메이션 효과*/
+    0% {
+        transform: scaleX(0) scaleY(1)
+    }
+
+    50% {
+        transform: scaleX(1) scaleY(0.005)
+    }
+
+    100% {
+        transform: scaleX(1) scaleY(0.005)
+    }
+}
+
+.modal-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    transform: scale(0);
+    /* 백그라운드 가운데로 오는법 */
+}
+
+#modal.show .modal-wrap {
+    animation: zoomOut 0.5s 1s ease forwards;
+}
+
+#modal.show.hide .modal-wrap {
+    animation: zoomIn 0.5s ease forwards;
+}
+
+.modal-close {
+    margin-top: 10px;
+}
+
+@keyframes zoomOut {
+
+    /*애니메이션 효과*/
+    0% {
+        transform: scale(0)
+    }
+
+    100% {
+        transform: scale(1)
+    }
+}
+
+@keyframes zoomIn {
+
+    /*애니메이션 효과*/
+    0% {
+        transform: scale(1)
+    }
+
+    100% {
+        transform: scale(0)
+    }
+}
+
+.modal-cont {
+    position: relative;
+    opacity: 1;
+    /*0: 디스플레이에서 사라지게함 1: 디스플레이에서 나타남*/
+}
+
+.code-view {
+    width: 60vw;
+    height: 60vh;
+    background: #fff;
+    border: 1px solid #f2f2f2;
+    border-radius: 5px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.code-view::-webkit-scrollbar {
+    width: 7px;
+    /*스크롤바의 너비*/
+}
+
+.code-view::-webkit-scrollbar-thumb {
+    background-color: black;
+    /*스크롤바의 색상*/
+}
+
+.code-view::-webkit-scrollbar-track {
+    background-color: #ffdddd;
+    /*스크롤바 트랙 색상*/
+}
+
+.code-view::-webkit-scrollbar-corner {
+    background-color: #ffdddd;
+}
+
+.code-view .view-header {
+    padding: 5px 0 7px 10px;
+    border-bottom: 1px solid #e3e8f0;
+
+
+}
+
+.code-view .view-header>span {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+.code-view .view-header>span:nth-child(1) {
+    background-color: #f56565;
+}
+
+.code-view .view-header>span:nth-child(2) {
+    background-color: #f6205e;
+}
+
+.code-view .view-header>span:nth-child(3) {
+    background-color: #4ebb7b;
+}
+
+.code-view .view-tilte {
+    border-bottom: 1px solid #eee;
+    padding: 9px 0px 7px;
+    height: 38px;
+}
+
+.code-view .view-tilte ul li {
+    display: inline;
+}
+
+.code-view .view-tilte ul li a {
+    color: rgb(185, 185, 185);
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 10px 15px 8px 15px;
+    margin: 2px 0 0 0;
+}
+
+.code-view .view-tilte ul li.active a {
+    color: #000;
+    border-bottom: 2px solid #f56565;
+    background: #ffdddd;
+}
+
+.code-view .view-cont {
+    background-color: #ece1e1;
+    height: 100%;
+    background: #fff;
+
+}
+
+.code-view .view-cont>div {
+    display: none;
+}
+
+.code-view .view-cont>div:first-child {
+    display: block;
+}
+
+.code-view .view-cont pre code.hljs {
+    line-height: 1.6;
+}
+
+.slider__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* 이미지 가운데 오게 하는거 */
+    height: 100vh;
+}
+
+.slider__img {
+    position: relative;
+    width: 800px;
+    height: 480px;
+}
+
+.slider {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.slider::before {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    padding: 5px 10px 3px;
+}
+
+.slider:nth-child(1)::before {
+    content: '이미지1';
+}
+
+.slider:nth-child(2)::before {
+    content: '이미지2';
+}
+
+.slider:nth-child(3)::before {
+    content: '이미지3';
+}
+
+.slider:nth-child(4)::before {
+    content: '이미지4';
+}
+
+.slider:nth-child(5)::before {
+    content: '이미지5';
+}
+
+.slider:nth-child(1) {
+    z-index: 5;
+}
+
+.slider:nth-child(2) {
+    z-index: 4;
+}
+
+.slider:nth-child(3) {
+    z-index: 3;
+}
+
+.slider:nth-child(4) {
+    z-index: 2;
+}
+
+.slider:nth-child(5) {
+    z-index: 1;
+}
