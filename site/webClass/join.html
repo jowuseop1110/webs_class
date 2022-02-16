@@ -79,7 +79,7 @@
                     </ul>
                     <div class="member-targ">
                         <h4>개인정보 수집 및 이용에 대한 안내</h4>
-                        <div class="back">
+                        <div class="back mb50">
                             <ul>
                                 <li>목적 : 가입자 개인 식별, 가입 의사 확인, 가입자와의 원활한 의사소통, 가
                                     입자와의 교육 커뮤니테이션</li>
@@ -90,6 +90,38 @@
                             </ul>
                         </div>
                     </div>
+                    <form action="@" name="join" method="post">
+                        <fieldset>
+                            <legend class="ir_so">회원가입 입력폼</legend>
+                            <div class="join-box">
+                                <div>
+                                    <label for="youEmail">이메일</label>
+                                    <input type="email" id="youEmail" name="youEmail" maxlength="20" placeholder="Sample@naver.com" autocomplete="off" autofocus required>
+                                </div>
+                                <div>
+                                    <label for="youPass">비밀번호</label>
+                                    <input type="password" id="youPass" name="youPass"  placeholder="비밀번호를 적어주세요!" autocomplete="off" required>
+                                </div>
+                                <div>
+                                    <label for="youPassC">비밀번호 확인</label>
+                                    <input type="password" id="youPassC" name="youPassC" maxlength="20" placeholder="비밀번호를 적어주세요!" autocomplete="off" required>
+                                </div>
+                                <div>
+                                    <label for="youName">이름</label>
+                                    <input type="text" id="youName" name="youName"  placeholder="이름을 적어주세요" autocomplete="off" required>
+                                </div>
+                                <div>
+                                    <label for="youBirth">생년월일</label>
+                                    <input type="text" id="youBirth" name="youBirth" maxlength="12"  placeholder="YYYY-MM-DD" autocomplete="off" required>
+                                </div>
+                                <div>
+                                    <label for="youPhon">휴대폰 번호</label>
+                                    <input type="text" id="youPhon"name="youPhon"  maxlength="15" placeholder="000-0000-0000" autocomplete="off" required>
+                                </div>
+                            </div>
+                            <button id="joinBtn" class="join-submint" type="submint">회원가입 완료</button>
+                        </fieldset>
+                    </form>
                 </div>
             </section>
         </main>
