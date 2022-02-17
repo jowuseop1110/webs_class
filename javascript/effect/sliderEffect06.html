@@ -371,20 +371,20 @@
 
         function gotoslider(num) { //gotoslider라는 함수를 만듬 여기서 num은 매개변수
             sliderInner.style.transition = "all 400ms"; //(sliderInner)에게 (style)스타일을 부여한다(transition = "all 400ms") 움직일때 0.4초라는 시간이 걸려라 라는 스타일
-            sliderInner.style.transform = "translateX(" + -sliderWidth * num + "px)";
+            sliderInner.style.transform = "translateX(" + -sliderWidth * num + "px)"; //css에 sliderWidth값을 800px이라고 저장해놨음 (-sliderWidth)-800px * (num)num에 오는 숫자만큼 곱해주겠다.
             // currentIndex--;
             // currentIndex--;
             // ↓
-            currentIndex = num;
+            currentIndex = num; //  currentIndex = 0; 에 num을 대입
 
-            dotActive = document.querySelectorAll(".slider__dot .dot");
-            dotActive.forEach(el => {
+            dotActive = document.querySelectorAll(".slider__dot .dot"); //변수 선언만 해준 dotActive에 .slider__dot .dot("<a href='#'class='dot'></a>" *5)를 대입한다
+            dotActive.forEach(el => { //dotActive 저장되어 있는 "<a href='#'class='dot'></a>" *5 에서 활성화 되어 있는 active 를 (remove) 삭제 해준다
                 el.classList.remove("active");
             })
-            dotActive[num].classList.add("active");
+            dotActive[num].classList.add("active");             //acyive가 삭제되어 있는dotActive에서 (num 숫자) num에 숫자가 붙은 있는 dotActive에 active를 넣어준다
 
         }
-        document.querySelectorAll(".slider__btn a").forEach((btn, index) => {
+        document.querySelectorAll(".slider__btn a").forEach((btn, index) => {      // slider__btn a를 전체 선택하여
             btn.addEventListener("click", () => {
                 let prevIndex = (currentIndex + (sliderCount - 1)) % sliderCount;
                 let nextIndex = (currentIndex + 1) % sliderCount;
