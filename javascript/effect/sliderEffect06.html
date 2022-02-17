@@ -122,13 +122,58 @@
             content: '이미지5';
         }
 
-        .slider:nth-child(6)::before {
-            content: '이미지1';
+        .slider__btn a {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 0, 0, 0.4);
+            text-align: center;
+            line-height: 50px;
+            transition: all 0.2s;
+            display: block;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .slider__btn a.prev {
+            left: 0;
+        }
+
+        .slider__btn a.next {
+            right: 0;
+        }
+
+        .slider__btn a:hover {
+            background: rgb(241, 96, 86);
+        }
+
+        .slider__dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 20px;
+        }
+
+        .slider__dot .dot {
+            width: 20px;
+            height: 20px;
+            background: rgba(0, 0, 0, 0.4);
+            display: inline-block;
+            border-radius: 50%;
+            transition: all 0.3s;
+            margin: 3px;
+        }
+
+        .slider__dot .dot.active {
+            background: rgba(255, 255, 255, 0.9)
         }
     </style>
 </head>
 
-<body class="img03">
+<body class="img06">
     <!-- main -->
     <main>
         <section id="sliderType03">
@@ -136,12 +181,23 @@
                 <div class="slider__img">
                     <div class="slider__inner">
                         <!-- slider*5>img[src="img/img$$.jpg" alt="이미지$"] -->
-                        <div class="slider"><img src="img/effectimg02.jpg" alt="이미지1"></div>
-                        <div class="slider"><img src="img/effectimg03.jpg" alt="이미지2"></div>
-                        <div class="slider"><img src="img/effectimg04.jpg" alt="이미지3"></div>
-                        <div class="slider"><img src="img/effectimg05.jpg" alt="이미지4"></div>
-                        <div class="slider"><img src="img/effectimg06.jpg" alt="이미지5"></div>
+                        <div class="slider"><img src="img/effectimg01.jpg" alt="이미지1"></div>
+                        <div class="slider"><img src="img/effectimg02.jpg" alt="이미지2"></div>
+                        <div class="slider"><img src="img/effectimg03.jpg" alt="이미지3"></div>
+                        <div class="slider"><img src="img/effectimg04.jpg" alt="이미지4"></div>
+                        <div class="slider"><img src="img/effectimg05.jpg" alt="이미지5"></div>
                     </div>
+                </div>
+                <div class="slider__btn">
+                    <a href="#" class="prev">prev</a>
+                    <a href="#" class="next">next</a>
+                </div>
+                <div class="slider__dot">
+                    <!-- <a href="#" class="dot active"></a>
+                    <a href="#" class="dot"></a>
+                    <a href="#" class="dot"></a>
+                    <a href="#" class="dot"></a>
+                    <a href="#" class="dot"></a> -->
                 </div>
             </div>
         </section>
@@ -150,17 +206,17 @@
     <!-- info -->
     <div class="info">
         <div class="title">
-            <h1><a href="slidersample.html">Javascript Slider Effect03</a></h1>
-            <p>이미지 슬라이드 - 연속으로 움직이기</p>
+            <h1><a href="slidersample.html">Javascript Slider Effect05</a></h1>
+            <p>이미지 슬라이드 - 버튼 추가, 닷 버튼 추가</p>
         </div>
         <div class="number">
             <ul>
                 <li><a href="sliderEffect01.html">1</a></li>
                 <li><a href="sliderEffect02.html">2</a></li>
-                <li class="active"><a href="sliderEffect03.html">3</a></li>
+                <li><a href="sliderEffect03.html">3</a></li>
                 <li><a href="sliderEffect04.html">4</a></li>
                 <li><a href="sliderEffect05.html">5</a></li>
-                <li><a href="sliderEffect06.html">6</a></li>
+                <li class="active"><a href="sliderEffect06.html">6</a></li>
                 <li><a href="sliderEffect07.html">7</a></li>
                 <li><a href="sliderEffect08.html">8</a></li>
             </ul>
@@ -198,33 +254,66 @@
                                 </div>
                                 <div>
                                     <pre><code class="language-javascript">highlight();
+    highlight();
     modal();
     tabMenu();
 
     const sliderWrap = document.querySelector(".slider__wrap")
-    const sliderImg = document.querySelector(".slider__img") 
+    const sliderImg = document.querySelector(".slider__img")
     const sliderInner = document.querySelector(".slider__inner")
     const slider = document.querySelectorAll(".slider")
+    const sliderBtn = document.querySelector(".slider__btn");
+    const sliderDot = document.querySelector(".slider__dot");
 
     let currentIndex = 0;
-    let sliderCount = slider.length;               
-    let sliderWidth = sliderImg.offsetWidth    
-    let sliderClone = sliderInner.firstElementChild.cloneNode(true);       
-    sliderInner.appendChild(sliderClone);      
-    function sliderEffect(){         
-        currentIndex++;                
-        sliderInner.style.transition = "all 0.3s"     
-        sliderInner.style.transform = "translateX(-"+ sliderWidth * currentIndex +"px)" // sliderInner에 transform 효과
-    
-        if(currentIndex==sliderCount){    
-            setTimeout(()=>{              
-            sliderInner.style.transition = "0s"
-            sliderInner.style.transform = "translateX(0)"
-            }, 300)
-            currentIndex=0;
-        }
+    let sliderCount = slider.length;
+    let sliderWidth = sliderImg.offsetWidth;
+    let dotIndex = "";
+    let dotActive;
+
+    function init() { 
+                    
+        slider.forEach(() => {   
+            dotIndex += "&lt;a href='#'class='dot'&gt;&lt;/a&gt;";
+        });
+        sliderDot.innerHTML = dotIndex;
+        
+        sliderDot.firstElementChild.classList.add("active");
     }
-    setInterval(sliderEffect, 2000);
+    init();
+
+    function gotoslider(num) {
+        sliderInner.style.transition = "all 400ms";
+        sliderInner.style.transform = "translateX(" + -sliderWidth * num + "px)";
+        
+        currentIndex = num;
+
+        dotActive = document.querySelectorAll(".slider__dot .dot");
+        dotActive.forEach(el => {
+            el.classList.remove("active");
+        })
+        dotActive[num].classList.add("active");
+
+    }
+    document.querySelectorAll(".slider__btn a").forEach((btn, index) => {
+        btn.addEventListener("click", () => {
+            let prevIndex = (currentIndex + (sliderCount - 1)) % sliderCount;
+            let nextIndex = (currentIndex + 1) % sliderCount;
+
+
+            if (btn.classList.contains("prev")) {
+                gotoslider(prevIndex)
+
+            } else {
+                gotoslider(nextIndex)
+            };
+        });
+    });
+    document.querySelectorAll(".slider__dot .dot").forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+            gotoslider(index);
+        });
+    });
 </code></pre>
                                 </div>
                                 <div>
@@ -258,28 +347,62 @@
         const sliderImg = document.querySelector(".slider__img") //이미지 보이는 영역
         const sliderInner = document.querySelector(".slider__inner") //이미지 움직이는 영역
         const slider = document.querySelectorAll(".slider") //5개의 이미지 저장
+        const sliderBtn = document.querySelector(".slider__btn");
+        const sliderDot = document.querySelector(".slider__dot");
 
-        // console.log(slider)
+
         let currentIndex = 0;
-        let sliderCount = slider.length; // 이미지 갯수
-        let sliderWidth = sliderImg.offsetWidth // sliderImg의 width 값 가져오기
-        let sliderClone = sliderInner.firstElementChild.cloneNode(true); // 첫 번째 이미지 복사
-        sliderInner.appendChild(sliderClone); // 첫 번째 이미지를 마지막에 넣어줌
-        function sliderEffect() { // sliderEffect 함수를 만든다.
-            currentIndex++; // currentIndex를 1씩 증가시킴
-            sliderInner.style.transition = "all 0.3s" // sliderInner에 transition 효과
-            sliderInner.style.transform = "translateX(-" + sliderWidth * currentIndex +
-                "px)" // sliderInner에 transform 효과
-            // 마지막 사진에 갔을 때
-            if (currentIndex == sliderCount) { // currentIndex값이 sliderCount 가 되면
-                setTimeout(() => { // 일정 시간이 지난 후에 함수 실행
-                    sliderInner.style.transition = "0s"
-                    sliderInner.style.transform = "translateX(0)"
-                }, 300)
-                currentIndex = 0;
-            }
+        let sliderCount = slider.length;
+        let sliderWidth = sliderImg.offsetWidth;
+        let dotIndex = "";  //빈칸 "<a href='#'class='dot'></a>" *5
+        let dotActive;
+
+        function init() { //init이라는 함수를 만듬
+            // 이미지 갯수만큼 <a></a>
+            // dotIndex += 
+            slider.forEach(() => {    //slider에있는 이미지 갯수만큼
+                dotIndex += "<a href='#'class='dot'></a>"; //dotIndex(빈칸)에 "<a href='#'class='dot'></a>" 추가
+            });
+            sliderDot.innerHTML = dotIndex; //dotIndex(빈칸)에  "<a href='#'class='dot'></a>"를 전송하고 sliderDot에 innerHTML로 출력
+            //첫 번째 닷 버튼한테 활성화 표시(active)
+            sliderDot.firstElementChild.classList.add("active"); //sliderDot에 있는 "<a href='#'class='dot'></a>" *5 중 (firstElementChild)가장 첫번째 자식에게 (add) 추가한다 active를
         }
-        setInterval(sliderEffect, 2000);
+        init();
+
+        function gotoslider(num) { //gotoslider라는 함수를 만듬 여기서 num은 매개변수
+            sliderInner.style.transition = "all 400ms"; //(sliderInner)에게 (style)스타일을 부여한다(transition = "all 400ms") 움직일때 0.4초라는 시간이 걸려라 라는 스타일
+            sliderInner.style.transform = "translateX(" + -sliderWidth * num + "px)";
+            // currentIndex--;
+            // currentIndex--;
+            // ↓
+            currentIndex = num;
+
+            dotActive = document.querySelectorAll(".slider__dot .dot");
+            dotActive.forEach(el => {
+                el.classList.remove("active");
+            })
+            dotActive[num].classList.add("active");
+
+        }
+        document.querySelectorAll(".slider__btn a").forEach((btn, index) => {
+            btn.addEventListener("click", () => {
+                let prevIndex = (currentIndex + (sliderCount - 1)) % sliderCount;
+                let nextIndex = (currentIndex + 1) % sliderCount;
+
+
+                if (btn.classList.contains("prev")) {
+                    gotoslider(prevIndex)
+
+                } else {
+                    gotoslider(nextIndex)
+                };
+            });
+        });
+        document.querySelectorAll(".slider__dot .dot").forEach((dot, index) => {
+            dot.addEventListener("click", () => {
+                gotoslider(index);
+            });
+        });
     </script>
 
 
