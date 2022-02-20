@@ -19,10 +19,9 @@ const modal = function () {
     })
 }
 // modal();
+
+
 //tabmenu
-
-
-
 const tabMenu = function () {
     const tabBtn = document.querySelectorAll(".view-tilte > ul > li");
     const tabCont = document.querySelectorAll(".view-cont > div");

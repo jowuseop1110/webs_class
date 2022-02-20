@@ -61,7 +61,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        height: 70px;
+        height: 69px;
         padding: 10px;
         z-index: 10;
     }
@@ -70,8 +70,8 @@
         content: '';
         border: 4px ridge #a3a3a3;
         position: absolute;
-        left: 5px;
-        top: 5px;
+        left: 1px;
+        top: 1px;
         width: calc(100% - 10px);
         height: calc(100% - 10px);
         z-index: -1;
@@ -157,7 +157,7 @@
         text-align: center;
         color: #fff;
         background-color: #f5534f;
-        /* opacity: 0; */
+        opacity: 0;
     }
 
     .quiz__view .false {
@@ -172,7 +172,7 @@
         line-height: 120px;
         text-align: center;
         color: #f5534f;
-        /* opacity: 0; */
+        opacity: 0;
     }
 
     .quiz__type {
@@ -272,6 +272,267 @@
         text-shadow: 1px 1px 1px #fff;
         margin-bottom: 10px;
     }
+
+    /* 윈도우98 */
+    .quiz_source {
+        position: relative
+    }
+
+    .source_btn {
+        border: 6px ridge #c5c5c5;
+        font-size: 25px;
+        padding: 7px 20px;
+        background: #cacaca;
+        position: absolute;
+        right: 20px;
+        top: -10px;
+    }
+
+    .source_btn:hover {
+        background: #aaaaaa;
+        cursor: pointer;
+    }
+
+    .window {
+        min-width: 360px;
+        min-height: 500px;
+        background-color: #c7c7c7;
+        padding: 4px;
+        border-left: 2px solid #FCFCFC;
+        border-top: 2px solid #FCFCFC;
+        border-right: 2px solid #2A2A2A;
+        border-bottom: 2px solid #2A2A2A;
+    }
+
+    .title-bar {
+        background-color: #000080;
+        padding: 4px;
+        height: 30px;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .title-bar>.minimize,
+    .title-bar>.maximize,
+    .title-bar>.close {
+        width: 26px;
+        height: 22px;
+        background-color: #c7c7c7;
+        margin-left: 4px;
+        border-left: 2px solid #FCFCFC;
+        border-top: 2px solid #FCFCFC;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .title-bar>.minimize:hover,
+    .title-bar>.maximize:hover,
+    .title-bar>.close:hover {
+        background-color: #bababa;
+        border-left: 2px solid #2A2A2A;
+        border-top: 2px solid #2A2A2A;
+        border-right: 2px solid #FCFCFC;
+        border-bottom: 2px solid #FCFCFC;
+    }
+
+    .title-bar>.minimize {
+        align-items: flex-end;
+    }
+
+    .title-bar>.minimize>.symbol {
+        width: 60%;
+        height: 3px;
+        background-color: #000000;
+        margin-bottom: 2px;
+    }
+
+    .title-bar>.maximize>.symbol {
+        width: 70%;
+        height: 80%;
+        border: 2px solid #000000;
+        border-top-width: 4px;
+    }
+
+    .title-bar>.close>.symbol {
+        width: 70%;
+        height: 3px;
+        background-color: #000000;
+        transform: rotate(45deg);
+    }
+
+    .title-bar>.close>.symbol::after {
+        content: "";
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: #000000;
+        transform: rotate(90deg);
+    }
+
+    .menu-bar>span {
+        padding: 8px;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .menu-bar>span::first-letter {
+        text-decoration: underline;
+    }
+
+    .menu-bar>span:hover {
+        background-color: #bababa;
+    }
+
+    .content-container {
+        border-left: 2px solid #2A2A2A;
+        border-top: 2px solid #2A2A2A;
+        border-right: 2px solid #FCFCFC;
+        border-bottom: 2px solid #FCFCFC;
+    }
+
+    .content-container>.content {
+        display: flex;
+        height: 400px;
+    }
+
+    .content-container>.content>.main,
+    .content-container>.content>.scroll-left {
+        height: 100%;
+    }
+
+    .menu-bar>span.active {
+        background: #a1a1a1;
+    }
+
+    .main {
+        width: 80vh;
+        height: 60vh;
+        background: #fff;
+        border: 1px solid #f2f2f2;
+        border-radius: 5px;
+        overflow: scroll;
+        overflow-x: hidden;
+    }
+
+    /* //윈도우98 */
+
+    /* 애니메이션 효과 */
+    #source {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1000;
+        /* display: none; 애니메이션을 줄수 없음*/
+        transform: scaleY(0);
+        /*사라짐*/
+        /* transition: all 0.3s ease; */
+
+    }
+
+    /* 애니메이션 */
+    #source.show {
+        /* display: block; 애니메이션을 줄수 없음 */
+        animation: foldOut 1s ease forwards;
+        /* animation-fill-mode: forwards; */
+    }
+
+    #source.show.hide {
+        animation: foldIn 1s ease backwards;
+    }
+
+    @keyframes foldOut {
+
+        /*애니메이션 효과*/
+        0% {
+            transform: scaleX(0) scaleY(0.005)
+        }
+
+        50% {
+            transform: scaleX(1) scaleY(0.005)
+        }
+
+        100% {
+            transform: scaleX(1) scaleY(1)
+        }
+    }
+
+    @keyframes foldIn {
+
+        /*애니메이션 효과*/
+        0% {
+            transform: scaleX(1) scaleY(1)
+        }
+
+        50% {
+            transform: scaleX(1) scaleY(0.005)
+        }
+
+        100% {
+            transform: scaleX(0) scaleY(0.005)
+        }
+    }
+
+    .source_wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 100vh;
+        transform: scale(0);
+        /* 백그라운드 가운데로 오는법 */
+    }
+
+    #source.show .source_wrap {
+        animation: zoomOut 0.5s 1s ease forwards;
+    }
+
+    #source.show.hide .source_wrap-wrap {
+        animation: zoomIn 0.5s ease forwards;
+    }
+
+
+
+    @keyframes zoomOut {
+
+        /*애니메이션 효과*/
+        0% {
+            transform: scale(0)
+        }
+
+        100% {
+            transform: scale(1)
+        }
+    }
+
+    @keyframes zoomIn {
+
+        /*애니메이션 효과*/
+        0% {
+            transform: scale(1)
+        }
+
+        100% {
+            transform: scale(0)
+        }
+    }
+
+    .source_cont {
+        position: relative;
+        opacity: 1;
+        /*0: 디스플레이에서 사라지게함 1: 디스플레이에서 나타남*/
+    }
+
+    /* //애니메이션 효과 */
+
 
 
     /* dog */
@@ -744,7 +1005,345 @@
                 </div>
             </div>
         </div>
-        <div class="quiz_source"></div>
+        <div class="quiz_source">
+            <button class="source_btn">소스보기</button>
+            <div id="source">
+                <div class="source_wrap">
+                    <div class="source_cont">
+                        <!-- 윈도우98 -->
+                        <div class="window">
+                            <div class="title-bar">
+                                <div class="minimize">
+                                    <div class="symbol"></div>
+                                </div>
+                                <div class="maximize">
+                                    <div class="symbol"></div>
+                                </div>
+                                <div class="close">
+                                    <div class="symbol"></div>
+                                </div>
+                            </div>
+                            <div class="menu-bar">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>javacript</span>
+                                <span>Jquery</span>
+                            </div>
+                            <div class="content-container">
+                                <div class="content">
+                                    <div class="main">
+                                        <!-- 윈도우98화면 -->
+                                        <!-- HTML -->
+                                        <div>
+                                            <pre><code class="language-javascript">
+    &lt;div class="quiz__wrap"&gt;
+        &lt;div class="quiz"&gt;
+            &lt;h2 class="quiz__type"&gt;&lt;/h2&gt;
+            &lt;h3 class="quiz__question"&gt;
+                &lt;span class="quiz__number"&gt;&lt;/span&gt;
+                &lt;span class="quiz__ask"&gt;&lt;/span&gt;
+            &lt;/h3&gt;
+            &lt;div class="quiz__view"&gt;
+                &lt;div class="true"&gt;정답입니다!&lt;/div&gt;
+                &lt;div class="false"&gt;틀렸습니다!&lt;/div&gt;
+                &lt;div class="dog"&gt;
+                    &lt;div class="dog"&gt;
+                        &lt;div class="head"&gt;
+                            &lt;div class="ears"&gt;&lt;/div&gt;
+                            &lt;div class="face"&gt;&lt;/div&gt;
+                            &lt;div class="eyes"&gt;
+                                &lt;div class="teardrop"&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class="nose"&gt;&lt;/div&gt;
+                            &lt;div class="mouth"&gt;
+                                &lt;div class="tongue"&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class="chin"&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class="body"&gt;
+                            &lt;div class="tail"&gt;&lt;/div&gt;
+                            &lt;div class="legs"&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="quiz__answer"&gt;
+                &lt;input class="quiz__input" type="text" placeholder="정답을 적어주세요"&gt;&lt;/input&gt;
+                &lt;button class="quiz__confirm"&gt;정답 확인하기&lt;/button&gt;
+                &lt;div class="quiz__result"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+</code></pre>
+                                        </div>
+                                        <!-- CSS -->
+                                        <div>
+                                            <pre><code class="language-javascript">
+    .quiz__wrap {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        /*df, acc, jcc백가라운드 가운데 오는 방법*/
+        margin-top: 150px;
+    }
+
+    .quiz {
+        max-width: 500px;
+        width: 100%;
+        background: #fff;
+        border: 8px ridge #cacaca;
+        margin: 10px;
+    }
+
+    .quiz__view {
+        position: relative;
+        background: #f5f5f5;
+    }
+
+    .quiz__view .true {
+        position: absolute;
+        left: 70%;
+        top: 100px;
+        width: 120px;
+        height: 120px;
+        background: #fff;
+        border-radius: 50%;
+        z-index: 100;
+        line-height: 120px;
+        text-align: center;
+        color: #fff;
+        background-color: #f5534f;
+        opacity: 0;
+    }
+
+    .quiz__view .false {
+        position: absolute;
+        right: 70%;
+        top: 100px;
+        width: 120px;
+        height: 1\20px;
+        background: #fff;
+        border-radius: 50%;
+        z-index: 100;
+        line-height: 120px;
+        text-align: center;
+        color: #f5534f;
+        opacity: 0;
+    }
+
+    .quiz__type {
+        background: #cacaca;
+        text-align: center;
+        font-size: 14px;
+        color: #3b3b3b;
+        border: 3px ridge #cacaca;
+        padding: 3px 0;
+        position: relative;
+    }
+
+    .quiz__type::before {
+        content: '';
+        position: absolute;
+        left: 2px;
+        top: 2px;
+        width: 5px;
+        height: 5px;
+        border: 6px ridge #8f8f8f;
+    }
+
+    .quiz__type::after {
+        content: '';
+        position: absolute;
+        right: 2px;
+        top: 2px;
+        width: 5px;
+        height: 5px;
+        border: 6px ridge #8f8f8f;
+    }
+
+    .quiz__question {
+        border-top: 6px ridge #cacaca;
+        border-bottom: 6px ridge #cacaca;
+        padding: 13px 30px;
+        font-size: 24px;
+        line-height: 1.4;
+    }
+
+    .quiz__number {
+        font-family: 'Cafe24Dangdanghae';
+        color: #64a30b;
+    }
+
+    .quiz__ask {
+        font-family: 'Cafe24Dangdanghae';
+    }
+
+    .quiz__answer {
+        background: #f5f5f5;
+        /* height: 300px; */
+    }
+
+    .quiz__answer {
+        background: #f5f5f5;
+        border-top: 6px ridge #cacaca;
+        padding: 10px;
+    }
+
+    .quiz__confirm {
+        border: 6px ridge #cacaca;
+        width: 100%;
+        font-size: 22px;
+        padding: 13px 20px;
+        background: #d6d6d6;
+        font-family: 'Cafe24Dangdanghae';
+        text-shadow: 1px 1px 1px #fff;
+        transition: all 0.3s;
+        cursor: pointer;
+    }
+
+    .quiz__confirm:hover {
+        background: #b3b3b3;
+    }
+
+    .quiz__result {
+        border: 6px ridge #FFFFFF;
+        width: 100%;
+        font-size: 22px;
+        padding: 13px 20px;
+        background: #fff;
+        text-align: center;
+        font-family: 'Cafe24Dangdanghae';
+        text-shadow: 1px 1px 1px #fff;
+        display: none;
+    }
+
+    .quiz__input {
+        border: 6px ridge #FFFFFF;
+        width: 100%;
+        font-size: 22px;
+        padding: 13px 20px;
+        background: #fff;
+        text-align: center;
+        font-family: 'Cafe24Dangdanghae';
+        text-shadow: 1px 1px 1px #fff;
+        margin-bottom: 10px;
+    }
+</code></pre>
+                                        </div>
+                                        <!-- javascrtip -->
+                                        <div>
+                                            <pre><code class="language-css hljs">
+    const quizType = document.querySelector(".quiz__type");
+    const quizNumber = document.querySelector(".quiz__number"); 
+    const quizAsk = document.querySelector(".quiz__ask"); 
+    const quizConfirm = document.querySelector(".quiz__confirm"); 
+    const quizResult = document.querySelector(".quiz__result"); 
+    const quizDog = document.querySelector(".quiz__view .dog"); 
+    const quizblank = document.querySelector(".quiz__input");
+    const quiztrue = document.querySelector(".true"); 
+    const quizfalse = document.querySelector(".false"); 
+    
+    const answerType = "Javascript"
+    const answerNum = 1;
+    const answerAsk = "객체 기반의 스크립트 프로그래밍 언어는 무엇입니까?";
+    const answerResult = "javascript";
+
+    quizType.textContent = answerType;
+    quizNumber.textContent = answerNum + ".";
+    quizAsk.textContent = answerAsk;
+    quizResult.textContent = answerResult;
+ 
+    userText = quizblank.value;
+
+    quizConfirm.addEventListener("click", () => {
+
+        userText = quizblank.value;
+
+        quizConfirm.style.display = "none";
+        quizResult.style.display = "block";
+        if (userText == answerResult) {
+            quizDog.classList.add("like");
+            quiztrue.style.opacity = "1"
+        } else {
+            quizDog.classList.add("dislike");
+            quizfalse.style.opacity = "1"
+        }
+    });
+
+    const source = function () {
+
+        document.querySelector(".source_btn").addEventListener("click", () => {
+            document.querySelector("#source").classList.add("show");
+            document.querySelector("#source").classList.remove("hide");
+        })
+        document.querySelector(".close").addEventListener("click", () => {
+            document.querySelector("#source").classList.add("hide");
+        })
+    }
+    source();
+
+    const tabMenubar = function () {
+        const menuBar = document.querySelectorAll(".menu-bar > span");
+        const menuCount = document.querySelectorAll(".main > div");
+
+        menuBar.forEach((btn, index) => {
+            btn.addEventListener("click", () => {
+
+                menuBar.forEach(el => {
+                    el.classList.remove("active");
+                });
+                btn.classList.add("active");
+
+                menuCount.forEach(el => {
+                    el.style.display = "none";
+                });
+                menuCount[index].style.display = "block";
+            })
+        })
+
+    }
+    tabMenubar();
+</code></pre>
+                                        </div>
+                                        <!-- jqeury -->
+                                        <div>
+                                            <pre><code class="language-javascript">
+
+</code></pre>
+                                        </div>
+
+
+                                        <!-- //윈도우98 화면 -->
+                                    </div>
+                                    <div class="scroll">
+                                        <div class="start"></div>
+                                        <div class="progress"></div>
+                                        <div class="end"></div>
+                                    </div>
+                                </div>
+                                <div class="scroll -row">
+                                    <div class="start"></div>
+                                    <div class="progress"></div>
+                                    <div class="end"></div>
+                                </div>
+                            </div>
+                            <div class="footer"></div>
+                        </div>
+
+                        <!-- //윈도우 98 -->
+
+
+
+
+                        <pre><code class="language-css hljs">
+ 
+                </code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <!-- //main -->
@@ -752,7 +1351,7 @@
     <footer id="footer">
         <a href="maito:dnstjq6305@naver.com"> dnstjq6305@naver.com</a>
     </footer>
-    
+
     <!-- //footer -->
 
     <!-- script -->
@@ -763,28 +1362,76 @@
         const quizConfirm = document.querySelector(".quiz__confirm") //정답 확인 버튼
         const quizResult = document.querySelector(".quiz__result") //정답 결과
         const quizDog = document.querySelector(".quiz__view .dog"); //강아지
+        const quizblank = document.querySelector(".quiz__input"); //사용자의 입력창
+        const quiztrue = document.querySelector(".true"); //정답입니다.
+        const quizfalse = document.querySelector(".false"); //정답입니다.
         // 문제 정보
         const answerType = "Javascript"
         const answerNum = 1;
         const answerAsk = "객체 기반의 스크립트 프로그래밍 언어는 무엇입니까?";
-        const answerResult = "Javascript";
+        const answerResult = "javascript";
 
         // 문제 출력
         quizType.textContent = answerType;
         quizNumber.textContent = answerNum + ".";
         quizAsk.textContent = answerAsk;
         quizResult.textContent = answerResult;
-
+        // 사용자가 입력한 데이터
+        userText = quizblank.value;
         //정답 확인
         //정답 버튼을 클릭하면 정답 확인은 안보이게......숨겨진 정답은 보이게
         //정답을 확인하면 강아지가 웃고 있어야 함
 
 
-        // quizConfirm.addEventListener("click", () => {
-        //     quizConfirm.style.display = "none";
-        //     quizResult.style.display = "block";
-        //     quizDog.classList.add("like");
-        // });
+        quizConfirm.addEventListener("click", () => {
+
+            // 사용자가 입력한 데이터
+            userText = quizblank.value;
+
+            quizConfirm.style.display = "none";
+            quizResult.style.display = "block";
+            if (userText == answerResult) {
+                quizDog.classList.add("like");
+                quiztrue.style.opacity = "1"
+            } else {
+                quizDog.classList.add("dislike");
+                quizfalse.style.opacity = "1"
+            }
+        });
+
+        const source = function () {
+
+            document.querySelector(".source_btn").addEventListener("click", () => {
+                document.querySelector("#source").classList.add("show");
+                document.querySelector("#source").classList.remove("hide");
+            })
+            document.querySelector(".close").addEventListener("click", () => {
+                document.querySelector("#source").classList.add("hide");
+            })
+        }
+        source();
+
+        const tabMenubar = function () {
+            const menuBar = document.querySelectorAll(".menu-bar > span");
+            const menuCount = document.querySelectorAll(".main > div");
+
+            menuBar.forEach((btn, index) => {
+                btn.addEventListener("click", () => {
+
+                    menuBar.forEach(el => {
+                        el.classList.remove("active");
+                    });
+                    btn.classList.add("active");
+
+                    menuCount.forEach(el => {
+                        el.style.display = "none";
+                    });
+                    menuCount[index].style.display = "block";
+                })
+            })
+
+        }
+        tabMenubar();
     </script>
 </body>
 
