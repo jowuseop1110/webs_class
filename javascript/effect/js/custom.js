@@ -46,6 +46,40 @@ const tabMenu = function () {
 }
 // tabMenu();
 
+  // 소스보기
+  const source = function () {
+
+    document.querySelector(".source_btn").addEventListener("click", () => {
+        document.querySelector("#source").classList.add("show");
+        document.querySelector("#source").classList.remove("hide");
+    })
+    document.querySelector(".close").addEventListener("click", () => {
+        document.querySelector("#source").classList.add("hide");
+    })
+}
+source();
+
+const tabMenubar = function () {
+    const menuBar = document.querySelectorAll(".menu-bar > span");
+    const menuCount = document.querySelectorAll(".main > div");
+
+    menuBar.forEach((btn, index) => {
+        btn.addEventListener("click", () => {
+
+            menuBar.forEach(el => {
+                el.classList.remove("active");
+            });
+            btn.classList.add("active");
+
+            menuCount.forEach(el => {
+                el.style.display = "none";
+            });
+            menuCount[index].style.display = "block";
+        })
+    })
+
+}
+// tabMenubar();
 
 
 
