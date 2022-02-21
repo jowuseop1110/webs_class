@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>퀴즈 이펙트</title>
+    <link rel="stylesheet"
+        href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/atom-one-light.min.css">
 </head>
 <style>
     @font-face {
@@ -31,6 +33,12 @@
 
     a {
         text-decoration: none;
+    }
+
+    .hljs {
+        background: #d6d6d6;
+        line-height: 1.6;
+
     }
 
     body {
@@ -79,14 +87,17 @@
 
     #header h1 {
         padding: 3px 0 6px 10px;
-      
+
     }
+
     #header h1 a {
         color: #CACACA;
     }
+
     #header h1 a:hover {
         color: #888888;
     }
+
     #header nav {
         padding-right: 10px;
     }
@@ -650,8 +661,8 @@
         position: relative
     }
 
-    
-   /* 윈도우98 */
+
+    /* 윈도우98 */
     .source_btn {
         border: 6px ridge #c5c5c5;
         font-size: 25px;
@@ -780,18 +791,20 @@
     .content-container>.content>.scroll-left {
         height: 100%;
     }
-    .menu-bar > span.active {
+
+    .menu-bar>span.active {
         background: #a1a1a1;
     }
+
     .main {
-    width: 80vh;
-    height: 60vh;
-    background: #fff;
-    border: 1px solid #f2f2f2;
-    border-radius: 5px;
-    overflow: scroll;
-    overflow-x: hidden;
-}
+        width: 80vh;
+        height: 60vh;
+        background: #fff;
+        border: 1px solid #f2f2f2;
+        border-radius: 5px;
+        overflow: scroll;
+        overflow-x: hidden;
+    }
 
     /* .content-container>.content>.main {
         width: calc(100% - 26px);
@@ -844,7 +857,7 @@
         border-right: 2px solid #FCFCFC;
         border-bottom: 2px solid #FCFCFC;
     } */
-/* 
+    /* 
     .scroll>.start::after,
     .scroll>.end::after {
         content: "";
@@ -995,7 +1008,6 @@
     }
 
     /* //애니메이션 효과 */
-
 </style>
 
 <body>
@@ -1070,19 +1082,17 @@
                                 </div>
                             </div>
                             <div class="menu-bar">
-                                <span>HTML</span>
+                                <span class="active">HTML</span>
                                 <span>CSS</span>
                                 <span>javacript</span>
-                                <span>Jquery</span>
                             </div>
                             <div class="content-container">
                                 <div class="content">
                                     <div class="main">
                                         <!-- 윈도우98화면 -->
                                         <!-- HTML -->
-                              <div>
-                                            <pre><code class="language-javascript">
-    &lt;div class="quiz__wrap"&gt;
+                                        <div>
+                                            <pre><code class="language-javascript">&lt;div class="quiz__wrap"&gt;
         &lt;div class="quiz"&gt;
             &lt;h2 class="quiz__type"&gt;&lt;/h2&gt;
             &lt;h3 class="quiz__question"&gt;
@@ -1118,11 +1128,10 @@
         &lt;/div&gt;
     &lt;/div&gt;
 </code></pre>
-</div>            
+                                        </div>
                                         <!-- CSS -->
                                         <div>
-                                            <pre><code class="language-javascript">
-    .quiz__wrap {
+                                            <pre><code class="language-javascript">.quiz__wrap {
         display: flex;
         align-content: center;
         justify-content: center;
@@ -1226,11 +1235,10 @@
         background: #fff;
     }
 </code></pre>
-</div>    
+                                        </div>
                                         <!-- javascrtip -->
                                         <div>
-                                            <pre><code class="language-css hljs">
-const quizType = document.querySelector(".quiz__type")
+                                            <pre><code class="language-javascript">const quizType = document.querySelector(".quiz__type")
 const quizNumber = document.querySelector(".quiz__number")
 const quizAsk = document.querySelector(".quiz__ask")
 const quizConfirm = document.querySelector(".quiz__confirm")
@@ -1254,44 +1262,11 @@ quizConfirm.addEventListener("click", () => {
 });
 const source = function() {
 </code></pre>
-</div>     
-                                        <!-- jqeury -->
-                                        <div>
-                                            <pre><code class="language-javascript">
-
-</code></pre>
-</div>   
-
-           
-                                        <!-- //윈도우98 화면 -->
+                                        </div>
                                     </div>
-                                    <div class="scroll">
-                                        <div class="start"></div>
-                                        <div class="progress"></div>
-                                        <div class="end"></div>
-                                    </div>
-                                </div>
-                                <div class="scroll -row">
-                                    <div class="start"></div>
-                                    <div class="progress"></div>
-                                    <div class="end"></div>
                                 </div>
                             </div>
-                            <div class="footer"></div>
                         </div>
-
-                        <!-- //윈도우 98 -->
-
-
-
-
-                        <pre><code class="language-css hljs">
- 
-                </code></pre>
-                    </div>
-                </div>
-            </div>
-        </div>
     </main>
 
     <!-- //main -->
@@ -1301,7 +1276,10 @@ const source = function() {
     </footer>
     <!-- //footer -->
     <!-- script -->
+    <script src="js/highlight.min.js"></script>
+
     <script>
+        hljs.highlightAll();
         const quizType = document.querySelector(".quiz__type") //퀴즈 종류
         const quizNumber = document.querySelector(".quiz__number") //퀴즈 번호
         const quizAsk = document.querySelector(".quiz__ask") //퀴즈 질문
@@ -1344,9 +1322,9 @@ const source = function() {
             const menuBar = document.querySelectorAll(".menu-bar > span");
             const menuCount = document.querySelectorAll(".main > div");
 
-            menuBar.forEach((btn, index)=>{
+            menuBar.forEach((btn, index) => {
                 btn.addEventListener("click", () => {
-          
+
                     menuBar.forEach(el => {
                         el.classList.remove("active");
                     });
@@ -1358,7 +1336,7 @@ const source = function() {
                     menuCount[index].style.display = "block";
                 })
             })
-            
+
         }
         tabMenubar();
     </script>
