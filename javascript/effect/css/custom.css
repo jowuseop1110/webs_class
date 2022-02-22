@@ -61,6 +61,14 @@ body.img06 {
     background: url(../img/effectimg06.jpg);
     background-size: 100%;
 }
+body.img07 {
+    background: url(../img/effectimg07.jpg);
+    background-size: 100%;
+}
+body.img08{
+    background: url(../img/effectimg08.jpg);
+    background-size: 100%;
+}
 
 body::before {
     content: '';
@@ -142,6 +150,14 @@ body::before {
 .source button:hover {
     background: #fff;
     color: #000;
+}
+.attr {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+
 }
 
 /* modal */

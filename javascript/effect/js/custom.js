@@ -57,7 +57,7 @@ const tabMenu = function () {
         document.querySelector("#source").classList.add("hide");
     })
 }
-source();
+
 
 const tabMenubar = function () {
     const menuBar = document.querySelectorAll(".menu-bar > span");

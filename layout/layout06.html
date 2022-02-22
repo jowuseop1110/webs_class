@@ -5,233 +5,91 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../layout/fonts.css">
+    <title>레이아웃</title>
+    <style>
+        * {
+            margin: 0 auto;
+            padding: 0;
+        }
+        body {
+            background-color: #666;
+        }
+        #wrap {
+            width: 1200px;
+
+        }
+
+        #header {
+
+            width: 100%;
+            height: 100px;
+            background-color: #111;
+        }
+
+        #nav {
+            width: 100%;
+            height: 100px;
+            background-color: #222;
+        }
+
+        #contents {
+            width: 100%;
+            display: flex;
+        }
+
+        .contents_l {
+            width: 30%;
+            height: 900px;
+            background-color: #333;
+
+        }
+
+        .contents_r {
+            width: 70%;
+            height: 900px;
+            background-color: #444;
+        }
+
+        #footer {
+            width: 100%;
+            height: 100px;
+            background-color: #555;
+        }
+        @media (max-width:1220px){
+            #wrap {
+                width: 96%;
+            }
+        }
+        @media (max-width:768px){
+            #wrap {
+                width: 100%;
+            }
+        }
+        @media (max-width:600px){
+            #contents {
+                flex-direction: column;
+            }
+            .contents_l {
+                width: 100%;
+                height: 300px;
+            }
+            .contents_r {
+                width: 100%;
+                height: 400px;
+            }
+        }
+    </style>
 </head>
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-    }
-
-    #wrap {
-        width: 1920px;
-        margin: 0 auto;
-    }
-
-    #header {
-        width: 1920px;
-        height: 109px;
-        background-color: rgb(160, 158, 158);
-
-    }
-
-    #header .head {
-        width: 1200px;
-        height: 109px;
-        background-color: rgb(226, 198, 198);
-        margin: 0 auto;
-    }
-
-    #banner {
-        width: 1920px;
-        height: 893px;
-        background-color: rgb(105, 104, 104);
-
-    }
-
-    #banner .ban {
-        width: 1200px;
-        height: 893px;
-        margin: 0 auto;
-        background-color: rgb(80, 49, 49);
-    }
-
-    #content1 {
-        width: 1920px;
-        height: 640px;
-        background-color: rgb(179, 143, 143);
-    }
-
-    #content1 .con1 {
-        width: 1200px;
-        height: 640px;
-        background-color: rgb(248, 9, 9);
-        margin: 0 auto;
-    }
-
-    #content2 {
-        width: 1920px;
-        height: 3250px;
-        background-color: rgb(58, 155, 118);
-    }
-
-    #content2 .con2 {
-        width: 1200px;
-        height: 3250px;
-        background-color: rgb(208, 219, 52);
-        margin: 0 auto;
-    }
-
-    #content3 {
-        width: 1920px;
-        height: 1076px;
-        background-color: #fff
-    }
-
-    #content3 .con3 {
-        width: 1200px;
-        height: 1076px;
-        margin: 0 auto;
-    }
-
-    #content3 .con3 h2 {
-        font-family: 'NexonLv1Gothic';
-        padding: 80px 0;
-        font-size: 50px;
-        font-weight: 700;
-
-    }
-
-    #content3 .con3 .pcenter .ptr1 {
-        background: url(../layout/img/img_text_bg1.jpg);
-        margin-right: 49px;
-        width: 367px;
-        height: 460px;
-        background-color: #fff;
-        float: left;
-    }
-
-    #content3 .con3 .pcenter .ptr2 {
-        background: url(../layout/img/img_text_bg2.jpg);
-        margin-right: 50px;
-        width: 367px;
-        height: 460px;
-        background-color: #fff;
-        float: left;
-    }
-
-    #content3 .con3 .pcenter .ptr3 {
-        background: url(../layout/img/img_text_bg3.jpg);
-        width: 367px;
-        height: 460px;
-        background-color: #fff;
-        float: left;
-    }
-
-    #content3 .con3 .textn {
-        display: inline-flex;
-        font-family: 'NexonLv1Gothic';
-        font-size: 40px;
-        margin-top: 50px;
-        font-weight: 500;
-    }
-
-    #content3 .con3 .textn .text1 {
-
-        margin-right: 270px;
-    }
-
-    #content3 .con3 .textn .text2 {
-
-        margin-right: 80px;
-    }
-
-    #content3 .con3 .textnm {
-        display: inline-flex;
-        font-family: 'NexonLv1Gothic';
-        font-size: 20px;
-        margin-top: 20px;
-        font-weight: 300;
-    }
-
-    #content3 .con3 .textnm .text4 {
-
-        margin-right: 330px;
-    }
-
-    #content3 .con3 .textnm .text5 {
-
-        margin-right: 383px;
-    }
-
-
-
-
-    #footer {
-        width: 1920px;
-        height: 399px;
-        background-color: rgb(241, 241, 198);
-    }
-
-    .ir_so {
-        overflow: hidden;
-        position: relative;
-        width: 0;
-        height: 0;
-        line-height: 0;
-        text-indent: -9999px;
-    }
-</style>
-
-
 
 <body>
     <div id="wrap">
-        <header id="header">
-            <h2 class="ir_so">header</h2>
-            <div class="head">
-                <h2>head</h2>
-            </div>
-        </header>
-        <nav id="banner">
-            <h2 class="ir_so">banner</h2>
-            <div class="ban">
-                <h2>ban</h2>
-            </div>
-        </nav>
-        <section id="content1">
-            <h2 class="ir_so">content1</h2>
-            <div class="con1">
-                <h2>con1</h2>
-            </div>
-        </section>
-        <section id="content2">
-            <h2 class="ir_so">content2</h2>
-            <div class="con2">
-                <h2>con2</h2>
-            </div>
-        </section>
-        <section id="content3">
-            <h2 class="ir_so">content3</h2>
-            <div class="con3">
-                <h2>FIND opportunities</h2>
-                <div class="pcenter">
-                    <div class="ptr1"></div>
-                    <div class="ptr2"></div>
-                    <div class="ptr3"></div>
-                </div>
-                <div class="textn">
-                    <div class="text1">Fintech</div>
-                    <div class="text2">Digital Marketing</div>
-                    <div class="text3">Platform</div>
-                </div>
-                <div class="textnm">
-                    <div class="text4">Payment</div>
-                    <div class="text5">IM5</div>
-                    <div class="text6">Commerce, Magazine</div>
-                </div>
-                <div class="textn6">
-                    <div class="text10">Payment</div>
-                    <div class="text11">IM5</div>
-                    <div class="text12">Commerce, Magazine</div>
-                </div>
-            </div>
-        </section>
-        <footer id="footer">
-            <h2 class="ir_so">footer</h2>
-            <h2>footer</h2>
-        </footer>
+        <header id="header"></header>
+        <nav id="nav"></nav>
+        <main id="contents">
+            <div class="contents_l"></div>
+            <div class="contents_r"></div>
+        </main>
+        <footer id="footer"></footer>
     </div>
 </body>
 
