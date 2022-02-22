@@ -80,15 +80,15 @@
 
         .slider__inner {
             /*이미지 움직이는 영역*/
-            display: flex;
+            /* display: flex; */
             width: 4800px;
             /*이미지 총 길이*/
-            transform: translateX(0);
+            transform: translateY(0);
 
         }
 
         .slider {
-            float: left;
+       
             width: 800px;
             position: relative;
         }
@@ -150,14 +150,14 @@
     <!-- info -->
     <div class="info">
         <div class="title">
-            <h1><a href="slidersample.html">Javascript Slider Effect03</a></h1>
-            <p>이미지 슬라이드 - 연속으로 움직이기</p>
+            <h1><a href="slidersample.html">Javascript Slider Effect04</a></h1>
+            <p>이미지 슬라이드 - 위로 움직이기</p>
         </div>
         <div class="number">
             <ul>
                 <li><a href="sliderEffect01.html">1</a></li>
                 <li><a href="sliderEffect02.html">2</a></li>
-                <li class="active"><a href="sliderEffect03.html">3</a></li>
+                <li><a href="sliderEffect03.html">3</a></li>
                 <li><a href="sliderEffect04.html">4</a></li>
                 <li><a href="sliderEffect05.html">5</a></li>
                 <li><a href="sliderEffect06.html">6</a></li>
@@ -262,19 +262,19 @@
         // console.log(slider)
         let currentIndex = 0;
         let sliderCount = slider.length; // 이미지 갯수
-        let sliderWidth = sliderImg.offsetWidth // sliderImg의 width 값 가져오기
+        let sliderHeight = sliderImg.offsetHeight// sliderImg의 width 값 가져오기
         let sliderClone = sliderInner.firstElementChild.cloneNode(true); // 첫 번째 이미지 복사
         sliderInner.appendChild(sliderClone); // 첫 번째 이미지를 마지막에 넣어줌
         function sliderEffect() { // sliderEffect 함수를 만든다.
             currentIndex++; // currentIndex를 1씩 증가시킴
             sliderInner.style.transition = "all 0.3s" // sliderInner에 transition 효과
-            sliderInner.style.transform = "translateX(-" + sliderWidth * currentIndex +
+            sliderInner.style.transform = "translateY(-" + sliderHeight * currentIndex +
                 "px)" // sliderInner에 transform 효과
             // 마지막 사진에 갔을 때
             if (currentIndex == sliderCount) { // currentIndex값이 sliderCount 가 되면
                 setTimeout(() => { // 일정 시간이 지난 후에 함수 실행
                     sliderInner.style.transition = "0s"
-                    sliderInner.style.transform = "translateX(0)"
+                    sliderInner.style.transform = "translateY(0)"
                 }, 300)
                 currentIndex = 0;
             }
