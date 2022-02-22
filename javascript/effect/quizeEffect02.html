@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>퀴즈 이펙트</title>
+    <link rel="stylesheet"
+    href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/atom-one-light.min.css">
 </head>
 <style>
     @font-face {
@@ -32,7 +34,11 @@
     a {
         text-decoration: none;
     }
+    .hljs {
+        background: #d6d6d6;
+        line-height: 1.6;
 
+    }
     body {
 
         background-color: #f6f6f6;
@@ -1087,8 +1093,7 @@
                                         <!-- 윈도우98화면 -->
                                         <!-- HTML -->
                                         <div>
-                                            <pre><code class="language-javascript">
-    &lt;div class="quiz__wrap"&gt;
+                                            <pre><code class="language-javascript">&lt;div class="quiz__wrap"&gt;
         &lt;div class="quiz"&gt;
             &lt;h2 class="quiz__type"&gt;&lt;/h2&gt;
             &lt;h3 class="quiz__question"&gt;
@@ -1388,9 +1393,6 @@
 
 
 
-                        <pre><code class="language-css hljs">
- 
-                </code></pre>
                     </div>
                 </div>
             </div>
@@ -1407,7 +1409,11 @@
     <!-- //footer -->
 
     <!-- script -->
+  
+    <script src="js/highlight.min.js"></script>
     <script>
+          hljs.highlightAll();
+       
         const quizType = document.querySelector(".quiz__type") //퀴즈 종류
         const quizNumber = document.querySelector(".quiz__number") //퀴즈 번호
         const quizAsk = document.querySelector(".quiz__ask") //퀴즈 질문
@@ -1485,6 +1491,7 @@
         }
         tabMenubar();
     </script>
+   
 </body>
 
 </html>

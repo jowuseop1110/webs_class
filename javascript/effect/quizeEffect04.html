@@ -6,8 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>퀴즈 이펙트</title>
+    <link rel="stylesheet"
+    href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/atom-one-light.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/sliderstyle.css">
 </head>
 <style>
+    
     @font-face {
         font-family: 'DungGeunMo';
         src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
@@ -1463,9 +1468,7 @@
 
 
 
-                        <pre><code class="language-css hljs">
- 
-                </code></pre>
+                \
                     </div>
                 </div>
             </div>
@@ -1482,10 +1485,12 @@
     <!-- //footer -->
 
     <!-- script -->
+    <script src="js/highlight.min.js"></script>
     <script src="js/custom.js"></script>
   
     <script>
-          tabMenubar();
+            hljs.highlightAll();
+tabMenubar();
         const quizType = document.querySelector(".quiz__type"); //문제 유형
         const quizNumber = document.querySelector(".quiz__number"); //문제 번호
         const quizAsk = document.querySelector(".quiz__ask"); //문제 질문
@@ -1540,6 +1545,11 @@
             quizConfirm.addEventListener("click", answerQuiz)
                  
           
+
+
+
+
+        
     </script>
 </body>
 
