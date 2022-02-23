@@ -34,40 +34,48 @@ body {
 
 body.img01 {
     background: url(../img/effectimg01.jpg);
-    background-size: 100%;
+    background-size: cover;
+    background-position: center center;
 }
 
 body.img02 {
     background: url(../img/effectimg02.jpg);
-    background-size: 100%;
+    background-size: cover;
+    background-position: center center;
 }
 
 body.img03 {
     background: url(../img/effectimg03.jpg);
-    background-size: 100%;
+    background-size: cover;
+    background-position: center center;
 }
 
 body.img04 {
     background: url(../img/effectimg04.jpg);
-    background-size: 100%;
+    background-size: cover;
+    background-position: center center;
 }
 
 body.img05 {
     background: url(../img/effectimg05.jpg);
-
+    background-size: cover;
+    background-position: center center;
 }
 
 body.img06 {
     background: url(../img/effectimg06.jpg);
-    background-size: 100%;
+    background-size: cover;
+    background-position: center center;
 }
 body.img07 {
     background: url(../img/effectimg07.jpg);
-    background-size: 100%;
+    background-size: cover;
+    background-position: center center;
 }
 body.img08{
     background: url(../img/effectimg08.jpg);
-    background-size: 100%;
+    background-size: cover;
+    background-position: center center;
 }
 
 body::before {
@@ -124,8 +132,7 @@ body::before {
     cursor: pointer;
 }
 
-.number li:active a,
-.number li a:hover {
+.number ul li.active a, .number ul li a:hover {
     background: #fff;
     color: #000;
 }

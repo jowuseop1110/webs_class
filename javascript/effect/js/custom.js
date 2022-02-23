@@ -1,8 +1,10 @@
+// highlight
+const highlight = function () {
+    hljs.highlightAll();
+}
 
-// // highlight
-// const highlight = function(){
-//             hljs.highlightAll();
-//         }
+
+
 
 
 //modal
@@ -19,6 +21,9 @@ const modal = function () {
     })
 }
 // modal();
+
+
+
 
 
 //tabmenu
@@ -46,8 +51,11 @@ const tabMenu = function () {
 }
 // tabMenu();
 
-   // 소스보기
-   const source = function () {
+
+
+
+ // 소스보기
+ const source = function () {
 
     document.querySelector(".source_btn").addEventListener("click", () => {
         document.querySelector("#source").classList.add("show");
@@ -57,7 +65,7 @@ const tabMenu = function () {
         document.querySelector("#source").classList.add("hide");
     })
     }
-    source();
+    // source();
     
     const tabMenubar = function () {
     const menuBar = document.querySelectorAll(".menu-bar > span");
@@ -79,7 +87,4 @@ const tabMenu = function () {
     })
     
     }
-    tabMenubar();
-
-
-
+    // tabMenubar();

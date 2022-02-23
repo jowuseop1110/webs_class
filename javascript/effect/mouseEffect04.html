@@ -103,14 +103,14 @@
         </div>
         <div class="number">
             <ul>
-                <li><a href="sliderEffect01.html">1</a></li>
-                <li><a href="sliderEffect02.html">2</a></li>
-                <li><a href="sliderEffect03.html">3</a></li>
-                <li class="active"><a href="sliderEffect04.html">4</a></li>
-                <li><a href="sliderEffect05.html">5</a></li>
-                <li><a href="sliderEffect06.html">6</a></li>
-                <li><a href="sliderEffect07.html">7</a></li>
-                <li><a href="sliderEffect08.html">8</a></li>
+                <li><a href="mouseEffect01.html">1</a></li>
+                <li><a href="mouseEffect02.html">2</a></li>
+                <li><a href="mouseEffect03.html">3</a></li>
+                <li class="active"><a href="mouseEffect04.html">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">6</a></li>
+                <li><a href="#">7</a></li>
+                <li><a href="#">8</a></li>
             </ul>
         </div>
         <!-- number -->
@@ -179,14 +179,15 @@
     // modal();
     // tabMenu();
 
-    const circle3 = document.querySelector(".cursor").getBoundingClientRect();
+    const circle = document.querySelector(".cursor").getBoundingClientRect();
     document.querySelector(".mouse__img").addEventListener("mousemove", (e) => {
         // 커서
         gsap.to(".cursor", {duration: .2, left: e.pageX - circle.width/2, top: e.pageY - circle.height/2})
+        let mousePageX = e.pageX;
+    let mousePageY = e.pageY;
     })
     //마우스 좌표 값
-    let mousePageX = e.pageX;
-    let mousePageY = e.pageY;
+   
 
     //마우스 좌표 값을 가운데 초기화
     //전체 가로 값
