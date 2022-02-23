@@ -640,6 +640,7 @@
     text-align: center;
     margin-right: 5px;
 }
+
 .notice_hover2 li.last {
     margin-right: 0;
 }
@@ -657,7 +658,9 @@
 }
 
 .notice_hover2 li a span em {
-    position: absolute; left: 0; bottom: 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
     width: 100%;
     background: rgba(0, 0, 0, 0.7);
     color: #fff;
@@ -669,6 +672,7 @@
     display: inline-block;
     font-size: 12px;
 }
+
 .notice_hover2 li a span:hover em {
     visibility: visible;
 }
@@ -687,46 +691,193 @@
     padding: 8px;
     height: 105px;
 }
-.tab_menu  ul {
+
+.tab_menu ul {
     overflow: hidden;
     border-bottom: 1px solid #ccc;
 }
-.tab_menu  ul li {
+
+.tab_menu ul li {
     float: left;
     border: 1px solid #ccc;
     margin-right: -1px;
     margin-bottom: -1px;
 }
-.tab_menu  ul li a {
+
+.tab_menu ul li a {
     display: block;
     padding: 5px 10px;
 }
-.tab_menu  ul li ul {
+
+.tab_menu ul li ul {
     position: absolute;
     left: 0px;
     top: 48px;
     width: 270px;
     border: 0;
 }
-.tab_menu  ul li ul li {
+
+.tab_menu ul li ul li {
     float: none;
     border: 0;
     background: url(../img/dot.gif) no-repeat 9px 8px;
     padding-left: 18px;
 }
-.tab_menu  ul li ul li a {
+
+.tab_menu ul li ul li a {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     width: 100%;
     padding: 0 0 3px 0;
 }
-.tab_menu  ul li.active {
+
+.tab_menu ul li.active {
     background: #2c94c4;
 }
-.tab_menu  ul li.active a {
+
+.tab_menu ul li.active a {
     color: #fff;
 }
-.tab_menu  ul li.active ul li a {
+
+.tab_menu ul li.active ul li a {
     color: #333;
+}
+
+/* 게시판4 */
+.notice4 {
+    position: relative;
+    border: 1px solid #ccc;
+}
+
+.notice4 h4 {
+    border-bottom: 1px solid #ccc;
+    font-size: 14px;
+    color: #0093bd;
+    font-weight: 700;
+    padding: 8px 10px;
+}
+
+.notice4 h4 em {
+    color: #cf3292;
+}
+
+.notice4 ul {
+    padding: 10px;
+}
+
+.notice4 li {
+    overflow: hidden;
+    background: url(../img/dot.gif) no-repeat 0 10px;
+    padding-left: 8px;
+    padding-bottom: 2px;
+}
+
+/*overflow : 요소의 박스에 내용이 너 길 때 어떻게 보일지 선택한는 속성
+    overflow 속성: visible : 내용이 길어도 그대로 보임 
+    hidden: 내용이 넘치면 자름(자른 부분은 보이지 않음) 
+    scroll: 내용이 넘치지 앉아도 항상 스크롤바가 보임 
+    auto: 내용이 잘릴 때만 스크롤바가 보임 */
+
+.notice4 li a {
+    float: left;
+    width: 60%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/*text-overflow : 박스 안에 내용이 넘칠 떄 텍스트를 어떻게 처리할지 지정하는 속성
+    주의: text-overflow 속성은 다음 2가지를 모두 충족할 경우에만 적용됩니다.
+    1. overflow 속성값이 hidden, scroll, auto 일 때 (visible 제외)
+    2. white-space: norap(텍스트가 길어도 줄바꿈 되지 않음)
+    
+text-overflow 속성
+    clip : 기본값, 텍스트를 자름
+    ellipsis : 잘린 텍스트를 생략 부호(...)으로 표시함
+    string : 잘린 텍스트르 지정한 문자열로 표시 (예 : div{text-overflow: "***"; */
+
+/*white-space 속성: 요소안에 공백을 어떻게 처리할지 지정하는 속성
+    nomal : 기본값, 공백을 여러개 넣어도 공백 1개만 표시, 글이 길어지면 텍스트가 자동 줄바꿈 됨(wrap)
+    nowrap : 공백을 여러개 넣어도 1개만 표시, 텍스트가 길어도 줄바꿈 되지 않고 같은 줄에 계속 표시
+    pre : 공백을 코드에 있는 그대로 표시함<pre>태그 처럼 행동함. 코드에 줄바꿈이 없다면 줄바꿈이 되지 않음
+    pre-wrap : 공백을 코드에 그대로 표시함. 줄바꿈이 없어도 자동 줄바꿈이 됨
+    pre-line :  공백을 여러개 넣어도 1개만 표시 코드에 줄바꿈이 없어도 자동 줄바꿈이 되며, 코드에 줄바꿈이 있을 때도 그대로 표시
+    */
+.notice4 li span {
+    float: right;
+    width: 30%;
+    text-align: right;
+}
+
+.notice4 a.more {
+    position: absolute;
+    right: 9px;
+    top: 9px;
+}
+
+/* 갤러리 */
+.gallery {
+    border: 1PX solid #CCC;
+    height: 254px;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery h4 {
+    font-size: 14px;
+    color: #0093bd;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0 8px 11px;
+    font-weight: bold;
+}
+
+.gellery_btn {
+    position: absolute;
+    right: 5px;
+    top: 7px;
+}
+
+.gellery_btn ul {
+    overflow: hidden;
+}
+
+.gellery_btn ul li {
+    float: left;
+    margin: 1px 2px;
+}
+
+.gellery_btn ul li a {
+    display: block;
+    width: 23px;
+    height: 23px;
+    background: url(../img/icon.png) no-repeat;
+}
+.gellery_btn ul li.gb_icon1 a {
+    background-position: -150px -120px;
+}
+.gellery_btn ul li.gb_icon2 a {
+    background-position: -150px -143px;
+}
+.gellery_btn ul li.gb_icon3 a {
+    background-position: -150px -166px;
+}
+.gellery_btn ul li.gb_icon4 a {
+    background-position: -150px -189px;
+}
+/* hover */
+.gellery_btn ul li.gb_icon1 a:hover {
+    background-position: -173px -120px;
+}
+.gellery_btn ul li.gb_icon2 a:hover {
+    background-position: -173px -120px;
+}
+.gellery_btn ul li.gb_icon3 a:hover {
+    background-position: -173px -120px;
+}
+.gellery_btn ul li.gb_icon4 a:hover {
+    background-position: -173px -120px;
+}
+.gellery_img img {
+    width: 100%;
 }
