@@ -113,7 +113,7 @@
                 <li><a href="#">8</a></li>
             </ul>
         </div>
-        <!-- number -->
+        <!--// number -->
         <div class="source">
             <button class="source-btn">소스보기</button>
             <div id="modal">
@@ -155,7 +155,7 @@
                 </div>
             </div>
         </div>
-        <!-- source -->
+        <!-- //source -->
     </div>
     <!--// info -->
 
@@ -179,7 +179,7 @@
     // modal();
     // tabMenu();
 
-    const circle = document.querySelector(".cursor").getBoundingClientRect();
+    const circle = document.querySelector(".cursor").getBoundingClientRect(); 
     document.querySelector(".mouse__img").addEventListener("mousemove", (e) => {
         // 커서
         gsap.to(".cursor", {duration: .2, left: e.pageX - circle.width/2, top: e.pageY - circle.height/2})
