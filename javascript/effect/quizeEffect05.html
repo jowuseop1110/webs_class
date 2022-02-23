@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>퀴즈 이펙트</title>
+    <link rel="stylesheet"
+    href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/atom-one-light.min.css">
+    <link rel="stylesheet" href="css/sliderstyle.css">
 </head>
 <style>
     @font-face {
@@ -488,7 +491,7 @@
     .main {
         width: 80vh;
         height: 60vh;
-        background: #fff;
+        background: #cacaca;
         border: 1px solid #f2f2f2;
         border-radius: 5px;
         overflow: scroll;
@@ -1080,8 +1083,8 @@
                 <li><a href="quizeEffect01.html">1</a></li>
                 <li><a href="quizeEffect02.html">2</a></li>
                 <li><a href="quizeEffect03.html">3</a></li>
-                <li class="active"><a href="quizeEffect04.html">4</a></li>
-                <li><a href="quizeEffect05.html">5</a></li>
+                <li><a href="quizeEffect04.html">4</a></li>
+                <li class="active"><a href="quizeEffect05.html">5</a></li>
                 <li><a href="quizeEffect06.html">6</a></li>
                 <li><a href="quizeEffect07.html">7</a></li>
                 <li><a href="quizeEffect08.html">8</a></li>
@@ -1169,25 +1172,19 @@
                                 </div>
                             </div>
                             <div class="menu-bar">
-                                <span>HTML</span>
+                             
                                 <span>CSS</span>
                                 <span>javacript</span>
-                                <span>Jquery</span>
+                           
                             </div>
                             <div class="content-container">
                                 <div class="content">
                                     <div class="main">
                                         <!-- 윈도우98화면 -->
-                                        <!-- HTML -->
-                                        <div>
-                                            <pre><code class="language-javascript">
-   
-</code></pre>
-                                        </div>
+          
                                         <!-- CSS -->
                                         <div>
-                                            <pre><code class="language-javascript">
-    .quiz__wrap {
+                                            <pre><code class="language-javascript">    .quiz__wrap {
         display: flex;
         align-content: center;
         justify-content: center;
@@ -1490,12 +1487,7 @@
     &lt;/script>
 </code></pre>
                                         </div>
-                                        <!-- jqeury -->
-                                        <div>
-                                            <pre><code class="language-javascript">
-
-</code></pre>
-                                        </div>
+                      
 
 
                                         <!-- //윈도우98 화면 -->
@@ -1520,9 +1512,7 @@
 
 
 
-                        <pre><code class="language-css hljs">
- 
-                </code></pre>
+     
                     </div>
                 </div>
             </div>
@@ -1540,8 +1530,9 @@
 
     <!-- script -->
     <script src="js/custom.js"></script>
-
+    <script src="js/highlight.min.js"></script>
     <script>
+           hljs.highlightAll();
         tabMenubar();
         const quizWrap = document.querySelector(".quiz__wrap");
   

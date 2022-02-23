@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃</title>
+    <style>
+        .body {
+            width: 1920px;
+            background-color: #E8F5E9;
+        }
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        #header {
+            width: 100%;
+            height: 100px;
+            background-color: #C8E6C9;
+        }
+        #nav {
+            width: 100%;
+            height: 100px;
+            background-color: #A5D6A7;
+        }
+        #aside {
+            width: 25%;
+            height: 780px;
+            background-color: #81C784; 
+            float: left;
+        }
+        #article1 {
+            width: 50%;
+            height: 780px;
+            background-color: #66BB6A; 
+            float: left;
+        }
+        #article2 {
+            width: 25%;
+            height: 780px;
+            background-color: #4CAF50; 
+            float: left;
+        }
+        #footer {
+            clear: both;
+            width: 100%;
+            height: 100px;
+            background-color: #43A047;
+        }
+        @media (max-width:1220px){
+            #wrap {
+                width: 96%;
+
+            }
+          
+        }
+        @media (max-width:768px){
+            #wrap {
+                width: 100%;
+            }
+            #article1 {
+                width: 75%;
+            }
+            #article2 {
+               width: 100%;
+               height: 150px;
+            }
+
+        }
+        @media (max-width:600px){
+        #aside {
+            width: 100%;
+            height: 200px;
+        }
+            #article1 {
+                width: 100%;
+             height: 430px;
+            }
+       
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <nav id="nav"></nav>
+        <aside id="aside">aside</aside>
+        <div id="article1">article1</div>
+        <div id="article2">article2</div>
+        <footer id="footer"></div>
+    </div>
+</body>
+</html>

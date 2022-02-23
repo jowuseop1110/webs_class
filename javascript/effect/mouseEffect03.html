@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 이팩트</title>
+    <link rel="stylesheet" href="css/nexon.css">
+    <link rel="stylesheet" href="css/dracula.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <style>
+             body::before {
+            background-color: rgba(8, 31, 36, .8)
+        }
+
+        .mouse__wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: #fff;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            cursor: none;
+        }
+
+        .mouse__wrap p {
+            font-size: 2.5vw;
+            line-height: 2;
+            font-weight: 300;
+        }
+
+        .mouse__wrap p:last-child {
+            font-size: 3vw;
+            font-weight: 400;
+        }
+
+        .mouse__wrap p span {
+            border-bottom: 0.15vw dashed orange;
+            color: orange;
+
+        }
+
+        .cursor {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 200px;
+            height: 200px;
+            z-index: -1;
+            border-radius: 50%;
+            background-image: url(../effect/img/effectimg02.jpg);
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            border: 5px solid #fff;
+        }
+    </style>
+</head>
+
+<body class="img02">
+    <main>
+        <section id="mouseType01">
+            <div class="cursor"></div>
+
+            <div class="mouse__wrap">
+                <p>It is kind of fun to do the <span>impossible.</span></p>
+                <p><span>불가능</span>을 하는 것은 좀 재미있다.</p>
+            </div>
+        </section>
+    </main>
+
+    <div class="info">
+        <div class="title">
+            <h1><a href="mousesample.html">Javascript Mouse Effect03</a></h1>
+            <p>마우스 이팩트 - 조명 효과</p>
+        </div>
+        <div class="number">
+            <ul>
+                <li><a href="sliderEffect01.html">1</a></li>
+                <li><a href="sliderEffect02.html">2</a></li>
+                <li class="active"><a href="sliderEffect03.html">3</a></li>
+                <li><a href="sliderEffect04.html">4</a></li>
+                <li><a href="sliderEffect05.html">5</a></li>
+                <li><a href="sliderEffect06.html">6</a></li>
+                <li><a href="sliderEffect07.html">7</a></li>
+                <li><a href="sliderEffect08.html">8</a></li>
+            </ul>
+        </div>
+        <!-- number -->
+        <div class="source">
+            <button class="source-btn">소스보기</button>
+            <div id="modal">
+                <div class="modal-wrap">
+                    <div class="modal-cont">
+                        <div class="code-view">
+                            <div class="view-header" aria-hidden="true">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="view-tilte">
+                                <ul>
+                                    <li class="active"><a href="#">HTML</a></li>
+                                    <li><a href="#">CSS</a></li>
+                                    <li><a href="#">Javascript</a></li>
+                                </ul>
+                            </div>
+                            <div class="view-cont">
+                                <div>
+                                    <pre><code class="language-javascript">
+    
+    </code></pre>
+                                </div>
+                                <div>
+                                    <pre><code class="language-javascript">
+    
+    </code></pre>
+                                </div>
+                                <div>
+                                    <pre><code class="language-javascript">
+    
+    </code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="modal-close">닫기</button>
+                </div>
+            </div>
+        </div>
+        <!-- source -->
+    </div>
+    <!--// info -->
+
+    <div class="attr">
+        <ul>
+
+            <li>pageX : <span class="pageX">0</span>px</li>
+            <li>pageY : <span class="pageY">0</span>px</li>
+
+        </ul>
+    </div>
+</body>
+<script src="js/highlight.min.js"></script>
+<script src="js/custom.js"></script>
+<script src="js/gsap.min.js"></script>
+
+<script>
+    // highlight();
+    // modal();
+    // tabMenu();
+    const circle1 = document.querySelector(".cursor").clientWidth;   //120 : border 빠진 상태
+    const circle2 = document.querySelector(".cursor").offsetWidth;   //200 : border 포함 상태
+    const circle3 = document.querySelector(".cursor").getBoundingClientRect();   //bottom, height, left, right, top ,width, x, y
+
+console.log(circle3)
+
+    function follow(e) {
+
+        gsap.to(".cursor", {
+            duration: .3,
+            left: e.pageX - circle3.width/2,
+            top: e.pageY - circle3.height/2
+        });
+
+        document.querySelector(".pageX").innerText = e.pageX;
+        document.querySelector(".pageY").innerText = e.pageY;
+
+    }
+    window.addEventListener("mousemove", follow);
+</script>
+
+
+
+</html>

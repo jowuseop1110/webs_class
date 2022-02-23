@@ -77,9 +77,11 @@ body::before {
     top: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(168, 130, 130, 0.5);
+    background-color: rgba(37, 46, 48, 0.8);
     z-index: -1;
 }
+
+/* info */
 
 .title {
     position: absolute;
@@ -122,7 +124,7 @@ body::before {
     cursor: pointer;
 }
 
-.number li :active a,
+.number li:active a,
 .number li a:hover {
     background: #fff;
     color: #000;
