@@ -657,6 +657,16 @@ img {
     vertical-align: -2px;
     border-radius: 5px;
 }
+button {
+    background: transparent;
+    border: 1px solid #cdcdcd;
+    padding: 3px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+button:active {
+    background: rgb(201, 174, 174)
+}
 
 /* 간격설정 */
 .mt5 {

@@ -1564,19 +1564,17 @@
                                 </div>
                             </div>
                             <div class="menu-bar">
-                                <span>HTML</span>
+                                <span class="active">HTML</span>
                                 <span>CSS</span>
                                 <span>javacript</span>
-                                <span>Jquery</span>
                             </div>
                             <div class="content-container">
                                 <div class="content">
                                     <div class="main">
                                         <!-- 윈도우98화면 -->
                                         <!-- HTML -->
-                                        <div>
-                                            <pre><code class="language-javascript">
-    &lt;div class="quiz__wrap"&gt;
+                                        <div class="sample">
+                                            <pre><code class="language-javascript">&lt;div class="quiz__wrap"&gt;
         &lt;div class="quiz"&gt;
             &lt;h2 class="quiz__type"&gt;&lt;/h2&gt;
             &lt;h3 class="quiz__question"&gt;
@@ -1584,8 +1582,6 @@
                 &lt;span class="quiz__ask"&gt;&lt;/span&gt;
             &lt;/h3&gt;
             &lt;div class="quiz__view"&gt;
-                &lt;div class="true"&gt;정답입니다!&lt;/div&gt;
-                &lt;div class="false"&gt;틀렸습니다!&lt;/div&gt;
                 &lt;div class="dog"&gt;
                     &lt;div class="dog"&gt;
                         &lt;div class="head"&gt;
@@ -1608,18 +1604,16 @@
                 &lt;/div&gt;
             &lt;/div&gt;
             &lt;div class="quiz__answer"&gt;
-                &lt;input class="quiz__input" type="text" placeholder="정답을 적어주세요"&gt;&lt;/input&gt;
                 &lt;button class="quiz__confirm"&gt;정답 확인하기&lt;/button&gt;
                 &lt;div class="quiz__result"&gt;&lt;/div&gt;
             &lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-</code></pre>
+    </code></pre>
                                         </div>
                                         <!-- CSS -->
-                                        <div>
-                                            <pre><code class="language-javascript">
-    .quiz__wrap {
+                                        <div class="sample">
+                                            <pre><code class="language-javascript">.quiz__wrap {
         display: flex;
         align-content: center;
         justify-content: center;
@@ -1627,7 +1621,7 @@
         /*df, acc, jcc백가라운드 가운데 오는 방법*/
         margin-top: 150px;
     }
-
+    
     .quiz {
         max-width: 500px;
         width: 100%;
@@ -1635,43 +1629,7 @@
         border: 8px ridge #cacaca;
         margin: 10px;
     }
-
-    .quiz__view {
-        position: relative;
-        background: #f5f5f5;
-    }
-
-    .quiz__view .true {
-        position: absolute;
-        left: 70%;
-        top: 100px;
-        width: 120px;
-        height: 120px;
-        background: #fff;
-        border-radius: 50%;
-        z-index: 100;
-        line-height: 120px;
-        text-align: center;
-        color: #fff;
-        background-color: #f5534f;
-        opacity: 0;
-    }
-
-    .quiz__view .false {
-        position: absolute;
-        right: 70%;
-        top: 100px;
-        width: 120px;
-        height: 1\20px;
-        background: #fff;
-        border-radius: 50%;
-        z-index: 100;
-        line-height: 120px;
-        text-align: center;
-        color: #f5534f;
-        opacity: 0;
-    }
-
+    
     .quiz__type {
         background: #cacaca;
         text-align: center;
@@ -1681,7 +1639,7 @@
         padding: 3px 0;
         position: relative;
     }
-
+    
     .quiz__type::before {
         content: '';
         position: absolute;
@@ -1691,7 +1649,7 @@
         height: 5px;
         border: 6px ridge #8f8f8f;
     }
-
+    
     .quiz__type::after {
         content: '';
         position: absolute;
@@ -1701,7 +1659,7 @@
         height: 5px;
         border: 6px ridge #8f8f8f;
     }
-
+    
     .quiz__question {
         border-top: 6px ridge #cacaca;
         border-bottom: 6px ridge #cacaca;
@@ -1709,27 +1667,27 @@
         font-size: 24px;
         line-height: 1.4;
     }
-
+    
     .quiz__number {
         font-family: 'Cafe24Dangdanghae';
         color: #64a30b;
     }
-
+    
     .quiz__ask {
         font-family: 'Cafe24Dangdanghae';
     }
-
+    
     .quiz__answer {
         background: #f5f5f5;
         /* height: 300px; */
     }
-
+    
     .quiz__answer {
         background: #f5f5f5;
         border-top: 6px ridge #cacaca;
         padding: 10px;
     }
-
+    
     .quiz__confirm {
         border: 6px ridge #cacaca;
         width: 100%;
@@ -1741,145 +1699,58 @@
         transition: all 0.3s;
         cursor: pointer;
     }
-
+    
     .quiz__confirm:hover {
         background: #b3b3b3;
     }
-
+    
     .quiz__result {
-        border: 6px ridge #FFFFFF;
+        text-align: center;
+        border: 6px ridge #cacaca;
         width: 100%;
         font-size: 22px;
         padding: 13px 20px;
-        background: #fff;
-        text-align: center;
+        background: #d6d6d6;
         font-family: 'Cafe24Dangdanghae';
         text-shadow: 1px 1px 1px #fff;
         display: none;
-    }
-
-    .quiz__input {
-        border: 6px ridge #FFFFFF;
-        width: 100%;
-        font-size: 22px;
-        padding: 13px 20px;
         background: #fff;
-        text-align: center;
-        font-family: 'Cafe24Dangdanghae';
-        text-shadow: 1px 1px 1px #fff;
-        margin-bottom: 10px;
     }
-</code></pre>
+    </code></pre>
                                         </div>
-                                        <!-- javascrtip -->
-                                        <div>
-                                            <pre><code class="language-css hljs">
-    const quizType = document.querySelector(".quiz__type");
-    const quizNumber = document.querySelector(".quiz__number"); 
-    const quizAsk = document.querySelector(".quiz__ask"); 
-    const quizConfirm = document.querySelector(".quiz__confirm"); 
-    const quizResult = document.querySelector(".quiz__result"); 
-    const quizDog = document.querySelector(".quiz__view .dog"); 
-    const quizblank = document.querySelector(".quiz__input");
-    const quiztrue = document.querySelector(".true"); 
-    const quizfalse = document.querySelector(".false"); 
     
-    const answerType = "Javascript"
+    
+                                        <!-- javascrtip -->
+                                        <div class="sample">
+                                            <pre><code class="language-javascript">const quizType = document.querySelector(".quiz__type")
+    const quizNumber = document.querySelector(".quiz__number")
+    const quizAsk = document.querySelector(".quiz__ask")
+    const quizConfirm = document.querySelector(".quiz__confirm")
+    const quizResult = document.querySelector(".quiz__result")
+    const quizDog = document.querySelector(".quiz__view .dog")
+    
+    const answerType = "HTML"
     const answerNum = 1;
-    const answerAsk = "객체 기반의 스크립트 프로그래밍 언어는 무엇입니까?";
-    const answerResult = "javascript";
-
+    const answerAsk = "컨텐츠의 구조를 정의하는 마크업 언어는 무엇일까요?";
+    const answerResult = "html";
+    
     quizType.textContent = answerType;
     quizNumber.textContent = answerNum + ".";
     quizAsk.textContent = answerAsk;
     quizResult.textContent = answerResult;
- 
-    userText = quizblank.value;
-
+    
     quizConfirm.addEventListener("click", () => {
-
-        userText = quizblank.value;
-
-        quizConfirm.style.display = "none";
-        quizResult.style.display = "block";
-        if (userText == answerResult) {
-            quizDog.classList.add("like");
-            quiztrue.style.opacity = "1"
-        } else {
-            quizDog.classList.add("dislike");
-            quizfalse.style.opacity = "1"
-        }
+    quizConfirm.style.display = "none";
+    quizResult.style.display = "block";
+    quizDog.classList.add("like");
     });
-
-    const source = function () {
-
-        document.querySelector(".source_btn").addEventListener("click", () => {
-            document.querySelector("#source").classList.add("show");
-            document.querySelector("#source").classList.remove("hide");
-        })
-        document.querySelector(".close").addEventListener("click", () => {
-            document.querySelector("#source").classList.add("hide");
-        })
-    }
-    source();
-
-    const tabMenubar = function () {
-        const menuBar = document.querySelectorAll(".menu-bar > span");
-        const menuCount = document.querySelectorAll(".main > div");
-
-        menuBar.forEach((btn, index) => {
-            btn.addEventListener("click", () => {
-
-                menuBar.forEach(el => {
-                    el.classList.remove("active");
-                });
-                btn.classList.add("active");
-
-                menuCount.forEach(el => {
-                    el.style.display = "none";
-                });
-                menuCount[index].style.display = "block";
-            })
-        })
-
-    }
-    tabMenubar();
-</code></pre>
+    const source = function() {
+    </code></pre>
                                         </div>
-                                        <!-- jqeury -->
-                                        <div>
-                                            <pre><code class="language-javascript">
-
-</code></pre>
-                                        </div>
-
-
-                                        <!-- //윈도우98 화면 -->
                                     </div>
-                                    <div class="scroll">
-                                        <div class="start"></div>
-                                        <div class="progress"></div>
-                                        <div class="end"></div>
-                                    </div>
-                                </div>
-                                <div class="scroll -row">
-                                    <div class="start"></div>
-                                    <div class="progress"></div>
-                                    <div class="end"></div>
                                 </div>
                             </div>
-                            <div class="footer"></div>
                         </div>
-
-                        <!-- //윈도우 98 -->
-
-
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
 
     </main>
 
@@ -1892,7 +1763,7 @@
     <!-- //footer -->
 
     <!-- script -->
- 
+    
     <script src="js/custom.js"></script>
     <script src="js/highlight.min.js"></script>
     <script>

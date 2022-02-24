@@ -586,10 +586,6 @@
         top: 16.5%;
     }
 
-    .dog.like .tongue::before {
-        /* height: 12px; */
-    }
-
     .dog.like .tongue::after {
         height: 24px;
         animation: movetongue 0.1s linear 0.35s infinite alternate forwards;
@@ -806,96 +802,12 @@
         overflow-x: hidden;
     }
 
-    /* .content-container>.content>.main {
-        width: calc(100% - 26px);
-    } */
-
-    /* .content-container>.content>.scroll {
-        width: 26px;
-    } */
-
-    /* .scroll {
-        background-color: #D7D7D7;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-direction: column;
+    .main .sample:nth-child(2) {
+        display: none;
     }
-
-    .scroll>.progress {
-        width: 24px;
-        height: 70%;
-        cursor: pointer;
-        border-left: 2px solid #FCFCFC;
-        border-top: 2px solid #FCFCFC;
-        border-right: 2px solid #2A2A2A;
-        border-bottom: 2px solid #2A2A2A;
-        background-color: #c7c7c7;
+    .main .sample:nth-child(3) {
+        display: none;
     }
-
-    .scroll>.progress:hover {
-        background-color: #bababa;
-    }
-
-    .scroll>.start,
-    .scroll>.end {
-        width: 24px;
-        height: 22px;
-        position: relative;
-        border-left: 2px solid #FCFCFC;
-        border-top: 2px solid #FCFCFC;
-        border-right: 2px solid #2A2A2A;
-        border-bottom: 2px solid #2A2A2A;
-        background-color: #c7c7c7;
-    }
-
-    .scroll>.start:hover,
-    .scroll>.end:hover {
-        background-color: #bababa;
-        border-left: 2px solid #2A2A2A;
-        border-top: 2px solid #2A2A2A;
-        border-right: 2px solid #FCFCFC;
-        border-bottom: 2px solid #FCFCFC;
-    } */
-    /* 
-    .scroll>.start::after,
-    .scroll>.end::after {
-        content: "";
-        display: block;
-        position: absolute;
-        width: 0;
-        height: 0;
-        top: 6px;
-        left: 4px;
-        border-top: 0;
-        border-left: 6px solid transparent;
-        border-right: 6px solid transparent;
-        border-bottom: 6px solid #000000;
-    }
-
-    .scroll>.end::after {
-        transform: rotate(180deg);
-    } */
-
-    /* .scroll.-row {
-        flex-direction: row;
-    }
-
-    .scroll.-row>.progress {
-        width: 30%;
-        height: 24px;
-    }
-
-    .scroll.-row>.start::after {
-        transform: rotate(-90deg);
-    }
-
-    .scroll.-row>.end::after {
-        transform: rotate(90deg);
-    } */
-
-
-
     /* //윈도우98 */
 
     /* 애니메이션 효과 */
@@ -1091,7 +1003,7 @@
                                     <div class="main">
                                         <!-- 윈도우98화면 -->
                                         <!-- HTML -->
-                                        <div>
+                                        <div class="sample">
                                             <pre><code class="language-javascript">&lt;div class="quiz__wrap"&gt;
         &lt;div class="quiz"&gt;
             &lt;h2 class="quiz__type"&gt;&lt;/h2&gt;
@@ -1130,7 +1042,7 @@
 </code></pre>
                                         </div>
                                         <!-- CSS -->
-                                        <div>
+                                        <div class="sample">
                                             <pre><code class="language-javascript">.quiz__wrap {
         display: flex;
         align-content: center;
@@ -1236,8 +1148,10 @@
     }
 </code></pre>
                                         </div>
+
+
                                         <!-- javascrtip -->
-                                        <div>
+                                        <div class="sample">
                                             <pre><code class="language-javascript">const quizType = document.querySelector(".quiz__type")
 const quizNumber = document.querySelector(".quiz__number")
 const quizAsk = document.querySelector(".quiz__ask")
@@ -1320,7 +1234,7 @@ const source = function() {
 
         const tabMenubar = function () {
             const menuBar = document.querySelectorAll(".menu-bar > span");
-            const menuCount = document.querySelectorAll(".main > div");
+            const menuCount = document.querySelectorAll(".main .sample");
 
             menuBar.forEach((btn, index) => {
                 btn.addEventListener("click", () => {

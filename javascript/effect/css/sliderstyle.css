@@ -1,14 +1,5 @@
  /* 윈도우98 */
- .hljs {
-    background: #d6d6d6;
-    line-height: 1.6;
-
-}
- .quiz_source {
-    position: relative
-}
-
-.source_btn {
+ .source_btn {
     border: 6px ridge #c5c5c5;
     font-size: 25px;
     padding: 7px 20px;
@@ -22,6 +13,7 @@
     background: #aaaaaa;
     cursor: pointer;
 }
+
 
 .window {
     min-width: 360px;
@@ -150,7 +142,14 @@
     overflow-x: hidden;
 }
 
+.main .sample:nth-child(2) {
+    display: none;
+}
+.main .sample:nth-child(3) {
+    display: none;
+}
 /* //윈도우98 */
+
 
 /* 애니메이션 효과 */
 #source {
