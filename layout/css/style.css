@@ -1,0 +1,760 @@
+/* ir 효과
+ir_pm : 의미 있는 이미지의 대체 텍스트를 제공하는 경우
+ir_wa : 의미 있는 이미지의 대체 텍스트로 이미지가 없어도 대체 텍스트를 보여주고 싶을 때
+ir_so : 대체 테스트가 아닌 접근성을 위한 숨김 텍스트를 제공할 때
+ */
+.ir_pm {
+    display: block;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+}
+
+.ir_wa {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+.ir_so {
+    overflow: hidden;
+    position: relative;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    text-indent: -9999px;
+}
+
+/* 초기화 */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+li {
+    list-style: none;
+}
+
+em {
+    font-style: normal;
+}
+
+h2 {
+    font-size: 50px;
+    font-weight: 500;
+}
+
+/* //초기화 */
+
+body {
+    width: 100%;
+ 
+}
+
+#wrap {
+    margin: 0 auto;
+    width: 1920px;
+    height: 20000px;
+    background: #E9E5BD;
+    font-family: 'NexonLv1Gothic';
+}
+
+/* 메인홈 */
+#header {
+    width: 1920px;
+    height: 1080px;
+}
+
+.header_img_top {
+
+    height: 200px;
+    position: relative;
+}
+
+.header_imgt {
+    width: 1920px;
+    height: 180px;
+    background: url(../img/honeytop.png) no-repeat;
+
+}
+
+.header_menu {
+    width: 100%;
+    text-align: center;
+
+}
+
+.header_menu ul {
+    position: absolute;
+    top: 30px;
+    left: 25%
+}
+
+.header_menu li {
+    display: inline-block;
+    font-size: 18px;
+    padding: 0 50px 0 50px;
+}
+
+.header_logo {
+    width: 100%;
+    height: 300px;
+    background: url(../img/요복조복logo.png)no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-bottom: 50px;
+
+}
+
+.header_text p {
+    text-align: center;
+    font-size: 96px;
+    color: #987c28;
+}
+
+.honey_tip {
+    font-weight: 700;
+    color: #FD6F22;
+    text-shadow: -2px 0px 0px #000, 3px 0px 0px #000, 0px -5px 0px #000, 0px 3px 0px #000;
+}
+
+.header_img_bottom {
+    width: 100%;
+    height: 180px;
+    background: url(../img/honeybottom.png)no-repeat;
+}
+
+/* 선정이유 */
+#pron {
+    height: 600px;
+}
+
+.pron_h2 h2 {
+    font-size: 50px;
+    font-weight: 500;
+    margin-left: 300px;
+}
+
+.pron_line {
+    width: 500px;
+    border-bottom: 1px solid #000;
+}
+
+.pron_text {
+    padding-left: 350px;
+    width: 30%;
+    height: 500px;
+
+    float: left;
+}
+
+.pron_text p {
+    width: 100%;
+    padding: 100px 10px 61px 0;
+    font-size: 27px;
+    color: #411700;
+}
+
+.pron_text em {
+    font-size: 25px;
+    color: #d65109;
+}
+
+.pron_img {
+    width: 51%;
+    height: 500px;
+    background: url(../img/편의점.png)no-repeat;
+    float: left;
+}
+
+/* 사용자 조사 */
+#recherche {
+    width: 100%;
+    height: 800px;
+}
+
+.recherche_h2 {
+    width: 100%;
+    position: relative;
+}
+
+.recherche_h2 h2 {
+    padding: 150px 350px 0 0;
+    text-align: right;
+}
+
+.recherche_line {
+    position: absolute;
+    right: 0px;
+    width: 610px;
+    border-bottom: 1px solid #000;
+}
+
+.recherche_img {
+    width: 50%;
+    height: 500px;
+    background: url(../img/회의.png) no-repeat;
+    background-position: right;
+    float: left;
+}
+
+.recherche_text {
+    width: 50%;
+    float: left;
+}
+
+.recherche_text p {
+    padding: 128px 0 0 68px;
+    font-size: 27px;
+    color: #411700;
+}
+
+/* 이미지 슬라이드 */
+#graph {
+    width: 100%;
+    height: 980px;
+    background: #eade80;
+    position: relative;
+}
+
+#graph h2 {
+    font-size: 50px;
+    padding: 100px 0 0 300px;
+}
+
+.graph_line {
+    width: 720px;
+    border-bottom: 1px solid #000;
+}
+
+.slider {
+    width: 80%;
+    height: 800px;
+    margin: 0 auto;
+}
+
+.swiper {
+    position: absolute;
+    top: 100px;
+    left: 0px;
+    width: 1200px;
+    height: 600px;
+}
+
+.swiper-slide.s1 {
+    background: url(../img/slider01.png) no-repeat center / cover;
+}
+
+.swiper-slide.s2 {
+    background: url(../img/slider01.png) no-repeat center / cover;
+}
+
+.swiper-slide.s3 {
+    background: url(../img/slider01.png) no-repeat center / cover;
+}
+
+.swiper-button-prev {
+
+    width: 100px;
+    height: 62px;
+    background: url(../img/sb0227.svg);
+    background-position: 0px -150px;
+
+}
+
+.swiper-button-prev::after {
+    font-size: 0 !important;
+}
+
+.swiper-button-next {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 80px;
+    background: url(../img/sb0227.svg);
+    background-position: -50px -150px;
+}
+
+.swiper-button-next::after {
+    font-size: 0 !important;
+}
+
+/*// 이미지 슬라이드 */
+
+/* 페르소나 */
+#persona {
+    height: 600px;
+}
+
+.persona_h2 {
+    width: 30%;
+    margin-top: 150px;
+    margin-left: 300px;
+}
+
+.persona_line {
+    width: 500px;
+    border-bottom: 1px solid #000;
+}
+
+#persona p {
+    margin-right: 180px;
+    padding-left: 200px;
+    text-align: left;
+    padding-top: 100px;
+    width: 30%;
+    height: 500px;
+
+    float: left;
+    font-size: 27px;
+    color: #411700;
+}
+
+.persona_persona1 {
+    width: 45%;
+    height: 500px;
+    float: left;
+}
+
+.type1 {
+    height: 280px;
+    border-bottom: 1px solid #000;
+    position: relative;
+}
+
+.type2 {
+    height: 280px;
+    border-bottom: 1px solid #000;
+    position: relative;
+}
+
+.type3 {
+    height: 280px;
+    border-bottom: 1px solid #000;
+    position: relative;
+}
+
+.name {
+    font-size: 24px;
+}
+
+.face1 {
+    width: 209px;
+    height: 238px;
+    background: url(../img/persona.png);
+    float: left;
+
+}
+
+.face2 {
+    width: 209px;
+    height: 238px;
+    background: url(../img/persona.png);
+    float: left;
+}
+
+.face3 {
+    width: 209px;
+    height: 238px;
+    background: url(../img/persona.png);
+    float: left;
+}
+
+.result1 {
+    font-size: 24px;
+}
+
+.result2 {
+    font-size: 24px;
+}
+
+.result3 {
+    font-size: 24px;
+}
+
+.modal1.show {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(../img/sb0227.svg) -30px -252px;
+    cursor: pointer;
+}
+
+.modal1 {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(../img/sb0227.svg) -2px -252px;
+    cursor: pointer;
+}
+
+.modal2.show {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(../img/sb0227.svg) -30px -252px;
+    cursor: pointer;
+}
+
+.modal2 {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(../img/sb0227.svg) -2px -252px;
+    cursor: pointer;
+}
+
+.modal3 {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(../img/sb0227.svg) -2px -252px;
+    cursor: pointer;
+}
+
+.modal3.show {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(../img/sb0227.svg) -30px -252px;
+    cursor: pointer;
+}
+
+.face1.hide {
+    display: none;
+
+}
+
+.result1.hide {
+    display: none;
+}
+
+.type1.hide {
+    height: 50px;
+    border-bottom: 1px solid #000;
+    position: relative;
+}
+
+.face2.hide {
+    display: none;
+}
+
+.result2.hide {
+    display: none;
+}
+
+.type2.hide {
+    height: 50px;
+    border-bottom: 1px solid #000;
+    position: relative;
+}
+
+.face3.hide {
+    display: none;
+}
+
+.result3.hide {
+    display: none;
+}
+
+.type3.hide {
+    height: 50px;
+    border-bottom: 1px solid #000;
+    position: relative;
+}
+
+/* //페르소나 */
+
+/* UI/UX 경영전략 */
+#directional {
+    width: 100%;
+    height: 900px;
+    background: #eade80;
+    ;
+}
+
+#directional h2 {
+    width: 30%;
+    padding-top: 150px;
+    margin-left: 300px;
+}
+
+.directional_line {
+    width: 650px;
+    border-bottom: 1px solid #000;
+}
+
+.directional_img {
+    margin: 0 auto;
+    width: 80%;
+    height: 500px;
+    padding: 70px 0 0 0;
+}
+
+.l_img {
+    width: 30%;
+    height: 400px;
+    background: url(../img/주방용품.jpg) no-repeat;
+    background-size: contain;
+    float: left;
+    margin-right: 40px;
+    position: relative;
+}
+
+.c_img {
+    margin-top: 130px;
+    width: 30%;
+    height: 400px;
+    background: url(../img/콜라보.jpg) no-repeat;
+    background-size: contain;
+    float: left;
+    margin-right: 40px;
+    position: relative;
+}
+
+.r_img {
+    width: 30%;
+    height: 400px;
+    background: url(../img/특허.jpg) no-repeat;
+    background-size: contain;
+    float: left;
+    position: relative;
+}
+
+.l_text {
+    color: #411700;
+    position: absolute;
+    top: 430px;
+}
+
+.l_text h3 {
+    font-size: 27px;
+    margin-bottom: 20px;
+
+}
+
+.l_text p {
+    font-size: 20px;
+}
+
+.c_text {
+    color: #411700;
+    position: absolute;
+    top: -130px;
+}
+
+.c_text h3 {
+    font-size: 27px;
+    margin-bottom: 20px;
+}
+
+.c_text p {
+    font-size: 20px;
+}
+
+.r_text {
+    color: #411700;
+    position: absolute;
+    top: 430px;
+}
+
+.r_text h3 {
+    font-size: 27px;
+    margin-bottom: 20px;
+}
+
+.r_text p {
+    font-size: 20px;
+}
+
+/* 프로젝트 방향성 */
+#project {
+    width: 100%;
+    height: 800px;
+}
+
+.project_h2 {
+    width: 100%;
+    position: relative;
+}
+
+.project_h2 h2 {
+    padding: 150px 350px 0 0;
+    text-align: right;
+}
+
+.project_text h3 {
+    font-size: 40px;
+    color: #411700;
+    padding: 150px 0 0 60px;
+}
+
+.project_line {
+    position: absolute;
+    right: 0px;
+    width: 700px;
+    border-bottom: 1px solid #000;
+}
+
+.project_img {
+    width: 50%;
+    height: 500px;
+    background: url(../img/식빵.jpg) no-repeat;
+    background-position: right;
+    float: left;
+}
+
+.project_text {
+    width: 50%;
+    float: left;
+}
+
+.project_text p {
+    padding: 40px 0 0 68px;
+    font-size: 27px;
+    color: #411700;
+}
+#project1 {
+    height: 880px;
+}
+.project1_text_l {
+    padding: 300px 70px 0 400px;
+    height: 500px;
+
+    float: left;
+}
+
+.project1_h2 h3 {
+    margin-bottom: 76px;
+    font-size: 40px;
+    color: #411700;
+}
+
+.project1_text p {
+    font-size: 25px;
+    color: #411700;
+}
+
+.project1_img {
+    margin-top: 170px;
+    width: 715px;
+    height: 492px;
+    background: url(../img/음식.jpg);
+    background-position: center;
+    float: left;
+}
+/* 다이어그램 */
+.diagram_h2 {
+    margin: 100px 0 0 300px;
+    width: 100%;
+}
+.diagram_line {
+    width: 700px;
+    border-bottom: 1px solid #000;
+}
+.diagram_top {
+    margin: 0 auto;
+    width: 80%;
+    height: 435px;
+    margin-bottom: 5%;
+    margin-top: 50px;
+}
+.diagram_img1 {
+    width: 30%;
+    height: 435px;
+    background: url(../img/다이어그램1.jpg) no-repeat;
+    background-size:cover;
+    float: left;
+    margin-right: 5%;
+}
+.diagram_img2 {
+    width: 30%;
+    height: 435px;
+    background: url(../img/다이어그램2.jpg) no-repeat;
+    background-size:cover;
+    float: left;
+    margin-right: 5%;
+}
+.diagram_img3 {
+    width: 30%;
+    height: 435px;
+    background: url(../img/다이어그램3.jpg) no-repeat;
+    background-size:cover;
+    float: left;
+}
+.diagram_bottom {
+    margin: 0 auto;
+    width: 80%;
+    height: 435px;
+}
+.diagram_img4 {
+    width: 30%;
+    height: 435px;
+    background: url(../img/다이어그램4.jpg) no-repeat;
+    background-size:cover;
+    float: left;
+    margin-right: 5%;
+}
+.diagram_img5 {
+    width: 30%;
+    height: 435px;
+    background: url(../img/다이어그램5.jpg) no-repeat;
+    background-size:cover;
+    float: left;
+    margin-right: 5%;
+}
+.diagram_img6{
+    width: 30%;
+    height: 435px;
+    background: url(../img/다이어그램6.jpg) no-repeat;
+    background-size:cover;
+    float: left;
+}
+.diagram_img7 {
+    width: 1920px;
+    height: 984px;
+    background: url(../img/다이어그램7.png) no-repeat;
+}
+.frame {
+    width: 1920px;
+    height: 1286px;
+    background: url(../img/와이어프레임.png)no-repeat;
+}
+#footer {
+    width: 100%;
+    height: 774px;
+    background: #411700;
+}
+.footer_hoeny {
+    width: 100%;
+    height: 300px;
+    background: url(../img/lasthoeny.png);
+}

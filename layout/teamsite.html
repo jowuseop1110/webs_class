@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 만들기</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+    <style>
+        @font-face {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 300;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.ttf') format("truetype");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.ttf') format("truetype");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 700;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.ttf') format("truetype");
+            font-display: swap;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        em {
+            font-style: normal;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        body {
+            width: 3000px;
+            height: 20000px;
+        }
+
+        #wrap {
+            width: 1920px;
+            line-height: 1.6;
+            background: #e9e5bd;
+            font-family: 'NexonLv1Gothic';
+            margin: 0 auto;
+        }
+
+        #mainhome {
+            width: 100%;
+            height: 1280px;
+     
+            position: relative;
+        }
+
+        .mainhome_header {
+            width: 100%;
+            height: 250px;
+            margin: 0 auto;
+            background: url(img/honeytop.png) no-repeat;
+            background-size: cover;
+            text-align: center;
+
+        }
+
+        .mainhome_header ul li {
+            font-size: 30px;
+            padding: 50px 50px;
+            font-weight: 500;
+            color: #58564e;
+            display: inline-block;
+
+        }
+
+        .mainhome_logo .logo {
+            width: 187px;
+            height: 187px;
+            background: url(img/요복조복187.png) no-repeat;
+            position: absolute;
+            left: 46%;
+            top: 15%;
+        }
+
+        .mainhome_logo em {
+            font-size: 64px;
+            color: #a7937b;
+            position: absolute;
+            left: 44%;
+            top: 358px;
+        }
+
+        .mainhome_logo h2 {
+            font-size: 96px;
+            color: #987c28;
+            text-align: center;
+            margin-top: 200px;
+        }
+
+        .mainhome_logo .tip {
+            width: 230px;
+            height: 150px;
+            background: url(img/꿀팁.png)no-repeat;
+            position: absolute;
+            left: 1150px;
+            top: 46%;
+        }
+
+        .mainhome_honey_b {
+            width: 100%;
+            height: 220px;
+            background: url(img/honeybottom.png) no-repeat;
+            background-size: cover;
+            position: absolute;
+            top: 1060px;
+            left: 0;
+        }
+
+        #pron {
+            padding-top: 400px;
+            width: 100%;
+            height: 1280px;
+            background: #e9e5bd;
+            display: flex;
+            position: relative;
+        }
+
+        .pron_line {
+            width: 620px;
+            border-bottom: 1px solid #000;
+            position: absolute;
+            top: 500px;
+
+        }
+
+        .pron_text {
+            width: 45%;
+            height: 900px;
+            margin: 0 auto;
+            font-size: 50px;
+            padding-left: 300px;
+        }
+
+        .pron_text p {
+            margin-top: 100px;
+            margin-bottom: 100px;
+            font-size: 50px;
+            color: #411700;
+        }
+
+        .pron_text em {
+            font-size: 40px;
+            color: #d65109;
+        }
+
+        .pron_img {
+            width: 50%;
+            height: 800px;
+            margin: 0 auto;
+            background: url(img/편의점.png)no-repeat -80px 30px;
+            background-size: cover;
+        }
+
+        #recherche {
+            width: 100%;
+            height: 900px;
+            background: #e9e5bd;
+            border-bottom: 1px solid #000;
+            display: flex;
+            position: relative;
+            ;
+
+        }
+
+        .recherche_text {
+            position: absolute;
+            left: 1300px;
+            width: 45%;
+            height: 900px;
+        }
+
+        .recherche_text h2 {
+            font-size: 60px;
+        }
+
+        .recherche_text p {
+            font-size: 50px;
+            color: #411700;
+
+        }
+
+        .recherche_line {
+            width: 100%;
+            border-bottom: 1px solid #000;
+            margin-bottom: 100px;
+        }
+
+        .recherche_img {
+            margin: 0 auto;
+            width: 45%;
+            height: 600px;
+            background: url(img/회의.png)no-repeat;
+            background-size: contain;
+            position: absolute;
+            left: 300px;
+
+        }
+
+
+
+
+        #strategy {
+            width: 100%;
+            height: 900px;
+            background: #eade80;
+        }
+
+        #directional {
+            width: 100%;
+            background: #e9e5bd;
+            border-bottom: 1px solid #000;
+        }
+
+        #diagram {
+            width: 100%;
+            background: #e9e5bd;
+        }
+
+        #footer {
+            width: 100%;
+            height: 774px;
+            background: #411700;
+
+        }
+
+        /* 이미지 슬라이드 */
+        #graph {
+            width: 100%;
+            height: 980px;
+            background: #2e2c22;
+            position: relative;
+        }
+        #graph h2 {
+            font-size: 60px;
+            padding: 100px 0 0 300px;
+        }
+        .graph_line {
+            width: 820px;
+            border-bottom: 1px solid #000;
+        }
+        .slider {
+            width: 80%;
+            height: 800px;
+            margin: 0 auto;
+         
+        }
+
+        .swiper {
+            position: absolute;
+            top: 30%;
+            left: 900px;
+            width: 1200px;
+            height: 600px;
+        }
+
+        .swiper-slide.s1 {
+            background: url(img/slider01.png) no-repeat center / cover;
+        }
+
+        .swiper-slide.s2 {
+            background: url(img/slider01.png) no-repeat center / cover;
+        }
+
+        .swiper-slide.s3 {
+            background: url(img/slider01.png) no-repeat center / cover;
+        }
+
+        .swiper-button-prev {
+            position: absolute;
+            top: 200px;
+            left: 50%;
+            width: 50px;
+            height: 62px;
+            background: url(img/sb0227.svg);
+            background-position: 0px -150px;
+
+        }
+
+        .swiper-button-prev::after {
+            font-size: 0 !important;
+        }
+
+        .swiper-button-next {
+            position: absolute;
+            top: 200px;
+            left: 55%;
+            width: 50px;
+            height: 62px;
+            background: url(img/sb0227.svg);
+            background-position: -50px -150px;
+        }
+
+        .swiper-button-next::after {
+            font-size: 0 !important;
+        }
+        /*// 이미지 슬라이드 */
+
+#strategy {
+            width: 100%;
+            height: 900px;
+            background: #eade80;
+        }
+
+        #directional {
+            width: 100%;
+            background: #e9e5bd;
+            border-bottom: 1px solid #000;
+        }
+
+        #diagram {
+            width: 100%;
+            background: #e9e5bd;
+        }
+
+        #footer {
+            width: 100%;
+            height: 774px;
+            background: #411700;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrpa">
+        <div id="mainhome">
+
+            <div class="mainhome_header">
+
+                <ul>
+                    <li><a href="#">선정이유</a></li>
+                    <li><a href="#">사용자 조사</a></li>
+                    <li><a href="#">페르소나</a></li>
+                    <li><a href="#">경영전략</a></li>
+                    <li><a href="#">방향성</a></li>
+                    <li><a href="#">활동</a></li>
+                </ul>
+
+
+            </div>
+            <div class="mainhome_logo">
+                <div class="logo"></div>
+                <h2>요리보고 조리보고 자취생을 위한<br>
+                    초간단 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;레시피</h2>
+                <div class="tip"></div>
+                <em>요복 조복</em>
+            </div>
+
+            <div class="mainhome_honey_b"></div>
+        </div>
+        <div id="pron">
+            <div class="pron_line"></div>
+            <div class="pron_text">
+                <h2>선정이유</h2>
+                <p>요리는 어렵고 재료를 사기위해 장보는 것은<br>
+                    귀찮은 자취생들이 자주 먹는 편의점 음식을<br>
+                    더욱 더 맛있게 먹을 수 있도록 <br>
+                    레시피들을 모아서 어디서나 제공할 수 있게<br>
+                    선정하게 되었습니다.
+                </p>
+                <em>그냥 먹기 심심한 편의점 음식들을<br>
+                    어떻게 요리하고 조리해야 맛이 있을까요?
+                </em>
+            </div>
+            <div class="pron_img"></div>
+        </div>
+        <div id="recherche">
+            <div class="recherche_img"></div>
+
+            <div class="recherche_text">
+                <h2>사용자 조사</h2>
+                <div class="recherche_line"></div>
+                <p>전 연령층을 대상으로 편의점 및 편의점<br>
+                    음식에 대한 설문을 실시 했습니다.<br>
+                    과연 편의점을 얼마나 자주 방문하고<br>
+                    편의점 음식을 자주 사 먹는지 알 수 있는<br>
+                    설문 조사입니다.
+                </p>
+            </div>
+        </div>
+        <!-- 슬라이드 -->
+        <div id="graph">
+            <h2>사용자 조사 그래프</h2>
+            <div class="graph_line"></div>
+            <div class="slider">
+                <section id="contents">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide s1">         
+                            </div>
+                            <div class="swiper-slide s2">                     
+                            </div>
+                            <div class="swiper-slide s3">                  
+                            </div>
+                        </div>          
+                    </div>
+                    <div class="img_Type">
+                        <!-- <img src="../webClass/img/Mask Group-min.jpg" alt="메인 베너"> -->
+                    </div>
+                </section>              
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+       
+        <div id="strategy">
+             <!-- 페르소나 -->
+             <h2>페르소나</h2>
+        
+      
+        </div>
+        <div id="directional"></div>
+        <div id="diagram"></div>
+        <div id="footer"></div>
+      
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+        <script src="js/persona.js"></script>
+        <script>
+            const swiper = new Swiper('.swiper', {
+                // Optional parameters
+                direction: 'horizontal',
+                loop: true,
+                effect: 'slide',
+                autoplay: {
+                    delay: 3000,
+
+                },
+                // If we need pagination
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true
+                },
+
+                // Navigation arrows
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </script>
+</body>
+
+</html>

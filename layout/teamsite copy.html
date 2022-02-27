@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teamproject</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/slide.css">
+    <style>
+        @font-face {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 300;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.ttf') format("truetype");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.ttf') format("truetype");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 700;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.ttf') format("truetype");
+            font-display: swap;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <!-- 메인홈 -->
+        <div id="header">
+            <div class="header_img_top">
+                <div class="header_imgt"></div>
+                <div class="header_menu">
+                    <ul>
+                        <li><a href="#">선정이유</a></li>
+                        <li><a href="#">사용자 조사</a></li>
+                        <li><a href="#">페르소나</a></li>
+                        <li><a href="#">경영전략</a></li>
+                        <li><a href="#">방향성</a></li>
+                        <li><a href="#">활동</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header_text">
+                <div class="header_logo"></div>
+                <p>요리보고 조리보고 자취생을 위한<br>
+                    초간단 <span class="honey_tip ir_so">꿀팁</span> 레시피</p>
+            </div>
+            <div class="header_img_bottom"></div>
+        </div>
+        <!-- 선정이유 -->
+        <div id="pron">
+            <div class="pron_h2">
+                <h2>선정이유</h2>
+                <div class="pron_line"></div>
+            </div>
+            <div class="pron_text">
+                <p>
+                    요리는 어렵고 재료를 사기위해 장보는 것은<br>
+                    귀찮은 자취생들이 자주 먹는 편의점 음식을<br>
+                    더욱 더 맛있게 먹을 수 있도록 <br>
+                    레시피들을 모아서 어디서나 제공할 수 있게<br>
+                    선정하게 되었습니다.</p>
+                <em>그냥 먹기 심심한 편의점 음식들을<br>
+                    어떻게 요리하고 조리해야 맛이 있을까요?</em>
+            </div>
+            <div class="pron_img"></div>
+        </div>
+        <!-- 사용자 조사 -->
+        <div id="recherche">
+            <div class="recherche_h2">
+                <h2>사용자 조사</h2>
+                <div class="recherche_line"></div>
+            </div>
+            <div class="recherche_img"></div>
+            <div class="recherche_text">
+                <p>전 연령층을 대상으로 편의점 및 편의점<br>
+                    음식에 대한 설문을 실시 했습니다.<br>
+                    과연 편의점을 얼마나 자주 방문하고<br>
+                    편의점 음식을 자주 사 먹는지 알 수 있는<br>
+                    설문 조사입니다.</p>
+            </div>
+        </div>
+        <div id="graph">
+            <!-- 슬라이드 -->
+            <div id="graph">
+                <h2>사용자 조사 그래프</h2>
+                <div class="graph_line"></div>
+                <div class="slider">
+                    <section id="contents">
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide s1">
+                                </div>
+                                <div class="swiper-slide s2">
+                                </div>
+                                <div class="swiper-slide s3">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="img_Type">
+                            <!-- <img src="../webClass/img/Mask Group-min.jpg" alt="메인 베너"> -->
+                        </div>
+                    </section>
+
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+            <!-- 페르소나 -->
+        </div>
+        <div id="persona">
+            <div class="persona_h2">
+                <h2>페르소나</h2>
+            </div>
+            <div class="persona_line"></div>
+            <p>특정한 목적의 앱,웹을 사용할 것 같은
+                사람을 가상으로 설정하여
+                아주 구체적으로 만드는 것을 뜻합니다.
+                즉, ‘사용자를 가상으로 만들어보는
+                것’<br>이라고 생각하시면 됩니다.</p>
+            <div class="persona_persona1">
+                <div class="type1">
+                    <div class="name">김영희</div>
+                    <div class="face1"></div>
+                    <div class="result1">
+                        행동변수 : 퇴근이 늦어 매일 배달은식 주문<br><br>
+                        희망사항 : 간편하고 저렵하게 요리를 만들어 먹고 싶어요.<br><br>
+                        불편사항 : 한달 식비가 많이 나옴
+                    </div>
+                    <div class="modal1"></div>
+                </div>
+                <div class="type2 hide">
+                    <div class="name">박철수</div>
+                    <div class="face2 hide"></div>
+                    <div class="result2 hide">
+                        행동변수 : 퇴근이 늦어 매일 배달은식 주문<br><br>
+                        희망사항 : 간편하고 저렵하게 요리를 만들어 먹고 싶어요.<br><br>
+                        불편사항 : 한달 식비가 많이 나옴
+                    </div>
+                    <div class="modal2 show"></div>
+                </div>
+                <div class="type3 hide">
+                    <div class="name">개똥이</div>
+                    <div class="face3 hide"></div>
+                    <div class="result3 hide">
+                        행동변수 : 퇴근이 늦어 매일 배달은식 주문<br><br>
+                        희망사항 : 간편하고 저렵하게 요리를 만들어 먹고 싶어요.<br><br>
+                        불편사항 : 한달 식비가 많이 나옴
+                    </div>
+                    <div class="modal3 show"></div>
+                </div>
+            </div>
+        </div>
+        <!-- 경영전략 -->
+        <div id="directional">
+            <h2>UI/UX 경영전략</h2>
+            <div class="directional_line"></div>
+            <div class="directional_img">
+                <div class="directional_limg">
+                    <div class="l_img">
+                        <div class="l_text">
+                            <h3>광고 배너</h3>
+                            <p>사이트 시작 페이지에 요리주제에 맞는<br>
+                                광고를 넣어서 수익 창출</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="directional_cimg">
+                    <div class="c_img">
+                        <div class="c_text">
+                            <h3>유명 요식업 스타들과의 콜라보</h3>
+                            <p>사이트 광고를 유명 요식업 스타들과 콜라보<br>
+                                로 사용자 유입</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="directional_rimg">
+                    <div class="r_img">
+                        <div class="r_text">
+                            <h3>레시피 등록자 혜택</h3>
+                            <p>등록한 레시피로 인한 혜택 부여</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div id="project">
+            <div class="project_h2">
+                <h2>프로젝트 방향성</h2>
+                <div class="project_line"></div>
+            </div>
+            <div class="project_img"></div>
+            <div class="project_text">
+                <h3>사용자 간의 레시피 공유</h3>
+                <p>사용자들간의 레시피를 공유해서 보다<br>
+                    편하고 쉽게 편의점 음식을 다양하게 요리<br>
+                    가능
+                </p>
+            </div>
+        </div>
+        <div id="project1">
+            <div class="project1_text_l">
+                <div class="project1_h2">
+                    <h3>선정이유</h3>
+                </div>
+                <div class="project1_text">
+                    <p>
+                        요리는 어렵고 재료를 사기위해 장보는 것은<br>
+                        귀찮은 자취생들이 자주 먹는 편의점 음식을<br>
+                        더욱 더 맛있게 먹을 수 있도록 <br>
+                        레시피들을 모아서 어디서나 제공할 수 있게<br>
+                        선정하게 되었습니다.</p>
+                </div>
+            </div>
+    
+                <div class="project1_img"></div>
+           
+        </div>
+         <!-- 다이어그램 -->
+         <div id="diagram">
+            <div class="diagram_h2">
+                <h2>Affinity Diagram</h2>            
+            </div>
+            <div class="diagram_line"></div>
+            <div class="diagram_top">
+                <div class="diagram_img1"></div>
+                <div class="diagram_img2"></div>
+                <div class="diagram_img3"></div>
+            </div>
+            <div class="diagram_bottom">
+                <div class="diagram_img4"></div>
+                <div class="diagram_img5"></div>
+                <div class="diagram_img6"></div>
+            </div>
+        </div>
+        <div class="diagram_img7"></div>
+        <div class="frame"></div>
+        <div id="footer">
+            <div class="footer_hoeny"></div>
+        </div>
+    </div>
+    <script src="js/slider.js"></script>
+    <!-- <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script> -->
+    <script>
+        const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+            effect: 'slide',
+            autoplay: {
+                delay: 3000,
+
+            },
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+        const type1 = document.querySelector(".type1");
+        const type2 = document.querySelector(".type2");
+        const type3 = document.querySelector(".type3");
+
+        const face1 = document.querySelector(".face1");
+        const face2 = document.querySelector(".face2");
+        const face3 = document.querySelector(".face3");
+
+        const result1 = document.querySelector(".result1");
+        const result2 = document.querySelector(".result2");
+        const result3 = document.querySelector(".result3");
+
+        const modal1 = document.querySelector(".modal1");
+        const modal2 = document.querySelector(".modal2");
+        const modal3 = document.querySelector(".modal3");
+
+        modal1.addEventListener("click", () => {
+
+            // modal1.classList.remove("show")        
+            // type1.classList.remove("hide")     
+            // face1.classList.remove("hide")
+            // result1.classList.remove("hide")
+
+            modal1.classList.toggle("show")
+            type1.classList.toggle("hide")
+            face1.classList.toggle("hide")
+            result1.classList.toggle("hide")
+            modal2.classList.add("show")
+            type2.classList.add("hide")
+            face2.classList.add("hide")
+            result2.classList.add("hide")
+            modal3.classList.add("show")
+            type3.classList.add("hide")
+            face3.classList.add("hide")
+            result3.classList.add("hide")
+
+        });
+
+        modal2.addEventListener("click", () => {
+
+            modal2.classList.toggle("show")
+            type2.classList.toggle("hide")
+            face2.classList.toggle("hide")
+            result2.classList.toggle("hide")
+            modal1.classList.add("show")
+            type1.classList.add("hide")
+            face1.classList.add("hide")
+            result1.classList.add("hide")
+            modal3.classList.add("show")
+            type3.classList.add("hide")
+            face3.classList.add("hide")
+            result3.classList.add("hide")
+        });
+        modal3.addEventListener("click", () => {
+
+            modal3.classList.toggle("show")
+            type3.classList.toggle("hide")
+            face3.classList.toggle("hide")
+            result3.classList.toggle("hide")
+            modal1.classList.add("show")
+            type1.classList.add("hide")
+            face1.classList.add("hide")
+            result1.classList.add("hide")
+            modal2.classList.add("show")
+            type2.classList.add("hide")
+            face2.classList.add("hide")
+            result2.classList.add("hide")
+        });
+    </script>
+</body>
+
+</html>
