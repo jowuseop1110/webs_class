@@ -55,12 +55,12 @@
                 <div class="header_imgt"></div>
                 <div class="header_menu">
                     <ul>
-                        <li><a href="#">선정이유</a></li>
-                        <li><a href="#">사용자 조사</a></li>
-                        <li><a href="#">페르소나</a></li>
-                        <li><a href="#">경영전략</a></li>
-                        <li><a href="#">방향성</a></li>
-                        <li><a href="#">활동</a></li>
+                        <li class="active"><a href="section1">선정이유</a></li>
+                        <li><a href="section2">사용자 조사</a></li>
+                        <li><a href="section3">페르소나</a></li>
+                        <li><a href="section4">경영전략</a></li>
+                        <li><a href="section5">방향성</a></li>
+                        <li><a href="section6">활동</a></li>
                     </ul>
                 </div>
             </div>
@@ -72,9 +72,11 @@
             <div class="header_img_bottom"></div>
         </div>
         <!-- 선정이유 -->
-        <div id="pron">
+        <div id="pron" class="content__item">
             <div class="pron_h2">
+
                 <h2>선정이유</h2>
+
                 <div class="pron_line"></div>
             </div>
             <div class="pron_text">
@@ -90,7 +92,7 @@
             <div class="pron_img"></div>
         </div>
         <!-- 사용자 조사 -->
-        <div id="recherche">
+        <div id="recherche" class="content__item">
             <div class="recherche_h2">
                 <h2>사용자 조사</h2>
                 <div class="recherche_line"></div>
@@ -133,7 +135,7 @@
             </div>
             <!-- 페르소나 -->
         </div>
-        <div id="persona">
+        <div id="persona" class="content__item">
             <div class="persona_h2">
                 <h2>페르소나</h2>
             </div>
@@ -177,7 +179,7 @@
             </div>
         </div>
         <!-- 경영전략 -->
-        <div id="directional">
+        <div id="directional" class="content__item">
             <h2>UI/UX 경영전략</h2>
             <div class="directional_line"></div>
             <div class="directional_img">
@@ -212,7 +214,7 @@
                 </div>
             </div>
         </div>
-        <div id="project">
+        <div id="project" class="content__item">
             <div class="project_h2">
                 <h2>프로젝트 방향성</h2>
                 <div class="project_line"></div>
@@ -229,25 +231,23 @@
         <div id="project1">
             <div class="project1_text_l">
                 <div class="project1_h2">
-                    <h3>선정이유</h3>
+                    <h3>다양한 요리 소개</h3>
                 </div>
                 <div class="project1_text">
                     <p>
-                        요리는 어렵고 재료를 사기위해 장보는 것은<br>
-                        귀찮은 자취생들이 자주 먹는 편의점 음식을<br>
-                        더욱 더 맛있게 먹을 수 있도록 <br>
-                        레시피들을 모아서 어디서나 제공할 수 있게<br>
-                        선정하게 되었습니다.</p>
+                    다양한 편의점 음식 종류를 카테고리로<br>
+                    만들어서 사용자가 쉽고 편하게 레시피를<br>
+                     찾을 수 있음</p>
                 </div>
             </div>
-    
-                <div class="project1_img"></div>
-           
+
+            <div class="project1_img"></div>
+
         </div>
-         <!-- 다이어그램 -->
-         <div id="diagram">
+        <!-- 다이어그램 -->
+        <div id="diagram" class="content__item">
             <div class="diagram_h2">
-                <h2>Affinity Diagram</h2>            
+                <h2>Affinity Diagram</h2>
             </div>
             <div class="diagram_line"></div>
             <div class="diagram_top">
@@ -359,6 +359,14 @@
             face2.classList.add("hide")
             result2.classList.add("hide")
         });
+
+        document.querySelectorAll("#header li a").forEach((element, index) => {
+            element.addEventListener("click", (e) => {
+                e.preventDefault();
+                let sectionOffset = document.querySelectorAll(".content__item")[index].offsetTop
+                window.scrollTo({top:sectionOffset, behavior:'smooth'});
+            })
+        })
     </script>
 </body>
 
