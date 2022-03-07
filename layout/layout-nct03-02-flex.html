@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃03-2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        #header {
+            width: 100%;
+            height: 100px;
+            background: #555;
+        }
+
+        #section {
+            width: 100%;
+            display: flex;
+        }
+
+        .aside {
+            width: 25%;
+            height: 700px;
+            background: #666;
+        }
+
+
+        .article1 {
+            width: 50%;
+            height: 700px;
+            background: #777;
+        }
+
+        .article2 {
+            width: 25%;
+            height: 700px;
+            background: #888;
+        }
+
+        #footer {
+            width: 100%;
+            height: 100px;
+            background: #999;
+        }
+
+        @media (max-width:1220px) {
+            #header {
+                height: 200px;
+            }
+
+            #section {
+                flex-wrap: wrap;
+            }
+            .aside {
+             width: 25%;         
+            }
+            .article1 {
+                width: 75%;
+            }
+            .article2 {
+                width: 100%;
+                height: 200px;
+            }
+        }
+
+        @media (max-width:768px) {
+            #section {
+                flex-direction: column;
+            }
+            .aside {
+            display: none;       
+            }
+            .article1 {
+                width: 100%;
+                height: 400px;    
+            }
+            .article2 {
+                width: 100%;
+                height: 400px;
+            }    
+        }
+
+        @media (max-width:600px) {
+            #header {
+                height: 250px;
+            }
+            .article1 {         
+                height: 400px;    
+            }
+            .article2 {
+                height: 400px;
+            }  
+            #footer {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="header"></div>
+        <div id="section">
+            <div class="aside"></div>
+            <div class="article1"></div>
+            <div class="article2"></div>
+
+        </div>
+        <div id="footer"></div>
+
+    </div>
+</body>
+
+</html>

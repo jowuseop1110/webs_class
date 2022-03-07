@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃03-3</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+          width: 1200px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-areas:
+          "header header"
+          "aside article1"
+          "aside article2"
+          "aside article3"
+          "footer footer"
+          ;
+          grid-template-columns: 30% 70%;
+          grid-template-rows: 100px 300px 300px 300px 100px;
+      }
+      #header {
+        grid-area: header;
+          background: rgb(136, 163, 236);
+      }
+      #aside {
+        grid-area: aside;
+        background: rgb(111, 143, 231);
+      }
+      #article1 {
+        grid-area: article1;
+        background: rgb(76, 116, 224);
+      }
+      #article2 {
+        grid-area: article2;
+        background: rgb(56, 86, 170);
+      }
+      #article3 {
+        grid-area: article3;
+        background: rgb(58, 103, 228);
+      }
+      #footer {
+        grid-area: footer;
+        background: rgb(29, 66, 170);
+      }
+      @media(max-width: 1300px){
+        #wrap {
+              width: 100%;
+              grid-template-areas:
+              "header header"
+                "aside article1"
+                "aside article2"
+                "article3 article3"
+                "footer footer"
+                ;
+          grid-template-columns: 35% 65%;
+          grid-template-rows: 200px 300px 300px 250px 100px;
+          }
+      }
+      @media(max-width: 768px){
+        #wrap {
+              grid-template-areas:
+              "header header"
+                "aside aside"
+                "article1 article2"
+                "article3 article3"
+                "footer footer"
+                ;
+          grid-template-columns: 50% 50%;
+          grid-template-rows: 200px 200px 300px 250px 100px;
+          }
+      }
+      @media(max-width: 480px){
+        #wrap {
+              grid-template-areas:
+              "header "
+                "aside "
+                "article1 "
+                "article2 "
+                "footer "
+                ;
+          grid-template-columns: 100%;
+          grid-template-rows: 200px 300px 300px 300px 100px;
+          }
+      }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header"></div>
+        <aside id="aside"></aside>
+        <article id="article1"></article>
+        <article id="article2"></article>
+        <article id="article3"></article>
+        <div id="footer"></div>
+    </div>
+</body>
+</html>
