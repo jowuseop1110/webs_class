@@ -226,13 +226,11 @@ Query OK, 0 rows affected (0.02 sec)
                 <div class="bs-callout bs-callout-info">
                     ALTER TABLE 테이블명 ADD 추가할 필드명 AFTER 필드명 위치
                 </div>
-                <pre class="language-js"><code>
-mysql>  ALTER TABLE mymember ADD youGender enum('m','w','x') default 'x' comment " 남성은m, 여성은w" AFTER youBirth;
+                <pre class="language-js"><code>mysql>  ALTER TABLE mymember ADD youGender enum('m','w','x') default 'x' comment " 남성은m, 여성은w" AFTER youBirth;
 Query OK, 0 rows affected (0.12 sec)
 Records: 0  Duplicates: 0  Warnings: 0
 </code></pre>
-                <pre class="language-js"><code>
-mysql> desc mymember;
+                <pre class="language-js"><code>mysql> desc mymember;
 +------------+-------------------+------+-----+---------+----------------+
 | Field      | Type              | Null | Key | Default | Extra          |
 +------------+-------------------+------+-----+---------+----------------+
@@ -251,8 +249,7 @@ mysql> desc mymember;
                 <div class="bs-callout bs-callout-info">
                     ALTER TABLE 테이블명 MODIFY 수정할 필드명
                 </div>
-                <pre class="language-js"><code>
-alter table mymember02 modify youname int(20);
+                <pre class="language-js"><code>alter table mymember02 modify youname int(20);
 Query OK, 0 rows affected (0.06 sec)
 Records: 0  Duplicates: 0  Warnings: 0
 </code></pre>
@@ -261,8 +258,7 @@ Records: 0  Duplicates: 0  Warnings: 0
                 <div class="bs-callout bs-callout-info">
                     ALTER TABLE 테이블명 DROP 삭제할 필드명
                 </div>
-                <pre class="language-js"><code>
-alter table mymember02 drop trgtime;
+                <pre class="language-js"><code>alter table mymember02 drop trgtime;
 Query OK, 0 rows affected (0.06 sec)
 Records: 0  Duplicates: 0  Warnings: 0
 </code></pre>
