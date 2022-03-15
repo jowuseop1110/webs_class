@@ -130,7 +130,7 @@
                 <li><a href="mouseEffect02.html">2</a></li>
                 <li><a href="mouseEffect03.html">3</a></li>
                 <li><a href="mouseEffect04.html">4</a></li>
-                <li><a href="#">5</a></li>
+                <li><a href="mouseEffect05.html">5</a></li>
                 <li><a href="#">6</a></li>
                 <li><a href="#">7</a></li>
                 <li><a href="#">8</a></li>
@@ -208,13 +208,13 @@
 
     // 출력용
     window.addEventListener("mousemove", (event) => {
-        document.querySelector(".clientX").innerHTML = event.clientX
+        document.querySelector(".clientX").innerHTML = event.clientX   //브라우저 화면이 기준(스크롤은 무시)
         document.querySelector(".clientY").innerHTML = event.clientY
-        document.querySelector(".offsetX").innerHTML = event.offsetX
+        document.querySelector(".offsetX").innerHTML = event.offsetX   //이벤트 대상이 기준
         document.querySelector(".offsetY").innerHTML = event.offsetY
-        document.querySelector(".pageX").innerHTML = event.pageX
+        document.querySelector(".pageX").innerHTML = event.pageX       //전체 문서를 기준(스크롤 화면을 포함해서 측정)
         document.querySelector(".pageY").innerHTML = event.pageY
-        document.querySelector(".screenX").innerHTML = event.screenX
+        document.querySelector(".screenX").innerHTML = event.screenX   //모니터 화면을 기준으로 좌표를 제공
         document.querySelector(".screenY").innerHTML = event.screenY
     });
 
