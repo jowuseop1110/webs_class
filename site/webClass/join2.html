@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹 표준 사이트 만들기: 회원가입</title>
+
+    <!-- SEO(검색엔진최적화) -->
+    <meta name="acthor" content="webstroyboy">
+    <meta name="description" content="웹 표준을 준수한 사이트입니다.">
+    <meta name="keywords" content="웹표준, 웹접근성, 웹호환성, 사이트제작, 사이트만들기, 포트폴리오">
+    <meta name="robots" content="all">
+
+    <!-- 메타 정보 -->
+    <meta property="og:title" content="웹표준 사이트 제작">
+    <meta property="og:url" content="https://webstoryboy.github.io/webs_class/site/webClass/index.html">
+    <meta property="og:image" content="https://webstoryboy.github.io/webs_class/site/webClass/img/icon.png">
+    <meta property="og:description" content="웹 표준을 준수한 사이트 튜토리얼입니다.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="웹표준 사이트 제작">
+    <meta name="twitter:url" content="https://webstoryboy.github.io/webs_class/site/webClass/index.html">
+    <meta name="twitter:image" content="https://webstoryboy.github.io/webs_class/site/webClass/img/icon.png">
+    <meta name="twitter:description" content="웹 표준을 준수한 사이트 튜토리얼입니다.">
+
+    <!-- 아이콘 & 파비콘 -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="apple-touch-icon" href="img/icon114.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/icon114.png">
+    <link rel="apple-touch-icon-precomposed" href="img/icon.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="167x167" href="img/icon167.png" />
+
+    <!-- CSS style -->
+    <link rel="stylesheet" href="css/fonts.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <style>
+        /* 전체 레이아웃 */
+#wrap {
+ height: 1000px;
+}
+
+.gray {
+    background: #f5f5f5;
+}
+
+.white {
+    background: #fff !important;
+}
+/* 기본셋팅 */
+:root {
+    font-style: 16px;
+    line-height: 1.53;
+}
+
+/* 여백 초기화 */
+body,
+div,
+dl,
+dt,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+textarea,
+p,
+blockquote,
+th,
+td,
+input,
+select,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+figure,
+figcaption {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 시멘트 태그 초기화 */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+/* 폰트 초기화 */
+body,
+button,
+input,
+select,
+table,
+textarea {
+    color: #222;
+    font-family: 'NexonLv1Gothic', 'AppleSDGothicNeo-Regular', 'Malgun Gothic', '맑은 고딕', dotum, 돋움;
+}
+
+/* 링크 초기화 */
+a {
+    color: #222;
+    text-decoration: none;
+}
+
+/* 목록 초기화 */
+ol,
+ul,
+li {
+    list-style: none;
+}
+
+/* 스타일 초기화 */
+em, address {
+    font-style: normal;
+}
+img, fieldset, button {
+    border: 0;
+}
+/* skip 메뉴 */
+#skip {
+    position: relative;
+    z-index: 10000;
+}
+
+#skip a {
+    background: #000;
+    color: #fff;
+    position: absolute;
+    left: -400px;
+    top: 5px;
+    padding: 20px 40px;
+    display: inline-block;
+    transition: left 0.3s ease-in;
+}
+
+#skip a:active,
+#skip a:focus {
+    left: 5px;
+}
+
+/* 클리어 픽스 */
+.clearfix {
+    zoom: 1;
+}
+
+.clearfix::before,
+.clearfix::after {
+    content: '';
+    display: block;
+}
+
+.clearfix::after {
+    clear: both;
+}
+
+/* ir 효과
+ir_pm : 의미 있는 이미지의 대체 텍스트를 제공하는 경우
+ir_wa : 의미 있는 이미지의 대체 텍스트로 이미지가 없어도 대체 텍스트를 보여주고 싶을 때
+ir_so : 대체 테스트가 아닌 접근성을 위한 숨김 텍스트를 제공할 때
+ */
+.ir_pm {
+    display: block;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+}
+
+.ir_wa {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+.ir_so {
+    overflow: hidden;
+    position: relative;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    text-indent: -9999px;
+}
+
+/* 폰트 셋팅 */
+.NexonLv1 {
+    font-family: 'NexonLv1Gothic';
+}
+
+.NexonLv1-300 {
+    font-family: 'NexonLv1Gothic';
+    font-weight: 300;
+}
+
+.NexonLv1-400 {
+    font-family: 'NexonLv1Gothic';
+    font-weight: 400;
+}
+
+.NexonLv1-700 {
+    font-family: 'NexonLv1Gothic';
+    font-weight: 700;
+}
+
+.NexonLv2 {
+    font-family: 'NexonLv2Gothic';
+}
+
+.NexonLv2-300 {
+    font-family: 'NexonLv2Gothic';
+    font-weight: 300;
+}
+
+.NexonLv2-400 {
+    font-family: 'NexonLv2Gothic';
+    font-weight: 400;
+}
+
+.NexonLv2-500 {
+    font-family: 'NexonLv2Gothic';
+    font-weight: 500;
+}
+
+.NexonLv2-700 {
+    font-family: 'NexonLv2Gothic';
+    font-weight: 700;
+}
+
+.Gmarket {
+    font-family: 'GmarketSans';
+}
+
+.Gmarket-300 {
+    font-family: 'GmarketSans';
+    font-weight: 300;
+}
+
+.Gmarket-500 {
+    font-family: 'GmarketSans';
+    font-weight: 500;
+}
+
+.Gmarket-700 {
+    font-family: 'GmarketSans';
+    font-weight: 700;
+}
+
+/* 간격 셋팅 */
+.mt0 {
+    margin-top: 0 !important;
+}
+
+.mt10 {
+    margin-top: 10px !important;
+}
+
+.mt20 {
+    margin-top: 20px !important;
+}
+
+.mt30 {
+    margin-top: 30px !important;
+}
+
+.mt40 {
+    margin-top: 40px !important;
+}
+
+.mt50 {
+    margin-top: 50px !important;
+}
+
+.mb0 {
+    margin-bottom: 0 !important;
+}
+
+.mb10 {
+    margin-bottom: 10px !important;
+}
+
+.mb20 {
+    margin-bottom: 20px !important;
+}
+
+.mb30 {
+    margin-bottom: 30px !important;
+}
+
+.mb40 {
+    margin-bottom: 40px !important;
+}
+
+.mb50 {
+    margin-bottom: 50px !important;
+}
+
+/* 컨테이너 */
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* 헤더3 grid를 사용하는 경우 */
+
+#header {
+    height: 80px;
+    min-width: 1200px;
+    white-space: nowrap;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    /* 그리드 */
+    position: relative;
+    border-bottom: 5px solid #411700;
+}
+#header .yobock_jobock {
+    width: 50px;
+    height: 50px;
+    background: url(img/요복조복.png);
+    position: absolute;
+    top: 0;
+    left: 50%;
+}
+
+#header .logo a {
+    position: absolute;
+    top: 50px;
+    left: 49.7%;
+    height: 20px;
+    font-size: 15px;
+
+}
+
+#header .member {
+    flex: 0 0 20%;
+    padding: 10px 18px;
+    text-align: right;
+    position: absolute;
+    top: 8px;
+    right: 20px;
+}
+
+#header .member a {
+    font-weight: 700;
+    display: inline-block;
+    padding: 9px 22px;
+    border: 1px solid #E9E5BD;
+    background: #E9E5BD;
+    border-radius: 50px;
+    transition: all 0.3s;
+}
+
+#header .member a:hover {
+    background: #333;
+    color: #fff;
+}
+        /* 회원가입 */
+
+.join-type {
+    padding: 100px 0 0 0;
+    margin-left: 4%;
+}
+
+.member-form {
+    max-width: 800px;
+    background: #fff;
+    margin: 0px auto;
+    padding: 50px;
+}
+
+.member-form h3 {
+    text-align: center;
+    font-weight: 500;
+    font-size: 80px;
+    margin-bottom: 50px;
+}
+.join-box {
+  margin-left: 50px;
+}
+.join-box :nth-child(1) {
+    margin-right: 30px;
+}
+.join-box :nth-child(3) {
+    margin-right: 30px;
+}
+.join-box :nth-child(5) {
+    margin-right: 30px;
+    margin-bottom: 50px;
+}
+.join-box > div {
+    float: left;
+    width: 300px;
+}
+.join-box label {  
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.join-box input {
+    width: 90%;
+    padding: 15px;
+    height: 50px;
+    margin-bottom: 30px;
+    margin-right: 30px;
+}
+
+.join-submint {
+    margin-left: 70px;
+    font-size: 16px;
+    background: #E9E5BD;
+    border-radius: 50px;
+    padding: 15px;
+    display: block;
+    width: 80%;
+    transition: all 0.3s;
+    cursor: pointer;
+    font-weight: 700;
+}
+.join-submint:hover {
+    box-shadow: inset 0 0 0 2px #222;
+    background: #fff;
+}
+    </style>
+</head>
+
+<body>
+
+    <div id="skip">
+        <a href="#contents">컨텐츠 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <div id="wrap">
+        <header id="header">
+            <h1 class="logo">
+                <div class="yobock_jobock"></div>
+                <a href="index.html"><em>요복조복</em></a>
+            </h1>
+            <div class="member">
+                <a href="login.html">로그인</a>
+                <a href="join.html">회원가입</a>
+            </div>
+        </header>
+        <!-- //header -->
+        <main id="contents">
+            <h2 class="ir_so">컨텐츠 영역</h2>
+            <section class="join-type">
+                <div class="member-form">
+                    <h3>환영합니다!</h3>
+                    <form action="@" name="join" method="post">
+                        <fieldset>
+                            <legend class="ir_so">로그인 입력폼</legend>
+                            <div class="join-box">
+                                <div>
+                                    <label for="youEmail">이메일</label>
+                                    <input type="email" id="youEmail"  name="youEmail" maxlength="20"
+                                        placeholder="이메일" autocomplete="off" autofocus required>
+                                </div>
+                                <div>
+                                    <label for="youName">닉네임</label>
+                                    <input type="name" id="youPass" name="youName" maxlength="10"
+                                        placeholder="닉네임" autocomplete="off" autofocus required>
+                                </div>
+                                <div>
+                                    <label for="youPass">비밀번호</label>
+                                    <input type="password" id="youPass" name="youPass" placeholder="비밀번호"
+                                        autocomplete="off" required>
+                                </div>
+                                <div>
+                                    <label for="youPassC">비밀번호 확인</label>
+                                    <input type="password" id="youPass" name="youPass" placeholder="비밀번호 확인"
+                                        autocomplete="off" required>
+                                </div>
+                                <div>
+                                    <label for="youBirth">생년월일</label>
+                                    <input type="name" id="youPass" name="youName" maxlength="10"
+                                        placeholder="생년월일" autocomplete="off" autofocus required>
+                                </div>
+                                <div>
+                                    <label for="youName">핸드폰 번호</label>
+                                    <input type="name" id="youPass" name="youName" maxlength="13"
+                                        placeholder="핸드폰 번호" autocomplete="off" autofocus required>
+                                </div>
+                            </div>
+                            <button id="joinBtn" class="join-submint" type="submint">로그인</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+    </div>
+    <!-- //wrap -->
+</body>
+
+</html>
