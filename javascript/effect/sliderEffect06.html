@@ -381,7 +381,7 @@
             dotActive.forEach(el => { //dotActive 저장되어 있는 "<a href='#'class='dot'></a>" *5 에서 활성화 되어 있는 active 를 (remove) 삭제 해준다
                 el.classList.remove("active");
             })
-            dotActive[num].classList.add("active");             //acyive가 삭제되어 있는dotActive에서 (num 숫자) num에 숫자가 붙은 있는 dotActive에 active를 넣어준다
+            dotActive[num].classList.add("active");   //acyive가 삭제되어 있는dotActive에서 (num 숫자) num에 숫자가 붙은 있는 dotActive에 active를 넣어준다
 
         }
         document.querySelectorAll(".slider__btn a").forEach((btn, index) => {      // slider__btn a를 전체 선택하여
