@@ -103,7 +103,7 @@ let allMusic = [
     },
     {
         name : "18. 쇼미더머니 10 Episode 2",
-        artist : "개코, 조광일; ",
+        artist : "개코, 조광일",
         img: "music-18",
         audio: "music18"
     },
@@ -114,7 +114,7 @@ let allMusic = [
         audio: "music19"
     },
     {
-        name : "20. 연가",
+        name : "20. 축가",
         artist : "전우성 (노을)",
         img: "music-20",
         audio: "music20"
