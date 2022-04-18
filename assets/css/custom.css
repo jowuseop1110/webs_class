@@ -52,7 +52,7 @@ body {background:#f1f4fb url(../img/body_bg.gif)}
 /* Header  */
 
 #header{
-	background:#a5d5fa center 57px;
+	background:#c462e8 center 57px;
 	padding: 10px 0 10px 0px;
 }
 #header.sub {
@@ -129,7 +129,7 @@ pre.pre-show{
 .header_tit h1 {display:inline-block; font-size: 45px; text-transform:uppercase; color:#fff;}
 .header_tit h2 {margin-top:4px;}
 .header_tit h2 a {font-size:30px; font-family: 'Abel'; color:#fff; b}
-.header_icon {margin: 20px 0; }
+.header_icon {margin: 20px 0;}
 .header_icon ul {margin:20px 0;}
 
 .header_icon {text-align: center;}

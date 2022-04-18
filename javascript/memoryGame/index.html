@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
     <title>Card Game</title>
     <style>
         * {
@@ -85,11 +86,48 @@
             80%  {transform: translateX(8px);}
             100% {transform: translateX(0);}
         }
+        .card_sound {
+            position: absolute;
+            right: 20px;
+            top: 20px;         
+        }
+        .card_sound button {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            background: #fff;  
+           color: #007bff;
+           text-align: center;
+           line-height: 40px;
+           border-radius: 50%;
+           cursor: pointer;
+           border: 0;
+        }
+        .card__start button {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            background: #fff;  
+           color: #007bff;
+           text-align: center;
+           line-height: 40px;
+           border-radius: 50%;
+           cursor: pointer;
+           border: 0;
+        }
     </style>
 </head>
 <body>
     <div class="wrap__card">
         <div class="card__inner">
+            <div class="card__start">
+                <button class="material-icons">waving_hand</button>
+            </div>
+            <div class="card_sound">
+                <button class="material-icons">volume_up</button>
+                <!-- <span class="material-icons">volume_off</span> -->
+                <audio id="song" src="../effect/musicPlayer/songs/music08.mp3" loop="loop"></audio>
+            </div>
             <ul class="cards">
                 <li>
                     <div class="view front">
@@ -229,13 +267,29 @@
         // 04. 클릭한 카드의 이미지 가저오기
         // 05. 두개의 이미지 비교하기
         // 06. 틀린 이미지 애니메이션 효과 주기
-        // 07. 빨리 클릭하면 버그 발생
+        // 07. 빨리 클릭하면 버그 발생 처리
+        // 08. 다 맞췄을 때
+        // 09. 카드 섞기
 
         const cards = document.querySelectorAll(".cards li");
+        let cardSound = document.querySelector(".card_sound button")
+        let cardSong = document.querySelector("#song")
+        let cardStart = document.querySelector(".card__start")
         
         let cardOne, cardTwo;
         let disableDeck = false;
+        let matchedCard = 0;
+        let sound = [
+            "audio/match2.mp3",
+            "audio/match.mp3",
+            "audio/up.mp3",
+        ]
+        let soundMatch = new Audio(sound[0]);
+        let soundNoMatch = new Audio(sound[1]);
+        let soundSuccess = new Audio(sound[2]);
         
+        
+
         function flipCard(e){
             let clickedCard = e.target;
            if(clickedCard !== cardOne && !disableDeck){
@@ -255,10 +309,18 @@
 
         function matchCards(img1, img2){
             if(img1 == img2){
+                matchedCard++;
+                if(matchedCard == 8){
+                    setTimeout(()=>{
+                        shuffledCard()
+                    }, 500)
+                }
                 cardOne.removeEventListener("click", flipCard);
                 cardTwo.removeEventListener("click", flipCard);             
                 cardOne = cardTwo = "";
+                soundMatch.play()
                 return disableDeck = false;
+                
             } 
             else{
                 setTimeout(()=>{
@@ -271,12 +333,71 @@
                     cardOne = cardTwo = "";
                     return disableDeck = false;
                 }, 1200);
+                soundNoMatch.play()
             }
         }
 
+        //뮤직 재생
+        cardSound.addEventListener("click", function(){
+            this.classList.toggle("is-playing");
+
+            if(this.classList.contains("is-playing")){
+                this.innerText = "volume_up";
+               cardSong.play()
+             } else {
+                this.innerText = "volume_off";
+                 cardSong.pause()
+             }
+        });
+
+        //시작 버튼
+        cardStart.addEventListener("click", () => {
+            shuffledCard()
+        })
+        // cardSound.addEventListener("click", () => {
+        //     cardSound.classList.toggle("is-playing")
+
+        //     if(cardSound.classList.contains("is-playing")){
+        //         cardSound.innerText = "volume_up";
+        //         cardSong.play()
+        //     } else {
+        //         cardSound.innerText = "volume_off";
+        //         cardSong.pause()
+        //     }
+        // })
+
+       //카드 섞기
+       function shuffledCard(){
+            cardOne, cardTwo = "";
+            disableDeck = false;
+            matchedCard = 0;
+            
+            let arr =[1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8];
+            let result = arr.sort(() => Math.random() > 0.5 ? 1 : -1)//sort를 이용해서 랜덤으로 나오게 설정 0.5보다 크면 1로 작으면 -1로
+            cards.forEach((card, index) => {
+                card.classList.remove("flip");
+                //처음에 사진 전부 보여주고
+                setTimeout(()=> {
+                    card.classList.add("flip");
+                }, 200 * index)
+                
+                //5초뒤에 안보이게 뒤집기
+                setTimeout(()=> {
+                    card.classList.remove("flip");
+                }, 5000);
+                let imgTag = card.querySelector(".back img");
+                imgTag.src = `img/img${arr[index]}.png`
+            })
+        }
+        // shuffledCard()
+
+        //카드 클릭
         cards.forEach(card => {
+            // card.classList.add("flip")
             card.addEventListener("click", flipCard)
           })
+
+      
 
     </script>
 </body>
