@@ -79,22 +79,13 @@
       font-size: 30px;
       padding: 10px;
       display: inline-block;
-      position: fixed;
     }
     .game__wrap {
       position: relative;
     }
     .game__folder {
-      width: 100vh;
+      width: 10vh;
       height: 100vh;
-    }
-    .game__folder a {
-      display: inline-block;
-      width: 150px;
-      height: 100px;
-      display: flex;
-      position: relative;
-      cursor: pointer;
     }
     .btn1 {
       display: inline-block;
@@ -105,9 +96,14 @@
     .btn3 {
       display: inline-block;
     }
- 
+    .game__folder a {
+      width: 150px;
+      height: 100px;
+      display: flex;
+      position: relative;
+      cursor: pointer;
+    }
     .game__folder a img {
-      display: inline-block;
       width: 50px;
       height: 50px;
       position: absolute;
@@ -141,12 +137,12 @@
       align-items: center;
       justify-content: center;
       position: absolute;
-      top: 1000px;
-      left: 40%;
+      top: 0;
+      right: -1000px;
       transition: all 1s;
     }
     .musicBox.show {
-      top: 0;
+      right: 0;
     }
     .musicPlay {
         width: 300px;
@@ -169,12 +165,12 @@
       justify-content: center;
       position: absolute;
       border-radius: 30px;
-      top: 1000px;
-      left: 30%;
+      top: 15%;
+      right: -1000px;
       transition: all 1s;
     }
     .typingBox.show {
-      top: 150px;
+      right: 1%;
     }
     .typingGame {
       width: 900px;
@@ -186,16 +182,16 @@
       justify-content: center;
       position: absolute;
       border-radius: 30px;
-      top: 1000px;
-      left: 28%;
+      top: 6.5%;
+      right: -1000px;
       transition: all 1s;
     }
     .cardBox.show {
-      top: 100px;
+      right: 1%;
     }
     .cardGame {
-      width: 900px;
-      height: 800px;
+      width: 800px;
+      height: 700px;
     }
   </style>
 </head>
