@@ -82,17 +82,27 @@
         }
         .card__wrap {
             width: 600px;
-            height: 600px;
+            height: 700px;
             background: #fff;
         }
         .card__wrap li {
             list-style: none;
         }
         .card__inner {
+            padding-top: 50px;
             padding: 20px;
             width: 100%;
-            height: 100%;
+            height: 90%;
         }
+        .score__display {
+          width: 100px;
+          background: steelblue;
+          padding: 5px 10px;
+          margin-left: 10px;
+          display: inline-block;
+          border-radius: 10px;
+        }
+
         .cards {
             display: flex;
             flex-wrap: wrap;
@@ -207,6 +217,9 @@
     <!-- 카드 박스 -->
     <div class="card__wrap">
         <div class="card__inner">
+          <div class="score__display">
+            <span>chance: <em>5</em></span>
+          </div>
             <ul class="cards">
                 <li>
                     <div class="view front">
@@ -354,18 +367,22 @@
     <script>
       const startBtn = document.querySelector(".start__btn");
       const infoBox = document.querySelector(".info__box");
+      const again = infoBox.querySelector(".buttons .stop");
       const resultBox = document.querySelector(".result__box");
       const resultTitle = resultBox.querySelector(".title");
       const resultScore = resultBox.querySelector(".score em");
       const resultWrong = resultBox.querySelector(".score");
+      const chance = document.querySelector(".score__display span em");
       const cardWrap = document.querySelector(".card__wrap");
       const cards = document.querySelectorAll(".cards li");
       const infoBoxStart = infoBox.querySelector(".start");
       const resultBoxRestart = resultBox.querySelector(".restart");
       const Stop = resultBox.querySelector(".buttons .stop");
+      const exit = document.querySelector(".card__inner .exit");
       let cardOne, cardTwo;
       let disableDeck = false;
       let matchedCard = 0;
+      let remaining = 5;
       let wrong = 0;
       let sound = [
           "audio/match2.mp3",
@@ -392,6 +409,7 @@
       resultBoxRestart.onclick = () => {
           resultBox.classList.remove("active");
           cardWrap.classList.add("active");
+          chance.innerHTML = remaining;
           shuffledCard();
       }
       // 그만하기 버튼
@@ -399,11 +417,22 @@
         resultBox.classList.remove("active");
         startBtn.classList.add("active");
       }
+      //나가기 버튼
+      again.onclick = () => {
+        infoBox.classList.remove("active");
+        startBtn.classList.add("active");
+      }
       //카드 클릭
       cards.forEach(card => {
           //card.classList.add("flip")
           card.addEventListener("click", flipCard);
       });
+      // 전체 나가기
+      exit.onclick = () => {
+        infoBox.classList.remove("active");
+        startBtn.classList.add("active");
+        cardWrap.classList.remove("active");
+      }
       function flipCard(e){
           let clickedCard = e.target;
           if(clickedCard !== cardOne && !disableDeck){
@@ -429,8 +458,10 @@
                       resultBox.classList.add("active");
                       let wrongScore = wrong * 20;
                       let finalScore = 100 - wrongScore
+                      console.log("8개 다 맞았을때")
                       console.log(wrongScore)
-                      resultScore.innerHTML = finalScore;
+                      resultTitle.innerHTML = "게임을 성공하였습니다."
+                      resultWrong.innerText = `당신의 점수는${finalScore}점 입니다.`;
                   }, 1000)
               }
               cardOne.removeEventListener("click", flipCard);
@@ -443,13 +474,17 @@
               setTimeout(() => {
                   cardOne.classList.add("shake");
                   cardTwo.classList.add("shake");
-                  wrong++;
               }, 400);
               setTimeout(() => {
                   cardOne.classList.remove("shake", "flip");
                   cardTwo.classList.remove("shake", "flip");
+                  wrong++;
+                  let remainingChance = remaining - wrong
+                  console.log("틀렸을때")
+                  console.log(wrong)
+                  chance.innerHTML = remainingChance;
                   cardOne = cardTwo = "";
-                  disableDeck = false;                
+                  disableDeck = false;              
                   if(wrong >= 5){
                     setTimeout(() => {
                       cardWrap.classList.remove("active");
@@ -464,6 +499,9 @@
       }
       function shuffledCard(){
           wrong = 0;
+          remaining = 5;
+          console.log("카드셔플")
+          console.log(wrong)
           cardOne, cardTwo = "";
           disableDeck = false;
           matchedCard = 0;

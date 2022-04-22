@@ -24,6 +24,9 @@
         <div class="btn1"><a href="#"><img src="img/faxmachine-light.svg" alt=""></a><span>Music Play</span></div>
         <div class="btn2"><a href="#"><img src="img/dogface-light.svg" alt=""></a><span>Typing Game</span></div>
         <div class="btn3"><a href="#"><img src="img/bearface-light.svg" alt=""></a><span>Card Game</span></div>
+        <div class="btn4"><a href="https://jowunseop-react.netlify.app/"><img src="img/reactsvg.svg" alt=""></a><span>react site</span></div>
+        <div class="btn5"><a href="https://jowuseop1110.github.io/webs_class/site/webClass/index.html"><img src="img/W3C.png" alt=""></a><span>웹표준 사이트</span></div>
+        <div class="btn6"><a href="http://dnstjq8904.dothome.co.kr/php/pages/main.php"><img src="img/php.svg" alt=""></a><span>웹표준 사이트</span></div>
       </div>
     </div>
     <!-- 뮤직플레이 -->
@@ -36,7 +39,8 @@
     </div>
       <!-- 카드게임 -->
     <div class="cardBox">
-      <iframe class="" src="../javascript/memoryGame/index2.html" frameborder="0"></iframe>
+      <div class="exit"><span>게임 그만하기</span></div>
+      <iframe class="cardGame" src="../javascript/memoryGame/index2.html" frameborder="0"></iframe>
       <!-- ../javascript/memoryGame/index.html -->
     </div>
   </div>
@@ -48,6 +52,9 @@
     $(".btn1").draggable();
     $(".btn2").draggable();
     $(".btn3").draggable();
+    $(".btn4").draggable();
+    $(".btn5").draggable();
+    $(".btn6").draggable();
     // 클릭하면 뮤직플레이 올라오기
    $(".btn1").click(function(){
      $(".musicBox").toggleClass("show")
@@ -59,6 +66,10 @@
    // 클릭하면 카드 게임 올라오기
    $(".btn3").click(function(){
      $(".cardBox").toggleClass("show")
+   })
+   // 클릭하면 게임 폴더 닫기
+   $(".exit span").click(function(){
+     $(".cardBox").removeClass("show")
    })
    //디지털 시계
    function setClock(){
