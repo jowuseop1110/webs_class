@@ -4,31 +4,49 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://webfontworld.github.io/NexonMaplestory/NexonMaplestory.css"
+      rel="stylesheet"
+    />
     <title>Document</title>
     <style>
+      @font-face {
+        font-family: "LABDigital";
+        font-weight: normal;
+        font-style: normal;
+        src: url("https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.eot");
+        src: url("https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.eot?#iefix")
+            format("embedded-opentype"),
+          url("https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.woff2")
+            format("woff2"),
+          url("https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.woff")
+            format("woff"),
+          url("https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.ttf")
+            format("truetype");
+        font-display: swap;
+      }
       * {
         margin: 0;
         padding: 0;
+        font-family: "LABDigital";
+      }
+      body {
+        background: url(img/tetrisback.jpg) no-repeat;
+        background-size: cover;
       }
       .game__wrap {
         height: 100vh;
-        background: url(img/tetris_01\ 1.jpg) no-repeat;
-        background-size: cover;
         overflow: hidden;
         position: relative;
       }
       li {
         list-style: none;
       }
-      .start__btn,
-      .info__box,
-      .result__box {
-        display: none;
-      }
+
       .tetris__wrap {
         width: 400px;
-        height: 80vh;
-        background: rgb(4, 24, 91);
+        max-height: 700px;
+        background: rgb(116, 143, 235);
         position: absolute;
         top: 0;
         left: 0;
@@ -36,7 +54,7 @@
         bottom: 0;
         margin: auto;
         border: 9px groove #ccc;
-        z-index: 1000;
+        z-index: 10;
       }
       .tetris__wrap .s {
         width: 70px;
@@ -49,6 +67,7 @@
       .tetris__wrap .s .score p {
         display: block;
         border-bottom: 1px groove #ccc;
+        font-weight: 700;
         background: #ccc;
         color: rgb(111, 111, 111);
         padding: 0 10px;
@@ -57,9 +76,15 @@
         width: 100%;
         padding: 0 10px;
       }
+
       .tetris__inner {
         width: 250px;
-        margin: 100px auto;
+        position: absolute;
+        top: 15%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
       }
       .tetris__inner > ul {
         border: 3px solid #ccc;
@@ -105,10 +130,14 @@
         border: 6px outset #ff861a !important;
         background-color: #ff7900;
       }
-
-      .start__btn,
-      .info__box,
-      .card__wrap,
+      .start__btn {
+        position: absolute;
+        left: 50%;
+        top: 75%;
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0;
+        z-index: 9999;
+      }
       .result__box {
         position: absolute;
         left: 50%;
@@ -116,27 +145,81 @@
         transform: translate(-50%, -50%) scale(0.8);
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1),
           0 4px 8px 0 rgba(0, 0, 0, 0.17);
+        pointer-events: none;
+        z-index: 99999;
         opacity: 0;
+      }
+      .start__btn button {
+        background: rgb(92, 177, 216);
+        padding: 1.3rem 8rem;
+        border-radius: 5px;
+        font-size: 8em;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5),
+          0 4px 8px 0 rgba(0, 0, 0, 0.2);
         pointer-events: none;
       }
       .start__btn.active,
-      .info__box.active,
-      .card__wrap.active,
       .result__box.active {
         opacity: 1;
-        z-index: 10;
-        pointer-events: auto;
-        transform: translate(-50%, -50%) scale(1);
+      }
+      button {
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      .tetris__wrap,
+      .result__box {
+        opacity: 0;
+      }
+      .tetris__wrap.active {
+        opacity: 1;
+      }
+
+      /* result box */
+      .result__box {
+        width: 500px;
+        background: #fff;
+        border-radius: 5px;
+        font-size: 1.3em;
+        z-index: 100;
+      }
+      .result__box .title {
+        border-bottom: 1px solid #ccc;
+        padding: 0.6rem 2rem;
+        text-align: center;
+        font-size: 1.4em;
+      }
+      .result__box .score {
+        padding: 2rem;
+        height: 300px;
+      }
+      .result__box .buttons {
+        border-top: 1px solid #ccc;
+        padding: 0.8rem 2rem;
+        text-align: center;
+      }
+      .result__box .buttons button {
+        background: #007bff;
+        color: #fff;
+        padding: 0.4rem 2rem;
+        border-radius: 5px;
+        font-size: 1em;
+        border: 1px solid #007bff;
+        margin: 0 0.2em;
+        display: inline-block;
+      }
+      .result__box .buttons button:first-child {
+        background: #fff;
+        border: 1px solid #007bff;
+        color: #007bff;
       }
     </style>
   </head>
   <body>
+    <!-- 시작버튼 -->
+    <div class="start__btn active">
+      <button>Start</button>
+    </div>
     <div class="game__wrap">
-      <!-- 시작버튼 -->
-      <div class="start__btn active">
-        <button>Start</button>
-      </div>
-
       <!-- 규칙 박스 -->
       <div class="info__box">
         <div class="title">메모리 게임을 하기 위한 규칙</div>
@@ -169,7 +252,7 @@
             <span>0</span>
           </div>
         </div>
-        <div class="tetris__inner active">
+        <div class="tetris__inner">
           <ul></ul>
         </div>
       </div>
@@ -177,12 +260,16 @@
     <script>
       const tetrisInner = document.querySelector(".tetris__inner > ul");
       const tetrisS = document.querySelector(".tetris__wrap .s .score span");
+      const tetrisWrap = document.querySelector(".tetris__wrap");
+      const startBtn = document.querySelector(".start__btn");
+      const tetrisUl = tetrisInner.querySelector(".tetris__inner .first");
+      const resultBox = document.querySelector(".result__box");
 
       const game_rows = 20;
       const game_cols = 10;
 
       let gameScore = 0;
-      let gameDuration = 200;
+      let gameDuration = 500;
       let gameInterval;
       let gameMovingItem;
 
@@ -377,19 +464,28 @@
         top: 0,
         left: 3,
       };
-
-      init();
-
+      // 시작 버튼
+      startBtn.onclick = () => {
+        startBtn.classList.remove("active");
+        tetrisWrap.classList.add("active");
+        init();
+      };
+      // 통과 후 재 시작
+      function restart() {
+        gameScore = 0;
+      }
       // 시작하기
       function init() {
+        // 아무것도없는 gameMovingItem에 movingItem 적용
         gameMovingItem = { ...movingItem };
 
-        //console.log(gameMovingItem)
-
+        console.log(gameMovingItem);
+        //game_rows: 20 칸 만큼 ul, li 생성
         for (let i = 0; i < game_rows; i++) {
           tetrisLine();
         }
         //renderBlocks();
+        // 새로운블록 만들기
         generateNewBlock();
       }
 
@@ -430,8 +526,13 @@
 
             if (moveType === "retry") {
               clearInterval(gameInterval);
+              //게임오버
               gameover();
             }
+            // if (tetrisUl.classList.contains("seized")) {
+            //   clearInterval(gameInterval);
+            //   gameover();
+            // }
 
             setTimeout(() => {
               renderBlocks("retry");
@@ -470,8 +571,24 @@
           if (matched) {
             child.remove();
             tetrisLine();
+            //한칸에 1점씩 올리기
             gameScore++;
             tetrisS.innerText = gameScore;
+            if (gameScore == 5) {
+              gameDuration = 400;
+            }
+            if (gameScore == 8) {
+              gameDuration = 300;
+            }
+            if (gameScore == 10) {
+              gameDuration = 300;
+            }
+            if (gameScore == 13) {
+              gameDuration = 300;
+            }
+            if (gameScore == 15) {
+              gameover();
+            }
           }
         });
         generateNewBlock();
@@ -479,6 +596,7 @@
 
       //새로운 블록 만들기
       function generateNewBlock() {
+        //clearInterval:반복 취소 - 블록 움직이기
         clearInterval(gameInterval);
         gameInterval = setInterval(() => {
           moveBlock("top", 1);
@@ -492,6 +610,10 @@
         movingItem.direction = 0;
         gameMovingItem = { ...movingItem };
         renderBlocks();
+        // if (gameScore == 3) {
+        //   alert("통과하셨습니다.");
+        //   restart();
+        // }
       }
 
       function checkEmpty(target) {
@@ -526,7 +648,7 @@
 
       function gameover() {
         //게임 끝났을 때
-        console.log("게임오버");
+        resultBox.classList.add("active");
       }
 
       // 키보드 이벤트
