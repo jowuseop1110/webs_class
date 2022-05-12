@@ -34,11 +34,11 @@
       <!-- #nav -->
       <div id="nav">
         <div class="nav_left">
+          <div class="nav_bottom"></div>
           <div class="nav_top">
             FRONTEND WITH THE<br />
             <span>HIGHEST</span> PRICE GOAL
           </div>
-          <div class="nav_bottom"></div>
         </div>
         <div class="nav_right">
           <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
@@ -169,7 +169,77 @@
         </div>
       </div>
       <!-- //#nav -->
-      <div id="maincontent"><span>PORTFOLIO</span></div>
+
+      <!-- maincontent -->
+      <div id="maincontent">
+        <!-- <marquee direction="left" scrollamount="50" loop="infinite"
+          >PORTFOLIO</marquee
+        > -->
+        <span>PORTFOLIO</span>
+      </div>
+      <!-- //maincontent -->
+
+      <!-- about -->
+      <div id="about">
+        <div class="about__desc">
+          <p>
+            <span>ABOUT ME</span>
+            안녕하십니까. 하고싶다! 해야겠다! 라는 생각으로 웹퍼블리셔에 뛰어든
+            조운섭입니다. 새로운것에 도전한다는게 쉽지는 않았지만 생각만하면
+            아무것도 달라질게 없기에 5년째 다니던 회사를 뒤로하고 생각을
+            실천으로 바꾸려 시작하게 되었습니다. 물론 쉽지는 않았습니다. 하지만
+            포기라는 단어가 너무 마음에 들지 않았기에 계속 앞으로 나아가려
+            합니다. 아직 부족한 부분이 많지만 부족한 만큼 발전할 수 있는 부분이
+            많다고 생각합니다. 열심히 일하고 열심히 배우고 취업후에도 열심히
+            공부해서 열심히하는 조운섭에서 최고의 조운섭으로 변하는 모습 꼭!
+            보여드리겠습니다.
+          </p>
+        </div>
+        <div class="about__face">Click</div>
+        <div class="about__skill">
+          <ul>
+            <li>1. HTML</li>
+          </ul>
+          <ul>
+            <li>2. SCSS</li>
+          </ul>
+          <ul>
+            <li>3. MYSQL</li>
+          </ul>
+          <ul>
+            <li>4. PHP</li>
+          </ul>
+          <ul>
+            <li>5. REACT</li>
+          </ul>
+          <ul>
+            <li>6. NEXT.JS</li>
+          </ul>
+          <ul>
+            <li>7. VUE</li>
+          </ul>
+          <ul>
+            <li>8. RES</li>
+          </ul>
+          <ul>
+            <li>9. AXIOS</li>
+          </ul>
+          <ul>
+            <li>10. JAVASCRIPT</li>
+          </ul>
+          <ul>
+            <li>11. JQUERY</li>
+          </ul>
+        </div>
+      </div>
+      <!-- //about -->
     </div>
+
+    <script>
+      const MaincontentCLone = document.querySelector(".maincontent span");
+      const Maincontent = document.querySelector(".maincontent");
+
+      MaincontentCLone.innerText = "포트폴리오";
+    </script>
   </body>
 </html>
