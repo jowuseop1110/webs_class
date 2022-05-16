@@ -323,4 +323,10 @@ svg {
   background: #a7a5a5;
   border: 6px solid #000;
   border-top: 0;
+  position: relative;
+}
+.script_code_view1 .blur {
+  width: 400px;
+  height: 400px;
+  position: absolute;
 }
