@@ -1,309 +1,309 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>portflio</title>
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style/font.css" />
     <link rel="stylesheet" href="style/style.css" />
     <link rel="stylesheet" href="style/reset.css" />
-    <link rel="stylesheet" href="style/font.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap"
-      rel="stylesheet"
-    />
   </head>
   <body>
     <div id="wrap">
-      <!-- #header -->
+      <!-- <div class="scrollTop">0</div> -->
       <div id="header">
-        <div class="header_logo">
-          <div class="header_portfolio">PORTFOLIO</div>
-          <div class="header_portfolio_menu"></div>
-        </div>
-        <div class="header_menu">
-          <div class="header_about">ABOUT</div>
-          <div class="header_work">WORK</div>
-          <div class="header_contact">CONTACT</div>
-        </div>
-      </div>
-      <!-- //#header -->
-
-      <!-- #nav -->
-      <div id="nav">
-        <div class="nav_left">
-          <div class="nav_bottom"></div>
-          <div class="nav_top">
-            FRONTEND WITH THE<br />
-            <span>HIGHEST PRICE GOAL</span>
+        <div class="header_top">
+          <div class="header_top_logo">
+            <a href="#">Portfolio</a>
+          </div>
+          <div class="header_top_menu">
+            <a href="#">about</a>
+            <a href="#">work</a>
+            <a href="#">contact</a>
           </div>
         </div>
-        <div class="nav_right">
-          <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
-            <defs>
-              <radialGradient
-                id="Gradient1"
-                cx="50%"
-                cy="50%"
-                fx="10%"
-                fy="50%"
-                r=".5"
-              >
-                <animate
-                  attributeName="fx"
-                  dur="1s"
-                  values="0%;3%;0%"
-                  repeatCount="indefinite"
-                />
-                <stop offset="0%" stop-color="#ff0" />
-                <stop offset="100%" stop-color="#ff00" />
-              </radialGradient>
-              <radialGradient
-                id="Gradient2"
-                cx="50%"
-                cy="50%"
-                fx="10%"
-                fy="50%"
-                r=".5"
-              >
-                <animate
-                  attributeName="fx"
-                  dur="10s"
-                  values="0%;3%;0%"
-                  repeatCount="indefinite"
-                />
-                <stop offset="0%" stop-color="#0ff" />
-                <stop offset="100%" stop-color="#0ff0" />
-              </radialGradient>
-              <radialGradient
-                id="Gradient3"
-                cx="50%"
-                cy="50%"
-                fx="50%"
-                fy="50%"
-                r=".5"
-              >
-                <animate
-                  attributeName="fx"
-                  dur="13s"
-                  values="0%;3%;0%"
-                  repeatCount="indefinite"
-                />
-                <stop offset="0%" stop-color="#f0f" />
-                <stop offset="100%" stop-color="#f0f0" />
-              </radialGradient>
-            </defs>
-            <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient1)">
-              <animate
-                attributeName="x"
-                dur="15s"
-                values="25%;0%;25%"
-                repeatCount="indefinite"
-              />
-              <animate
-                attributeName="y"
-                dur="17s"
-                values="0%;25%;0%"
-                repeatCount="indefinite"
-              />
-              <animateTransform
-                attributeName="transform"
-                type="rotate"
-                from="0 50 50"
-                to="360 50 50"
-                dur="13s"
-                repeatCount="indefinite"
-              />
-            </rect>
-            <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient2)">
-              <animate
-                attributeName="x"
-                dur="19s"
-                values="-25%;0%;-25%"
-                repeatCount="indefinite"
-              />
-              <animate
-                attributeName="y"
-                dur="16s"
-                values="0%;50%;0%"
-                repeatCount="indefinite"
-              />
-              <animateTransform
-                attributeName="transform"
-                type="rotate"
-                from="0 50 50"
-                to="360 50 50"
-                dur="14s"
-                repeatCount="indefinite"
-              />
-            </rect>
-            <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient3)">
-              <animate
-                attributeName="x"
-                dur="6s"
-                values="0%;25%;0%"
-                repeatCount="indefinite"
-              />
-              <animate
-                attributeName="y"
-                dur="20s"
-                values="0%;25%;0%"
-                repeatCount="indefinite"
-              />
-              <animateTransform
-                attributeName="transform"
-                type="rotate"
-                from="360 50 50"
-                to="0 50 50"
-                dur="15s"
-                repeatCount="indefinite"
-              />
-            </rect>
-          </svg>
-          <h1>
-            Welcome to<br />
-            my portfolio
-          </h1>
+        <div class="header_middle">
+          <iframe
+            src="color-shaders/color-shaders/dist/index.html"
+            frameborder="0"
+          >
+          </iframe>
+          <div class="header_middle_box1">
+            <span>frontend with the</span>
+            <span>highest price goal</span>
+          </div>
+          <div class="header_middle_box2"></div>
+        </div>
+        <div class="header_bottom">
+          <h1>Portfolio</h1>
         </div>
       </div>
-      <!-- //#nav -->
-
-      <!-- maincontent -->
-      <div id="maincontent">
-        <span>PORTFOLIO</span>
-      </div>
-      <!-- //maincontent -->
-
       <!-- about -->
       <div id="about">
-        <div class="about__desc">
-          <p>
-            <span>ABOUT ME</span>
-            안녕하십니까. 하고싶다! 해야겠다! 라는 생각으로 웹퍼블리셔에 뛰어든
-            조운섭입니다. 새로운것에 도전한다는게 쉽지는 않았지만 생각만하면
-            아무것도 달라질게 없기에 5년째 다니던 회사를 뒤로하고 생각을
-            실천으로 바꾸려 시작하게 되었습니다. 물론 쉽지는 않았습니다. 하지만
-            포기라는 단어가 너무 마음에 들지 않았기에 계속 앞으로 나아가려
-            합니다. 아직 부족한 부분이 많지만 부족한 만큼 발전할 수 있는 부분이
-            많다고 생각합니다. 열심히 일하고 열심히 배우고 취업후에도 열심히
-            공부해서 열심히하는 조운섭에서 최고의 조운섭으로 변하는 모습 꼭!
-            보여드리겠습니다.
-          </p>
+        <div class="about_me">
+          <span>about me</span>
+          안녕하십니까. 하고싶다! 해야겠다! 라는 생각으로 개발자에 뛰어든
+          조운섭입니다. 새로운것에 도전한다는게 쉽지는 않았지만 생각만하면
+          아무것도 달라질게 없기에 5년째 다니던 회사를 뒤로하고 생각을 실천으로
+          바꾸려 시작하게 되었습니다. 물론 쉽지는 않았습니다. 하지만 포기라는
+          단어가 너무 마음에 들지 않았기에 계속 앞으로 나아가려 합니다. 아직
+          부족한 부분이 많지만 부족한 만큼 발전할 수 있는 부분이 많다고
+          생각합니다. 열심히 일하고 열심히 배우고 취업후에도 열심히 공부해서
+          열심히하는 조운섭에서 최고의 조운섭으로 변하는 모습 꼭!
+          보여드리겠습니다.
         </div>
-        <div class="about__face">Click</div>
-        <div class="about__skill">
-          <!-- <ul>
-            <li>1. HTML</li>
-          </ul>
+        <div class="about_face">
+          <span>Click</span>
+        </div>
+        <div class="about_skill">
           <ul>
-            <li>2. SCSS</li>
+            <li>1. html</li>
+            <li>2. scss</li>
+            <li>3. mysql</li>
+            <li>4. php</li>
+            <li>5. react</li>
+            <li>6. next.js</li>
+            <li>7. vue</li>
+            <li>8. res</li>
+            <li>9. axios</li>
+            <li>10. javascript</li>
+            <li>11. jquery</li>
           </ul>
-          <ul>
-            <li>3. MYSQL</li>
-          </ul>
-          <ul>
-            <li>4. PHP</li>
-          </ul>
-          <ul>
-            <li>5. REACT</li>
-          </ul>
-          <ul>
-            <li>6. NEXT.JS</li>
-          </ul>
-          <ul>
-            <li>7. VUE</li>
-          </ul>
-          <ul>
-            <li>8. RES</li>
-          </ul>
-          <ul>
-            <li>9. AXIOS</li>
-          </ul>
-          <ul>
-            <li>10. JAVASCRIPT</li>
-          </ul>
-          <ul>
-            <li>11. JQUERY</li>
-          </ul> -->
         </div>
       </div>
       <!-- //about -->
-
-      <!-- siteCode -->
-      <div class="siteCode">
-        <h1>SITE CODE</h1>
-      </div>
-      <!-- //siteCode -->
-      <div class="coding_page">
-        <div class="coding"></div>
-        <div class="coding"></div>
-        <div class="coding"></div>
-        <div class="coding"></div>
-        <div class="coding"></div>
-      </div>
-      <!-- coding__view -->
-      <!-- 1 -->
-      <div class="coding_view1">
-        <div class="coding_view_left"></div>
-        <div class="coding_view_right">
-          <p class="site_view"></p>
-          <p class="code_view"></p>
+      <!-- site_code -->
+      <div id="site_code">
+        <div class="site_code_title">
+          <h1>site code</h1>
+        </div>
+        <div class="site_code_view">
+          <div class="site_code_box">
+            <div class="box">
+              <div class="box_number">01</div>
+              <div class="box_title">
+                <p>webstandard</p>
+                <span>사이트 코딩</span>
+              </div>
+              <div class="box_desc">
+                창직종합설계프로젝트 과목을 이수하며 개발한 웹 서비스입니다.
+                프로젝트 설명 창직종합설계프로젝트 과목을 이수하며 개발한 웹
+                서비스입니다
+              </div>
+            </div>
+          </div>
+          <div class="site_code_box">
+            <div class="box">
+              <div class="box_number">02</div>
+              <div class="box_title">
+                <p>webstandard</p>
+                <span>사이트 코딩</span>
+              </div>
+              <div class="box_desc">
+                창직종합설계프로젝트 과목을 이수하며 개발한 웹 서비스입니다.
+                프로젝트 설명 창직종합설계프로젝트 과목을 이수하며 개발한 웹
+                서비스입니다
+              </div>
+            </div>
+          </div>
+          <div class="site_code_box">
+            <div class="box">
+              <div class="box_number">03</div>
+              <div class="box_title">
+                <p>webstandard</p>
+                <span>사이트 코딩</span>
+              </div>
+              <div class="box_desc">
+                창직종합설계프로젝트 과목을 이수하며 개발한 웹 서비스입니다.
+                프로젝트 설명 창직종합설계프로젝트 과목을 이수하며 개발한 웹
+                서비스입니다
+              </div>
+            </div>
+          </div>
+          <div class="site_code_box">
+            <div class="box">
+              <div class="box_number">04</div>
+              <div class="box_title">
+                <p>webstandard</p>
+                <span>사이트 코딩</span>
+              </div>
+              <div class="box_desc">
+                창직종합설계프로젝트 과목을 이수하며 개발한 웹 서비스입니다.
+                프로젝트 설명 창직종합설계프로젝트 과목을 이수하며 개발한 웹
+                서비스입니다
+              </div>
+            </div>
+          </div>
+          <div class="site_code_box">
+            <div class="box">
+              <div class="box_number">05</div>
+              <div class="box_title">
+                <p>webstandard</p>
+                <span>사이트 코딩</span>
+              </div>
+              <div class="box_desc">
+                창직종합설계프로젝트 과목을 이수하며 개발한 웹 서비스입니다.
+                프로젝트 설명 창직종합설계프로젝트 과목을 이수하며 개발한 웹
+                서비스입니다
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <!-- 2 -->
-      <div class="coding_view2">
-        <div class="coding_view_left2">
-          <p class="site_view2"></p>
-          <p class="code_view2"></p>
-        </div>
-        <div class="coding_view_right2"></div>
-      </div>
-      <!-- 3 -->
-      <div class="coding_view1">
-        <div class="coding_view_left"></div>
-        <div class="coding_view_right">
-          <p class="site_view"></p>
-          <p class="code_view"></p>
-        </div>
-      </div>
-      <!-- 4 -->
-      <div class="coding_view2">
-        <div class="coding_view_left2">
-          <p class="site_view2"></p>
-          <p class="code_view2"></p>
-        </div>
-        <div class="coding_view_right2"></div>
-      </div>
-      <!-- 5 -->
-      <div class="coding_view1">
-        <div class="coding_view_left"></div>
-        <div class="coding_view_right">
-          <p class="site_view"></p>
-          <p class="code_view"></p>
+      <!-- //site_code -->
+      <!-- site_view1 -->
+      <div id="site_view">
+        <div class="site_view_img1" style="border-left: 0"></div>
+        <div class="site_view_desc">
+          <div class="desc">
+            <div class="site_view_desc_number"><span>01</span></div>
+            <div class="site_view_desc_title">
+              <span>webstandard</span>
+              <span>사이트 코딩</span>
+            </div>
+            <div class="site_view_desc_codeview">
+              <p>
+                창직종합설계프로젝트 과목을 이수하며 개발한 웹 서비스입니다.
+                프로젝트 설명 창직종합설계프로젝트 과목을 이수하며 개발한 웹
+                서비스입니다 입니다
+              </p>
+            </div>
+          </div>
+          <div class="view">
+            <div class="site_view_siteV"><a href="#">사이트 보기</a></div>
+            <div class="site_view_siteC"><a href="#">코드 보기</a></div>
+          </div>
         </div>
       </div>
-
-      <!-- siteCode -->
-      <div class="scriptCode">
-        <h1>SCRIPT CODE</h1>
+      <!-- //site_view -->
+      <!-- site_view2 -->
+      <div id="site_view">
+        <div class="site_view_desc">
+          <div class="desc">
+            <div class="site_view_desc_number"><span>02</span></div>
+            <div class="site_view_desc_title">
+              <span>responsive</span>
+              <span>사이트 코딩</span>
+            </div>
+            <div class="site_view_desc_codeview">
+              <p>
+                다양한 디바이스에 맞춰 볼 수 있도록 미디어쿼리를 이용하여 제작한
+                반응형 웹사이트 입니다. 슬라이드, 마우스오버 등의 효과를
+                주었습니다.
+              </p>
+            </div>
+          </div>
+          <div class="view">
+            <div class="site_view_siteV">사이트 보기</div>
+            <div class="site_view_siteC">코드 보기</div>
+          </div>
+        </div>
+        <div class="site_view_img2" style="border-right: 0"></div>
       </div>
-      <!-- //siteCode -->
-      <div class="script_code">
-        <div class="script_view"></div>
-        <div class="script_view"></div>
-        <div class="script_view"></div>
-        <div class="script_view"></div>
-      </div>
-      <div class="script_code_view1">
-        <div class="blur">
-          <h1>01.</h1>
-          <h2>GAME EFFECT</h2>
-          <span>사이트 보기</span>
+      <!-- //site_view -->
+      <!-- site_view3 -->
+      <div id="site_view">
+        <div class="site_view_img3" style="border-left: 0"></div>
+        <div class="site_view_desc">
+          <div class="desc">
+            <div class="site_view_desc_number"><span>03</span></div>
+            <div class="site_view_desc_title">
+              <span>react blog</span>
+              <span>사이트 코딩</span>
+            </div>
+            <div class="site_view_desc_codeview">
+              <p>
+                다양한 디바이스에 맞춰 볼 수 있도록 미디어쿼리를 이용하여 제작한
+                반응형 웹사이트 입니다. 슬라이드, 마우스오버 등의 효과를
+                주었습니다.
+              </p>
+            </div>
+          </div>
+          <div class="view">
+            <div class="site_view_siteV">사이트 보기</div>
+            <div class="site_view_siteC">코드 보기</div>
+          </div>
         </div>
       </div>
-      <div class="script_code_view2"></div>
+      <!-- //site_view -->
+      <!-- site_view4 -->
+      <div id="site_view">
+        <div class="site_view_desc">
+          <div class="desc">
+            <div class="site_view_desc_number"><span>04</span></div>
+            <div class="site_view_desc_title">
+              <span>php notice</span>
+              <span>사이트 코딩</span>
+            </div>
+            <div class="site_view_desc_codeview">
+              <p>
+                다양한 디바이스에 맞춰 볼 수 있도록 미디어쿼리를 이용하여 제작한
+                반응형 웹사이트 입니다. 슬라이드, 마우스오버 등의 효과를
+                주었습니다.
+              </p>
+            </div>
+          </div>
+          <div class="view">
+            <div class="site_view_siteV">사이트 보기</div>
+            <div class="site_view_siteC">코드 보기</div>
+          </div>
+        </div>
+        <div class="site_view_img4" style="border-right: 0"></div>
+      </div>
+      <!-- //site_view -->
+      <!-- site_view5 -->
+      <div id="site_view">
+        <div class="site_view_img5" style="border-left: 0"></div>
+        <div class="site_view_desc">
+          <div class="desc">
+            <div class="site_view_desc_number"><span>05</span></div>
+            <div class="site_view_desc_title">
+              <span>vue port</span>
+              <span>사이트 코딩</span>
+            </div>
+            <div class="site_view_desc_codeview">
+              <p>
+                창직종합설계프로젝트 과목을 이수하며 개발한 웹 서비스입니다.
+                프로젝트 설명 창직종합설계프로젝트 과목을 이수하며 개발한 웹
+                서비스입니다 입니다
+              </p>
+            </div>
+          </div>
+          <div class="view">
+            <div class="site_view_siteV"><a href="#">사이트 보기</a></div>
+            <div class="site_view_siteC"><a href="#">코드 보기</a></div>
+          </div>
+        </div>
+      </div>
+      <!-- //site_view -->
+      <div id="script_code">
+        <div class="script_code_title">
+          <iframe
+            src="bubblegum-on-hover/bubblegum-on-hover/dist/index.html"
+            frameborder="0"
+          ></iframe>
+          <h1>script code</h1>
+        </div>
+      </div>
     </div>
+    <script src="js/skrollr.min.js"></script>
+    <script type="text/javascript">
+      var s = skrollr.init();
+
+      function scroll() {
+        let scrollTop =
+          window.pageYOffset ||
+          document.documentElement.scrollTop ||
+          window.scrollY;
+        document.querySelector(".scrollTop").innerText = Math.round(scrollTop);
+
+        // document.querySelector(".section1__bg img").style.width =
+        //   scrollTop + "px";
+
+        requestAnimationFrame(scroll);
+      }
+      scroll();
+    </script>
   </body>
 </html>
