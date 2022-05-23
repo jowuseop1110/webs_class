@@ -30,10 +30,12 @@
           >
           </iframe>
           <div class="header_middle_box1">
-            <span>frontend with the</span>
+            <span>frontend with the&nbsp;</span> 
             <span>highest price goal</span>
           </div>
-          <div class="header_middle_box2"></div>
+          <div class="header_middle_box2">
+            <iframe src="../portfolio/text-tornado-css/text-tornado-css/dist/index.html" frameborder="0"></iframe>
+          </div>
         </div>
         <div class="header_bottom">
           <h1>Portfolio</h1>
@@ -164,11 +166,10 @@
           </div>
           <div class="view">
             <span class="site_view_siteV">
-              <a class="btn btn-line-outline btn-lg"><span class="inner" data-hover="사이트 보기">사이트 보기</span></a>
+               <a href="#" class="btn"><span>사이트 보기</span></a>
             </span>
-            
             <span class="site_view_siteC">
-              <a class="btn btn-line-outline1 btn-lg"><span class="inner" data-hover="코드 보기">코드 보기</span></a>
+              <a href="" class="btn"><span>코드 보기</span></a>
             </span>
           </div>
         </div>
@@ -193,10 +194,10 @@
           </div>
           <div class="view">
             <span class="site_view_siteV">
-              <a class="btn btn-line-outline btn-lg"><span class="inner" data-hover="사이트 보기">사이트 보기</span></a>
+               <a href="#" class="btn"><span>사이트 보기</span></a>
             </span>
             <span class="site_view_siteC">
-              <a class="btn btn-line-outline1 btn-lg"><span class="inner" data-hover="코드 보기">코드 보기</span></a>
+              <a href="" class="btn"><span>코드 보기</span></a>
             </span>
           </div>
         </div>
@@ -222,10 +223,10 @@
           </div>
           <div class="view">
             <span class="site_view_siteV">
-              <a class="btn btn-line-outline btn-lg"><span class="inner" data-hover="사이트 보기">사이트 보기</span></a>
+               <a href="#" class="btn"><span>사이트 보기</span></a>
             </span>
             <span class="site_view_siteC">
-              <a class="btn btn-line-outline1 btn-lg"><span class="inner" data-hover="코드 보기">코드 보기</span></a>
+              <a href="" class="btn"><span>코드 보기</span></a>
             </span>
           </div>
         </div>
@@ -250,10 +251,10 @@
           </div>
           <div class="view">
             <span class="site_view_siteV">
-              <a class="btn btn-line-outline btn-lg"><span class="inner" data-hover="사이트 보기">사이트 보기</span></a>
+               <a href="#" class="btn"><span>사이트 보기</span></a>
             </span>
             <span class="site_view_siteC">
-              <a class="btn btn-line-outline1 btn-lg"><span class="inner" data-hover="코드 보기">코드 보기</span></a>
+              <a href="" class="btn"><span>코드 보기</span></a>
             </span>
           </div>
         </div>
@@ -278,10 +279,10 @@
           </div>
           <div class="view">
             <span class="site_view_siteV">
-              <a class="btn btn-line-outline btn-lg"><span class="inner" data-hover="사이트 보기">사이트 보기</span></a>
+               <a href="#" class="btn"><span>사이트 보기</span></a>
             </span>
             <span class="site_view_siteC">
-              <a class="btn btn-line-outline1 btn-lg"><span class="inner" data-hover="코드 보기">코드 보기</span></a>
+              <a href="" class="btn"><span>코드 보기</span></a>
             </span>
           </div>
         </div>
@@ -394,8 +395,10 @@
       
     </div>
     <script src="js/skrollr.min.js"></script>
+  
     <script type="text/javascript">
 
+     
       // 스크롤값
       function scroll() {
         let scrollTop =
@@ -418,11 +421,12 @@
           })         
         }
         let siteCode = document.querySelector(".site_code_box");
-        if(scrollTop > siteCode.offsetHeight + 800){
+        if(scrollTop > siteCode.offsetHeight + 500){
+          let stieCodeTitle = document.querySelector(".site_code_title h1")
+          stieCodeTitle.classList.add("show")
           let siteCodeBox = document.querySelectorAll(".site_code_box .box").forEach(el => {
             el.classList.add("show")
           });
-          
         }
         requestAnimationFrame(scroll);
       }
@@ -439,7 +443,15 @@
       // console.log(aboutSplit)
       aboutMe.innerHTML = aboutSplit;
       // aboutMe.setAttribute("aria-label", aboutSplit);
+
+
+
+
+
+
     </script>
+
+
   </body>
 
 </html>
