@@ -387,15 +387,41 @@
   color: #000;
 }
 @media (max-width: 1200px) {
-  /* #site_code {
+  #site_code {
     border: 3px solid #000;
     border-top: 0;
-  } */
-  .site_code_view {
+    border-bottom: 0;
+  }
+  .box {
+    border: 3px solid #000;
+    position: absolute;
+    left: -0.3%;
+  }
+  .box.show {
     border: 3px solid #000;
   }
-  .site_code_box {
-    border: 3px solid #000;
+}
+@media (max-width: 700px) {
+  #site_code {
+    border: 1px solid #000;
+    border-top: 0;
+    border-bottom: 0;
+  }
+  .box {
+    border: 1px solid #000;
+  }
+  .box.show {
+    border: 1px solid #000;
+    position: absolute;
+    left: -0%;
+  }
+  .box_number::before {
+    display: none;
+  }
+}
+@media (max-width: 400px) {
+  .box_desc {
+    display: none;
   }
 }
 /* //site_code */
