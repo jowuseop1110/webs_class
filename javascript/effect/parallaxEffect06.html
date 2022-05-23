@@ -1,75 +1,83 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>패럴랙스 효과</title>
-    <link href="https://webfontworld.github.io/NexonLv2Gothic/NexonLv2Gothic.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap" rel="stylesheet">
+    <link
+      href="https://webfontworld.github.io/NexonLv2Gothic/NexonLv2Gothic.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap"
+      rel="stylesheet"
+    />
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+      }
 
-        a {
-            color: #fff;
-            text-decoration: none;
-        }
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
 
-        body {
-            background-color: #222;
-            color: #fff;
-            font-family: 'NexonLv1Gothic';
-            font-weight: 300;
-        }
+      body {
+        background-color: #222;
+        color: #fff;
+        font-family: "NexonLv1Gothic";
+        font-weight: 300;
+      }
 
-        #parallax__title {
-            padding: 20px;
-        }
+      #parallax__title {
+        padding: 20px;
+      }
 
-        #parallax__title h1 {
-            font-size: 30px;
-            border-bottom: 1px dashed #fff;
-            margin-bottom: 10px;
-            padding-bottom: 5px;
-            font-weight: 400;
-            display: inline-block;
-        }
+      #parallax__title h1 {
+        font-size: 30px;
+        border-bottom: 1px dashed #fff;
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+        font-weight: 400;
+        display: inline-block;
+      }
 
-        #parallax__title p {
-            font-size: 16px;
-        }
+      #parallax__title p {
+        font-size: 16px;
+      }
 
-        #parallax__title li {
-            display: inline;
-        }
+      #parallax__title li {
+        display: inline;
+      }
 
-        #parallax__title ul {
-            margin-top: 10px;
-        }
+      #parallax__title ul {
+        margin-top: 10px;
+      }
 
-        #parallax__title li a {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            border: 1px dashed #fff;
-            display: inline-block;
-            text-align: center;
-            line-height: 20px;
-            font-size: 12px;
-        }
+      #parallax__title li a {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1px dashed #fff;
+        display: inline-block;
+        text-align: center;
+        line-height: 20px;
+        font-size: 12px;
+      }
 
-        #parallax__title li.active a {
-            background: #fff;
-            color: #000;
-        }
+      #parallax__title li.active a {
+        background: #fff;
+        color: #000;
+      }
 
-        /* #parallax__nav {
+      /* #parallax__nav {
             position: fixed;
             right: 20px;
             top: -200px;
@@ -102,162 +110,161 @@
             border-radius: 30px;
         } */
 
-        #parallax__cont {
-            max-width: 1600px;
-            width: 98%;
-            margin: 0 auto;
-            /* background-color: rgba(255,255,255,0.1); */
-        }
+      #parallax__cont {
+        max-width: 1600px;
+        width: 98%;
+        margin: 0 auto;
+        /* background-color: rgba(255,255,255,0.1); */
+      }
 
-        .content__item {
-            width: 1000px;
-            max-width: 70vw;
-            margin: 30vw auto;
-            /* background-color: rgba(255,255,255,0.3); */
-            text-align: left;
-            margin-right: 0;
-            position: relative;
-            padding-top: 15vw;
-        }
+      .content__item {
+        width: 1000px;
+        max-width: 70vw;
+        margin: 30vw auto;
+        /* background-color: rgba(255,255,255,0.3); */
+        text-align: left;
+        margin-right: 0;
+        position: relative;
+        padding-top: 15vw;
+      }
 
-        .content__item:nth-child(even) {
-            margin-left: 0;
-            text-align: right
-        }
+      .content__item:nth-child(even) {
+        margin-left: 0;
+        text-align: right;
+      }
 
-        .content__item__num {
-            font-size: 35vw;
-            position: absolute;
-            left: -5vw;
-            top: -13vw;
-            opacity: 0.07;
-            font-family: "Lato";
-            font-weight: 100;
+      .content__item__num {
+        font-size: 35vw;
+        position: absolute;
+        left: -5vw;
+        top: -13vw;
+        opacity: 0.07;
+        font-family: "Lato";
+        font-weight: 100;
+      }
 
-        }
+      .content__item:nth-child(even) .content__item__num {
+        left: auto;
+        right: -5vw;
+      }
 
-        .content__item:nth-child(even) .content__item__num {
-            left: auto;
-            right: -5vw;
-        }
+      .content__item__title {
+        padding-bottom: 5px;
+        font-weight: 400;
+      }
 
-        .content__item__title {
-            padding-bottom: 5px;
-            font-weight: 400;
-        }
+      .content__item__imgWrap {
+        width: 100%;
+        padding-bottom: 56.25%;
+        background: #000;
+        position: relative;
+        overflow: hidden;
+      }
 
-        .content__item__imgWrap {
-            width: 100%;
-            padding-bottom: 56.25%;
-            background: #000;
-            position: relative;
-            overflow: hidden;
-        }
+      .content__item__img {
+        position: absolute;
+        left: -5%;
+        top: -5%;
+        width: 110%;
+        height: 110%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        filter: saturate(0%);
+        transition: all 1s;
+      }
 
-        .content__item__img {
-            position: absolute;
-            left: -5%;
-            top: -5%;
-            width: 110%;
-            height: 110%;
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
-            filter: saturate(0%);
-            transition: all 1s;
-        }
+      .content__item__img:hover {
+        filter: saturate(100%);
+        transform: scale(1.025);
+      }
 
-        .content__item__img:hover {
-            filter: saturate(100%);
-            transform: scale(1.025);
-        }
+      .content__item:nth-child(1) .content__item__img {
+        background-image: url(img/effectimg01.jpg);
+      }
 
-        .content__item:nth-child(1) .content__item__img {
-            background-image: url(img/effectimg01.jpg);
-        }
+      .content__item:nth-child(2) .content__item__img {
+        background-image: url(img/effectimg02.jpg);
+      }
 
-        .content__item:nth-child(2) .content__item__img {
-            background-image: url(img/effectimg02.jpg);
-        }
+      .content__item:nth-child(3) .content__item__img {
+        background-image: url(img/effectimg03.jpg);
+      }
 
-        .content__item:nth-child(3) .content__item__img {
-            background-image: url(img/effectimg03.jpg);
-        }
+      .content__item:nth-child(4) .content__item__img {
+        background-image: url(img/effectimg04.jpg);
+      }
 
-        .content__item:nth-child(4) .content__item__img {
-            background-image: url(img/effectimg04.jpg);
-        }
+      .content__item:nth-child(5) .content__item__img {
+        background-image: url(img/effectimg05.jpg);
+      }
 
-        .content__item:nth-child(5) .content__item__img {
-            background-image: url(img/effectimg05.jpg);
-        }
+      .content__item:nth-child(6) .content__item__img {
+        background-image: url(img/effectimg06.jpg);
+      }
 
-        .content__item:nth-child(6) .content__item__img {
-            background-image: url(img/effectimg06.jpg);
-        }
+      .content__item:nth-child(7) .content__item__img {
+        background-image: url(img/effectimg07.jpg);
+      }
 
-        .content__item:nth-child(7) .content__item__img {
-            background-image: url(img/effectimg07.jpg);
-        }
+      .content__item:nth-child(8) .content__item__img {
+        background-image: url(img/effectimg08.jpg);
+      }
 
-        .content__item:nth-child(8) .content__item__img {
-            background-image: url(img/effectimg08.jpg);
-        }
+      .content__item:nth-child(9) .content__item__img {
+        background-image: url(img/effectimg09.jpg);
+      }
 
-        .content__item:nth-child(9) .content__item__img {
-            background-image: url(img/effectimg09.jpg);
-        }
+      .content__item__desc {
+        font-size: 4vw;
+        line-height: 1.4;
+        margin-top: -5vw;
+        margin-left: -5vw;
+        position: relative;
+        z-index: 100;
+        word-break: keep-all;
+      }
 
-        .content__item__desc {
-            font-size: 4vw;
-            line-height: 1.4;
-            margin-top: -5vw;
-            margin-left: -5vw;
-            position: relative;
-            z-index: 100;
-            word-break: keep-all;
-        }
+      .content__item:nth-child(even) .content__item__desc {
+        margin-left: auto;
+        margin-right: -4vw;
+      }
 
-        .content__item:nth-child(even) .content__item__desc {
-            margin-left: auto;
-            margin-right: -4vw;
-        }
+      /* info */
+      .scrollTop {
+        position: fixed;
+        left: 20px;
+        bottom: 20px;
+        z-index: 1000;
+        background: rgba(0, 0, 0, 0.4);
+        color: #fff;
+        padding: 10px 30px;
+        border-radius: 50px;
+      }
 
-        /* info */
-        .scrollTop {
-            position: fixed;
-            left: 20px;
-            bottom: 20px;
-            z-index: 1000;
-            background: rgba(0, 0, 0, 0.4);
-            color: #fff;
-            padding: 10px 30px;
-            border-radius: 50px;
-        }
+      .scrollInfo {
+        position: fixed;
+        left: 20px;
+        bottom: 70px;
+        z-index: 1000;
+        background: rgba(0, 0, 0, 0.4);
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 10px;
+      }
 
-        .scrollInfo {
-            position: fixed;
-            left: 20px;
-            bottom: 70px;
-            z-index: 1000;
-            background: rgba(0, 0, 0, 0.4);
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 10px;
-        }
+      .scrollInfo li {
+        list-style: none;
+        line-height: 1.6;
+      }
 
-        .scrollInfo li {
-            list-style: none;
-            line-height: 1.6;
-        }
-
-        /* option */
-        /* 한번에 나타나기 */
-        /* .content__item__desc span {
+      /* option */
+      /* 한번에 나타나기 */
+      /* .content__item__desc span {
             opacity: 0;
             transition: all 0.33s ease-in-out;
         } */
-        /* .content__item__des span:nth-child(1) {transition-delay: 0.1s;}
+      /* .content__item__des span:nth-child(1) {transition-delay: 0.1s;}
         .content__item__des span:nth-child(2) {transition-delay: 0.2s;}
         .content__item__des span:nth-child(3) {transition-delay: 0.3s;}
         .content__item__des span:nth-child(4) {transition-delay: 0.4s;}
@@ -299,655 +306,685 @@
         .content__item__des.show span:nth-child(19) {opacity: 1;}
         .content__item__des.show span:nth-child(20) {opacity: 1;} */
 
-        /* 순차적으로 나타나기 */
-        /* section1 */
-        #section1 .content__item__desc span {
-            opacity: 0;
-            transition: all 0.33s ease-in-out;
+      /* 순차적으로 나타나기 */
+      /* section1 */
+      #section1 .content__item__desc span {
+        opacity: 0;
+        transition: all 0.33s ease-in-out;
+      }
+
+      #section1 .content__item__desc span.show {
+        opacity: 1;
+      }
+
+      /* section2 */
+      #section2 .content__item__desc span {
+        opacity: 0;
+        display: inline-block;
+        min-width: 1.4vw;
+        transform: translateY(70px) rotateY(180deg);
+        transition: all 0.33s ease-in-out;
+      }
+
+      #section2 .content__item__desc span.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* section3 */
+      #section3 .content__item__desc span {
+        display: inline-block;
+        min-width: 1.4vw;
+        opacity: 0;
+      }
+
+      #section3 .content__item__desc span.show {
+        opacity: 1;
+        animation: tada 0.3s;
+      }
+
+      @keyframes tada {
+        0% {
+          transform: scaleX(1);
+          transform: scaleX(1);
         }
 
-        #section1 .content__item__desc span.show {
-            opacity: 1;
+        10%,
+        20% {
+          transform: scale3d(0.9, 0.9, 0.9) rotate(-3deg);
+          transform: scale3d(0.9, 0.9, 0.9) rotate(-3deg);
         }
 
-        /* section2 */
-        #section2 .content__item__desc span {
-            opacity: 0;
-            display: inline-block;
-            min-width: 1.4vw;
-            transform: translateY(70px) rotateY(180deg);
-            transition: all 0.33s ease-in-out;
+        30%,
+        50%,
+        70%,
+        90% {
+          transform: scale3d(1.1, 1.1, 1.1) rotate(3deg);
+          transform: scale3d(1.1, 1.1, 1.1) rotate(3deg);
         }
 
-        #section2 .content__item__desc span.show {
-            opacity: 1;
-            transform: translateY(0);
+        40%,
+        60%,
+        80% {
+          transform: scale3d(1.1, 1.1, 1.1) rotate(-3deg);
+          transform: scale3d(1.1, 1.1, 1.1) rotate(-3deg);
         }
 
-        /* section3 */
-        #section3 .content__item__desc span {
-            display: inline-block;
-            min-width: 1.4vw;
-            opacity: 0;
+        to {
+          transform: scaleX(1);
+          transform: scaleX(1);
+        }
+      }
+
+      @keyframes tada {
+        0% {
+          transform: scaleX(1);
+          transform: scaleX(1);
         }
 
-        #section3 .content__item__desc span.show {
-            opacity: 1;
-            animation: tada 0.3s;
+        10%,
+        20% {
+          transform: scale3d(0.9, 0.9, 0.9) rotate(-3deg);
+          transform: scale3d(0.9, 0.9, 0.9) rotate(-3deg);
         }
 
-        @keyframes tada {
-            0% {
-                transform: scaleX(1);
-                transform: scaleX(1)
-            }
-
-            10%,
-            20% {
-                transform: scale3d(.9, .9, .9) rotate(-3deg);
-                transform: scale3d(.9, .9, .9) rotate(-3deg)
-            }
-
-            30%,
-            50%,
-            70%,
-            90% {
-                transform: scale3d(1.1, 1.1, 1.1) rotate(3deg);
-                transform: scale3d(1.1, 1.1, 1.1) rotate(3deg)
-            }
-
-            40%,
-            60%,
-            80% {
-                transform: scale3d(1.1, 1.1, 1.1) rotate(-3deg);
-                transform: scale3d(1.1, 1.1, 1.1) rotate(-3deg)
-            }
-
-            to {
-                transform: scaleX(1);
-                transform: scaleX(1)
-            }
+        30%,
+        50%,
+        70%,
+        90% {
+          transform: scale3d(1.1, 1.1, 1.1) rotate(3deg);
+          transform: scale3d(1.1, 1.1, 1.1) rotate(3deg);
         }
 
-        @keyframes tada {
-            0% {
-                transform: scaleX(1);
-                transform: scaleX(1)
-            }
-
-            10%,
-            20% {
-                transform: scale3d(.9, .9, .9) rotate(-3deg);
-                transform: scale3d(.9, .9, .9) rotate(-3deg)
-            }
-
-            30%,
-            50%,
-            70%,
-            90% {
-                transform: scale3d(1.1, 1.1, 1.1) rotate(3deg);
-                transform: scale3d(1.1, 1.1, 1.1) rotate(3deg)
-            }
-
-            40%,
-            60%,
-            80% {
-                transform: scale3d(1.1, 1.1, 1.1) rotate(-3deg);
-                transform: scale3d(1.1, 1.1, 1.1) rotate(-3deg)
-            }
-
-            to {
-                transform: scaleX(1);
-                transform: scaleX(1)
-            }
+        40%,
+        60%,
+        80% {
+          transform: scale3d(1.1, 1.1, 1.1) rotate(-3deg);
+          transform: scale3d(1.1, 1.1, 1.1) rotate(-3deg);
         }
 
-        /* section4 */
-        #section4 .content__item__desc span {
-            display: inline-block;
-            min-width: 1.4vw;
-            opacity: 0;
+        to {
+          transform: scaleX(1);
+          transform: scaleX(1);
+        }
+      }
+
+      /* section4 */
+      #section4 .content__item__desc span {
+        display: inline-block;
+        min-width: 1.4vw;
+        opacity: 0;
+      }
+
+      #section4 .content__item__desc span.show {
+        opacity: 1;
+        animation: swing 0.8s;
+      }
+
+      @keyframes swing {
+        20% {
+          transform: rotate(15deg);
+          transform: rotate(15deg);
         }
 
-        #section4 .content__item__desc span.show {
-            opacity: 1;
-            animation: swing 0.8s;
+        40% {
+          transform: rotate(-10deg);
+          transform: rotate(-10deg);
         }
 
-        @keyframes swing {
-            20% {
-                transform: rotate(15deg);
-                transform: rotate(15deg)
-            }
-
-            40% {
-                transform: rotate(-10deg);
-                transform: rotate(-10deg)
-            }
-
-            60% {
-                transform: rotate(5deg);
-                transform: rotate(5deg)
-            }
-
-            80% {
-                transform: rotate(-5deg);
-                transform: rotate(-5deg)
-            }
-
-            to {
-                transform: rotate(0deg);
-                transform: rotate(0deg)
-            }
+        60% {
+          transform: rotate(5deg);
+          transform: rotate(5deg);
         }
 
-        @keyframes swing {
-            20% {
-                transform: rotate(15deg);
-                transform: rotate(15deg)
-            }
-
-            40% {
-                transform: rotate(-10deg);
-                transform: rotate(-10deg)
-            }
-
-            60% {
-                transform: rotate(5deg);
-                transform: rotate(5deg)
-            }
-
-            80% {
-                transform: rotate(-5deg);
-                transform: rotate(-5deg)
-            }
-
-            to {
-                transform: rotate(0deg);
-                transform: rotate(0deg)
-            }
+        80% {
+          transform: rotate(-5deg);
+          transform: rotate(-5deg);
         }
 
-        /* section5 */
-        #section5 .content__item__desc span {
-            display: inline-block;
-            min-width: 1.4vw;
-            opacity: 0;
+        to {
+          transform: rotate(0deg);
+          transform: rotate(0deg);
+        }
+      }
+
+      @keyframes swing {
+        20% {
+          transform: rotate(15deg);
+          transform: rotate(15deg);
         }
 
-        #section5 .content__item__desc span.show {
-            opacity: 1;
-            animation: bounceInRight 1.5s;
+        40% {
+          transform: rotate(-10deg);
+          transform: rotate(-10deg);
         }
 
-        @keyframes bounceInRight {
-
-            0%,
-            60%,
-            75%,
-            90%,
-            to {
-                animation-timing-function: cubic-bezier(.215, .61, .355, 1);
-                animation-timing-function: cubic-bezier(.215, .61, .355, 1)
-            }
-
-            0% {
-                opacity: 0;
-                transform: translate3d(3000px, 0, 0) scaleX(3);
-                transform: translate3d(3000px, 0, 0) scaleX(3)
-            }
-
-            60% {
-                opacity: 1;
-                transform: translate3d(-25px, 0, 0) scaleX(1);
-                transform: translate3d(-25px, 0, 0) scaleX(1)
-            }
-
-            75% {
-                transform: translate3d(10px, 0, 0) scaleX(.98);
-                transform: translate3d(10px, 0, 0) scaleX(.98)
-            }
-
-            90% {
-                transform: translate3d(-5px, 0, 0) scaleX(.995);
-                transform: translate3d(-5px, 0, 0) scaleX(.995)
-            }
-
-            to {
-                transform: translateZ(0);
-                transform: translateZ(0)
-            }
+        60% {
+          transform: rotate(5deg);
+          transform: rotate(5deg);
         }
 
-        @keyframes bounceInRight {
-
-            0%,
-            60%,
-            75%,
-            90%,
-            to {
-                animation-timing-function: cubic-bezier(.215, .61, .355, 1);
-                animation-timing-function: cubic-bezier(.215, .61, .355, 1)
-            }
-
-            0% {
-                opacity: 0;
-                transform: translate3d(3000px, 0, 0) scaleX(3);
-                transform: translate3d(3000px, 0, 0) scaleX(3)
-            }
-
-            60% {
-                opacity: 1;
-                transform: translate3d(-25px, 0, 0) scaleX(1);
-                transform: translate3d(-25px, 0, 0) scaleX(1)
-            }
-
-            75% {
-                transform: translate3d(10px, 0, 0) scaleX(.98);
-                transform: translate3d(10px, 0, 0) scaleX(.98)
-            }
-
-            90% {
-                transform: translate3d(-5px, 0, 0) scaleX(.995);
-                transform: translate3d(-5px, 0, 0) scaleX(.995)
-            }
-
-            to {
-                transform: translateZ(0);
-                transform: translateZ(0)
-            }
+        80% {
+          transform: rotate(-5deg);
+          transform: rotate(-5deg);
         }
 
-        /* section6 */
-        #section6 .content__item__desc span {
-            display: inline-block;
-            min-width: 1.4vw;
-            opacity: 0;
+        to {
+          transform: rotate(0deg);
+          transform: rotate(0deg);
+        }
+      }
+
+      /* section5 */
+      #section5 .content__item__desc span {
+        display: inline-block;
+        min-width: 1.4vw;
+        opacity: 0;
+      }
+
+      #section5 .content__item__desc span.show {
+        opacity: 1;
+        animation: bounceInRight 1.5s;
+      }
+
+      @keyframes bounceInRight {
+        0%,
+        60%,
+        75%,
+        90%,
+        to {
+          animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+          animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
         }
 
-        #section6 .content__item__desc span.show {
-            opacity: 1;
-            animation: zoomInDown 0.5s;
+        0% {
+          opacity: 0;
+          transform: translate3d(3000px, 0, 0) scaleX(3);
+          transform: translate3d(3000px, 0, 0) scaleX(3);
         }
 
-        @keyframes zoomInDown {
-            0% {
-                opacity: 0;
-                transform: scale3d(.1, .1, .1) translate3d(0, -1000px, 0);
-                transform: scale3d(.1, .1, .1) translate3d(0, -1000px, 0);
-                animation-timing-function: cubic-bezier(.55, .055, .675, .19);
-                animation-timing-function: cubic-bezier(.55, .055, .675, .19)
-            }
-
-            60% {
-                opacity: 1;
-                transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);
-                transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);
-                animation-timing-function: cubic-bezier(.175, .885, .32, 1);
-                animation-timing-function: cubic-bezier(.175, .885, .32, 1)
-            }
+        60% {
+          opacity: 1;
+          transform: translate3d(-25px, 0, 0) scaleX(1);
+          transform: translate3d(-25px, 0, 0) scaleX(1);
         }
 
-        @keyframes zoomInDown {
-            0% {
-                opacity: 0;
-                transform: scale3d(.1, .1, .1) translate3d(0, -1000px, 0);
-                transform: scale3d(.1, .1, .1) translate3d(0, -1000px, 0);
-                animation-timing-function: cubic-bezier(.55, .055, .675, .19);
-                animation-timing-function: cubic-bezier(.55, .055, .675, .19)
-            }
-
-            60% {
-                opacity: 1;
-                transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);
-                transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);
-                animation-timing-function: cubic-bezier(.175, .885, .32, 1);
-                animation-timing-function: cubic-bezier(.175, .885, .32, 1)
-            }
+        75% {
+          transform: translate3d(10px, 0, 0) scaleX(0.98);
+          transform: translate3d(10px, 0, 0) scaleX(0.98);
         }
 
-        /* section7 */
-        #section7 .content__item__desc span {
-            display: inline-block;
-            min-width: 1.4vw;
-            opacity: 0;
+        90% {
+          transform: translate3d(-5px, 0, 0) scaleX(0.995);
+          transform: translate3d(-5px, 0, 0) scaleX(0.995);
         }
 
-        #section7 .content__item__desc span.show {
-            opacity: 1;
-            animation: lightSpeedInLeft 0.5s;
+        to {
+          transform: translateZ(0);
+          transform: translateZ(0);
+        }
+      }
+
+      @keyframes bounceInRight {
+        0%,
+        60%,
+        75%,
+        90%,
+        to {
+          animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+          animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
         }
 
-        @keyframes lightSpeedInLeft {
-            0% {
-                transform: translate3d(-100%, 0, 0) skewX(30deg);
-                transform: translate3d(-100%, 0, 0) skewX(30deg);
-                opacity: 0
-            }
-
-            60% {
-                transform: skewX(-20deg);
-                transform: skewX(-20deg);
-                opacity: 1
-            }
-
-            80% {
-                transform: skewX(5deg);
-                transform: skewX(5deg)
-            }
-
-            to {
-                transform: translateZ(0);
-                transform: translateZ(0)
-            }
+        0% {
+          opacity: 0;
+          transform: translate3d(3000px, 0, 0) scaleX(3);
+          transform: translate3d(3000px, 0, 0) scaleX(3);
         }
 
-        @keyframes lightSpeedInLeft {
-            0% {
-                transform: translate3d(-100%, 0, 0) skewX(30deg);
-                transform: translate3d(-100%, 0, 0) skewX(30deg);
-                opacity: 0
-            }
-
-            60% {
-                transform: skewX(-20deg);
-                transform: skewX(-20deg);
-                opacity: 1
-            }
-
-            80% {
-                transform: skewX(5deg);
-                transform: skewX(5deg)
-            }
-
-            to {
-                transform: translateZ(0);
-                transform: translateZ(0)
-            }
+        60% {
+          opacity: 1;
+          transform: translate3d(-25px, 0, 0) scaleX(1);
+          transform: translate3d(-25px, 0, 0) scaleX(1);
         }
 
-        /* section8 */
-        #section8 .content__item__desc span {
-            display: inline-block;
-            min-width: 1.4vw;
-            opacity: 0;
+        75% {
+          transform: translate3d(10px, 0, 0) scaleX(0.98);
+          transform: translate3d(10px, 0, 0) scaleX(0.98);
         }
 
-        #section8 .content__item__desc span.show {
-            opacity: 1;
-            animation: rotateIn 0.5s;
+        90% {
+          transform: translate3d(-5px, 0, 0) scaleX(0.995);
+          transform: translate3d(-5px, 0, 0) scaleX(0.995);
         }
 
-        @keyframes rotateIn {
-            0% {
-                transform: rotate(-200deg);
-                transform: rotate(-200deg);
-                opacity: 0
-            }
+        to {
+          transform: translateZ(0);
+          transform: translateZ(0);
+        }
+      }
 
-            to {
-                transform: translateZ(0);
-                transform: translateZ(0);
-                opacity: 1
-            }
+      /* section6 */
+      #section6 .content__item__desc span {
+        display: inline-block;
+        min-width: 1.4vw;
+        opacity: 0;
+      }
+
+      #section6 .content__item__desc span.show {
+        opacity: 1;
+        animation: zoomInDown 0.5s;
+      }
+
+      @keyframes zoomInDown {
+        0% {
+          opacity: 0;
+          transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0);
+          transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0);
+          animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+          animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
         }
 
-        @keyframes rotateIn {
-            0% {
-                transform: rotate(-200deg);
-                transform: rotate(-200deg);
-                opacity: 0
-            }
+        60% {
+          opacity: 1;
+          transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+          transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+          animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+          animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+        }
+      }
 
-            to {
-                transform: translateZ(0);
-                transform: translateZ(0);
-                opacity: 1
-            }
+      @keyframes zoomInDown {
+        0% {
+          opacity: 0;
+          transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0);
+          transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0);
+          animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+          animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
         }
 
-        /* section9 */
-        #section9 .content__item__desc span {
-            display: inline-block;
-            min-width: 1.4vw;
-            opacity: 0;
+        60% {
+          opacity: 1;
+          transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+          transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+          animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+          animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+        }
+      }
+
+      /* section7 */
+      #section7 .content__item__desc span {
+        display: inline-block;
+        min-width: 1.4vw;
+        opacity: 0;
+      }
+
+      #section7 .content__item__desc span.show {
+        opacity: 1;
+        animation: lightSpeedInLeft 0.5s;
+      }
+
+      @keyframes lightSpeedInLeft {
+        0% {
+          transform: translate3d(-100%, 0, 0) skewX(30deg);
+          transform: translate3d(-100%, 0, 0) skewX(30deg);
+          opacity: 0;
         }
 
-        #section9 .content__item__desc span.show {
-            opacity: 1;
-            animation: flip 0.5s;
+        60% {
+          transform: skewX(-20deg);
+          transform: skewX(-20deg);
+          opacity: 1;
         }
 
-        @keyframes flip {
-            0% {
-                transform: perspective(400px) scaleX(1) translateZ(0) rotateY(-1turn);
-                transform: perspective(400px) scaleX(1) translateZ(0) rotateY(-1turn);
-                animation-timing-function: ease-out;
-                animation-timing-function: ease-out
-            }
-
-            40% {
-                transform: perspective(400px) scaleX(1) translateZ(150px) rotateY(-190deg);
-                transform: perspective(400px) scaleX(1) translateZ(150px) rotateY(-190deg);
-                animation-timing-function: ease-out;
-                animation-timing-function: ease-out
-            }
-
-            50% {
-                transform: perspective(400px) scaleX(1) translateZ(150px) rotateY(-170deg);
-                transform: perspective(400px) scaleX(1) translateZ(150px) rotateY(-170deg);
-                animation-timing-function: ease-in;
-                animation-timing-function: ease-in
-            }
-
-            80% {
-                transform: perspective(400px) scale3d(.95, .95, .95) translateZ(0) rotateY(0deg);
-                transform: perspective(400px) scale3d(.95, .95, .95) translateZ(0) rotateY(0deg);
-                animation-timing-function: ease-in;
-                animation-timing-function: ease-in
-            }
-
-            to {
-                transform: perspective(400px) scaleX(1) translateZ(0) rotateY(0deg);
-                transform: perspective(400px) scaleX(1) translateZ(0) rotateY(0deg);
-                animation-timing-function: ease-in;
-                animation-timing-function: ease-in
-            }
+        80% {
+          transform: skewX(5deg);
+          transform: skewX(5deg);
         }
 
-        @keyframes flip {
-            0% {
-                transform: perspective(400px) scaleX(1) translateZ(0) rotateY(-1turn);
-                transform: perspective(400px) scaleX(1) translateZ(0) rotateY(-1turn);
-                animation-timing-function: ease-out;
-                animation-timing-function: ease-out
-            }
-
-            40% {
-                transform: perspective(400px) scaleX(1) translateZ(150px) rotateY(-190deg);
-                transform: perspective(400px) scaleX(1) translateZ(150px) rotateY(-190deg);
-                animation-timing-function: ease-out;
-                animation-timing-function: ease-out
-            }
-
-            50% {
-                transform: perspective(400px) scaleX(1) translateZ(150px) rotateY(-170deg);
-                transform: perspective(400px) scaleX(1) translateZ(150px) rotateY(-170deg);
-                animation-timing-function: ease-in;
-                animation-timing-function: ease-in
-            }
-
-            80% {
-                transform: perspective(400px) scale3d(.95, .95, .95) translateZ(0) rotateY(0deg);
-                transform: perspective(400px) scale3d(.95, .95, .95) translateZ(0) rotateY(0deg);
-                animation-timing-function: ease-in;
-                animation-timing-function: ease-in
-            }
-
-            to {
-                transform: perspective(400px) scaleX(1) translateZ(0) rotateY(0deg);
-                transform: perspective(400px) scaleX(1) translateZ(0) rotateY(0deg);
-                animation-timing-function: ease-in;
-                animation-timing-function: ease-in
-            }
+        to {
+          transform: translateZ(0);
+          transform: translateZ(0);
         }
+      }
+
+      @keyframes lightSpeedInLeft {
+        0% {
+          transform: translate3d(-100%, 0, 0) skewX(30deg);
+          transform: translate3d(-100%, 0, 0) skewX(30deg);
+          opacity: 0;
+        }
+
+        60% {
+          transform: skewX(-20deg);
+          transform: skewX(-20deg);
+          opacity: 1;
+        }
+
+        80% {
+          transform: skewX(5deg);
+          transform: skewX(5deg);
+        }
+
+        to {
+          transform: translateZ(0);
+          transform: translateZ(0);
+        }
+      }
+
+      /* section8 */
+      #section8 .content__item__desc span {
+        display: inline-block;
+        min-width: 1.4vw;
+        opacity: 0;
+      }
+
+      #section8 .content__item__desc span.show {
+        opacity: 1;
+        animation: rotateIn 0.5s;
+      }
+
+      @keyframes rotateIn {
+        0% {
+          transform: rotate(-200deg);
+          transform: rotate(-200deg);
+          opacity: 0;
+        }
+
+        to {
+          transform: translateZ(0);
+          transform: translateZ(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes rotateIn {
+        0% {
+          transform: rotate(-200deg);
+          transform: rotate(-200deg);
+          opacity: 0;
+        }
+
+        to {
+          transform: translateZ(0);
+          transform: translateZ(0);
+          opacity: 1;
+        }
+      }
+
+      /* section9 */
+      #section9 .content__item__desc span {
+        display: inline-block;
+        min-width: 1.4vw;
+        opacity: 0;
+      }
+
+      #section9 .content__item__desc span.show {
+        opacity: 1;
+        animation: flip 0.5s;
+      }
+
+      @keyframes flip {
+        0% {
+          transform: perspective(400px) scaleX(1) translateZ(0) rotateY(-1turn);
+          transform: perspective(400px) scaleX(1) translateZ(0) rotateY(-1turn);
+          animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+        }
+
+        40% {
+          transform: perspective(400px) scaleX(1) translateZ(150px)
+            rotateY(-190deg);
+          transform: perspective(400px) scaleX(1) translateZ(150px)
+            rotateY(-190deg);
+          animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+        }
+
+        50% {
+          transform: perspective(400px) scaleX(1) translateZ(150px)
+            rotateY(-170deg);
+          transform: perspective(400px) scaleX(1) translateZ(150px)
+            rotateY(-170deg);
+          animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+        }
+
+        80% {
+          transform: perspective(400px) scale3d(0.95, 0.95, 0.95) translateZ(0)
+            rotateY(0deg);
+          transform: perspective(400px) scale3d(0.95, 0.95, 0.95) translateZ(0)
+            rotateY(0deg);
+          animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+        }
+
+        to {
+          transform: perspective(400px) scaleX(1) translateZ(0) rotateY(0deg);
+          transform: perspective(400px) scaleX(1) translateZ(0) rotateY(0deg);
+          animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+        }
+      }
+
+      @keyframes flip {
+        0% {
+          transform: perspective(400px) scaleX(1) translateZ(0) rotateY(-1turn);
+          transform: perspective(400px) scaleX(1) translateZ(0) rotateY(-1turn);
+          animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+        }
+
+        40% {
+          transform: perspective(400px) scaleX(1) translateZ(150px)
+            rotateY(-190deg);
+          transform: perspective(400px) scaleX(1) translateZ(150px)
+            rotateY(-190deg);
+          animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+        }
+
+        50% {
+          transform: perspective(400px) scaleX(1) translateZ(150px)
+            rotateY(-170deg);
+          transform: perspective(400px) scaleX(1) translateZ(150px)
+            rotateY(-170deg);
+          animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+        }
+
+        80% {
+          transform: perspective(400px) scale3d(0.95, 0.95, 0.95) translateZ(0)
+            rotateY(0deg);
+          transform: perspective(400px) scale3d(0.95, 0.95, 0.95) translateZ(0)
+            rotateY(0deg);
+          animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+        }
+
+        to {
+          transform: perspective(400px) scaleX(1) translateZ(0) rotateY(0deg);
+          transform: perspective(400px) scaleX(1) translateZ(0) rotateY(0deg);
+          animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <header id="parallax__title">
-        <h1><a href="parallaxsample.html">Javascript Parallax Effect06</a></h1>
-        <p>패럴랙스 스크롤링 효과 - 텍스트 효과</p>
-        <ul>
-            <li><a href="parallaxEffect01.html">1</a></li>
-            <li><a href="parallaxEffect02.html">2</a></li>
-            <li><a href="parallaxEffect03.html">3</a></li>
-            <li><a href="parallaxEffect04.html">4</a></li>
-            <li><a href="parallaxEffect05.html">5</a></li>
-            <li class="active"><a href="parallaxEffect06.html">6</a></li>
-            <li><a href="parallaxEffect07.html">7</a></li>
-        </ul>
+      <h1><a href="parallaxsample.html">Javascript Parallax Effect06</a></h1>
+      <p>패럴랙스 스크롤링 효과 - 텍스트 효과</p>
+      <ul>
+        <li><a href="parallaxEffect01.html">1</a></li>
+        <li><a href="parallaxEffect02.html">2</a></li>
+        <li><a href="parallaxEffect03.html">3</a></li>
+        <li><a href="parallaxEffect04.html">4</a></li>
+        <li><a href="parallaxEffect05.html">5</a></li>
+        <li class="active"><a href="parallaxEffect06.html">6</a></li>
+        <li><a href="parallaxEffect07.html">7</a></li>
+      </ul>
     </header>
 
     <!-- main -->
     <main>
-        <div id="parallax__cont">
-            <div id="contents">
-                <section id="section1" class="content__item">
-                    <span class="content__item__num">01</span>
-                    <h2 class="content__item__title">Section1</h2>
-                    <figure class="content__item__imgWrap">
-                        <div class="content__item__img"></div>
-                    </figure>
-                    <p class="content__item__desc">높은 목표를 세우고, 스스로 채찍질 한다.</p>
-                </section>
-                <!-- //section1 -->
-                <section id="section2" class="content__item">
-                    <span class="content__item__num">02</span>
-                    <h2 class="content__item__title">Section2</h2>
-                    <figure class="content__item__imgWrap">
-                        <div class="content__item__img"></div>
-                    </figure>
-                    <p class="content__item__desc">삶이 있는 한 희망은 있다</p>
-                </section>
-                <!-- //section2 -->
-                <section id="section3" class="content__item">
-                    <span class="content__item__num">03</span>
-                    <h2 class="content__item__title">Section3</h2>
-                    <figure class="content__item__imgWrap">
-                        <div class="content__item__img"></div>
-                    </figure>
-                    <p class="content__item__desc">산다는것 그것은 치열한 전투이다.</p>
-                </section>
-                <!-- //section3 -->
-                <section id="section4" class="content__item">
-                    <span class="content__item__num">04</span>
-                    <h2 class="content__item__title">Section4</h2>
-                    <figure class="content__item__imgWrap">
-                        <div class="content__item__img"></div>
-                    </figure>
-                    <p class="content__item__desc">하루에 3시간을 걸으면 7년 후에 지구를 한바퀴 돌 수 있다.</p>
-                </section>
-                <!-- //section4 -->
-                <section id="section5" class="content__item">
-                    <span class="content__item__num">05</span>
-                    <h2 class="content__item__title">Section5</h2>
-                    <figure class="content__item__imgWrap">
-                        <div class="content__item__img"></div>
-                    </figure>
-                    <p class="content__item__desc">직업에서 행복을 찾아라. 아니면 행복이 무엇인지 절대 모를 것이다</p>
-                </section>
-                <!-- //section5 -->
-                <section id="section6" class="content__item">
-                    <span class="content__item__num">06</span>
-                    <h2 class="content__item__title">Section6</h2>
-                    <figure class="content__item__imgWrap">
-                        <div class="content__item__img"></div>
-                    </figure>
-                    <p class="content__item__desc">신은 용기있는자를 결코 버리지 않는다</p>
-                </section>
-                <!-- //section6 -->
-                <section id="section7" class="content__item">
-                    <span class="content__item__num">07</span>
-                    <h2 class="content__item__title">Section7</h2>
-                    <figure class="content__item__imgWrap">
-                        <div class="content__item__img"></div>
-                    </figure>
-                    <p class="content__item__desc">피할수 없으면 즐겨라</p>
-                </section>
-                <!-- //section7 -->
-                <section id="section8" class="content__item">
-                    <span class="content__item__num">08</span>
-                    <h2 class="content__item__title">Section8</h2>
-                    <figure class="content__item__imgWrap">
-                        <div class="content__item__img"></div>
-                    </figure>
-                    <p class="content__item__desc">먼저 자신을 비웃어라. 다른 사람이 당신을 비웃기 전에</p>
-                </section>
-                <!-- //section8 -->
-                <section id="section9" class="content__item">
-                    <span class="content__item__num">09</span>
-                    <h2 class="content__item__title">Section9</h2>
-                    <figure class="content__item__imgWrap">
-                        <div class="content__item__img"></div>
-                    </figure>
-                    <p class="content__item__desc">한번의 실패와 영원한 실패를 혼동하지 마라</p>
-                </section>
-                <!-- //section9 -->
-            </div>
+      <div id="parallax__cont">
+        <div id="contents">
+          <section id="section1" class="content__item">
+            <span class="content__item__num">01</span>
+            <h2 class="content__item__title">Section1</h2>
+            <figure class="content__item__imgWrap">
+              <div class="content__item__img"></div>
+            </figure>
+            <p class="content__item__desc">
+              높은 목표를 세우고, 스스로 채찍질 한다.
+            </p>
+          </section>
+          <!-- //section1 -->
+          <section id="section2" class="content__item">
+            <span class="content__item__num">02</span>
+            <h2 class="content__item__title">Section2</h2>
+            <figure class="content__item__imgWrap">
+              <div class="content__item__img"></div>
+            </figure>
+            <p class="content__item__desc">삶이 있는 한 희망은 있다</p>
+          </section>
+          <!-- //section2 -->
+          <section id="section3" class="content__item">
+            <span class="content__item__num">03</span>
+            <h2 class="content__item__title">Section3</h2>
+            <figure class="content__item__imgWrap">
+              <div class="content__item__img"></div>
+            </figure>
+            <p class="content__item__desc">산다는것 그것은 치열한 전투이다.</p>
+          </section>
+          <!-- //section3 -->
+          <section id="section4" class="content__item">
+            <span class="content__item__num">04</span>
+            <h2 class="content__item__title">Section4</h2>
+            <figure class="content__item__imgWrap">
+              <div class="content__item__img"></div>
+            </figure>
+            <p class="content__item__desc">
+              하루에 3시간을 걸으면 7년 후에 지구를 한바퀴 돌 수 있다.
+            </p>
+          </section>
+          <!-- //section4 -->
+          <section id="section5" class="content__item">
+            <span class="content__item__num">05</span>
+            <h2 class="content__item__title">Section5</h2>
+            <figure class="content__item__imgWrap">
+              <div class="content__item__img"></div>
+            </figure>
+            <p class="content__item__desc">
+              직업에서 행복을 찾아라. 아니면 행복이 무엇인지 절대 모를 것이다
+            </p>
+          </section>
+          <!-- //section5 -->
+          <section id="section6" class="content__item">
+            <span class="content__item__num">06</span>
+            <h2 class="content__item__title">Section6</h2>
+            <figure class="content__item__imgWrap">
+              <div class="content__item__img"></div>
+            </figure>
+            <p class="content__item__desc">
+              신은 용기있는자를 결코 버리지 않는다
+            </p>
+          </section>
+          <!-- //section6 -->
+          <section id="section7" class="content__item">
+            <span class="content__item__num">07</span>
+            <h2 class="content__item__title">Section7</h2>
+            <figure class="content__item__imgWrap">
+              <div class="content__item__img"></div>
+            </figure>
+            <p class="content__item__desc">피할수 없으면 즐겨라</p>
+          </section>
+          <!-- //section7 -->
+          <section id="section8" class="content__item">
+            <span class="content__item__num">08</span>
+            <h2 class="content__item__title">Section8</h2>
+            <figure class="content__item__imgWrap">
+              <div class="content__item__img"></div>
+            </figure>
+            <p class="content__item__desc">
+              먼저 자신을 비웃어라. 다른 사람이 당신을 비웃기 전에
+            </p>
+          </section>
+          <!-- //section8 -->
+          <section id="section9" class="content__item">
+            <span class="content__item__num">09</span>
+            <h2 class="content__item__title">Section9</h2>
+            <figure class="content__item__imgWrap">
+              <div class="content__item__img"></div>
+            </figure>
+            <p class="content__item__desc">
+              한번의 실패와 영원한 실패를 혼동하지 마라
+            </p>
+          </section>
+          <!-- //section9 -->
         </div>
+      </div>
     </main>
     <!-- //main -->
 
     <!-- info -->
-    <div class="scrollTop">
-        scrollTop : <span>0</span>px
-    </div>
+    <div class="scrollTop">scrollTop : <span>0</span>px</div>
     <!-- //info -->
 
     <!-- script -->
     <script src="js/gsap.min.js"></script>
     <script>
-        //글씨 쪼개기
-        // let text = document.querySelector("#section1 .content__item__desc");
-        // let splitText = text.innerText 
-        // let spliteWrap = splitText.split('').join("</span><span>");
-        //     spliteWrap = "<span>" + spliteWrap + "</span>";
-        //     text.innerHTML = spliteWrap;
+      //글씨 쪼개기
+      // let text = document.querySelector("#section1 .content__item__desc");
+      // let splitText = text.innerText
+      // let spliteWrap = splitText.split('').join("</span><span>");
+      //     spliteWrap = "<span>" + spliteWrap + "</span>";
+      //     text.innerHTML = spliteWrap;
 
-        let text = document.querySelectorAll(".content__item__desc");
+      let text = document.querySelectorAll(".content__item__desc");
 
-        text.forEach(el => {
-            let splitText = el.innerText;
-            let spliteWrap = splitText.split('').join("</span><span aria-hidden='true'>");
-            spliteWrap = "<span aria-hidden='true'>" + spliteWrap + "</span>";
-            el.innerHTML = spliteWrap
-            el.setAttribute("aria-label", splitText);
-        })
+      text.forEach((el) => {
+        // console.log(el);
+        // section1~9 content__item__desc
+        let splitText = el.innerText;
+        let spliteWrap = splitText
+          .split("")
+          .join("</span><span aria-hidden='true'>");
+        // console.log(spliteWrap);
+        spliteWrap = "<span aria-hidden='true'>" + spliteWrap + "</span>";
+        el.innerHTML = spliteWrap;
+        el.setAttribute("aria-label", splitText);
+      });
 
-        //재귀 함수
-        function scroll() {
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
-            document.querySelector(".scrollTop span").innerText = Math.round(scrollTop);
+      //재귀 함수
+      function scroll() {
+        let scrollTop =
+          window.pageYOffset ||
+          document.documentElement.scrollTop ||
+          window.scrollY;
+        document.querySelector(".scrollTop span").innerText =
+          Math.round(scrollTop);
 
-            // document.querySelectorAll(".content__item").forEach(item => {
-            //     if(scrollTop >= item.offetTop){
-            //         item.querySelector(".content__item__desc").classList.add("show")
-            //     }
-            // })
-            document.querySelectorAll(".content__item").forEach(item => {
-                if (scrollTop > item.offsetTop) {
-                    item.querySelectorAll(".content__item__desc span").forEach((span, index) => {
-                        setTimeout(() => {
-                            span.classList.add("show");
-                        }, 50 * (index + 1))
-                    })
-                }
-            })
-            requestAnimationFrame(scroll);
-        }
-        scroll();
+        // document.querySelectorAll(".content__item").forEach(item => {
+        //     if(scrollTop >= item.offetTop){
+        //         item.querySelector(".content__item__desc").classList.add("show")
+        //     }
+        // })
+        document.querySelectorAll(".content__item").forEach((item) => {
+          if (scrollTop > item.offsetTop) {
+            item
+              .querySelectorAll(".content__item__desc span")
+              .forEach((span, index) => {
+                setTimeout(() => {
+                  span.classList.add("show");
+                }, 50 * (index + 1));
+              });
+          }
+        });
+        requestAnimationFrame(scroll);
+      }
+      scroll();
     </script>
-</body>
-
+  </body>
 </html>

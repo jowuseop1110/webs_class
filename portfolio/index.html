@@ -11,7 +11,7 @@
   </head>
   <body>
     <div id="wrap">
-      <!-- <div class="scrollTop">0</div> -->
+      <div class="scrollTop">scrollTop : <span>0</span>px</div>
       <div id="header">
         <div class="header_top">
           <div class="header_top_logo">
@@ -42,7 +42,8 @@
       <!-- about -->
       <div id="about">
         <div class="about_me">
-          <span>about me</span>
+          <span class="about_text">about me</span>
+          <p class="about_animation">
           안녕하십니까. 하고싶다! 해야겠다! 라는 생각으로 개발자에 뛰어든
           조운섭입니다. 새로운것에 도전한다는게 쉽지는 않았지만 생각만하면
           아무것도 달라질게 없기에 5년째 다니던 회사를 뒤로하고 생각을 실천으로
@@ -52,6 +53,7 @@
           생각합니다. 열심히 일하고 열심히 배우고 취업후에도 열심히 공부해서
           열심히하는 조운섭에서 최고의 조운섭으로 변하는 모습 꼭!
           보여드리겠습니다.
+        </p>
         </div>
         <div class="about_face">
           <span>Click</span>
@@ -87,9 +89,7 @@
                 <span>사이트 코딩</span>
               </div>
               <div class="box_desc">
-                창직종합설계프로젝트 과목을 이수하며 개발한 웹 서비스입니다.
-                프로젝트 설명 창직종합설계프로젝트 과목을 이수하며 개발한 웹
-                서비스입니다
+                웹표준형 사이트입니다. 웹접근성에 근거하여 모든 사용자가 사용함에 있어 불편함없이 설계된 사이트입니다.
               </div>
             </div>
           </div>
@@ -97,13 +97,11 @@
             <div class="box">
               <div class="box_number">02</div>
               <div class="box_title">
-                <p>webstandard</p>
+                <p>responsive</p>
                 <span>사이트 코딩</span>
               </div>
               <div class="box_desc">
-                창직종합설계프로젝트 과목을 이수하며 개발한 웹 서비스입니다.
-                프로젝트 설명 창직종합설계프로젝트 과목을 이수하며 개발한 웹
-                서비스입니다
+                반응형 웹 사이트입니다. 웹표준을 준수하며 스크립트요소들을 활용하여 반응형까지 지원하는 페이지입니다.
               </div>
             </div>
           </div>
@@ -111,13 +109,12 @@
             <div class="box">
               <div class="box_number">03</div>
               <div class="box_title">
-                <p>webstandard</p>
+                <p>react blog</p>
                 <span>사이트 코딩</span>
               </div>
               <div class="box_desc">
-                창직종합설계프로젝트 과목을 이수하며 개발한 웹 서비스입니다.
-                프로젝트 설명 창직종합설계프로젝트 과목을 이수하며 개발한 웹
-                서비스입니다
+                컴퍼넌트로 페이지를 작성하고 PROPS를 활용하여 데이터를 주고받는 흐름을
+                완벽하게 이해하고 응용하여 만든 React Blog 입니다.
               </div>
             </div>
           </div>
@@ -125,13 +122,12 @@
             <div class="box">
               <div class="box_number">04</div>
               <div class="box_title">
-                <p>webstandard</p>
+                <p>php notice</p>
                 <span>사이트 코딩</span>
               </div>
               <div class="box_desc">
-                창직종합설계프로젝트 과목을 이수하며 개발한 웹 서비스입니다.
-                프로젝트 설명 창직종합설계프로젝트 과목을 이수하며 개발한 웹
-                서비스입니다
+                PHP를 응용하여 MyAdmin을 활용한 PHP사이트 입니다.
+                게시판, 블로그, 회원가입, 로그인 기능을 구현하였습니다.
               </div>
             </div>
           </div>
@@ -139,13 +135,11 @@
             <div class="box">
               <div class="box_number">05</div>
               <div class="box_title">
-                <p>webstandard</p>
+                <p>vue port</p>
                 <span>사이트 코딩</span>
               </div>
               <div class="box_desc">
-                창직종합설계프로젝트 과목을 이수하며 개발한 웹 서비스입니다.
-                프로젝트 설명 창직종합설계프로젝트 과목을 이수하며 개발한 웹
-                서비스입니다
+                vue.js에서 제공하는 방복문, 리스트 렌더링 v-for구문을 활용하여 만든 사이트 입니다.
               </div>
             </div>
           </div>
@@ -164,15 +158,18 @@
             </div>
             <div class="site_view_desc_codeview">
               <p>
-                창직종합설계프로젝트 과목을 이수하며 개발한 웹 서비스입니다.
-                프로젝트 설명 창직종합설계프로젝트 과목을 이수하며 개발한 웹
-                서비스입니다 입니다
+                모든 사용자가 웹사이트 이용에 불편이 없도록 대체 텍스트로 웹 접근성을 고려하였습니다. 메뉴, 슬라이드, 탭, 동영상, 팝업 등 동적인 효과를 접목시켜 만들었습니다.
               </p>
             </div>
           </div>
           <div class="view">
-            <div class="site_view_siteV"><a href="#">사이트 보기</a></div>
-            <div class="site_view_siteC"><a href="#">코드 보기</a></div>
+            <span class="site_view_siteV">
+              <a class="btn btn-line-outline btn-lg"><span class="inner" data-hover="사이트 보기">사이트 보기</span></a>
+            </span>
+            
+            <span class="site_view_siteC">
+              <a class="btn btn-line-outline1 btn-lg"><span class="inner" data-hover="코드 보기">코드 보기</span></a>
+            </span>
           </div>
         </div>
       </div>
@@ -195,8 +192,12 @@
             </div>
           </div>
           <div class="view">
-            <div class="site_view_siteV">사이트 보기</div>
-            <div class="site_view_siteC">코드 보기</div>
+            <span class="site_view_siteV">
+              <a class="btn btn-line-outline btn-lg"><span class="inner" data-hover="사이트 보기">사이트 보기</span></a>
+            </span>
+            <span class="site_view_siteC">
+              <a class="btn btn-line-outline1 btn-lg"><span class="inner" data-hover="코드 보기">코드 보기</span></a>
+            </span>
           </div>
         </div>
         <div class="site_view_img2" style="border-right: 0"></div>
@@ -214,15 +215,18 @@
             </div>
             <div class="site_view_desc_codeview">
               <p>
-                다양한 디바이스에 맞춰 볼 수 있도록 미디어쿼리를 이용하여 제작한
-                반응형 웹사이트 입니다. 슬라이드, 마우스오버 등의 효과를
-                주었습니다.
+                컴퍼넌트로 페이지를 작성하고 PROPS를 활용하여 데이터를 주고받는 흐름을
+                완벽하게 이해하고 응용하여 만든 React Blog 입니다.
               </p>
             </div>
           </div>
           <div class="view">
-            <div class="site_view_siteV">사이트 보기</div>
-            <div class="site_view_siteC">코드 보기</div>
+            <span class="site_view_siteV">
+              <a class="btn btn-line-outline btn-lg"><span class="inner" data-hover="사이트 보기">사이트 보기</span></a>
+            </span>
+            <span class="site_view_siteC">
+              <a class="btn btn-line-outline1 btn-lg"><span class="inner" data-hover="코드 보기">코드 보기</span></a>
+            </span>
           </div>
         </div>
       </div>
@@ -233,20 +237,24 @@
           <div class="desc">
             <div class="site_view_desc_number"><span>04</span></div>
             <div class="site_view_desc_title">
+     
               <span>php notice</span>
               <span>사이트 코딩</span>
             </div>
             <div class="site_view_desc_codeview">
               <p>
-                다양한 디바이스에 맞춰 볼 수 있도록 미디어쿼리를 이용하여 제작한
-                반응형 웹사이트 입니다. 슬라이드, 마우스오버 등의 효과를
-                주었습니다.
+                PHP를 활용하여 게시판, 블로그, 퀴즈기능, 회원가입, 로그인 기능을 구현해보았습니다.
+                DB는 PHPMyAdmin을 활용 하였습니다.
               </p>
             </div>
           </div>
           <div class="view">
-            <div class="site_view_siteV">사이트 보기</div>
-            <div class="site_view_siteC">코드 보기</div>
+            <span class="site_view_siteV">
+              <a class="btn btn-line-outline btn-lg"><span class="inner" data-hover="사이트 보기">사이트 보기</span></a>
+            </span>
+            <span class="site_view_siteC">
+              <a class="btn btn-line-outline1 btn-lg"><span class="inner" data-hover="코드 보기">코드 보기</span></a>
+            </span>
           </div>
         </div>
         <div class="site_view_img4" style="border-right: 0"></div>
@@ -264,15 +272,17 @@
             </div>
             <div class="site_view_desc_codeview">
               <p>
-                창직종합설계프로젝트 과목을 이수하며 개발한 웹 서비스입니다.
-                프로젝트 설명 창직종합설계프로젝트 과목을 이수하며 개발한 웹
-                서비스입니다 입니다
+                vue.js에서 제공하는 방복문, 리스트 렌더링 v-for구문을 활용하여 만든 사이트 입니다.
               </p>
             </div>
           </div>
           <div class="view">
-            <div class="site_view_siteV"><a href="#">사이트 보기</a></div>
-            <div class="site_view_siteC"><a href="#">코드 보기</a></div>
+            <span class="site_view_siteV">
+              <a class="btn btn-line-outline btn-lg"><span class="inner" data-hover="사이트 보기">사이트 보기</span></a>
+            </span>
+            <span class="site_view_siteC">
+              <a class="btn btn-line-outline1 btn-lg"><span class="inner" data-hover="코드 보기">코드 보기</span></a>
+            </span>
           </div>
         </div>
       </div>
@@ -296,21 +306,17 @@
               <span>게임 사이트</span>
             </div>
             <div class="page_desc">
-              창직종합설계프로젝트 과목을 이수하며 개발한 웹 서비스입니다.
-              프로젝트 설명 창직종합설계프로젝트 과목을 이수하며 개발한 웹
-              서비스입니다 창직종합설계프로젝
+              수업시간에 기분전환하기 위해 만든 게임입니다. javascript를 활용하여 카드 게임, 테트리스, 타자게임, 뮤직 플레이어 등을 구현해보았습니다.
             </div>
           </div>
           <div class="page2">
             <div class="page_number">01</div>
             <div class="page_title">
               <span>parallax effect</span>
-              <span>게임 사이트</span>
+              <span>페럴럭스 사이트</span>
             </div>
             <div class="page_desc">
-              창직종합설계프로젝트 과목을 이수하며 개발한 웹 서비스입니다.
-              프로젝트 설명 창직종합설계프로젝트 과목을 이수하며 개발한 웹
-              서비스입니다 창직종합설계프로젝
+              scroll값에 따라 여러 효과를 적용해본 사이트 입니다. 각종 메뉴 효과, 가로세로 모드, 리빌 효과, 이질감 효과를 적용해보았습니다.<div class=""></div>
             </div>
           </div>
         </div>
@@ -319,24 +325,20 @@
             <div class="page_number">01</div>
             <div class="page_title">
               <span>search effect</span>
-              <span>게임 사이트</span>
+              <span>CSS 속성 검색 사이트</span>
             </div>
             <div class="page_desc">
-              창직종합설계프로젝트 과목을 이수하며 개발한 웹 서비스입니다.
-              프로젝트 설명 창직종합설계프로젝트 과목을 이수하며 개발한 웹
-              서비스입니다 창직종합설계프로젝
+              javascript 문자열 메서드(indexOf(), includes(), charAt(), find(), fliter(), sort())를 활용하여 CSS속성을 검색할 수 있게 만든 사이트 입니다.
             </div>
           </div>
           <div class="page4">
             <div class="page_number">01</div>
             <div class="page_title">
               <span>slider effect</span>
-              <span>게임 사이트</span>
+              <span>이미지 슬라이드</span>
             </div>
             <div class="page_desc">
-              창직종합설계프로젝트 과목을 이수하며 개발한 웹 서비스입니다.
-              프로젝트 설명 창직종합설계프로젝트 과목을 이수하며 개발한 웹
-              서비스입니다 창직종합설계프로젝
+              javascript를 활용하여 이미지를 슬라이드 형식으로 움직여 보았고, 움직임 버튼, 닷 버튼, 자동플레이, 시작 버튼, 정지 버튼을 구현해보았습니다.
             </div>
           </div>
         </div>
@@ -368,41 +370,76 @@
           <div class="site_view1_button">사이트 보기</div>
         </div>
       </div>
-    <!-- page4 -->
+      <!-- page4 -->
 
-    <div class="code_view_page4">
-      <div class="site_view1">
-        <h1>04.</h1>
-        <p>search effect</p>
-        <div class="site_view1_button">사이트 보기</div>
+      <div class="code_view_page4">
+        <div class="site_view1">
+          <h1>04.</h1>
+          <p>search effect</p>
+          <div class="site_view1_button">사이트 보기</div>
+        </div>
       </div>
     </div>
+    <!-- //script_code_view -->
+    <!-- contact -->
+    <div id="contact">
+      <div class="contact_inner">
+        <div class="contact_title">contact</div>
+        <div class="contact_cont">
+          <span>contact</span></div>
+      </div>
     </div>
-          <!-- //script_code_view -->
-          <div id="contact">
-            <div class="contact_inner">
-              <div class="contact_title">contact</div>
-              <div class="contact_cont">
-                <span>contact</span></div>
-            </div>
-          </div>
+    <!-- //contact -->
+    <div id="contact_end">
+      
+    </div>
     <script src="js/skrollr.min.js"></script>
     <script type="text/javascript">
-      var s = skrollr.init();
 
+      // 스크롤값
       function scroll() {
         let scrollTop =
           window.pageYOffset ||
           document.documentElement.scrollTop ||
           window.scrollY;
-        document.querySelector(".scrollTop").innerText = Math.round(scrollTop);
-
-        // document.querySelector(".section1__bg img").style.width =
-        //   scrollTop + "px";
-
+        document.querySelector(".scrollTop span").innerText =
+          Math.round(scrollTop);
+        //   about_me
+        let aboutCont = document.querySelector(".about_me");
+                // let textOffset  = aboutCont.offsetHeight
+                // console.log(textOffset)
+                // about_me 스크롤에 위치하면
+        if(scrollTop >aboutCont.offsetHeight-500 ){
+          // alert("fdfd")
+          let text = aboutCont.querySelectorAll(".about_animation span").forEach((span, index) => {
+            setTimeout(()=> {
+              span.classList.add("show");
+            }, 20 * (index + 1))
+          })         
+        }
+        let siteCode = document.querySelector(".site_code_box");
+        if(scrollTop > siteCode.offsetHeight + 800){
+          let siteCodeBox = document.querySelectorAll(".site_code_box .box").forEach(el => {
+            el.classList.add("show")
+          });
+          
+        }
         requestAnimationFrame(scroll);
       }
       scroll();
+      // about_me 글씨 애니메이션 효과
+      let aboutMe = document.querySelector(".about_animation");
+      // console.log(aboutMe)
+      let aboutText= aboutMe.innerText
+      // console.log(aboutText)
+      // 한글자 한글자 자름
+      let aboutSplit = aboutText.split("").join("</span><span aria-hidden='true'>");
+      // console.log(aboutSplit)
+      aboutSplit = "<span aria-hidden='true'>" + aboutSplit + "</span>";
+      // console.log(aboutSplit)
+      aboutMe.innerHTML = aboutSplit;
+      // aboutMe.setAttribute("aria-label", aboutSplit);
     </script>
   </body>
+
 </html>

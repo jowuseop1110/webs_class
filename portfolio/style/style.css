@@ -4,13 +4,12 @@
 .scrollTop {
   position: fixed;
   left: 20px;
-  top: 20px;
+  bottom: 20px;
+  z-index: 1000;
   background: rgba(0, 0, 0, 0.4);
   color: #fff;
-  width: 60px;
-  height: 30px;
-  text-align: center;
-  line-height: 30px;
+  padding: 10px 30px;
+  border-radius: 50px;
 }
 .fixed {
   position: fixed;
@@ -22,7 +21,7 @@
   width: 100%;
   position: relative;
   font-family: "GmarketSans";
-  z-index: 1;
+  z-index: 9999999;
 }
 .header_top {
   width: 100%;
@@ -130,6 +129,56 @@
   text-transform: uppercase;
   font-size: 9vw;
 }
+@media (max-width: 1200px) {
+  .header_top_menu {
+    border-bottom: 3px solid #000;
+    border-right: 3px solid #000;
+  }
+  .header_bottom {
+    border: 3px solid #000;
+  }
+  .header_middle_box1 {
+    border: 3px solid #000;
+    border-top: 0;
+    border-bottom: 0;
+  }
+  .header_middle_box2 {
+    border: 3px solid #000;
+    border-bottom: 0;
+  }
+  .header_middle {
+    border: 3px solid #000;
+  }
+}
+@media (max-width: 700px) {
+  .header_top_menu {
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+  }
+  .header_bottom {
+    display: none;
+  }
+  .header_middle_box1 {
+    border: 1px solid #000;
+    border-top: 0;
+    border-bottom: 0;
+    border-left: 0;
+  }
+  .header_middle_box2 {
+    border: 1px solid #000;
+    border-bottom: 0;
+    border-left: 0;
+  }
+  .header_middle {
+    border: 1px solid #000;
+    border-right: 1px solid #000;
+  }
+}
+@media (max-width: 400px) {
+  .header_bottom {
+    display: none;
+  }
+}
 /* about */
 #about {
   width: 100%;
@@ -142,21 +191,30 @@
   width: 45%;
   height: 35vw;
   padding: 3vw;
+}
+
+.about_animation span {
   font-size: 1.5vw;
   color: #000;
+  opacity: 0;
+  transition: all 0.33s ease-in-out;
 }
-.about_me span {
+.about_animation span.show {
+  opacity: 1;
+}
+.about_me .about_text {
   font-size: 1vw;
   font-weight: 900;
   text-transform: uppercase;
   padding-right: 10px;
 }
+
 .about_face {
   width: 27.5%;
   height: 35vw;
   border-right: 6px solid #000;
   border-left: 6px solid #000;
-  background: url("../img/aboutimg.jpg") no-repeat center center;
+  background: url("../img/3.jpg") no-repeat center center;
   background-size: cover;
   position: relative;
 }
@@ -191,6 +249,48 @@
   font-size: 2vw;
   color: #000;
 }
+@media (max-width: 1200px) {
+  #about {
+    border: 3px solid #000;
+    border-top: 0;
+  }
+  .about_face {
+    border-right: 3px solid #000;
+    border-left: 3px solid #000;
+  }
+}
+@media (max-width: 700px) {
+  #about {
+    border: 1px solid #000;
+    margin-top: 4.5vw;
+  }
+  .about_me {
+    width: 69.9%;
+    overflow: hidden;
+  }
+  .about_skill {
+    display: none;
+  }
+  .about_animation span {
+    font-size: 0.5vw;
+  }
+  .about_face {
+    width: 30.1%;
+    border-right: 1px solid #000;
+    border-left: 1px solid #000;
+  }
+}
+@media (max-width: 560px) {
+  .about_animation span {
+    display: none;
+  }
+  .about_animation::after {
+    content: " 안녕하십니까. 모든일에 최선을 다 하는 조운섭 입니다. 열심히 일하고 열심히 배우고 취업후에도 열심히 공부해서 열심히 하는 조운섭에서 최고의 조운섭으로 변하는 모습 꼭!! 보여드리겠습니다.";
+    font-size: 0.5vw;
+  }
+}
+@media (max-width: 400px) {
+}
 /* //about */
 /* site_code */
 #site_code {
@@ -223,19 +323,25 @@
 .site_code_box {
   width: 20%;
   height: 25vw;
+  position: relative;
+  overflow: hidden;
 }
 
 .box {
   width: calc(100% + 6px);
   height: 100%;
   border: 6px solid #000;
-  /* position: absolute;
-  top: -5%; */
+  position: absolute;
+  top: 0;
+  left: 500%;
   background: #fff;
   padding: 1vw;
-  transition: all 0.5s;
+  transition: all 0.8s;
 }
-
+.box.show {
+  position: absolute;
+  left: -0.5%;
+}
 .site_code_box:nth-child(1) .box:hover {
   background: #fd437d;
 }
@@ -280,6 +386,18 @@
   font-weight: 350;
   color: #000;
 }
+@media (max-width: 1200px) {
+  /* #site_code {
+    border: 3px solid #000;
+    border-top: 0;
+  } */
+  .site_code_view {
+    border: 3px solid #000;
+  }
+  .site_code_box {
+    border: 3px solid #000;
+  }
+}
 /* //site_code */
 /* site_view */
 #site_view {
@@ -290,7 +408,7 @@
   font-family: "SCoreDream";
 }
 .site_view_img1 {
-  width: calc(40.3% + 5px);
+  width: calc(40% + 4px);
   height: 45vw;
   border-right: 6px solid #000;
   border-left: 6px solid #000;
@@ -298,7 +416,7 @@
   background-size: cover;
 }
 .site_view_img2 {
-  width: calc(40.3% + 5px);
+  width: calc(40% + 4px);
   height: 45vw;
   border-right: 6px solid #000;
   border-left: 6px solid #000;
@@ -306,7 +424,7 @@
   background-size: cover;
 }
 .site_view_img3 {
-  width: calc(40.3% + 5px);
+  width: calc(40% + 4px);
   height: 45vw;
   border-right: 6px solid #000;
   border-left: 6px solid #000;
@@ -314,7 +432,7 @@
   background-size: cover;
 }
 .site_view_img4 {
-  width: calc(40.3% + 5px);
+  width: calc(40% + 4px);
   height: 45vw;
   border-right: 6px solid #000;
   border-left: 6px solid #000;
@@ -322,7 +440,7 @@
   background-size: cover;
 }
 .site_view_img5 {
-  width: calc(40.3% + 5px);
+  width: calc(40% + 4px);
   height: 45vw;
   border-right: 6px solid #000;
   border-left: 6px solid #000;
@@ -379,6 +497,12 @@
   border-top: 6px solid #000;
   text-align: center;
 }
+/* 버튼 */
+:root {
+  --primary: #99c41f;
+  --bg-dark: #121212;
+  --bg-darker: #212121;
+}
 .view .site_view_siteV {
   width: 50%;
   font-size: 2vw;
@@ -386,14 +510,142 @@
   line-height: 5.5vw;
   border-right: 6px solid #000;
   color: #000;
+  z-index: 1;
+  /*  */
+  /* background: #000; */
 }
+/*  */
+.btn-line-outline {
+  position: relative;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  -webkit-text-stroke: 0.04em #000;
+  text-stroke: 0.02em #000;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  color: transparent;
+  padding-left: 50px;
+  cursor: pointer;
+  transition: all 0.15s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.15s;
+}
+.btn-line-outline1 {
+  position: relative;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  -webkit-text-stroke: 0.04em #000;
+  text-stroke: 0.02em #000;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  color: transparent;
+  padding-left: 50px;
+  cursor: pointer;
+  transition: all 0.15s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.25s;
+}
+.btn-line-outline1:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 2px;
+  left: -0.5rem;
+  background-color: var(--primary);
+  margin-top: -1px;
+  transform-origin: right;
+  transition: all 0.15s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.15s;
+}
+.btn-line-outline:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 2px;
+  left: -0.5rem;
+  background-color: var(--primary);
+  margin-top: -1px;
+  transform-origin: right;
+  transition: all 0.15s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.15s;
+  z-index: -100;
+}
+.btn-line-outline .inner {
+  position: relative;
+  z-index: -1;
+}
+.btn-line-outline1 .inner {
+  position: relative;
+  z-index: -1;
+}
+.btn-line-outline .inner:after {
+  content: attr(data-hover);
+  position: absolute;
+  top: 0%;
+  left: 0;
+  width: 0;
+  line-height: normal;
+  overflow: hidden;
+  white-space: nowrap;
+  -webkit-text-stroke: 0.02em var(--primary);
+  text-stroke: 0.02em var(--primary);
+  -webkit-text-fill-color: var(--primary);
+  text-fill-color: var(--primary);
+  color: var(--primary);
+  transition: all 0.15s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  z-index: -1;
+}
+.btn-line-outline1 .inner:after {
+  content: attr(data-hover);
+  position: absolute;
+  top: 0%;
+  left: 0;
+  width: 0;
+  line-height: normal;
+  overflow: hidden;
+  white-space: nowrap;
+  -webkit-text-stroke: 0.02em var(--primary);
+  text-stroke: 0.02em var(--primary);
+  -webkit-text-fill-color: var(--primary);
+  text-fill-color: var(--primary);
+  color: var(--primary);
+  transition: all 0.15s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  z-index: -1;
+}
+.btn-line-outline:hover {
+  text-decoration: none;
+  padding-left: 1rem;
+}
+.btn-line-outline:hover:before {
+  transform: scaleX(0);
+  transition: all 0.15s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+.btn-line-outline:hover .inner:after {
+  width: 100%;
+  height: 100%;
+  transition: all 0.15s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.2s;
+}
+.btn-line-outline1:hover {
+  text-decoration: none;
+  padding-left: 1rem;
+}
+.btn-line-outline1:hover:before {
+  transform: scaleX(0);
+  transition: all 0.15s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+.btn-line-outline1:hover .inner:after {
+  width: 100%;
+  height: 100%;
+  transition: all 0.15s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.2s;
+}
+/* // */
 .view .site_view_siteC {
   width: 50%;
   font-size: 2vw;
   font-weight: 900;
   line-height: 5.5vw;
   color: #000;
+  z-index: 1;
 }
+/* //버튼 */
 /* //site_view_img */
 /* script_code */
 #script_code {
