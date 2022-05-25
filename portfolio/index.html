@@ -153,6 +153,7 @@
         <div class="site_view_img1" style="border-left: 0"></div>
         <div class="site_view_desc">
           <div class="desc">
+           <img src="img/webstandardSite.jpg.png" alt="" class="click_site">
             <div class="site_view_desc_number"><span>01</span></div>
             <div class="site_view_desc_title">
               <span>webstandard</span>
@@ -166,10 +167,10 @@
           </div>
           <div class="view">
             <span class="site_view_siteV">
-               <a href="#" class="btn"><span>사이트 보기</span></a>
+               <a href="#" class="btn"><span>CODE VIEW</span></a>
             </span>
             <span class="site_view_siteC">
-              <a href="" class="btn"><span>코드 보기</span></a>
+              <div class="btn"><span>SITE VIEW</span></div>
             </span>
           </div>
         </div>
@@ -223,7 +224,7 @@
           </div>
           <div class="view">
             <span class="site_view_siteV">
-               <a href="#" class="btn"><span>사이트 보기</span></a>
+               <div class="btn"><span>사이트 보기</span></div>
             </span>
             <span class="site_view_siteC">
               <a href="" class="btn"><span>코드 보기</span></a>
@@ -444,7 +445,11 @@
       aboutMe.innerHTML = aboutSplit;
       // aboutMe.setAttribute("aria-label", aboutSplit);
 
+        const siteView = document.querySelector(".click_site")
+        const siteClick = document.querySelector(".site_view_siteC. btn")
 
+        siteClick.addEventListener("click")
+        siteView.classList.add("show")
 
 
 
