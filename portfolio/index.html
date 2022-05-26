@@ -24,18 +24,13 @@
           </div>
         </div>
         <div class="header_middle">
-          <iframe
-            src="color-shaders/color-shaders/dist/index.html"
-            frameborder="0"
-          >
-          </iframe>
           <div class="header_middle_box1">
             <span>frontend with the&nbsp;</span> 
             <span>highest price goal</span>
           </div>
-          <div class="header_middle_box2">
-            <iframe src="../portfolio/text-tornado-css/text-tornado-css/dist/index.html" frameborder="0"></iframe>
-          </div>
+          <div class="header_middle_box2"></div>
+          <div class="header_middle_box3">portfolio</div>
+          <canvas id="three_bg"></canvas>
         </div>
         <div class="header_bottom">
           <h1>Portfolio</h1>
@@ -166,12 +161,11 @@
             </div>
           </div>
           <div class="view">
-            <span class="site_view_siteV">
-               <a href="#" class="btn"><span>CODE VIEW</span></a>
-            </span>
-            <span class="site_view_siteC">
-              <div class="btn"><span>SITE VIEW</span></div>
-            </span>
+            <div class="switch-button">
+              <span class="active" style="left: 0%;"></span>
+              <button class="switch-button-case left active-case">CODE VIEW</button>
+              <button class="switch-button-case right">SITE VIEW</button>
+            </div>
           </div>
         </div>
       </div>
@@ -194,12 +188,11 @@
             </div>
           </div>
           <div class="view">
-            <span class="site_view_siteV">
-               <a href="#" class="btn"><span>사이트 보기</span></a>
-            </span>
-            <span class="site_view_siteC">
-              <a href="" class="btn"><span>코드 보기</span></a>
-            </span>
+            <div class="switch-button">
+              <span class="active" style="left: 0%;"></span>
+              <button class="switch-button-case left active-case">CODE VIEW</button>
+              <button class="switch-button-case right">SITE VIEW</button>
+            </div>
           </div>
         </div>
         <div class="site_view_img2" style="border-right: 0"></div>
@@ -395,11 +388,8 @@
     <div id="contact_end">
       
     </div>
-    <script src="js/skrollr.min.js"></script>
-  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/89/three.min.js"></script>
     <script type="text/javascript">
-
-     
       // 스크롤값
       function scroll() {
         let scrollTop =
@@ -446,16 +436,126 @@
       // aboutMe.setAttribute("aria-label", aboutSplit);
 
         const siteView = document.querySelector(".click_site")
-        const siteClick = document.querySelector(".site_view_siteC. btn")
+        const siteClick = document.querySelector(".site_view_siteC .btn")
 
-        siteClick.addEventListener("click")
-        siteView.classList.add("show")
-
-
-
-
+        siteClick.addEventListener("click", () => {
+          siteView.classList.toggle("show")
+        })
     </script>
+      <script id="vertexShader" type="x-shader/x-vertex">
+        void main() {
+            gl_Position = vec4( position, 1.0 );
+        }
+      </script>
+      <script id="fragmentShader" type="x-shader/x-fragment">
+        #ifdef GL_ES
+        precision mediump float;
+        #endif
+        uniform float time;
+        uniform vec2 resolution;
+        const int complexity = 3;
+        const float fluid_speed = 4.0;
+        const float color_intensity = 1.0;
+        float random (in vec2 st) {
+            return fract(sin(dot(st.xy, vec2(12.9898,78.233))) * 43758.5453123);
+        }
+        void main(){
+            vec2 uv = (gl_FragCoord.xy * 2.0 - resolution.xy) / min(resolution.x, resolution.y);
+            float r = sqrt( dot( uv, uv ) );
+            for(int i=1; i<complexity; i++){
+                vec2 newUv = uv + time * 0.01;
+                newUv.x += 1.5/float(i) * sin(float(i) * uv.y + time/fluid_speed) + 1.0;
+                newUv.y += 1.4/float(i) * cos(float(i) * uv.x + time/fluid_speed) - 0.9;
+                uv = newUv;
+            }
+            vec3 col = vec3(color_intensity*cos(uv.x) * 0.9, color_intensity * sin(uv.x) * sqrt(cos(time * 0.01)), color_intensity);
+            gl_FragColor=vec4(col, 1.0);
+        }
+      </script>
+ 
+<script>
+// 버튼 디자인
+  "use strict";
 
+var switchButton = document.querySelector(".switch-button");
+var switchBtnRight = document.querySelectorAll(".switch-button-case.right");
+var switchBtnLeft = document.querySelectorAll(".switch-button-case");
+var activeSwitch = document.querySelectorAll(".active");
+
+switchBtnLeft.forEach(el => {
+  el.addEventListener(
+  "click",
+  function (e) {
+    console.log(e.target.parentNode.querySelectorAll("button"))
+    e.target.parentNode.querySelectorAll("button").forEach(el => {
+      el.classList.remove("active-case");
+    })
+    e.target.classList.add("active-case");
+    if(e.target.classList.contains("right")){
+      e.target.parentNode.querySelector(".active").style.left = "50%";
+    } else {
+      e.target.parentNode.querySelector(".active").style.left = "0%";
+    }
+  },
+  false
+);
+})
+</script>
+
+ <script>
+  var container;
+  var camera, scene, renderer;
+  var uniforms;
+  init();
+  animate();
+  function init() {
+    container = document.getElementById("container");
+    camera = new THREE.Camera();
+    camera.position.z = 1;
+    scene = new THREE.Scene();
+    var geometry = new THREE.PlaneBufferGeometry(2, 2);
+    uniforms = {
+      time: {
+        type: "f",
+        value: 1.0,
+      },
+      resolution: {
+        type: "v2",
+        value: new THREE.Vector2(),
+      },
+    };
+    var material = new THREE.ShaderMaterial({
+      uniforms: uniforms,
+      vertexShader: document.getElementById("vertexShader").textContent,
+      fragmentShader: document.getElementById("fragmentShader").textContent,
+    });
+    var mesh = new THREE.Mesh(geometry, material);
+    scene.add(mesh);
+    renderer = new THREE.WebGLRenderer({
+      canvas: document.getElementById("three_bg"),
+    });
+    renderer.setPixelRatio(window.devicePixelRatio);
+
+    onWindowResize();
+    window.addEventListener("resize", onWindowResize, false);
+
+  }
+  function onWindowResize(event) {
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    uniforms.resolution.value.x = renderer.domElement.width;
+    uniforms.resolution.value.y = renderer.domElement.height;
+    const canvasSize = document.querySelector("#three_bg");
+    canvasSize.style = "width: 100%; height: 100%"
+  }
+  function animate() {
+    requestAnimationFrame(animate);
+    render();
+  }
+  function render() {
+    uniforms.time.value += 0.05;
+    renderer.render(scene, camera);
+  }
+</script>
 
   </body>
 

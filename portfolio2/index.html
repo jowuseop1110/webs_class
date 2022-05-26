@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style/font.css" />
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/reset.css" />
+    <style>
+      /* layout */
+      #main {
+        overflow-x: scroll;
+      }
+      #section2 {
+        background-color: #7d7565;
+      }
+      #section3 {
+        background-color: #b9b3a9;
+        height: 100vh;
+      }
+      .sec1-3 {
+        background-color: #51442b;
+      }
+      .sec1-4 {
+      }
+      #section2 {
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        left: 0;
+      }
+      .sec1-1 {
+        height: 20vw;
+      }
+      .sec2_wrap {
+        height: 100vh;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+      }
+      .sec2_wrap > div {
+        min-width: 100vw;
+        height: 40vh;
+      }
+      .sec2-1 {
+        background-color: #51442b;
+      }
+      .sec2-2 {
+        background-color: #b9b3a9;
+      }
+      .sec2-3 {
+        background-color: #51442b;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- header -->
+    <div class="scrollTop">scrollTop : <span>0</span>px</div>
+    <div class="header_top">
+      <div class="header_top_logo">
+        <a href="#">Portfolio</a>
+      </div>
+      <div class="header_top_menu">
+        <a href="#">about</a>
+        <a href="#">work</a>
+        <a href="#">contact</a>
+      </div>
+    </div>
+    <!-- //header -->
+    <main id="main">
+      <section id="section1" class="vertical">
+        <div class="sec1_wrap">
+          <!--tress.bg -->
+          <div class="sec1-1">
+            <div class="sec1_bg">
+              <div class="header_middle">
+                <div class="header_middle_box1">
+                  <span>frontend with the&nbsp;</span>
+                  <span>highest price goal</span>
+                </div>
+                <div class="header_middle_box2"></div>
+                <div class="header_middle_box3">portfolio</div>
+                <canvas id="three_bg"></canvas>
+              </div>
+              <canvas id="three_bg"></canvas>
+            </div>
+          </div>
+          <!--// tress.bg -->
+          <!-- portfolio_bg -->
+          <div class="sec1-2">
+            <div class="header_bottom">
+              <h1
+                data-scroll
+                data-scroll-speed="3"
+                data-scroll-direction="horizontal"
+              >
+                portfolio
+              </h1>
+            </div>
+          </div>
+          <!-- //portfolio_bg -->
+          <!-- about -->
+          <div class="sec1-3">
+            <div class="sec3_about">
+              <div id="about">
+                <div class="about_me">
+                  <span class="about_text">about me</span>
+                  <p class="about_animation">
+                    안녕하십니까. 하고싶다! 해야겠다! 라는 생각으로 개발자에
+                    뛰어든 조운섭입니다. 새로운것에 도전한다는게 쉽지는 않았지만
+                    생각만하면 아무것도 달라질게 없기에 5년째 다니던 회사를
+                    뒤로하고 생각을 실천으로 바꾸려 시작하게 되었습니다. 물론
+                    쉽지는 않았습니다. 하지만 포기라는 단어가 너무 마음에 들지
+                    않았기에 계속 앞으로 나아가려 합니다. 아직 부족한 부분이
+                    많지만 부족한 만큼 발전할 수 있는 부분이 많다고 생각합니다.
+                    열심히 일하고 열심히 배우고 취업후에도 열심히 공부해서
+                    열심히하는 조운섭에서 최고의 조운섭으로 변하는 모습 꼭!
+                    보여드리겠습니다.
+                  </p>
+                </div>
+                <div class="about_face">
+                  <span>Click</span>
+                </div>
+                <div class="about_skill">
+                  <ul>
+                    <li>1. html</li>
+                    <li>2. scss</li>
+                    <li>3. mysql</li>
+                    <li>4. php</li>
+                    <li>5. react</li>
+                    <li>6. next.js</li>
+                    <li>7. vue</li>
+                    <li>8. res</li>
+                    <li>9. axios</li>
+                    <li>10. javascript</li>
+                    <li>11. jquery</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //about -->
+          <div class="sec1-4">
+            <div id="site_code">
+              <div class="site_code_title">
+                <h1>site code</h1>
+              </div>
+              <div class="site_code_view">
+                <div class="site_code_box">
+                  <div class="box">
+                    <div class="box_number">01</div>
+                    <div class="box_title">
+                      <p>webstandard</p>
+                      <span>사이트 코딩</span>
+                    </div>
+                    <div class="box_desc">
+                      웹표준형 사이트입니다. 웹접근성에 근거하여 모든 사용자가
+                      사용함에 있어 불편함없이 설계된 사이트입니다.
+                    </div>
+                  </div>
+                </div>
+                <div class="site_code_box">
+                  <div class="box">
+                    <div class="box_number">02</div>
+                    <div class="box_title">
+                      <p>responsive</p>
+                      <span>사이트 코딩</span>
+                    </div>
+                    <div class="box_desc">
+                      반응형 웹 사이트입니다. 웹표준을 준수하며 스크립트요소들을
+                      활용하여 반응형까지 지원하는 페이지입니다.
+                    </div>
+                  </div>
+                </div>
+                <div class="site_code_box">
+                  <div class="box">
+                    <div class="box_number">03</div>
+                    <div class="box_title">
+                      <p>react blog</p>
+                      <span>사이트 코딩</span>
+                    </div>
+                    <div class="box_desc">
+                      컴퍼넌트로 페이지를 작성하고 PROPS를 활용하여 데이터를
+                      주고받는 흐름을 완벽하게 이해하고 응용하여 만든 React Blog
+                      입니다.
+                    </div>
+                  </div>
+                </div>
+                <div class="site_code_box">
+                  <div class="box">
+                    <div class="box_number">04</div>
+                    <div class="box_title">
+                      <p>php notice</p>
+                      <span>사이트 코딩</span>
+                    </div>
+                    <div class="box_desc">
+                      PHP를 응용하여 MyAdmin을 활용한 PHP사이트 입니다. 게시판,
+                      블로그, 회원가입, 로그인 기능을 구현하였습니다.
+                    </div>
+                  </div>
+                </div>
+                <div class="site_code_box">
+                  <div class="box">
+                    <div class="box_number">05</div>
+                    <div class="box_title">
+                      <p>vue port</p>
+                      <span>사이트 코딩</span>
+                    </div>
+                    <div class="box_desc">
+                      vue.js에서 제공하는 방복문, 리스트 렌더링 v-for구문을
+                      활용하여 만든 사이트 입니다.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- site_view1 -->
+            <div id="site_view">
+              <div class="site_view_img1" style="border-left: 0"></div>
+              <div class="site_view_desc">
+                <div class="desc">
+                  <img
+                    src="img/webstandardSite.jpg.png"
+                    alt=""
+                    class="click_site"
+                  />
+                  <div class="site_view_desc_number"><span>01</span></div>
+                  <div class="site_view_desc_title">
+                    <span>webstandard</span>
+                    <span>사이트 코딩</span>
+                  </div>
+                  <div class="site_view_desc_codeview">
+                    <p>
+                      모든 사용자가 웹사이트 이용에 불편이 없도록 대체 텍스트로
+                      웹 접근성을 고려하였습니다. 메뉴, 슬라이드, 탭, 동영상,
+                      팝업 등 동적인 효과를 접목시켜 만들었습니다.
+                    </p>
+                  </div>
+                </div>
+                <div class="view">
+                  <div class="switch-button">
+                    <span class="active" style="left: 0%"></span>
+                    <button class="switch-button-case left active-case">
+                      CODE VIEW
+                    </button>
+                    <button class="switch-button-case right">SITE VIEW</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- //site_view -->
+            <!-- site_view2 -->
+            <div id="site_view">
+              <div class="site_view_desc">
+                <div class="desc">
+                  <div class="site_view_desc_number"><span>02</span></div>
+                  <div class="site_view_desc_title">
+                    <span>responsive</span>
+                    <span>사이트 코딩</span>
+                  </div>
+                  <div class="site_view_desc_codeview">
+                    <p>
+                      다양한 디바이스에 맞춰 볼 수 있도록 미디어쿼리를 이용하여
+                      제작한 반응형 웹사이트 입니다. 슬라이드, 마우스오버 등의
+                      효과를 주었습니다.
+                    </p>
+                  </div>
+                </div>
+                <div class="view">
+                  <div class="switch-button">
+                    <span class="active" style="left: 0%"></span>
+                    <button class="switch-button-case left active-case">
+                      CODE VIEW
+                    </button>
+                    <button class="switch-button-case right">SITE VIEW</button>
+                  </div>
+                </div>
+              </div>
+              <div class="site_view_img2" style="border-right: 0"></div>
+            </div>
+            <!-- //site_view -->
+            <!-- site_view3 -->
+            <div id="site_view">
+              <div class="site_view_img3" style="border-left: 0"></div>
+              <div class="site_view_desc">
+                <div class="desc">
+                  <div class="site_view_desc_number"><span>03</span></div>
+                  <div class="site_view_desc_title">
+                    <span>react blog</span>
+                    <span>사이트 코딩</span>
+                  </div>
+                  <div class="site_view_desc_codeview">
+                    <p>
+                      컴퍼넌트로 페이지를 작성하고 PROPS를 활용하여 데이터를
+                      주고받는 흐름을 완벽하게 이해하고 응용하여 만든 React Blog
+                      입니다.
+                    </p>
+                  </div>
+                </div>
+                <div class="view">
+                  <div class="switch-button">
+                    <span class="active" style="left: 0%"></span>
+                    <button class="switch-button-case left active-case">
+                      CODE VIEW
+                    </button>
+                    <button class="switch-button-case right">SITE VIEW</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- //site_view -->
+            <!-- site_view4 -->
+            <div id="site_view">
+              <div class="site_view_desc">
+                <div class="desc">
+                  <div class="site_view_desc_number"><span>04</span></div>
+                  <div class="site_view_desc_title">
+                    <span>php notice</span>
+                    <span>사이트 코딩</span>
+                  </div>
+                  <div class="site_view_desc_codeview">
+                    <p>
+                      PHP를 활용하여 게시판, 블로그, 퀴즈기능, 회원가입, 로그인
+                      기능을 구현해보았습니다. DB는 PHPMyAdmin을 활용
+                      하였습니다.
+                    </p>
+                  </div>
+                </div>
+                <div class="view">
+                  <div class="switch-button">
+                    <span class="active" style="left: 0%"></span>
+                    <button class="switch-button-case left active-case">
+                      CODE VIEW
+                    </button>
+                    <button class="switch-button-case right">SITE VIEW</button>
+                  </div>
+                </div>
+              </div>
+              <div class="site_view_img4" style="border-right: 0"></div>
+            </div>
+            <!-- //site_view -->
+            <!-- site_view5 -->
+            <div id="site_view">
+              <div class="site_view_img5" style="border-left: 0"></div>
+              <div class="site_view_desc">
+                <div class="desc">
+                  <div class="site_view_desc_number"><span>05</span></div>
+                  <div class="site_view_desc_title">
+                    <span>vue port</span>
+                    <span>사이트 코딩</span>
+                  </div>
+                  <div class="site_view_desc_codeview">
+                    <p>
+                      vue.js에서 제공하는 방복문, 리스트 렌더링 v-for구문을
+                      활용하여 만든 사이트 입니다.
+                    </p>
+                  </div>
+                </div>
+                <div class="view">
+                  <div class="switch-button">
+                    <span class="active" style="left: 0%"></span>
+                    <button class="switch-button-case left active-case">
+                      CODE VIEW
+                    </button>
+                    <button class="switch-button-case right">SITE VIEW</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- //site_view -->
+          </div>
+        </div>
+      </section>
+      <section id="section2" class="horizontal">
+        <div class="sec2_wrap">
+          <div class="sec2-1"></div>
+          <div class="sec2-2">sec2-2</div>
+          <div class="sec2-3">sec2-3</div>
+        </div>
+      </section>
+      <section id="section3">section3</section>
+    </main>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/89/three.min.js"></script>
+    <script>
+      // 스크롤 값
+      function scroll() {
+        let scrollTop =
+          window.pageYOffset ||
+          document.documentElement.scrollTop ||
+          window.scrollY;
+        document.querySelector(".scrollTop span").innerText =
+          Math.round(scrollTop);
+        let aboutCont = document.querySelector(".about_me");
+        // let textOffset  = aboutCont.offsetHeight
+        // console.log(textOffset)
+        // about_me 스크롤에 위치하면
+        if (scrollTop > aboutCont.offsetHeight - 500) {
+          // alert("fdfd")
+          let text = aboutCont
+            .querySelectorAll(".about_animation span")
+            .forEach((span, index) => {
+              setTimeout(() => {
+                span.classList.add("show");
+              }, 20 * (index + 1));
+            });
+        }
+        // let siteCode = document.querySelector(".site_code_box");
+        // if (scrollTop > siteCode.offsetHeight + 500) {
+        //   let stieCodeTitle = document.querySelector(".site_code_title h1");
+        //   stieCodeTitle.classList.add("show");
+        //   let siteCodeBox = document
+        //     .querySelectorAll(".site_code_box .box")
+        //     .forEach((el) => {
+        //       el.classList.add("show");
+        //     });
+        // }
+        requestAnimationFrame(scroll);
+      }
+      scroll();
+      // 스무스 효과
+      gsap.registerPlugin(ScrollTrigger);
+      const pageContents = document.getElementById("main");
+      const scroller = new LocomotiveScroll({
+        el: pageContents,
+        smooth: true,
+      });
+      scroller.on("scroll", ScrollTrigger.update);
+      ScrollTrigger.scrollerProxy(pageContents, {
+        scrollTop(value) {
+          return arguments.length
+            ? scroller.scrollTo(value, 0, 0)
+            : scroller.scroll.instance.scroll.y;
+        },
+        getBoundingClientRect() {
+          return {
+            left: 0,
+            top: 0,
+            width: window.innerWidth,
+            height: window.innerHeight,
+          };
+        },
+        pinType: pageContents.style.transform ? "transform" : "fixed",
+      });
+      window.addEventListener("load", function () {
+        let sec2WrapWidth = document.querySelector(".sec2_wrap").offsetWidth;
+        let horizontal2 = sec2WrapWidth - window.innerWidth;
+        gsap.to("#section2 .sec2_wrap", {
+          scrollTrigger: {
+            scroller: pageContents,
+            scrub: true,
+            trigger: "#section2",
+            pin: true,
+            start: "top top",
+            markers: true,
+            end: sec2WrapWidth,
+          },
+          x: -horizontal2,
+          ease: "none",
+        });
+        ScrollTrigger.addEventListener("refresh", () => scroller.update());
+        ScrollTrigger.refresh();
+      });
+
+      // about span 처리
+      // about_me 글씨 애니메이션 효과
+      let aboutMe = document.querySelector(".about_animation");
+      // console.log(aboutMe)
+      let aboutText = aboutMe.innerText;
+      // console.log(aboutText)
+      // 한글자 한글자 자름
+      let aboutSplit = aboutText
+        .split("")
+        .join("</span><span aria-hidden='true'>");
+      // console.log(aboutSplit)
+      aboutSplit = "<span aria-hidden='true'>" + aboutSplit + "</span>";
+      // console.log(aboutSplit)
+      aboutMe.innerHTML = aboutSplit;
+      // aboutMe.setAttribute("aria-label", aboutSplit);
+
+      // 버튼 디자인
+      ("use strict");
+
+      var switchButton = document.querySelector(".switch-button");
+      var switchBtnRight = document.querySelectorAll(
+        ".switch-button-case.right"
+      );
+      var switchBtnLeft = document.querySelectorAll(".switch-button-case");
+      var activeSwitch = document.querySelectorAll(".active");
+
+      switchBtnLeft.forEach((el) => {
+        el.addEventListener(
+          "click",
+          function (e) {
+            console.log(e.target.parentNode.querySelectorAll("button"));
+            e.target.parentNode.querySelectorAll("button").forEach((el) => {
+              el.classList.remove("active-case");
+            });
+            e.target.classList.add("active-case");
+            if (e.target.classList.contains("right")) {
+              e.target.parentNode.querySelector(".active").style.left = "50%";
+            } else {
+              e.target.parentNode.querySelector(".active").style.left = "0%";
+            }
+          },
+          false
+        );
+      });
+    </script>
+
+    <script id="vertexShader" type="x-shader/x-vertex">
+      void main() {
+          gl_Position = vec4( position, 1.0 );
+      }
+    </script>
+    <script id="fragmentShader" type="x-shader/x-fragment">
+      #ifdef GL_ES
+      precision mediump float;
+      #endif
+      uniform float time;
+      uniform vec2 resolution;
+      const int complexity = 3;
+      const float fluid_speed = 4.0;
+      const float color_intensity = 1.0;
+      float random (in vec2 st) {
+          return fract(sin(dot(st.xy, vec2(12.9898,78.233))) * 43758.5453123);
+      }
+      void main(){
+          vec2 uv = (gl_FragCoord.xy * 2.0 - resolution.xy) / min(resolution.x, resolution.y);
+          float r = sqrt( dot( uv, uv ) );
+          for(int i=1; i<complexity; i++){
+              vec2 newUv = uv + time * 0.01;
+              newUv.x += 1.5/float(i) * sin(float(i) * uv.y + time/fluid_speed) + 1.0;
+              newUv.y += 1.4/float(i) * cos(float(i) * uv.x + time/fluid_speed) - 0.9;
+              uv = newUv;
+          }
+          vec3 col = vec3(color_intensity*cos(uv.x) * 0.9, color_intensity * sin(uv.x) * sqrt(cos(time * 0.01)), color_intensity);
+          gl_FragColor=vec4(col, 1.0);
+      }
+    </script>
+    <script>
+      var container;
+      var camera, scene, renderer;
+      var uniforms;
+      init();
+      animate();
+      function init() {
+        container = document.getElementById("container");
+        camera = new THREE.Camera();
+        camera.position.z = 1;
+        scene = new THREE.Scene();
+        var geometry = new THREE.PlaneBufferGeometry(2, 2);
+        uniforms = {
+          time: {
+            type: "f",
+            value: 1.0,
+          },
+          resolution: {
+            type: "v2",
+            value: new THREE.Vector2(),
+          },
+        };
+        var material = new THREE.ShaderMaterial({
+          uniforms: uniforms,
+          vertexShader: document.getElementById("vertexShader").textContent,
+          fragmentShader: document.getElementById("fragmentShader").textContent,
+        });
+        var mesh = new THREE.Mesh(geometry, material);
+        scene.add(mesh);
+        renderer = new THREE.WebGLRenderer({
+          canvas: document.getElementById("three_bg"),
+        });
+        renderer.setPixelRatio(window.devicePixelRatio);
+
+        onWindowResize();
+        window.addEventListener("resize", onWindowResize, false);
+      }
+      function onWindowResize(event) {
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        uniforms.resolution.value.x = renderer.domElement.width;
+        uniforms.resolution.value.y = renderer.domElement.height;
+        const canvasSize = document.querySelector("#three_bg");
+        canvasSize.style = "width: 100%; height: 100%";
+      }
+      function animate() {
+        requestAnimationFrame(animate);
+        render();
+      }
+      function render() {
+        uniforms.time.value += 0.05;
+        renderer.render(scene, camera);
+      }
+    </script>
+  </body>
+</html>
