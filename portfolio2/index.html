@@ -32,22 +32,22 @@
       }
 
       #section2 {
-        height: 100vh;
+        height: 50vw;
         overflow: hidden;
         display: flex;
         left: 0;
       }
 
       .sec2_wrap {
-        height: 100vh;
+        height: 50vw;
         display: flex;
         justify-content: flex-start;
-        align-items: center;
+        align-items: end;
       }
 
       .sec2_wrap > div {
         min-width: 100vw;
-        height: 40vh;
+        height: 25vw;
       }
 
       .sec2-1 {
@@ -158,7 +158,7 @@
                 data-scroll-speed="-3"
                 data-scroll-direction="horizontal"
               >
-                SIDE CODING
+                SITE CODING
               </h2>
             </div>
             <!-- site card -->
@@ -214,7 +214,7 @@
                   alt=""
                 />
                 </div>
-                <div class="site_view_btn">View</div>
+                <div class="site_view_btn">Site View</div>
               </div>
               <div class="sright">
                 <div class="site_title">
@@ -1632,7 +1632,7 @@
                   src="img/webstandardSite.jpg.png" class="site_V"
                   alt=""
                 />
-                  <div class="site_view_btn">View</div>
+                  <div class="site_view_btn">Site View</div>
                 </div>
               </div>
               <div class="sright">
@@ -3058,7 +3058,7 @@ console.error('Upgrade your browser. This Browser is NOT supported WebSocket for
                   src="img/webstandardSite.jpg.png" class="site_V"
                   alt=""
                 />
-                  <div class="site_view_btn">View</div>
+                  <div class="site_view_btn">Site View</div>
                 </div>
               </div>
               <div class="sright">
@@ -4477,7 +4477,7 @@ console.error('Upgrade your browser. This Browser is NOT supported WebSocket for
                   src="img/webstandardSite.jpg.png" class="site_V"
                   alt=""
                 />s
-                  <div class="site_view_btn">View</div>
+                  <div class="site_view_btn">Site View</div>
                 </div>
               </div>
               <div class="sright">
@@ -5896,7 +5896,7 @@ console.error('Upgrade your browser. This Browser is NOT supported WebSocket for
                   src="img/webstandardSite.jpg.png" class="site_V"
                   alt=""
                 />
-                  <div class="site_view_btn">View</div>
+                  <div class="site_view_btn">Site View</div>
                 </div>
               </div>
               <div class="sright">
@@ -7308,16 +7308,72 @@ console.error('Upgrade your browser. This Browser is NOT supported WebSocket for
             <div class="sec4_site5">sec4_site5</div> -->
           </div>
           <div class="sec1-5">
-            <div class="sec5_about">sec5_about</div>
+            <canvas id="canvas2" width="1400" height="600"></canvas>
+        
+            <div class="sec5_about">
+                <h2
+                data-scroll
+                data-scroll-speed="3"
+                data-scroll-direction="horizontal"
+              >
+                SCRIPT CODING
+                </h2>
+            </div>
+          </div>
+          <div class="sec1-6">
+            <div class="sec_title1">
+                <div class="title_box1"></div>
+                <div class="title_box2"></div>
+            </div>
+            <div class="sec_title2">
+                <div class="title_box3"></div>
+                <div class="title_box4"></div>
+            </div>
           </div>
         </div>
       </section>
       <section id="section2" class="horizontal">
         <div class="sec2_wrap">
-          <div class="sec2-1">sec2-1</div>
-          <div class="sec2-2">sec2-2</div>
-          <div class="sec2-3">sec2-3</div>
-          <div class="sec2-4">sec2-4</div>
+          <div class="sec2-1">
+              <!-- sec1 -->
+            <div class="code_view_page1">
+                <div class="site_view1">
+                  <h1>01.</h1>
+                  <p>game effect</p>
+                  <div class="site_view1_button">사이트 보기</div>
+                </div>
+              </div>
+          </div>
+          <div class="sec2-2">
+              <!-- sec2 -->
+              <div class="code_view_page2">
+                <div class="site_view1">
+                  <h1>02.</h1>
+                  <p>parallax effect</p>
+                  <div class="site_view1_button">사이트 보기</div>
+                </div>
+              </div>
+          </div>
+          <div class="sec2-3">
+              <!-- sec3 -->
+              <div class="code_view_page3">
+                <div class="site_view1">
+                  <h1>03.</h1>
+                  <p>search effect</p>
+                  <div class="site_view1_button">사이트 보기</div>
+                </div>
+              </div>
+          </div>
+          <div class="sec2-4">
+              <!-- sec4 -->
+              <div class="code_view_page4">
+                <div class="site_view1">
+                  <h1>04.</h1>
+                  <p>search effect</p>
+                  <div class="site_view1_button">사이트 보기</div>
+                </div>
+              </div>
+          </div>
         </div>
       </section>
       <section id="section3">section3</section>
@@ -7329,7 +7385,7 @@ console.error('Upgrade your browser. This Browser is NOT supported WebSocket for
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/89/three.min.js"></script>
-
+    <script src="js/tunnel.js"></script>
     <script>
       var switchButton = document.querySelector(".switch_button");
       var switchBtnRight = document.querySelectorAll(
@@ -7420,6 +7476,10 @@ console.error('Upgrade your browser. This Browser is NOT supported WebSocket for
 
       gsap.registerPlugin(ScrollTrigger);
       let state = false;
+      let state1 = false;
+      let state2 = false;
+      let state3 = false;
+      let state4 = false;
       const pageContents = document.getElementById("main");
       const scroller = new LocomotiveScroll({
         el: pageContents,
@@ -7429,6 +7489,7 @@ console.error('Upgrade your browser. This Browser is NOT supported WebSocket for
 
       ScrollTrigger.scrollerProxy(pageContents, {
         scrollTop(value) {
+            // about me
           if (scroller.scroll.instance.scroll.y > 150 && !state) {
             state = true;
 
@@ -7438,6 +7499,46 @@ console.error('Upgrade your browser. This Browser is NOT supported WebSocket for
               }, 20 * (index + 1));
             });
           }
+                    //   script card1
+                    if (scroller.scroll.instance.scroll.y > 5300 && !state1) {
+                        state1 = true;
+                        const scriptBox1 = document.querySelector(".title_box1")
+                        console.log(scriptBox1)
+                        gsap.to(scriptBox1, {
+                        duration: 0.3,
+                        top: "-2%",
+                      });
+                    }
+                     //   script card2
+                     if (scroller.scroll.instance.scroll.y > 5300 && !state2) {
+                        state2 = true;
+                        const scriptBox2 = document.querySelector(".title_box2")
+                        console.log(scriptBox2)
+                        gsap.to(scriptBox2, {
+                        duration: 0.6,
+                        top: "-2%",
+                      });
+                    }
+                     //   script card3
+                     if (scroller.scroll.instance.scroll.y > 5300 && !state3) {
+                        state3 = true;
+                        const scriptBox3 = document.querySelector(".title_box3")
+                        console.log(scriptBox3)
+                        gsap.to(scriptBox3, {
+                        duration: 0.9,
+                        top: "-4%",
+                      });
+                    }
+                      //   script card4
+                      if (scroller.scroll.instance.scroll.y > 5300 && !state4) {
+                        state4 = true;
+                        const scriptBox4 = document.querySelector(".title_box4")
+                        console.log(scriptBox4)
+                        gsap.to(scriptBox4, {
+                        duration: 1.2,
+                        top: "-4%",
+                      });
+                    }
           return arguments.length
             ? scroller.scrollTo(value, 0, 0)
             : scroller.scroll.instance.scroll.y;
