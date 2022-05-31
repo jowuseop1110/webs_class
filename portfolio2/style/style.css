@@ -3,7 +3,7 @@
   position: fixed;
   left: 0;
   top: 0;
-  width: 99.1vmax;
+  width: 100vmax;
   font-family: "GmarketSans";
   display: flex;
   align-items: center;
@@ -623,8 +623,9 @@
   overflow: hidden;
 }
 .sec_title1 {
+  font-family: "GmarketSans";
   width: 100%;
-  height: 50%;
+  height: 51%;
   display: flex;
   position: relative;
 }
@@ -632,69 +633,108 @@
   width: calc(50% + 6px);
   height: 100%;
   border: 6px solid #000;
-  background: rgb(162, 85, 85);
+  background: #fff;
   position: absolute;
   top: 200%;
+  transition: all 0.51s;
+  padding: 1vw;
 }
 .title_box2 {
   width: 50%;
   height: 100%;
   border: 6px solid #000;
-  background: rgb(101, 61, 61);
+  background: #fff;
   position: absolute;
   left: 50%;
   top: 200%;
+  transition: all 0.51s;
+  padding: 1vw;
 }
 .sec_title2 {
+  font-family: "GmarketSans";
   width: 100%;
-  height: 50%;
+  height: 53%;
   display: flex;
   position: relative;
 }
 .title_box3 {
-  width: 50%;
+  width: calc(50% + 6px);
   height: 100%;
   border: 6px solid #000;
-  background: rgb(206, 171, 171);
+  background: #fff;
   position: absolute;
-
   top: 200%;
+  transition: all 0.51s;
+  padding: 1vw;
 }
 .title_box4 {
   width: 50%;
   height: 100%;
   border: 6px solid #000;
-  background: rgb(208, 15, 15);
+  background: #fff;
   position: absolute;
   left: 50%;
   top: 200%;
+  transition: all 0.51s;
+  padding: 1vw;
+}
+
+/* 스크립트 box */
+
+.page_number {
+  font-size: 2vw;
+  font-weight: 300;
+  position: relative;
+}
+.page_title {
+  padding: 1vw 0;
+}
+.page_title span {
+  font-size: 2vw;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: block;
+}
+.page_desc {
+  font-size: 1.3vw;
+  font-weight: normal;
+}
+.title_box1:hover {
+  background: #48ceec;
+}
+.title_box2:hover {
+  background: #ec48c3;
+}
+.title_box3:hover {
+  background: #b1e194;
+}
+.title_box4:hover {
+  background: #f08540;
 }
 /* 가로모드 */
 .code_view_page1 {
   width: 100%;
-  height: 25vw;
+  height: 100%;
   background: url(../img/gameeffect.jpg) no-repeat;
   background-size: cover;
-  align-items: center;
-  display: flex;
-  justify-content: left;
-  padding-left: 2vw;
+  /* align-items: center; */
+  padding: 6vw 0 0 3vw;
   border-top: 6px solid #000;
   border-bottom: 6px solid #000;
   border-right: 6px solid #000;
+  position: relative;
 }
 .code_view_page2 {
   width: 100%;
-  height: 25vw;
+  height: 100%;
   background: url(../img/parallax\ effect.jpg) no-repeat;
   background-size: cover;
   align-items: center;
-  display: flex;
-  justify-content: left;
-  padding-left: 2vw;
+  padding: 6vw 0 0 3vw;
   border-bottom: 6px solid #000;
   border-top: 6px solid #000;
   border-right: 6px solid #000;
+  position: relative;
 }
 .code_view_page3 {
   width: 100%;
@@ -725,36 +765,58 @@
 .site_view1 {
   width: 28%;
   height: 80%;
-  background: rgba(148, 148, 148, 0.6);
-  backdrop-filter: blur(10px);
-  box-shadow: 2px 7px 15px 8px rgba(0, 0, 0, 0.3);
   position: relative;
+  font-family: "GmarketSans";
 }
 .site_view1 h1 {
   color: #fff;
-  font-size: 4vw;
+  font-size: 6vw;
   font-weight: 500;
-  padding: 1vw;
 }
 .site_view1 p {
   color: #fff;
-  font-size: 2vw;
+  font-size: 6vw;
   font-weight: 500;
-  text-align: center;
   text-transform: uppercase;
 }
-.site_view1_button {
-  width: 100%;
-  height: 20%;
-  background: rgba(74, 250, 5, 0.2);
-  vertical-align: bottom;
+.site_view1 p:nth-child(2) {
   position: absolute;
-  bottom: 0;
+  top: 45%;
+  left: -25%;
+  transform: rotate(0.75turn);
+}
+.site_view1 p:nth-child(3) {
+  position: absolute;
+  top: 0;
+  left: 40%;
+}
+.site_view1 p:nth-child(4) {
+  font-size: 3.5vw;
+  position: absolute;
+  top: 25%;
+  left: 40%;
+  cursor: pointer;
+  transition: font-size 0.5s;
+}
+.site_view1 p:nth-child(4):hover {
+  font-size: 4vw;
+}
+.site_view1 p:nth-child(5) {
+  font-size: 25vw;
+  font-weight: bold;
+  position: absolute;
+  top: 45%;
+  left: 70%;
+}
+.site_view1_img {
+  width: 60%;
+  height: 55%;
+  background: url(../img/gamesite.jpg) no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 35%;
+  right: 0%;
   color: #fff;
-  font-size: 2vw;
-  font-weight: 500;
-  text-align: center;
-  padding: 0.5vw 0;
 }
 
 /* //script_code_view */
@@ -840,6 +902,7 @@
     display: none;
   }
 }
+
 #contact {
   width: 100%;
   height: 35vw;
