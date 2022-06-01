@@ -766,29 +766,92 @@
   position: relative;
   font-family: "GmarketSans";
 }
+.site_view2 {
+  width: 28%;
+  height: 80%;
+  position: relative;
+  font-family: "GmarketSans";
+}
+.site_view3 {
+  width: 28%;
+  height: 80%;
+  position: relative;
+  font-family: "GmarketSans";
+}
+.site_view4 {
+  width: 28%;
+  height: 80%;
+  position: relative;
+  font-family: "GmarketSans";
+}
 .site_view1 h1 {
+  color: #fff;
+  font-size: 6vw;
+  font-weight: 500;
+}
+.site_view2 h1 {
+  color: #fff;
+  font-size: 6vw;
+  font-weight: 500;
+}
+.site_view3 h1 {
+  color: #fff;
+  font-size: 6vw;
+  font-weight: 500;
+}
+.site_view4 h1 {
   color: #fff;
   font-size: 6vw;
   font-weight: 500;
 }
 .site_view1 p {
   color: #fff;
-  font-size: 6vw;
-  font-weight: 500;
   text-transform: uppercase;
 }
-.site_view1 p:nth-child(2) {
+.site_view2 p {
+  color: #fff;
+  text-transform: uppercase;
+}
+.site_view3 p {
+  color: #fff;
+  text-transform: uppercase;
+}
+.site_view4 p {
+  color: #fff;
+  text-transform: uppercase;
+}
+/* .site_view1 p:nth-child(2) {
   position: absolute;
   top: 45%;
   left: -25%;
   transform: rotate(0.75turn);
-}
+} */
 .site_view1 p:nth-child(3) {
+  font-size: 6vw;
   position: absolute;
   top: 0;
   left: 40%;
 }
-.site_view1 p:nth-child(4) {
+.site_view2 p:nth-child(3) {
+  font-size: 6vw;
+  position: absolute;
+  top: 0;
+  left: 40%;
+}
+.site_view3 p:nth-child(3) {
+  font-size: 6vw;
+  position: absolute;
+  top: 0;
+  left: 40%;
+}
+.site_view4 p:nth-child(3) {
+  font-size: 6vw;
+  position: absolute;
+  top: 0;
+  left: 40%;
+}
+
+.site_btn1 {
   font-size: 3.5vw;
   position: absolute;
   top: 25%;
@@ -796,15 +859,105 @@
   cursor: pointer;
   transition: font-size 0.5s;
 }
-.site_view1 p:nth-child(4):hover {
+.site_btn2 {
+  font-size: 3.5vw;
+  position: absolute;
+  top: 25%;
+  left: 40%;
+  cursor: pointer;
+  transition: font-size 0.5s;
+}
+.site_btn3 {
+  font-size: 3.5vw;
+  position: absolute;
+  top: 25%;
+  left: 40%;
+  cursor: pointer;
+  transition: font-size 0.5s;
+}
+.site_btn4 {
+  font-size: 3.5vw;
+  position: absolute;
+  top: 25%;
+  left: 40%;
+  cursor: pointer;
+  transition: font-size 0.5s;
+}
+.site_btn1:hover {
   font-size: 4vw;
 }
-.site_view1 p:nth-child(5) {
+.site_btn2:hover {
+  font-size: 4vw;
+}
+.site_btn3:hover {
+  font-size: 4vw;
+}
+.site_btn4:hover {
+  font-size: 4vw;
+}
+.game1 {
   font-size: 25vw;
   font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  position: absolute;
+  top: 40%;
+  left: 60%;
+}
+.game2 {
+  font-size: 25vw;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  position: absolute;
+  top: 40%;
+  left: 77%;
+}
+.game3 {
+  font-size: 25vw;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  position: absolute;
+  top: 40%;
+  left: 80%;
+}
+.game4 {
+  font-size: 25vw;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  position: absolute;
+  top: 40%;
+  left: 80%;
+}
+.site_view1_p1 {
+  font-size: 6vw;
   position: absolute;
   top: 45%;
-  left: 70%;
+  left: -25%;
+  transform: rotate(0.75turn);
+}
+.site_view2_p1 {
+  font-size: 6vw;
+  position: absolute;
+  top: 61%;
+  left: -48%;
+  transform: rotate(0.75turn);
+}
+.site_view3_p1 {
+  font-size: 6vw;
+  position: absolute;
+  top: 53%;
+  left: -35%;
+  transform: rotate(0.75turn);
+}
+.site_view4_p1 {
+  font-size: 6vw;
+  position: absolute;
+  top: 45%;
+  left: -25%;
+  transform: rotate(0.75turn);
 }
 .site_view1_img1 {
   width: 60%;
@@ -970,6 +1123,7 @@
   margin: auto;
   text-align: center;
   overflow: hidden;
+  transform: scale(0);
 }
 .contact_cont span {
   color: #fff;

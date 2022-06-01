@@ -28,7 +28,6 @@
 
       #section3 {
         background-color: #b9b3a9;
-        height: 100vh;
       }
 
       #section2 {
@@ -7345,7 +7344,7 @@ console.error('Upgrade your browser. This Browser is NOT supported WebSocket for
                         수업시간에 기분전환하기 위해 만든 게임입니다. javascript를 활용하여 카드 게임, 테트리스, 타자게임, 뮤직 플레이어 등을 구현해보았습니다.
                       </div>
                 </div>
-                                <!-- box2 -->
+                <!-- box2 -->
                 <div class="title_box2">
                     <div class="page_number">02</div>
                     <div class="page_title">
@@ -7358,7 +7357,7 @@ console.error('Upgrade your browser. This Browser is NOT supported WebSocket for
             </div>
             </div>
             <div class="sec_title2">
-                                <!-- box3 -->
+                 <!-- box3 -->
                 <div class="title_box3">
                     <div class="page_number">03</div>
                     <div class="page_title">
@@ -7369,7 +7368,7 @@ console.error('Upgrade your browser. This Browser is NOT supported WebSocket for
                         javascript 문자열 메서드(indexOf(), includes(), charAt(), find(), fliter(), sort())를 활용하여 CSS속성을 검색할 수 있게 만든 사이트 입니다.
                       </div>
                 </div>
-                                <!-- box4 -->
+                <!-- box4 -->
                 <div class="title_box4">
                     <div class="page_number">04</div>
                         <div class="page_title">
@@ -7392,10 +7391,10 @@ console.error('Upgrade your browser. This Browser is NOT supported WebSocket for
             <div class="code_view_page1">
                 <div class="site_view1">
                   <h1>01.</h1>
-                  <p>game </p>
+                  <p class="site_view1_p1">game</p>
                   <p>effect</p>
-                  <p class="site_btn"><a href="https://jowuseop1110.github.io/webs_class/game/index.html">site&nbsp;view</a></p>
-                  <p>g</p>
+                  <p class="site_btn1"><a href="https://jowuseop1110.github.io/webs_class/game/index.html">site&nbsp;view</a></p>
+                  <span class="game1">g</span>
                 </div>
                 <div class="site_view1_img1"></div>
               </div>
@@ -7403,12 +7402,12 @@ console.error('Upgrade your browser. This Browser is NOT supported WebSocket for
           <div class="sec2-2">
               <!-- sec2 -->
               <div class="code_view_page2">
-                <div class="site_view1">
-                    <h1>01.</h1>
-                    <p>game </p>
-                    <p>effect</p>
-                    <p class="site_btn"><a href="https://jowuseop1110.github.io/webs_class/game/index.html">site&nbsp;view</a></p>
-                    <p>g</p>
+                <div class="site_view2">
+                    <h1>02.</h1>
+                    <p class="site_view2_p1">PARALLAX </p>
+                    <p class="site_view2_p2">effect</p>
+                    <p class="site_btn2"><a href="https://jowuseop1110.github.io/webs_class/game/index.html">site&nbsp;view</a></p>
+                    <p class="game2">P</p>
                   </div>
                   <div class="site_view1_img1"></div>
                 </div>
@@ -7417,12 +7416,12 @@ console.error('Upgrade your browser. This Browser is NOT supported WebSocket for
           <div class="sec2-3">
               <!-- sec3 -->
               <div class="code_view_page3">
-                <div class="site_view1">
-                    <h1>01.</h1>
-                    <p>game </p>
-                    <p>effect</p>
-                    <p class="site_btn"><a href="https://jowuseop1110.github.io/webs_class/game/index.html">site&nbsp;view</a></p>
-                    <p>g</p>
+                <div class="site_view3">
+                    <h1>03.</h1>
+                    <p class="site_view3_p1">search </p>
+                    <p class="site_view3_p2">effect</p>
+                    <p class="site_btn3"><a href="https://jowuseop1110.github.io/webs_class/game/index.html">site&nbsp;view</a></p>
+                    <p class="game3">s</p>
                   </div>
                   <div class="site_view1_img1"></div>
                 </div>
@@ -7431,20 +7430,27 @@ console.error('Upgrade your browser. This Browser is NOT supported WebSocket for
           <div class="sec2-4">
               <!-- sec4 -->
               <div class="code_view_page4">
-                <div class="site_view1">
-                    <h1>01.</h1>
-                    <p>game </p>
-                    <p>effect</p>
-                    <p class="site_btn"><a href="https://jowuseop1110.github.io/webs_class/game/index.html">site&nbsp;view</a></p>
-                    <p>g</p>
+                <div class="site_view4">
+                    <h1>04.</h1>
+                    <p class="site_view4_p1">slider </p>
+                    <p class="site_view4_p2">effect</p>
+                    <p class="site_btn4"><a href="https://jowuseop1110.github.io/webs_class/game/index.html">site&nbsp;view</a></p>
+                    <p class="game4">s</p>
                   </div>
                   <div class="site_view1_img1"></div>
                 </div>
               </div>
-       
         </div>
       </section>
-      <section id="section3">section3</section>
+      <section id="section3">
+        <div id="contact">
+            <div class="contact_inner">
+              <div class="contact_title">contact</div>
+              <div class="contact_cont">
+                <span>contact</span></div>
+            </div>
+          </div>
+      </section>
     </main>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.5/highlight.min.js"></script>
@@ -7548,6 +7554,7 @@ console.error('Upgrade your browser. This Browser is NOT supported WebSocket for
       let state2 = false;
       let state3 = false;
       let state4 = false;
+      let state5 = false;
       const pageContents = document.getElementById("main");
       const scroller = new LocomotiveScroll({
         el: pageContents,
@@ -7607,6 +7614,17 @@ console.error('Upgrade your browser. This Browser is NOT supported WebSocket for
                         top: "-4%",
                       });
                     }
+                     //   contact
+                     if (scroller.scroll.instance.scroll.y > 6500 && !state5) {
+                        state5 = true;
+                        const contantBox = document.querySelector(".contact_cont")
+                        console.log(contantBox)
+                        gsap.to(contantBox, {
+                        duration: 0.8,
+                        scale: 4,
+                        rotation: 360
+                      });
+                    }
           return arguments.length
             ? scroller.scrollTo(value, 0, 0)
             : scroller.scroll.instance.scroll.y-4000;
@@ -7643,6 +7661,28 @@ console.error('Upgrade your browser. This Browser is NOT supported WebSocket for
         ScrollTrigger.addEventListener("refresh", () => scroller.update());
         ScrollTrigger.refresh();
       });
+    //   contact
+    //   window.addEventListener("load", function () {
+    //     let section3 = document.querySelector("#section3").offsetWidth;
+    //     let section3Horizon = section3 - window.innerWidth;
+
+    //     gsap.to("#section# #contact", {
+    //       scrollTrigger: {
+    //         scroller: pageContents,
+    //         scrub: true,
+    //         trigger: "#section2",
+    //         pin: true,
+    //         start: "top",
+    //         markers: true,
+    //         end: section3,
+    //       },
+    //       x: -section3,
+    //       ease: "none",
+    //     });
+
+    //     ScrollTrigger.addEventListener("refresh", () => scroller.update());
+    //     ScrollTrigger.refresh();
+    //   });
     </script>
 
     <script id="vertexShader" type="x-shader/x-vertex">
