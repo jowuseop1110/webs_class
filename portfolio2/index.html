@@ -7614,17 +7614,23 @@ console.error('Upgrade your browser. This Browser is NOT supported WebSocket for
                         top: "-4%",
                       });
                     }
-                     //   contact
-                     if (scroller.scroll.instance.scroll.y > 6500 && !state5) {
-                        state5 = true;
-                        const contantBox = document.querySelector(".contact_cont")
-                        console.log(contantBox)
-                        gsap.to(contantBox, {
-                        duration: 0.8,
-                        scale: 4,
-                        rotation: 360
-                      });
-                    }
+                    //  //   contact
+                    //  if (scroller.scroll.instance.scroll.y > 12000 && !state5) {
+                    //     state5 = true;
+                    //     const contantBox = document.querySelector(".contact_cont")
+                    //     console.log(contantBox)
+                    //     gsap.to(contantBox, {
+                    //     duration: 2,
+                    //     scale: 4,
+                    //     rotation: 360
+                    //   });
+                    // }
+                    gsap.registerPlugin(ScrollTrigger);
+
+gsap.to(".contact_cont", {
+  scrollTrigger: ".contact_cont", scale: 4, rotation: 360, duration: 2, })
+
+  
           return arguments.length
             ? scroller.scrollTo(value, 0, 0)
             : scroller.scroll.instance.scroll.y-4000;
@@ -7639,6 +7645,10 @@ console.error('Upgrade your browser. This Browser is NOT supported WebSocket for
         },
         pinType: pageContents.style.transform ? "transform" : "fixed",
       });
+
+
+    
+
 
       window.addEventListener("load", function () {
         let sec2WrapWidth = document.querySelector(".sec2_wrap").offsetWidth;
