@@ -972,8 +972,8 @@
 .site_view1_img2 {
   width: 60%;
   height: 55%;
-  background: url(../img/gamesite.jpg) no-repeat;
-  background-size: cover;
+  background: url(../img/prallaxeffect.jpg) no-repeat;
+  background-size: contain;
   position: absolute;
   top: 35%;
   right: 0%;
@@ -982,7 +982,7 @@
 .site_view1_img3 {
   width: 60%;
   height: 55%;
-  background: url(../img/gamesite.jpg) no-repeat;
+  background: url(../img/searcheffectimg.jpg) no-repeat;
   background-size: cover;
   position: absolute;
   top: 35%;
@@ -992,7 +992,7 @@
 .site_view1_img4 {
   width: 60%;
   height: 55%;
-  background: url(../img/gamesite.jpg) no-repeat;
+  background: url(../img/slidereffectimg.jpg) no-repeat;
   background-size: cover;
   position: absolute;
   top: 35%;
