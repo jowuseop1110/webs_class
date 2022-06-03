@@ -38,13 +38,12 @@ ScrollTrigger.scrollerProxy(pageContents, {
 
     //   script_card
 
-    setTimeout(() => {
-      gsap.to(".title_box1", {
-        scrollTrigger: ".sec_title1",
-        top: "-2%",
-        duration: 0.3,
-      });
-    }, 2000);
+    gsap.to(".title_box1", {
+      scrollTrigger: ".sec_title1",
+      top: "-2%",
+      duration: 0.3,
+    });
+
     setTimeout(() => {
       gsap.to(".title_box2", {
         scrollTrigger: ".sec_title1",
@@ -54,14 +53,14 @@ ScrollTrigger.scrollerProxy(pageContents, {
     }, 4000);
     setTimeout(() => {
       gsap.to(".title_box3", {
-        scrollTrigger: ".sec_title1",
+        scrollTrigger: ".sec_title2",
         top: "-4%",
         duration: 0.3,
       });
     }, 4500);
     setTimeout(() => {
       gsap.to(".title_box4", {
-        scrollTrigger: ".sec_title1",
+        scrollTrigger: ".sec_title2",
         top: "-4%",
         duration: 0.3,
       });
@@ -81,7 +80,7 @@ ScrollTrigger.scrollerProxy(pageContents, {
         rotation: 360,
         duration: 1,
       });
-    }, 5000);
+    }, 5000 * 2);
 
     return arguments.length
       ? scroller.scrollTo(value, 0, 0)

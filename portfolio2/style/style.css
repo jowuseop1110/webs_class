@@ -1151,10 +1151,10 @@
 }
 .contact_cont1 img {
   width: 10vw;
-  height: 10vw;
+  height: 12vw;
   border-radius: 50%;
   position: absolute;
-  top: 2vw;
+  top: 1.5vw;
   left: 10vw;
 }
 .contact_cont1 h1 {
