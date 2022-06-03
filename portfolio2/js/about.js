@@ -37,34 +37,51 @@ ScrollTrigger.scrollerProxy(pageContents, {
     gsap.registerPlugin(ScrollTrigger);
 
     //   script_card
-    gsap.to(".title_box1", {
-      scrollTrigger: ".sec1-6",
-      top: "-2%",
-      duration: 0.4,
-    });
-    gsap.to(".title_box2", {
-      scrollTrigger: ".sec1-6",
-      top: "-2%",
-      duration: 0.6,
-    });
-    gsap.to(".title_box3", {
-      scrollTrigger: ".sec1-6",
-      top: "-4%",
-      duration: 0.8,
-    });
-    gsap.to(".title_box4", {
-      scrollTrigger: ".sec1-6",
-      top: "-4%",
-      duration: 1,
-    });
+
+    setTimeout(() => {
+      gsap.to(".title_box1", {
+        scrollTrigger: ".sec_title1",
+        top: "-2%",
+        duration: 0.3,
+      });
+    }, 2000);
+    setTimeout(() => {
+      gsap.to(".title_box2", {
+        scrollTrigger: ".sec_title1",
+        top: "-2%",
+        duration: 0.3,
+      });
+    }, 4000);
+    setTimeout(() => {
+      gsap.to(".title_box3", {
+        scrollTrigger: ".sec_title1",
+        top: "-4%",
+        duration: 0.3,
+      });
+    }, 4500);
+    setTimeout(() => {
+      gsap.to(".title_box4", {
+        scrollTrigger: ".sec_title1",
+        top: "-4%",
+        duration: 0.3,
+      });
+    }, 5000);
 
     // contact
     gsap.to(".contact_cont", {
       scrollTrigger: ".contact_cont",
       scale: 4,
       rotation: 360,
-      duration: 1.5,
+      duration: 1,
     });
+    setTimeout(() => {
+      gsap.to(".contact_cont1", {
+        scrollTrigger: ".contact_cont1",
+        scale: 1,
+        rotation: 360,
+        duration: 1,
+      });
+    }, 5000);
 
     return arguments.length
       ? scroller.scrollTo(value, 0, 0)
