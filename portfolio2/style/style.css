@@ -636,7 +636,7 @@
   background: #fff;
   position: absolute;
   top: 200%;
-  transition: all 0.51s;
+
   padding: 1vw;
 }
 .title_box2 {
@@ -647,7 +647,7 @@
   position: absolute;
   left: 50%;
   top: 200%;
-  transition: all 0.51s;
+
   padding: 1vw;
 }
 .sec_title2 {
@@ -664,7 +664,7 @@
   background: #fff;
   position: absolute;
   top: 200%;
-  transition: all 0.51s;
+
   padding: 1vw;
 }
 .title_box4 {
@@ -675,7 +675,7 @@
   position: absolute;
   left: 50%;
   top: 200%;
-  transition: all 0.51s;
+
   padding: 1vw;
 }
 
