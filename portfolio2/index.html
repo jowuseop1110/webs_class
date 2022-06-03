@@ -7318,9 +7318,7 @@ console.error('Upgrade your browser. This Browser is NOT supported WebSocket for
           <!-- script coding -->
           <div class="sec1-5">
             <!-- <canvas id="canvas2" width="1400" height="600"></canvas> -->
-            <div class="relative w-screen h-screen">
-                <div class="noise-wave w-full h-full bg-black"></div>
-              </div>
+            <canvas id="canvas">Canvas not supported.</canvas>
             <div class="sec5_about">
     
                 <h2
@@ -7461,15 +7459,7 @@ console.error('Upgrade your browser. This Browser is NOT supported WebSocket for
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/89/three.min.js"></script>
     <!-- <script src="js/tunnel.js"></script> -->
-<script>
-    import * as THREE from "https://cdn.skypack.dev/three@0.124.0";
-import ky from "https://cdn.skypack.dev/kyouka@1.2.5";
-import { OrbitControls } from "https://cdn.skypack.dev/three@0.124.0/examples/jsm/controls/OrbitControls";
-import { GLTFLoader } from "https://cdn.skypack.dev/three@0.124.0/examples/jsm/loaders/GLTFLoader";
-import { FBXLoader } from "https://cdn.skypack.dev/three@0.124.0/examples/jsm/loaders/FBXLoader";
-import Stats from "https://cdn.skypack.dev/three@0.124.0/examples/jsm/libs/stats.module";
-import * as dat from "https://cdn.skypack.dev/dat.gui@0.7.7";
-</script>
+
     <script src="js/sitecoding.js"></script>
     <script src="js/about.js"></script>
 
@@ -7572,591 +7562,150 @@ import * as dat from "https://cdn.skypack.dev/dat.gui@0.7.7";
       }
     </script>
 
-    <!-- 코드팬 -->
-    <script>
-        const calcAspect = (el) => el.clientWidth / el.clientHeight;
-const getNormalizedMousePos = (e) => {
-    return {
-        x: (e.clientX / window.innerWidth) * 2 - 1,
-        y: -(e.clientY / window.innerHeight) * 2 + 1
+<!-- 코드팬 -->
+<script>
+    (function () {
+  'use strict';
+  window.addEventListener('load', function () {
+    var canvas = document.getElementById('canvas');
+
+    if (!canvas || !canvas.getContext) {
+      return false;
+    }
+
+    /********************
+      Random Number
+    ********************/
+
+    function rand(min, max) {
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+    
+    /********************
+      Var
+    ********************/
+
+    var ctx = canvas.getContext('2d');
+    var X = canvas.width = window.innerWidth;
+    var Y = canvas.height = window.innerHeight;
+    var mouseX = null;
+    var mouseY = null;
+    var shapeNum = 300;
+    var shapes = [];
+    var style = {
+      black: 'black',
+      white: 'white',
+      lineWidth: 4,
     };
-};
-const noiseWaveVertexShader = `
-varying vec2 vUv;
-varying vec3 vPosition;
 
-void main(){
-    vec4 modelPosition=modelMatrix*vec4(position,1.);
-    vec4 viewPosition=viewMatrix*modelPosition;
-    vec4 projectedPosition=projectionMatrix*viewPosition;
-    gl_Position=projectedPosition;
+    /********************
+      Animation
+    ********************/
+
+    window.requestAnimationFrame =
+      window.requestAnimationFrame ||
+      window.mozRequestAnimationFrame ||
+      window.webkitRequestAnimationFrame ||
+      window.msRequestAnimationFrame ||
+      function(cb) {
+        setTimeout(cb, 17);
+      };
+
+    /********************
+      Shape
+    ********************/
+     
+    function Shape(ctx, x, y) {
+      this.ctx = ctx;
+      this.init(x, y);
+    }
     
-    vUv=uv;
-    vPosition=position;
-}
-`;
-const noiseWaveFragmentShader = `
-#define GLSLIFY 1
-vec2 centerUv(vec2 uv,vec2 resolution){
-    uv=2.*uv-1.;
-    float aspect=resolution.x/resolution.y;
-    uv.x*=aspect;
-    return uv;
-}
+    Shape.prototype.init = function(x, y) {
+      this.x = x;
+      this.y = y;
+      this.r = rand(10, 25);
+      this.ga = Math.random() * Math.random() * Math.random() * Math.random();
+      this.v = {
+        x: Math.random(),
+        y: -1
+      };
+      this.l = rand(0, 20);
+      this.sl = this.l;
+    };
 
-// https://gist.github.com/patriciogonzalezvivo/670c22f3966e662d2f83
-float hash(float n){return fract(sin(n)*1e4);}
-float hash(vec2 p){return fract(1e4*sin(17.*p.x+p.y*.1)*(.1+abs(sin(p.y*13.+p.x))));}
+    Shape.prototype.updateParams = function() {
+      var ratio = this.l / this.sl;
+      //this.r *= ratio;
+      this.l -= 1;
+      if (this.l < 0) {
+        this.init(X * (Math.random() + Math.random()) / 2, rand(0, Y));
+      }
+    };
 
-float noise_0(float x){
-    float i=floor(x);
-    float f=fract(x);
-    float u=f*f*(3.-2.*f);
-    return mix(hash(i),hash(i+1.),u);
-}
-
-float noise_0(vec2 x){
-    vec2 i=floor(x);
-    vec2 f=fract(x);
+    Shape.prototype.updatePosition = function() {
+      this.x += Math.random();
+      this.y += -Math.random();
+    };
     
-    // Four corners in 2D of a tile
-    float a=hash(i);
-    float b=hash(i+vec2(1.,0.));
-    float c=hash(i+vec2(0.,1.));
-    float d=hash(i+vec2(1.,1.));
+    Shape.prototype.draw = function() {
+      var ctx  = this.ctx;
+      ctx.save();
+      ctx.globalCompositeOperation = 'lighter';
+      ctx.globalAlpha = this.ga;
+      //ctx.fillStyle = 'rgb(123, 252, 100)';
+      ctx.fillStyle = 'white';
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2, false);
+      ctx.fill();
+      ctx.restore();
+    };
+
+    Shape.prototype.render = function(i) {
+      this.updatePosition();
+      this.updateParams();
+      this.draw();
+    };
+
+    for (var i = 0; i < shapeNum; i++) {
+      var s = new Shape(ctx, X * (Math.random() + Math.random()) / 2, rand(0, Y));
+      shapes.push(s);
+    }
+
+    /********************
+      Render
+    ********************/
     
-    // Simple 2D lerp using smoothstep envelope between the values.
-    // return vec3(mix(mix(a, b, smoothstep(0.0, 1.0, f.x)),
-    //			mix(c, d, smoothstep(0.0, 1.0, f.x)),
-    //			smoothstep(0.0, 1.0, f.y)));
+    function render() {
+      ctx.clearRect(0, 0, X, Y);
+      for (var i = 0; i < shapes.length; i++) {
+        shapes[i].render(i);
+      }
+      requestAnimationFrame(render);
+    }
+
+    render();
+
+    /********************
+      Event
+    ********************/
     
-    // Same code, with the clamps in smoothstep and common subexpressions
-    // optimized away.
-    vec2 u=f*f*(3.-2.*f);
-    return mix(a,b,u.x)+(c-a)*u.y*(1.-u.x)+(d-b)*u.x*u.y;
-}
+    function onResize() {
+      X = canvas.width = window.innerWidth;
+      Y = canvas.height = window.innerHeight;
+    }
 
-// This one has non-ideal tiling properties that I'm still tuning
-float noise_0(vec3 x){
-    const vec3 step=vec3(110,241,171);
-    
-    vec3 i=floor(x);
-    vec3 f=fract(x);
-    
-    // For performance, compute the base input to a 1D hash from the integer part of the argument and the
-    // incremental change to the 1D based on the 3D -> 1D wrapping
-    float n=dot(i,step);
-    
-    vec3 u=f*f*(3.-2.*f);
-    return mix(mix(mix(hash(n+dot(step,vec3(0,0,0))),hash(n+dot(step,vec3(1,0,0))),u.x),
-    mix(hash(n+dot(step,vec3(0,1,0))),hash(n+dot(step,vec3(1,1,0))),u.x),u.y),
-    mix(mix(hash(n+dot(step,vec3(0,0,1))),hash(n+dot(step,vec3(1,0,1))),u.x),
-    mix(hash(n+dot(step,vec3(0,1,1))),hash(n+dot(step,vec3(1,1,1))),u.x),u.y),u.z);
-}
+    window.addEventListener('resize', function() {
+      onResize();
+    });
 
-vec3 cosPalette(  float t,  vec3 a,  vec3 b,  vec3 c, vec3 d ){
-    return a + b*cos( 6.28318*(c*t+d) );
-}
+    window.addEventListener('mousemove', function(e) {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    }, false);
 
-#define OCTAVES 8
+  });
+})();
+</script>
 
-uniform float uTime;
-uniform float uVelocity;
-uniform vec2 uMouse;
-uniform vec2 uResolution;
-uniform vec3 uBrightness;
-uniform vec3 uContrast;
-uniform vec3 uOscilation;
-uniform vec3 uPhase;
-
-varying vec2 vUv;
-varying vec3 vPosition;
-
-float fbm(in vec2 p){
-    float sum=0.;
-    float amp=.5;
-    float scale=1.;
-    for(int i=0;i<OCTAVES;i++){
-        sum+=noise_0(p*scale)*amp;
-        amp*=.6;
-        scale*=1.9;
-    }
-    return sum;
-}
-
-float wave(in vec2 p){
-    float displacement=uTime*uVelocity;
-    vec2 aOffset=vec2(sin(displacement*.02),sin(displacement*.1))*8.;
-    float a=fbm(p*3.+aOffset);
-    vec2 bOffset=vec2(sin(displacement*.1),sin(displacement*.1))*2.;
-    float b=fbm((p+a)*.5+bOffset);
-    vec2 cOffset=vec2(sin(displacement*-.01),sin(displacement*.1))*4.;
-    float c=fbm((p+b)*2.+cOffset);
-    return c;
-}
-
-void main(){
-    vec2 cUv=centerUv(vUv,uResolution);
-    float noise=pow(wave(cUv),2.);
-    vec3 color=cosPalette(noise,uBrightness,uContrast,uOscilation,uPhase);
-    gl_FragColor=vec4(color,1.);
-}
-`;
-class Base {
-    constructor(sel, debug = false) {
-        this.debug = debug;
-        this.container = document.querySelector(sel);
-        this.perspectiveCameraParams = {
-            fov: 75,
-            near: 0.1,
-            far: 100
-        };
-        this.orthographicCameraParams = {
-            zoom: 2,
-            near: -100,
-            far: 1000
-        };
-        this.cameraPosition = new THREE.Vector3(0, 3, 10);
-        this.lookAtPosition = new THREE.Vector3(0, 0, 0);
-        this.rendererParams = {
-            outputEncoding: THREE.LinearEncoding,
-            config: {
-                alpha: true,
-                antialias: true
-            }
-        };
-        this.mousePos = new THREE.Vector2(0, 0);
-        this.mouseSpeed = 0;
-    }
-    // 初始化
-    init() {
-        this.createScene();
-        this.createPerspectiveCamera();
-        this.createRenderer();
-        this.createMesh({});
-        this.createLight();
-        this.createOrbitControls();
-        this.addListeners();
-        this.setLoop();
-    }
-    // 创建场景
-    createScene() {
-        const scene = new THREE.Scene();
-        if (this.debug) {
-            scene.add(new THREE.AxesHelper());
-            const stats = Stats();
-            this.container.appendChild(stats.dom);
-            this.stats = stats;
-        }
-        this.scene = scene;
-    }
-    // 创建透视相机
-    createPerspectiveCamera() {
-        const { perspectiveCameraParams, cameraPosition, lookAtPosition } = this;
-        const { fov, near, far } = perspectiveCameraParams;
-        const aspect = calcAspect(this.container);
-        const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-        camera.position.copy(cameraPosition);
-        camera.lookAt(lookAtPosition);
-        this.camera = camera;
-    }
-    // 创建正交相机
-    createOrthographicCamera() {
-        const { orthographicCameraParams, cameraPosition, lookAtPosition } = this;
-        const { left, right, top, bottom, near, far } = orthographicCameraParams;
-        const camera = new THREE.OrthographicCamera(left, right, top, bottom, near, far);
-        camera.position.copy(cameraPosition);
-        camera.lookAt(lookAtPosition);
-        this.camera = camera;
-    }
-    // 更新正交相机参数
-    updateOrthographicCameraParams() {
-        const { container } = this;
-        const { zoom, near, far } = this.orthographicCameraParams;
-        const aspect = calcAspect(container);
-        this.orthographicCameraParams = {
-            left: -zoom * aspect,
-            right: zoom * aspect,
-            top: zoom,
-            bottom: -zoom,
-            near,
-            far,
-            zoom
-        };
-    }
-    // 创建渲染
-    createRenderer(useWebGL1 = false) {
-        var _a;
-        const { rendererParams } = this;
-        const { outputEncoding, config } = rendererParams;
-        const renderer = !useWebGL1
-            ? new THREE.WebGLRenderer(config)
-            : new THREE.WebGL1Renderer(config);
-        renderer.setSize(this.container.clientWidth, this.container.clientHeight);
-        renderer.outputEncoding = outputEncoding;
-        this.resizeRendererToDisplaySize();
-        (_a = this.container) === null || _a === void 0 ? void 0 : _a.appendChild(renderer.domElement);
-        this.renderer = renderer;
-        this.renderer.setClearColor(0x000000, 0);
-    }
-    // 允许投影
-    enableShadow() {
-        this.renderer.shadowMap.enabled = true;
-    }
-    // 调整渲染器尺寸
-    resizeRendererToDisplaySize() {
-        const { renderer } = this;
-        if (!renderer) {
-            return;
-        }
-        const canvas = renderer.domElement;
-        const pixelRatio = window.devicePixelRatio;
-        const { clientWidth, clientHeight } = canvas;
-        const width = (clientWidth * pixelRatio) | 0;
-        const height = (clientHeight * pixelRatio) | 0;
-        const isResizeNeeded = canvas.width !== width || canvas.height !== height;
-        if (isResizeNeeded) {
-            renderer.setSize(width, height, false);
-        }
-        return isResizeNeeded;
-    }
-    // 创建网格
-    createMesh(meshObject, container = this.scene) {
-        const { geometry = new THREE.BoxGeometry(1, 1, 1), material = new THREE.MeshStandardMaterial({
-            color: new THREE.Color("#d9dfc8")
-        }), position = new THREE.Vector3(0, 0, 0) } = meshObject;
-        const mesh = new THREE.Mesh(geometry, material);
-        mesh.position.copy(position);
-        container.add(mesh);
-        return mesh;
-    }
-    // 创建光源
-    createLight() {
-        const dirLight = new THREE.DirectionalLight(new THREE.Color("#ffffff"), 0.5);
-        dirLight.position.set(0, 50, 0);
-        this.scene.add(dirLight);
-        const ambiLight = new THREE.AmbientLight(new THREE.Color("#ffffff"), 0.4);
-        this.scene.add(ambiLight);
-    }
-    // 创建轨道控制
-    createOrbitControls() {
-        const controls = new OrbitControls(this.camera, this.renderer.domElement);
-        const { lookAtPosition } = this;
-        controls.target.copy(lookAtPosition);
-        controls.update();
-        this.controls = controls;
-    }
-    // 监听事件
-    addListeners() {
-        this.onResize();
-    }
-    // 监听画面缩放
-    onResize() {
-        window.addEventListener("resize", (e) => {
-            if (this.shaderMaterial) {
-                this.shaderMaterial.uniforms.uResolution.value.x = window.innerWidth;
-                this.shaderMaterial.uniforms.uResolution.value.y = window.innerHeight;
-                this.renderer.setSize(window.innerWidth, window.innerHeight);
-            }
-            else {
-                if (this.camera instanceof THREE.PerspectiveCamera) {
-                    const aspect = calcAspect(this.container);
-                    const camera = this.camera;
-                    camera.aspect = aspect;
-                    camera.updateProjectionMatrix();
-                }
-                else if (this.camera instanceof THREE.OrthographicCamera) {
-                    this.updateOrthographicCameraParams();
-                    const camera = this.camera;
-                    const { left, right, top, bottom, near, far } = this.orthographicCameraParams;
-                    camera.left = left;
-                    camera.right = right;
-                    camera.top = top;
-                    camera.bottom = bottom;
-                    camera.near = near;
-                    camera.far = far;
-                    camera.updateProjectionMatrix();
-                }
-                this.renderer.setSize(this.container.clientWidth, this.container.clientHeight);
-            }
-        });
-    }
-    // 动画
-    update() {
-        console.log("animation");
-    }
-    // 渲染
-    setLoop() {
-        this.renderer.setAnimationLoop(() => {
-            this.resizeRendererToDisplaySize();
-            this.update();
-            if (this.controls) {
-                this.controls.update();
-            }
-            if (this.stats) {
-                this.stats.update();
-            }
-            if (this.composer) {
-                this.composer.render();
-            }
-            else {
-                this.renderer.render(this.scene, this.camera);
-            }
-        });
-    }
-    // 创建文本
-    createText(text = "", config, material = new THREE.MeshStandardMaterial({
-        color: "#ffffff"
-    })) {
-        const geo = new THREE.TextGeometry(text, config);
-        const mesh = new THREE.Mesh(geo, material);
-        return mesh;
-    }
-    // 创建音效源
-    createAudioSource() {
-        const listener = new THREE.AudioListener();
-        this.camera.add(listener);
-        const sound = new THREE.Audio(listener);
-        this.sound = sound;
-    }
-    // 加载音效
-    loadAudio(url) {
-        const loader = new THREE.AudioLoader();
-        return new Promise((resolve) => {
-            loader.load(url, (buffer) => {
-                this.sound.setBuffer(buffer);
-                resolve(buffer);
-            });
-        });
-    }
-    // 加载模型
-    loadModel(url) {
-        const loader = new GLTFLoader();
-        return new Promise((resolve, reject) => {
-            loader.load(url, (gltf) => {
-                const model = gltf.scene;
-                console.log(model);
-                resolve(model);
-            }, undefined, (err) => {
-                console.log(err);
-                reject();
-            });
-        });
-    }
-    // 加载FBX模型
-    loadFBXModel(url) {
-        const loader = new FBXLoader();
-        return new Promise((resolve, reject) => {
-            loader.load(url, (obj) => {
-                resolve(obj);
-            }, undefined, (err) => {
-                console.log(err);
-                reject();
-            });
-        });
-    }
-    // 加载字体
-    loadFont(url) {
-        const loader = new THREE.FontLoader();
-        return new Promise((resolve) => {
-            loader.load(url, (font) => {
-                resolve(font);
-            });
-        });
-    }
-    // 创建点选模型
-    createRaycaster() {
-        this.raycaster = new THREE.Raycaster();
-        this.trackMousePos();
-    }
-    // 追踪鼠标位置
-    trackMousePos() {
-        window.addEventListener("mousemove", (e) => {
-            this.setMousePos(e);
-        });
-        window.addEventListener("touchstart", (e) => {
-            this.setMousePos(e.touches[0]);
-        }, { passive: false });
-        window.addEventListener("touchmove", (e) => {
-            this.setMousePos(e.touches[0]);
-        });
-    }
-    // 设置鼠标位置
-    setMousePos(e) {
-        const { x, y } = getNormalizedMousePos(e);
-        this.mousePos.x = x;
-        this.mousePos.y = y;
-    }
-    // 获取点击物
-    getInterSects() {
-        this.raycaster.setFromCamera(this.mousePos, this.camera);
-        const intersects = this.raycaster.intersectObjects(this.scene.children, true);
-        return intersects;
-    }
-    // 选中点击物时
-    onChooseIntersect(target) {
-        const intersects = this.getInterSects();
-        const intersect = intersects[0];
-        if (!intersect || !intersect.face) {
-            return null;
-        }
-        const { object } = intersect;
-        return target === object ? intersect : null;
-    }
-    // 获取跟屏幕同像素的fov角度
-    getScreenFov() {
-        return ky.rad2deg(2 * Math.atan(window.innerHeight / 2 / this.cameraPosition.z));
-    }
-    // 获取重心坐标系
-    getBaryCoord(bufferGeometry) {
-        // https://gist.github.com/mattdesl/e399418558b2b52b58f5edeafea3c16c
-        const length = bufferGeometry.attributes.position.array.length;
-        const count = length / 3;
-        const bary = [];
-        for (let i = 0; i < count; i++) {
-            bary.push(0, 0, 1, 0, 1, 0, 1, 0, 0);
-        }
-        const aCenter = new Float32Array(bary);
-        bufferGeometry.setAttribute("aCenter", new THREE.BufferAttribute(aCenter, 3));
-    }
-    // 追踪鼠标速度
-    trackMouseSpeed() {
-        // https://stackoverflow.com/questions/6417036/track-mouse-speed-with-js
-        let lastMouseX = -1;
-        let lastMouseY = -1;
-        let mouseSpeed = 0;
-        window.addEventListener("mousemove", (e) => {
-            const mousex = e.pageX;
-            const mousey = e.pageY;
-            if (lastMouseX > -1) {
-                mouseSpeed = Math.max(Math.abs(mousex - lastMouseX), Math.abs(mousey - lastMouseY));
-                this.mouseSpeed = mouseSpeed / 100;
-            }
-            lastMouseX = mousex;
-            lastMouseY = mousey;
-        });
-        document.addEventListener("mouseleave", () => {
-            this.mouseSpeed = 0;
-        });
-    }
-    // 使用PCFSoft阴影
-    usePCFSoftShadowMap() {
-        this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-    }
-    // 使用VSM阴影
-    useVSMShadowMap() {
-        this.renderer.shadowMap.type = THREE.VSMShadowMap;
-    }
-    // 将相机的方向设为z轴
-    setCameraUpZ() {
-        this.camera.up.set(0, 0, 1);
-    }
-}
-class NoiseWave extends Base {
-    constructor(sel, debug) {
-        super(sel, debug);
-        this.clock = new THREE.Clock();
-        this.cameraPosition = new THREE.Vector3(0, 0, 1);
-        this.params = {
-            velocity: 1
-        };
-        this.colorParams = {
-            brightness: "#808080",
-            contrast: "#7b4923",
-            oscilation: "#ffffff",
-            phase: "#001932"
-        };
-    }
-    // 初始化
-    init() {
-        this.createScene();
-        this.createOrthographicCamera();
-        this.createRenderer();
-        this.createNoiseWaveMaterial();
-        this.createPlane();
-        this.createLight();
-        // this.createDebugPanel();
-        this.trackMousePos();
-        this.addListeners();
-        this.setLoop();
-    }
-    // 创建材质
-    createNoiseWaveMaterial() {
-        const noiseWaveMaterial = new THREE.ShaderMaterial({
-            vertexShader: noiseWaveVertexShader,
-            fragmentShader: noiseWaveFragmentShader,
-            side: THREE.DoubleSide,
-            uniforms: {
-                uTime: {
-                    value: 0
-                },
-                uMouse: {
-                    value: new THREE.Vector2(0, 0)
-                },
-                uResolution: {
-                    value: new THREE.Vector2(window.innerWidth, window.innerHeight)
-                },
-                uBrightness: {
-                    value: new THREE.Color(this.colorParams.brightness)
-                },
-                uContrast: {
-                    value: new THREE.Color(this.colorParams.contrast)
-                },
-                uOscilation: {
-                    value: new THREE.Color(this.colorParams.oscilation)
-                },
-                uPhase: {
-                    value: new THREE.Color(this.colorParams.phase)
-                },
-                uVelocity: {
-                    value: this.params.velocity
-                }
-            }
-        });
-        this.noiseWaveMaterial = noiseWaveMaterial;
-        this.shaderMaterial = noiseWaveMaterial;
-    }
-    // 创建平面
-    createPlane() {
-        const geometry = new THREE.PlaneBufferGeometry(2, 2, 100, 100);
-        const material = this.noiseWaveMaterial;
-        this.createMesh({
-            geometry,
-            material
-        });
-    }
-    // 动画
-    update() {
-        const elapsedTime = this.clock.getElapsedTime();
-        const mousePos = this.mousePos;
-        if (this.noiseWaveMaterial) {
-            this.noiseWaveMaterial.uniforms.uTime.value = elapsedTime;
-            this.noiseWaveMaterial.uniforms.uMouse.value = mousePos;
-        }
-    }
-    // 创建调试面板
-    createDebugPanel() {
-        const gui = new dat.GUI();
-        const uniforms = this.noiseWaveMaterial.uniforms;
-        gui.addColor(this.colorParams, "brightness").onFinishChange((value) => {
-            uniforms.uBrightness.value.set(value);
-        });
-        gui.addColor(this.colorParams, "contrast").onFinishChange((value) => {
-            uniforms.uContrast.value.set(value);
-        });
-        gui.addColor(this.colorParams, "oscilation").onFinishChange((value) => {
-            uniforms.uOscilation.value.set(value);
-        });
-        gui.addColor(this.colorParams, "phase").onFinishChange((value) => {
-            uniforms.uPhase.value.set(value);
-        });
-    }
-}
-const start = () => {
-    const noiseWave = new NoiseWave(".noise-wave", false);
-    noiseWave.init();
-};
-start();
-    </script>
   </body>
 </html>

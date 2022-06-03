@@ -593,7 +593,8 @@
   background: #666;
   position: relative;
   overflow: hidden;
-  background-color: #000;
+  /* background-color: #000; */
+  background: #00222b;
   margin: 0;
   background-repeat: no-repeat;
   border-left: 6px solid #000;
