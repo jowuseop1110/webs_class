@@ -25,8 +25,8 @@ switchBtnLeft.forEach((btnLeft) => {
 
     const codeT = targetT.querySelector(".code");
     gsap.to(codeT, {
-      duration: 0.3,
-      top: "-100%",
+      duration: 1,
+      top: "-350%",
     });
   });
 });
