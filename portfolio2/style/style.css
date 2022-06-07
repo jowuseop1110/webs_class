@@ -1128,6 +1128,7 @@
   .site_title .desc p:last-child {
     display: none;
   }
+}
 @media (max-width: 700px) {
   .sec1-5 {
     border-left: 1px solid #000;
@@ -1147,11 +1148,6 @@
     border-top: 1px solid #000;
     border-bottom: 1px solid #000;
     border-right: 1px solid #000;
-  }
-}
-@media (max-width: 400px) {
-  .page_desc {
-    display: none;
   }
 }
 
