@@ -3,7 +3,7 @@
   position: fixed;
   left: 0;
   top: 0;
-  width: 100vmax;
+  width: 100vw;
   font-family: "GmarketSans";
   display: flex;
   align-items: center;
@@ -47,7 +47,7 @@
 /* sec1_bg */
 .sec1_bg {
   margin-top: 5.1vw;
-  height: 350px;
+  height: 18vw;
   border: 6px solid #000;
   box-sizing: border-box;
   overflow: hidden;
