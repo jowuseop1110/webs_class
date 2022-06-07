@@ -80,8 +80,8 @@ ScrollTrigger.scrollerProxy(pageContents, {
         rotation: 360,
         duration: 1,
       });
-    }, 5000 * 2);
-
+      console.log(".contact_cont1");
+    }, 5000);
     return arguments.length
       ? scroller.scrollTo(value, 0, 0)
       : scroller.scroll.instance.scroll.y - 4000;
