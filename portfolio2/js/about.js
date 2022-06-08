@@ -125,4 +125,10 @@ window.addEventListener("load", function () {
     scroller.scrollTo(target);
     navigation.reversed() ? navigation.play() : navigation.reverse();
   });
+  $("#header a").click(function (e) {
+    e.preventDefault();
+    let target = e.target.getAttribute("href");
+    scroller.scrollTo(target);
+    navigation.reversed() ? navigation.play() : navigation.reverse();
+  });
 });
