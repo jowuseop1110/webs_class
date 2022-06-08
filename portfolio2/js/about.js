@@ -116,4 +116,13 @@ window.addEventListener("load", function () {
 
   ScrollTrigger.addEventListener("refresh", () => scroller.update());
   ScrollTrigger.refresh();
+
+  // header 움직이는 영역
+  var navigation = new TimelineLite({ paused: true, reversed: true });
+  $(".nav a").click(function (e) {
+    e.preventDefault();
+    let target = e.target.getAttribute("href");
+    scroller.scrollTo(target);
+    navigation.reversed() ? navigation.play() : navigation.reverse();
+  });
 });
